@@ -17,6 +17,8 @@ namespace RFID.Droid.Views
         /// If true show the hamburger menu
         /// </summary>
         protected bool ShowHamburgerMenu { get; set; } = false;
+        protected bool ShowBackButton { get; set; } = false;
+        protected bool ShowBackMenu { get; set; } = false;
 
         protected BaseFragment()
         {
@@ -60,7 +62,12 @@ namespace RFID.Droid.Views
                     DrawerToggle.DrawerOpened += (sender, e) => mainActivity?.HideSoftKeyboard();
                     mainActivity.DrawerLayout.AddDrawerListener(DrawerToggle);
                 }
+                else if (ShowBackButton)
+                {
+                    mainActivity.SupportActionBar?.SetDisplayHomeAsUpEnabled(true);
+                }
             }
+
             return view;
         }
 

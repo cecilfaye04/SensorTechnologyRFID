@@ -22,8 +22,7 @@ namespace RFID.Droid.Views
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+            ((MainView)Activity).Title = "Home";
             ShowHamburgerMenu = true;
             return base.OnCreateView(inflater, container, savedInstanceState);
         }

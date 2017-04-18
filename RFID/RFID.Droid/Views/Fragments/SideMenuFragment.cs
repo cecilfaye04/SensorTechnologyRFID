@@ -26,13 +26,6 @@ namespace RFID.Droid.Views
         private NavigationView _navigationView;
         private IMenuItem _previousMenuItem;
 
-        //public override void OnCreate(Bundle savedInstanceState)
-        //{
-        //    base.OnCreate(savedInstanceState);
-
-        //    // Create your fragment here
-        //}
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var ignore = base.OnCreateView(inflater, container, savedInstanceState);
@@ -74,15 +67,12 @@ namespace RFID.Droid.Views
             {
                 case Resource.Id.nav_home:
                     ViewModel.ShowHomeCommand.Execute();
-                    ((MainView)Activity).setActionBarTitle("Masd");
                     break;
                 case Resource.Id.nav_pier:
                     ViewModel.ShowPierCommand.Execute();
-                    ((MainView)Activity).setActionBarTitle("Pier");
                     break;
                 case Resource.Id.nav_departure:
                     ViewModel.ShowDepartureCommand.Execute();
-                    ((MainView)Activity).setActionBarTitle("Departure");
                     break;
                 case Resource.Id.nav_logout:
                     ViewModel.LogoutCommand.Execute();

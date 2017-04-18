@@ -14,5 +14,15 @@ namespace RFID.Core.ViewModels
             ShowViewModel<HomeViewModel>();
             ShowViewModel<SideMenuViewModel>();
         }
+
+        public IMvxCommand ShowSearchCommand
+        {
+            get { return new MvxCommand(ShowSearchExecuted); }
+        }
+
+        private void ShowSearchExecuted()
+        {
+            ShowViewModel<SearchViewModel>();
+        }
     }
 }

@@ -87,6 +87,7 @@
                         android:id="@+id/button1"
                         android:background="@android:color/transparent"
                         android:textColor="#3F51B5"
+                        local:MvxBind="Click ShowPierScanCommand"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1" />
@@ -161,6 +162,7 @@
                         android:id="@+id/button3"
                         android:background="@android:color/transparent"
                         android:textColor="#3F51B5"
+                        local:MvxBind="Click ShowPierScanCommand"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1" />
@@ -235,6 +237,7 @@
                         android:id="@+id/button5"
                         android:background="@android:color/transparent"
                         android:textColor="#3F51B5"
+                        local:MvxBind="Click ShowPierScanCommand"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1" />
@@ -309,6 +312,7 @@
                         android:id="@+id/button7"
                         android:background="@android:color/transparent"
                         android:textColor="#3F51B5"
+                        local:MvxBind="Click ShowPierScanCommand"
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1" />

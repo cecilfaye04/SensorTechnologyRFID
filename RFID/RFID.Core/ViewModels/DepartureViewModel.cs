@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvvmCross.Core.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -40,6 +41,16 @@ namespace RFID.Core.ViewModels
         {
             get { return _selectedGate; }
             set { _selectedGate = value; RaisePropertyChanged(() => SelectedGate); }
+        }
+
+        public IMvxCommand ShowDepartmentScanCommand
+        {
+            get { return new MvxCommand(ShowDepartmentScanExecuted); }
+        }
+
+        private void ShowDepartmentScanExecuted()
+        {
+            ShowViewModel<DepartureScanViewModel>();
         }
     }
 }

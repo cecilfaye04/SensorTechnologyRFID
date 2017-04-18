@@ -43,11 +43,16 @@
     <Compile Include="Services\SqliteDatabase.cs" />
     <Compile Include="Services\SqliteService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\DepartureScanViewModel.cs" />
     <Compile Include="ViewModels\DepartureViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\PierScanViewModel.cs" />
     <Compile Include="ViewModels\PierViewModel.cs" />
+    <Compile Include="ViewModels\SearchResultViewModel.cs" />
+    <Compile Include="ViewModels\SearchTrackViewModel.cs" />
+    <Compile Include="ViewModels\SearchViewModel.cs" />
     <Compile Include="ViewModels\SideMenuViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

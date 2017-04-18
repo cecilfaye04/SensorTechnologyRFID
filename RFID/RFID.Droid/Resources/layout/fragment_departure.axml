@@ -73,10 +73,25 @@
     </RelativeLayout>
     <DatePicker
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="248.0dp"
         android:id="@+id/datePicker1"
         android:datePickerMode="calendar"
         android:spinnersShown="false"
         android:calendarTextColor="#ff3e50b4"
-        android:clipToPadding="true" />
+        android:clipToPadding="true"
+        android:layout_marginTop="30dp"
+        android:headerBackground="#1565C0"
+        android:calendarViewShown="true"
+        android:clipChildren="true"
+        android:layoutMode="clipBounds" />
+    <Button
+        android:text="Next"
+        android:layout_width="121.3dp"
+        android:layout_height="41.3dp"
+        android:id="@+id/button1"
+        local:MvxBind="Click ShowDepartmentScanCommand"
+        android:layout_gravity="center"
+        android:background="#3F51B5"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="15dp" />
 </LinearLayout>

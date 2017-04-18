@@ -14,6 +14,7 @@ using RFID.Core.ViewModels;
 using MvvmCross.Droid.Shared.Attributes;
 using Android.Graphics;
 using static Android.InputMethodServices.InputMethodService;
+using MvvmCross.Binding.Droid.BindingContext;
 
 namespace RFID.Droid.Views.Fragments
 {
@@ -21,15 +22,15 @@ namespace RFID.Droid.Views.Fragments
     [Register("RFID.Droid.Views.PierFragment")]
     public class PierFragment : BaseFragment<PierViewModel>
     {
+        protected Toolbar Toolbars { get; private set; }
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
+           ((MainView)Activity).Title = "Pier";
             ShowHamburgerMenu = true;
             return base.OnCreateView(inflater, container, savedInstanceState);
 
         }
-
         protected override int FragmentId => Resource.Layout.fragment_pier;
     }
 }

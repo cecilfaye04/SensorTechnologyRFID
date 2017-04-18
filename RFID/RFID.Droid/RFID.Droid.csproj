@@ -208,9 +208,14 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\Activities\MainView.cs" />
     <Compile Include="Views\Fragments\BaseFragment.cs" />
+    <Compile Include="Views\Fragments\DepartureScanFragment.cs" />
     <Compile Include="Views\Fragments\DepartureFragment.cs" />
     <Compile Include="Views\Fragments\HomeFragment.cs" />
     <Compile Include="Views\Fragments\PierFragment.cs" />
+    <Compile Include="Views\Fragments\PierScanFragment.cs" />
+    <Compile Include="Views\Fragments\SearchFragment.cs" />
+    <Compile Include="Views\Fragments\SearchResultFragment.cs" />
+    <Compile Include="Views\Fragments\SearchTrackFragment.cs" />
     <Compile Include="Views\Fragments\SideMenuFragment.cs" />
     <Compile Include="Views\Activities\LoginView.cs" />
   </ItemGroup>
@@ -248,6 +253,18 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_search.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_search_result.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_pier_scan.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_departure_scan.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_search_track.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -347,6 +364,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\searchico.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\searchico2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

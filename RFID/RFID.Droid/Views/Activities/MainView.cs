@@ -1,14 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 using Android.App;
-using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
-using Android.Widget;
 using Android.Content.PM;
 using RFID.Core.ViewModels;
 using MvvmCross.Droid.Support.V7.AppCompat;
@@ -33,12 +26,6 @@ namespace RFID.Droid.Views
                 ViewModel.ShowMenu();
         }
 
-        public void setActionBarTitle(String title)
-        {
-            this.Window.SetTitle(title);
-            RunOnUiThread(() => this.Window.SetTitle(title));
-    }
-
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.home, menu);
@@ -47,51 +34,44 @@ namespace RFID.Droid.Views
 
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
-
+             
             switch (item.ItemId)
             {
                 case Android.Resource.Id.Home:
                     DrawerLayout.OpenDrawer(GravityCompat.Start);
+                    OnBackPressed();
                     return true;
                 case Resource.Id.menu_search:
-                    DrawerLayout.OpenDrawer(GravityCompat.Start);
+                    ViewModel.ShowSearchCommand.Execute();
                     return true;
             }
 
             return base.OnOptionsItemSelected(item);
         }
-
+         
         private void ShowBackButton()
         {
-            //TODO Tell the toggle to set the indicator off
-            //this.DrawerToggle.DrawerIndicatorEnabled = false;
-
-            //Block the menu slide gesture
             DrawerLayout.SetDrawerLockMode(DrawerLayout.LockModeLockedClosed);
         }
 
+
         private void ShowHamburguerMenu()
         {
-            //TODO set toggle indicator as enabled 
-            //this.DrawerToggle.DrawerIndicatorEnabled = true;
-
-            //Unlock the menu sliding gesture
             DrawerLayout.SetDrawerLockMode(DrawerLayout.LockModeUnlocked);
         }
-
 
         public override void OnBackPressed()
         {
             if (DrawerLayout != null && DrawerLayout.IsDrawerOpen(GravityCompat.Start))
                 DrawerLayout.CloseDrawers();
             else
-                base.OnBackPressed();
+                DrawerLayout.CloseDrawers();
+            base.OnBackPressed();
         }
 
         public void HideSoftKeyboard()
         {
             if (CurrentFocus == null) return;
-
             InputMethodManager inputMethodManager = (InputMethodManager)GetSystemService(InputMethodService);
             inputMethodManager.HideSoftInputFromWindow(CurrentFocus.WindowToken, 0);
 
