@@ -208,6 +208,7 @@
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\Activities\MainView.cs" />
     <Compile Include="Views\Fragments\BaseFragment.cs" />
+    <Compile Include="Views\Fragments\BottomNavigationFragment.cs" />
     <Compile Include="Views\Fragments\DepartureScanFragment.cs" />
     <Compile Include="Views\Fragments\DepartureFragment.cs" />
     <Compile Include="Views\Fragments\HomeFragment.cs" />
@@ -265,6 +266,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_search_track.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_bottomNavigation.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -367,6 +371,23 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\searchico2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\menu\bottom_navigation_main.xml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\searchresult.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\location.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\radar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\nav_item_color_state.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

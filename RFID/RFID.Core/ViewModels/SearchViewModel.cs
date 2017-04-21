@@ -16,7 +16,7 @@ namespace RFID.Core.ViewModels
 
         private void ShowSearchResultExecuted()
         {
-            ShowViewModel<SearchResultViewModel>();
+            ShowViewModel<BottomNavigationViewModel>();
         }
     }
 }

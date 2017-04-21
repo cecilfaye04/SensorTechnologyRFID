@@ -2516,100 +2516,112 @@ namespace RFID.Droid
 			public const int Icon = 2130837625;
 			
 			// aapt resource value: 0x7f02007a
-			public const int navigation_empty_icon = 2130837626;
+			public const int location = 2130837626;
 			
 			// aapt resource value: 0x7f02007b
-			public const int notification_action_background = 2130837627;
+			public const int nav_item_color_state = 2130837627;
 			
 			// aapt resource value: 0x7f02007c
-			public const int notification_bg = 2130837628;
+			public const int navigation_empty_icon = 2130837628;
 			
 			// aapt resource value: 0x7f02007d
-			public const int notification_bg_low = 2130837629;
+			public const int notification_action_background = 2130837629;
 			
 			// aapt resource value: 0x7f02007e
-			public const int notification_bg_low_normal = 2130837630;
+			public const int notification_bg = 2130837630;
 			
 			// aapt resource value: 0x7f02007f
-			public const int notification_bg_low_pressed = 2130837631;
+			public const int notification_bg_low = 2130837631;
 			
 			// aapt resource value: 0x7f020080
-			public const int notification_bg_normal = 2130837632;
+			public const int notification_bg_low_normal = 2130837632;
 			
 			// aapt resource value: 0x7f020081
-			public const int notification_bg_normal_pressed = 2130837633;
+			public const int notification_bg_low_pressed = 2130837633;
 			
 			// aapt resource value: 0x7f020082
-			public const int notification_icon_background = 2130837634;
-			
-			// aapt resource value: 0x7f020098
-			public const int notification_template_icon_bg = 2130837656;
-			
-			// aapt resource value: 0x7f020099
-			public const int notification_template_icon_low_bg = 2130837657;
+			public const int notification_bg_normal = 2130837634;
 			
 			// aapt resource value: 0x7f020083
-			public const int notification_tile_bg = 2130837635;
+			public const int notification_bg_normal_pressed = 2130837635;
 			
 			// aapt resource value: 0x7f020084
-			public const int notify_panel_notification_icon_bg = 2130837636;
+			public const int notification_icon_background = 2130837636;
+			
+			// aapt resource value: 0x7f02009c
+			public const int notification_template_icon_bg = 2130837660;
+			
+			// aapt resource value: 0x7f02009d
+			public const int notification_template_icon_low_bg = 2130837661;
 			
 			// aapt resource value: 0x7f020085
-			public const int p1 = 2130837637;
+			public const int notification_tile_bg = 2130837637;
 			
 			// aapt resource value: 0x7f020086
-			public const int p2 = 2130837638;
+			public const int notify_panel_notification_icon_bg = 2130837638;
 			
 			// aapt resource value: 0x7f020087
-			public const int p3 = 2130837639;
+			public const int p1 = 2130837639;
 			
 			// aapt resource value: 0x7f020088
-			public const int p4 = 2130837640;
+			public const int p2 = 2130837640;
 			
 			// aapt resource value: 0x7f020089
-			public const int p5 = 2130837641;
+			public const int p3 = 2130837641;
 			
 			// aapt resource value: 0x7f02008a
-			public const int person = 2130837642;
+			public const int p4 = 2130837642;
 			
 			// aapt resource value: 0x7f02008b
-			public const int pier = 2130837643;
+			public const int p5 = 2130837643;
 			
 			// aapt resource value: 0x7f02008c
-			public const int roundedbg = 2130837644;
+			public const int person = 2130837644;
 			
 			// aapt resource value: 0x7f02008d
-			public const int roundedbgdark = 2130837645;
+			public const int pier = 2130837645;
 			
 			// aapt resource value: 0x7f02008e
-			public const int scanpoint = 2130837646;
+			public const int radar = 2130837646;
 			
 			// aapt resource value: 0x7f02008f
-			public const int search1 = 2130837647;
+			public const int roundedbg = 2130837647;
 			
 			// aapt resource value: 0x7f020090
-			public const int search2 = 2130837648;
+			public const int roundedbgdark = 2130837648;
 			
 			// aapt resource value: 0x7f020091
-			public const int search3 = 2130837649;
+			public const int scanpoint = 2130837649;
 			
 			// aapt resource value: 0x7f020092
-			public const int searchico = 2130837650;
+			public const int search1 = 2130837650;
 			
 			// aapt resource value: 0x7f020093
-			public const int searchico2 = 2130837651;
+			public const int search2 = 2130837651;
 			
 			// aapt resource value: 0x7f020094
-			public const int shadow = 2130837652;
+			public const int search3 = 2130837652;
 			
 			// aapt resource value: 0x7f020095
-			public const int shadow2 = 2130837653;
+			public const int searchico = 2130837653;
 			
 			// aapt resource value: 0x7f020096
-			public const int splash = 2130837654;
+			public const int searchico2 = 2130837654;
 			
 			// aapt resource value: 0x7f020097
-			public const int user = 2130837655;
+			public const int searchresult = 2130837655;
+			
+			// aapt resource value: 0x7f020098
+			public const int shadow = 2130837656;
+			
+			// aapt resource value: 0x7f020099
+			public const int shadow2 = 2130837657;
+			
+			// aapt resource value: 0x7f02009a
+			public const int splash = 2130837658;
+			
+			// aapt resource value: 0x7f02009b
+			public const int user = 2130837659;
 			
 			static Drawable()
 			{
@@ -2630,8 +2642,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0010
 			public const int MvxBindingTagUnique = 2131427344;
 			
-			// aapt resource value: 0x7f0b00cb
-			public const int action0 = 2131427531;
+			// aapt resource value: 0x7f0b00ce
+			public const int action0 = 2131427534;
 			
 			// aapt resource value: 0x7f0b0070
 			public const int action_bar = 2131427440;
@@ -2654,17 +2666,17 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b004d
 			public const int action_bar_title = 2131427405;
 			
-			// aapt resource value: 0x7f0b00c8
-			public const int action_container = 2131427528;
+			// aapt resource value: 0x7f0b00cb
+			public const int action_container = 2131427531;
 			
 			// aapt resource value: 0x7f0b0071
 			public const int action_context_bar = 2131427441;
 			
-			// aapt resource value: 0x7f0b00cf
-			public const int action_divider = 2131427535;
+			// aapt resource value: 0x7f0b00d2
+			public const int action_divider = 2131427538;
 			
-			// aapt resource value: 0x7f0b00c9
-			public const int action_image = 2131427529;
+			// aapt resource value: 0x7f0b00cc
+			public const int action_image = 2131427532;
 			
 			// aapt resource value: 0x7f0b0005
 			public const int action_menu_divider = 2131427333;
@@ -2681,11 +2693,11 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b004f
 			public const int action_mode_close_button = 2131427407;
 			
-			// aapt resource value: 0x7f0b00ca
-			public const int action_text = 2131427530;
+			// aapt resource value: 0x7f0b00cd
+			public const int action_text = 2131427533;
 			
-			// aapt resource value: 0x7f0b00d8
-			public const int actions = 2131427544;
+			// aapt resource value: 0x7f0b00db
+			public const int actions = 2131427547;
 			
 			// aapt resource value: 0x7f0b0050
 			public const int activity_chooser_view_content = 2131427408;
@@ -2708,8 +2720,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0048
 			public const int always = 2131427400;
 			
-			// aapt resource value: 0x7f0b00df
-			public const int appbar = 2131427551;
+			// aapt resource value: 0x7f0b00e2
+			public const int appbar = 2131427554;
 			
 			// aapt resource value: 0x7f0b001b
 			public const int auto = 2131427355;
@@ -2720,35 +2732,38 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0023
 			public const int bottom = 2131427363;
 			
+			// aapt resource value: 0x7f0b0097
+			public const int bottom_navigation = 2131427479;
+			
 			// aapt resource value: 0x7f0b0084
 			public const int button1 = 2131427460;
 			
-			// aapt resource value: 0x7f0b00a9
-			public const int button2 = 2131427497;
-			
 			// aapt resource value: 0x7f0b00ac
-			public const int button3 = 2131427500;
+			public const int button2 = 2131427500;
 			
 			// aapt resource value: 0x7f0b00af
-			public const int button4 = 2131427503;
+			public const int button3 = 2131427503;
 			
 			// aapt resource value: 0x7f0b00b2
-			public const int button5 = 2131427506;
+			public const int button4 = 2131427506;
 			
-			// aapt resource value: 0x7f0b00b9
-			public const int button6 = 2131427513;
-			
-			// aapt resource value: 0x7f0b00bb
-			public const int button7 = 2131427515;
+			// aapt resource value: 0x7f0b00b5
+			public const int button5 = 2131427509;
 			
 			// aapt resource value: 0x7f0b00bc
-			public const int button8 = 2131427516;
+			public const int button6 = 2131427516;
+			
+			// aapt resource value: 0x7f0b00be
+			public const int button7 = 2131427518;
+			
+			// aapt resource value: 0x7f0b00bf
+			public const int button8 = 2131427519;
 			
 			// aapt resource value: 0x7f0b0057
 			public const int buttonPanel = 2131427415;
 			
-			// aapt resource value: 0x7f0b00cc
-			public const int cancel_action = 2131427532;
+			// aapt resource value: 0x7f0b00cf
+			public const int cancel_action = 2131427535;
 			
 			// aapt resource value: 0x7f0b0024
 			public const int center = 2131427364;
@@ -2762,8 +2777,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0067
 			public const int checkbox = 2131427431;
 			
-			// aapt resource value: 0x7f0b00d4
-			public const int chronometer = 2131427540;
+			// aapt resource value: 0x7f0b00d7
+			public const int chronometer = 2131427543;
 			
 			// aapt resource value: 0x7f0b002f
 			public const int clip_horizontal = 2131427375;
@@ -2789,8 +2804,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b001c
 			public const int dark = 2131427356;
 			
-			// aapt resource value: 0x7f0b009c
-			public const int datePicker1 = 2131427484;
+			// aapt resource value: 0x7f0b009f
+			public const int datePicker1 = 2131427487;
 			
 			// aapt resource value: 0x7f0b006e
 			public const int decor_content_parent = 2131427438;
@@ -2831,8 +2846,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0027
 			public const int end = 2131427367;
 			
-			// aapt resource value: 0x7f0b00de
-			public const int end_padder = 2131427550;
+			// aapt resource value: 0x7f0b00e1
+			public const int end_padder = 2131427553;
 			
 			// aapt resource value: 0x7f0b001e
 			public const int enterAlways = 2131427358;
@@ -2861,8 +2876,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0035
 			public const int @fixed = 2131427381;
 			
-			// aapt resource value: 0x7f0b00c1
-			public const int frameLayout1 = 2131427521;
+			// aapt resource value: 0x7f0b00c4
+			public const int frameLayout1 = 2131427524;
 			
 			// aapt resource value: 0x7f0b0007
 			public const int home = 2131427335;
@@ -2876,8 +2891,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0055
 			public const int icon = 2131427413;
 			
-			// aapt resource value: 0x7f0b00d9
-			public const int icon_group = 2131427545;
+			// aapt resource value: 0x7f0b00dc
+			public const int icon_group = 2131427548;
 			
 			// aapt resource value: 0x7f0b0018
 			public const int icon_only = 2131427352;
@@ -2891,23 +2906,23 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0081
 			public const int imageView1 = 2131427457;
 			
-			// aapt resource value: 0x7f0b00a8
-			public const int imageView2 = 2131427496;
-			
 			// aapt resource value: 0x7f0b00ab
-			public const int imageView3 = 2131427499;
+			public const int imageView2 = 2131427499;
 			
 			// aapt resource value: 0x7f0b00ae
-			public const int imageView4 = 2131427502;
+			public const int imageView3 = 2131427502;
 			
 			// aapt resource value: 0x7f0b00b1
-			public const int imageView5 = 2131427505;
+			public const int imageView4 = 2131427505;
 			
 			// aapt resource value: 0x7f0b00b4
-			public const int image_view_row_icon = 2131427508;
+			public const int imageView5 = 2131427508;
 			
-			// aapt resource value: 0x7f0b00d5
-			public const int info = 2131427541;
+			// aapt resource value: 0x7f0b00b7
+			public const int image_view_row_icon = 2131427511;
+			
+			// aapt resource value: 0x7f0b00d8
+			public const int info = 2131427544;
 			
 			// aapt resource value: 0x7f0b000c
 			public const int item_touch_helper_previous_elevation = 2131427340;
@@ -2921,26 +2936,26 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b001d
 			public const int light = 2131427357;
 			
-			// aapt resource value: 0x7f0b00da
-			public const int line1 = 2131427546;
+			// aapt resource value: 0x7f0b00dd
+			public const int line1 = 2131427549;
 			
-			// aapt resource value: 0x7f0b00dc
-			public const int line3 = 2131427548;
+			// aapt resource value: 0x7f0b00df
+			public const int line3 = 2131427551;
 			
 			// aapt resource value: 0x7f0b007f
 			public const int linearLayout1 = 2131427455;
 			
-			// aapt resource value: 0x7f0b0095
-			public const int linearLayout2 = 2131427477;
-			
-			// aapt resource value: 0x7f0b00aa
-			public const int linearLayout3 = 2131427498;
+			// aapt resource value: 0x7f0b0098
+			public const int linearLayout2 = 2131427480;
 			
 			// aapt resource value: 0x7f0b00ad
-			public const int linearLayout4 = 2131427501;
+			public const int linearLayout3 = 2131427501;
 			
 			// aapt resource value: 0x7f0b00b0
-			public const int linearLayout5 = 2131427504;
+			public const int linearLayout4 = 2131427504;
+			
+			// aapt resource value: 0x7f0b00b3
+			public const int linearLayout5 = 2131427507;
 			
 			// aapt resource value: 0x7f0b003c
 			public const int listMode = 2131427388;
@@ -2948,32 +2963,32 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0054
 			public const int list_item = 2131427412;
 			
-			// aapt resource value: 0x7f0b00c6
-			public const int loadingImage = 2131427526;
-			
-			// aapt resource value: 0x7f0b00c4
-			public const int loadingProgressBar = 2131427524;
+			// aapt resource value: 0x7f0b00c9
+			public const int loadingImage = 2131427529;
 			
 			// aapt resource value: 0x7f0b00c7
-			public const int loadingProgressWheel = 2131427527;
+			public const int loadingProgressBar = 2131427527;
 			
-			// aapt resource value: 0x7f0b00a7
-			public const int main_content = 2131427495;
+			// aapt resource value: 0x7f0b00ca
+			public const int loadingProgressWheel = 2131427530;
+			
+			// aapt resource value: 0x7f0b00aa
+			public const int main_content = 2131427498;
 			
 			// aapt resource value: 0x7f0b0086
 			public const int main_frame = 2131427462;
 			
-			// aapt resource value: 0x7f0b00c2
-			public const int map = 2131427522;
+			// aapt resource value: 0x7f0b00c5
+			public const int map = 2131427525;
 			
-			// aapt resource value: 0x7f0b00e2
-			public const int masked = 2131427554;
+			// aapt resource value: 0x7f0b00e5
+			public const int masked = 2131427557;
 			
-			// aapt resource value: 0x7f0b00ce
-			public const int media_actions = 2131427534;
+			// aapt resource value: 0x7f0b00d1
+			public const int media_actions = 2131427537;
 			
-			// aapt resource value: 0x7f0b00e3
-			public const int menu_search = 2131427555;
+			// aapt resource value: 0x7f0b00e9
+			public const int menu_search = 2131427561;
 			
 			// aapt resource value: 0x7f0b0047
 			public const int middle = 2131427399;
@@ -2984,32 +2999,41 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0037
 			public const int multiply = 2131427383;
 			
-			// aapt resource value: 0x7f0b009a
-			public const int mvxSpinner1 = 2131427482;
+			// aapt resource value: 0x7f0b009d
+			public const int mvxSpinner1 = 2131427485;
 			
-			// aapt resource value: 0x7f0b009b
-			public const int mvxSpinner2 = 2131427483;
+			// aapt resource value: 0x7f0b009e
+			public const int mvxSpinner2 = 2131427486;
 			
-			// aapt resource value: 0x7f0b00e7
-			public const int nav_departure = 2131427559;
+			// aapt resource value: 0x7f0b00ed
+			public const int nav_departure = 2131427565;
 			
-			// aapt resource value: 0x7f0b00e9
-			public const int nav_footer = 2131427561;
+			// aapt resource value: 0x7f0b00ef
+			public const int nav_footer = 2131427567;
 			
-			// aapt resource value: 0x7f0b00e5
-			public const int nav_home = 2131427557;
-			
-			// aapt resource value: 0x7f0b00e4
-			public const int nav_items = 2131427556;
+			// aapt resource value: 0x7f0b00eb
+			public const int nav_home = 2131427563;
 			
 			// aapt resource value: 0x7f0b00ea
-			public const int nav_logout = 2131427562;
+			public const int nav_items = 2131427562;
+			
+			// aapt resource value: 0x7f0b00e7
+			public const int nav_location = 2131427559;
+			
+			// aapt resource value: 0x7f0b00f0
+			public const int nav_logout = 2131427568;
+			
+			// aapt resource value: 0x7f0b00ec
+			public const int nav_pier = 2131427564;
+			
+			// aapt resource value: 0x7f0b00ee
+			public const int nav_recyclerview = 2131427566;
 			
 			// aapt resource value: 0x7f0b00e6
-			public const int nav_pier = 2131427558;
+			public const int nav_result = 2131427558;
 			
 			// aapt resource value: 0x7f0b00e8
-			public const int nav_recyclerview = 2131427560;
+			public const int nav_track = 2131427560;
 			
 			// aapt resource value: 0x7f0b0088
 			public const int navigation_frame = 2131427464;
@@ -3017,8 +3041,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b008f
 			public const int navigation_header_container = 2131427471;
 			
-			// aapt resource value: 0x7f0b00b3
-			public const int navigation_view = 2131427507;
+			// aapt resource value: 0x7f0b00b6
+			public const int navigation_view = 2131427510;
 			
 			// aapt resource value: 0x7f0b004b
 			public const int never = 2131427403;
@@ -3029,14 +3053,14 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0013
 			public const int normal = 2131427347;
 			
-			// aapt resource value: 0x7f0b00d7
-			public const int notification_background = 2131427543;
+			// aapt resource value: 0x7f0b00da
+			public const int notification_background = 2131427546;
 			
-			// aapt resource value: 0x7f0b00d1
-			public const int notification_main_column = 2131427537;
+			// aapt resource value: 0x7f0b00d4
+			public const int notification_main_column = 2131427540;
 			
-			// aapt resource value: 0x7f0b00d0
-			public const int notification_main_column_container = 2131427536;
+			// aapt resource value: 0x7f0b00d3
+			public const int notification_main_column_container = 2131427539;
 			
 			// aapt resource value: 0x7f0b002d
 			public const int parallax = 2131427373;
@@ -3056,26 +3080,26 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0069
 			public const int radio = 2131427433;
 			
-			// aapt resource value: 0x7f0b0096
-			public const int relativeLayout1 = 2131427478;
+			// aapt resource value: 0x7f0b0099
+			public const int relativeLayout1 = 2131427481;
 			
-			// aapt resource value: 0x7f0b00a1
-			public const int relativeLayout2 = 2131427489;
+			// aapt resource value: 0x7f0b00a4
+			public const int relativeLayout2 = 2131427492;
 			
-			// aapt resource value: 0x7f0b00b8
-			public const int relativeLayout3 = 2131427512;
+			// aapt resource value: 0x7f0b00bb
+			public const int relativeLayout3 = 2131427515;
 			
-			// aapt resource value: 0x7f0b00ba
-			public const int relativeLayout4 = 2131427514;
+			// aapt resource value: 0x7f0b00bd
+			public const int relativeLayout4 = 2131427517;
 			
 			// aapt resource value: 0x7f0b002a
 			public const int right = 2131427370;
 			
-			// aapt resource value: 0x7f0b00d6
-			public const int right_icon = 2131427542;
+			// aapt resource value: 0x7f0b00d9
+			public const int right_icon = 2131427545;
 			
-			// aapt resource value: 0x7f0b00d2
-			public const int right_side = 2131427538;
+			// aapt resource value: 0x7f0b00d5
+			public const int right_side = 2131427541;
 			
 			// aapt resource value: 0x7f0b0014
 			public const int satellite = 2131427348;
@@ -3113,6 +3137,9 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0076
 			public const int search_edit_frame = 2131427446;
 			
+			// aapt resource value: 0x7f0b0096
+			public const int search_frame = 2131427478;
+			
 			// aapt resource value: 0x7f0b007c
 			public const int search_go_btn = 2131427452;
 			
@@ -3127,6 +3154,9 @@ namespace RFID.Droid
 			
 			// aapt resource value: 0x7f0b007d
 			public const int search_voice_btn = 2131427453;
+			
+			// aapt resource value: 0x7f0b0095
+			public const int searchmain_frame = 2131427477;
 			
 			// aapt resource value: 0x7f0b007e
 			public const int select_dialog_listview = 2131427454;
@@ -3179,8 +3209,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b002b
 			public const int start = 2131427371;
 			
-			// aapt resource value: 0x7f0b00cd
-			public const int status_bar_latest_event_content = 2131427533;
+			// aapt resource value: 0x7f0b00d0
+			public const int status_bar_latest_event_content = 2131427536;
 			
 			// aapt resource value: 0x7f0b006a
 			public const int submenuarrow = 2131427434;
@@ -3194,11 +3224,11 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0015
 			public const int terrain = 2131427349;
 			
-			// aapt resource value: 0x7f0b00dd
-			public const int text = 2131427549;
+			// aapt resource value: 0x7f0b00e0
+			public const int text = 2131427552;
 			
-			// aapt resource value: 0x7f0b00db
-			public const int text2 = 2131427547;
+			// aapt resource value: 0x7f0b00de
+			public const int text2 = 2131427550;
 			
 			// aapt resource value: 0x7f0b005e
 			public const int textSpacerNoButtons = 2131427422;
@@ -3206,62 +3236,62 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b005d
 			public const int textSpacerNoTitle = 2131427421;
 			
-			// aapt resource value: 0x7f0b0097
-			public const int textView1 = 2131427479;
-			
-			// aapt resource value: 0x7f0b009d
-			public const int textView10 = 2131427485;
-			
-			// aapt resource value: 0x7f0b00bd
-			public const int textView11 = 2131427517;
-			
-			// aapt resource value: 0x7f0b00be
-			public const int textView12 = 2131427518;
-			
-			// aapt resource value: 0x7f0b00bf
-			public const int textView15 = 2131427519;
-			
-			// aapt resource value: 0x7f0b00c0
-			public const int textView16 = 2131427520;
-			
-			// aapt resource value: 0x7f0b0098
-			public const int textView2 = 2131427480;
-			
-			// aapt resource value: 0x7f0b009e
-			public const int textView3 = 2131427486;
-			
-			// aapt resource value: 0x7f0b009f
-			public const int textView4 = 2131427487;
+			// aapt resource value: 0x7f0b009a
+			public const int textView1 = 2131427482;
 			
 			// aapt resource value: 0x7f0b00a0
-			public const int textView5 = 2131427488;
+			public const int textView10 = 2131427488;
+			
+			// aapt resource value: 0x7f0b00c0
+			public const int textView11 = 2131427520;
+			
+			// aapt resource value: 0x7f0b00c1
+			public const int textView12 = 2131427521;
+			
+			// aapt resource value: 0x7f0b00c2
+			public const int textView15 = 2131427522;
+			
+			// aapt resource value: 0x7f0b00c3
+			public const int textView16 = 2131427523;
+			
+			// aapt resource value: 0x7f0b009b
+			public const int textView2 = 2131427483;
+			
+			// aapt resource value: 0x7f0b00a1
+			public const int textView3 = 2131427489;
 			
 			// aapt resource value: 0x7f0b00a2
-			public const int textView6 = 2131427490;
+			public const int textView4 = 2131427490;
 			
 			// aapt resource value: 0x7f0b00a3
-			public const int textView7 = 2131427491;
+			public const int textView5 = 2131427491;
 			
 			// aapt resource value: 0x7f0b00a5
-			public const int textView8 = 2131427493;
+			public const int textView6 = 2131427493;
 			
 			// aapt resource value: 0x7f0b00a6
-			public const int textView9 = 2131427494;
+			public const int textView7 = 2131427494;
 			
-			// aapt resource value: 0x7f0b00c5
-			public const int textViewStatus = 2131427525;
+			// aapt resource value: 0x7f0b00a8
+			public const int textView8 = 2131427496;
 			
-			// aapt resource value: 0x7f0b00b5
-			public const int text_container = 2131427509;
+			// aapt resource value: 0x7f0b00a9
+			public const int textView9 = 2131427497;
+			
+			// aapt resource value: 0x7f0b00c8
+			public const int textViewStatus = 2131427528;
+			
+			// aapt resource value: 0x7f0b00b8
+			public const int text_container = 2131427512;
 			
 			// aapt resource value: 0x7f0b0094
 			public const int text_input_password_toggle = 2131427476;
 			
-			// aapt resource value: 0x7f0b00b6
-			public const int text_view_fullname = 2131427510;
+			// aapt resource value: 0x7f0b00b9
+			public const int text_view_fullname = 2131427513;
 			
-			// aapt resource value: 0x7f0b00b7
-			public const int text_view_username = 2131427511;
+			// aapt resource value: 0x7f0b00ba
+			public const int text_view_username = 2131427514;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int textinput_counter = 2131427328;
@@ -3269,8 +3299,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0001
 			public const int textinput_error = 2131427329;
 			
-			// aapt resource value: 0x7f0b00d3
-			public const int time = 2131427539;
+			// aapt resource value: 0x7f0b00d6
+			public const int time = 2131427542;
 			
 			// aapt resource value: 0x7f0b0056
 			public const int title = 2131427414;
@@ -3281,8 +3311,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0063
 			public const int title_template = 2131427427;
 			
-			// aapt resource value: 0x7f0b00e0
-			public const int toolbar = 2131427552;
+			// aapt resource value: 0x7f0b00e3
+			public const int toolbar = 2131427555;
 			
 			// aapt resource value: 0x7f0b002c
 			public const int top = 2131427372;
@@ -3305,20 +3335,20 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0043
 			public const int useLogo = 2131427395;
 			
-			// aapt resource value: 0x7f0b00a4
-			public const int view1 = 2131427492;
+			// aapt resource value: 0x7f0b00a7
+			public const int view1 = 2131427495;
 			
-			// aapt resource value: 0x7f0b0099
-			public const int view2 = 2131427481;
+			// aapt resource value: 0x7f0b009c
+			public const int view2 = 2131427484;
 			
-			// aapt resource value: 0x7f0b00c3
-			public const int view3 = 2131427523;
+			// aapt resource value: 0x7f0b00c6
+			public const int view3 = 2131427526;
 			
 			// aapt resource value: 0x7f0b0002
 			public const int view_offset_helper = 2131427330;
 			
-			// aapt resource value: 0x7f0b00e1
-			public const int visible = 2131427553;
+			// aapt resource value: 0x7f0b00e4
+			public const int visible = 2131427556;
 			
 			// aapt resource value: 0x7f0b001a
 			public const int wide = 2131427354;
@@ -3515,103 +3545,106 @@ namespace RFID.Droid
 			public const int design_text_input_password_icon = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
-			public const int fragment_departure = 2130903083;
+			public const int fragment_bottomNavigation = 2130903083;
 			
 			// aapt resource value: 0x7f03002c
-			public const int fragment_departure_scan = 2130903084;
+			public const int fragment_departure = 2130903084;
 			
 			// aapt resource value: 0x7f03002d
-			public const int fragment_home = 2130903085;
+			public const int fragment_departure_scan = 2130903085;
 			
 			// aapt resource value: 0x7f03002e
-			public const int fragment_navigation = 2130903086;
+			public const int fragment_home = 2130903086;
 			
 			// aapt resource value: 0x7f03002f
-			public const int fragment_navigation_header = 2130903087;
+			public const int fragment_navigation = 2130903087;
 			
 			// aapt resource value: 0x7f030030
-			public const int fragment_pier = 2130903088;
+			public const int fragment_navigation_header = 2130903088;
 			
 			// aapt resource value: 0x7f030031
-			public const int fragment_pier_scan = 2130903089;
+			public const int fragment_pier = 2130903089;
 			
 			// aapt resource value: 0x7f030032
-			public const int fragment_search = 2130903090;
+			public const int fragment_pier_scan = 2130903090;
 			
 			// aapt resource value: 0x7f030033
-			public const int fragment_search_result = 2130903091;
+			public const int fragment_search = 2130903091;
 			
 			// aapt resource value: 0x7f030034
-			public const int fragment_search_track = 2130903092;
+			public const int fragment_search_result = 2130903092;
 			
 			// aapt resource value: 0x7f030035
-			public const int loading = 2130903093;
+			public const int fragment_search_track = 2130903093;
 			
 			// aapt resource value: 0x7f030036
-			public const int loadingimage = 2130903094;
+			public const int loading = 2130903094;
 			
 			// aapt resource value: 0x7f030037
-			public const int loadingprogress = 2130903095;
+			public const int loadingimage = 2130903095;
 			
 			// aapt resource value: 0x7f030038
-			public const int notification_action = 2130903096;
+			public const int loadingprogress = 2130903096;
 			
 			// aapt resource value: 0x7f030039
-			public const int notification_action_tombstone = 2130903097;
+			public const int notification_action = 2130903097;
 			
 			// aapt resource value: 0x7f03003a
-			public const int notification_media_action = 2130903098;
+			public const int notification_action_tombstone = 2130903098;
 			
 			// aapt resource value: 0x7f03003b
-			public const int notification_media_cancel_action = 2130903099;
+			public const int notification_media_action = 2130903099;
 			
 			// aapt resource value: 0x7f03003c
-			public const int notification_template_big_media = 2130903100;
+			public const int notification_media_cancel_action = 2130903100;
 			
 			// aapt resource value: 0x7f03003d
-			public const int notification_template_big_media_custom = 2130903101;
+			public const int notification_template_big_media = 2130903101;
 			
 			// aapt resource value: 0x7f03003e
-			public const int notification_template_big_media_narrow = 2130903102;
+			public const int notification_template_big_media_custom = 2130903102;
 			
 			// aapt resource value: 0x7f03003f
-			public const int notification_template_big_media_narrow_custom = 2130903103;
+			public const int notification_template_big_media_narrow = 2130903103;
 			
 			// aapt resource value: 0x7f030040
-			public const int notification_template_custom_big = 2130903104;
+			public const int notification_template_big_media_narrow_custom = 2130903104;
 			
 			// aapt resource value: 0x7f030041
-			public const int notification_template_icon_group = 2130903105;
+			public const int notification_template_custom_big = 2130903105;
 			
 			// aapt resource value: 0x7f030042
-			public const int notification_template_lines_media = 2130903106;
+			public const int notification_template_icon_group = 2130903106;
 			
 			// aapt resource value: 0x7f030043
-			public const int notification_template_media = 2130903107;
+			public const int notification_template_lines_media = 2130903107;
 			
 			// aapt resource value: 0x7f030044
-			public const int notification_template_media_custom = 2130903108;
+			public const int notification_template_media = 2130903108;
 			
 			// aapt resource value: 0x7f030045
-			public const int notification_template_part_chronometer = 2130903109;
+			public const int notification_template_media_custom = 2130903109;
 			
 			// aapt resource value: 0x7f030046
-			public const int notification_template_part_time = 2130903110;
+			public const int notification_template_part_chronometer = 2130903110;
 			
 			// aapt resource value: 0x7f030047
-			public const int select_dialog_item_material = 2130903111;
+			public const int notification_template_part_time = 2130903111;
 			
 			// aapt resource value: 0x7f030048
-			public const int select_dialog_multichoice_material = 2130903112;
+			public const int select_dialog_item_material = 2130903112;
 			
 			// aapt resource value: 0x7f030049
-			public const int select_dialog_singlechoice_material = 2130903113;
+			public const int select_dialog_multichoice_material = 2130903113;
 			
 			// aapt resource value: 0x7f03004a
-			public const int support_simple_spinner_dropdown_item = 2130903114;
+			public const int select_dialog_singlechoice_material = 2130903114;
 			
 			// aapt resource value: 0x7f03004b
-			public const int toolbar_actionbar = 2130903115;
+			public const int support_simple_spinner_dropdown_item = 2130903115;
+			
+			// aapt resource value: 0x7f03004c
+			public const int toolbar_actionbar = 2130903116;
 			
 			static Layout()
 			{
@@ -3627,10 +3660,13 @@ namespace RFID.Droid
 		{
 			
 			// aapt resource value: 0x7f0d0000
-			public const int home = 2131558400;
+			public const int bottom_navigation_main = 2131558400;
 			
 			// aapt resource value: 0x7f0d0001
-			public const int navigation_drawer = 2131558401;
+			public const int home = 2131558401;
+			
+			// aapt resource value: 0x7f0d0002
+			public const int navigation_drawer = 2131558402;
 			
 			static Menu()
 			{

@@ -43,6 +43,7 @@
     <Compile Include="Services\SqliteDatabase.cs" />
     <Compile Include="Services\SqliteService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\BottomNavigationViewModel.cs" />
     <Compile Include="ViewModels\DepartureScanViewModel.cs" />
     <Compile Include="ViewModels\DepartureViewModel.cs" />
     <Compile Include="ViewModels\HomeViewModel.cs" />

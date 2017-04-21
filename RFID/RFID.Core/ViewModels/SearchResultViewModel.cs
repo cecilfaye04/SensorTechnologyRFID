@@ -9,6 +9,11 @@ namespace RFID.Core.ViewModels
 {
     public class SearchResultViewModel : BaseViewModel
     {
+        public SearchResultViewModel()
+        {
+
+        }
+
         public IMvxCommand ShowSearchTrackCommand
         {
             get { return new MvxCommand(ShowSearchTrackExecuted); }

@@ -27,8 +27,6 @@ namespace RFID.Droid.Views.Fragments
             return base.OnCreateView(inflater, container, savedInstanceState);
         }
 
-
-
         protected override int FragmentId => Resource.Layout.fragment_search;
     }
 }

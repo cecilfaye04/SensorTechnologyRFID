@@ -15,7 +15,7 @@ using RFID.Core.ViewModels;
 
 namespace RFID.Droid.Views.Fragments
 {
-    [MvxFragment(typeof(MainViewModel), Resource.Id.content_frame,true)]
+    [MvxFragment(typeof(MainViewModel), Resource.Id.search_frame,true)]
     [Register("RFID.Droid.Views.SearchResultFragment")]
     public class SearchResultFragment : BaseFragment<SearchResultViewModel>
     {
