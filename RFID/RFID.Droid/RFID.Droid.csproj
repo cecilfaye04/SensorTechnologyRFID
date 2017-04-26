@@ -200,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DebugTrace.cs" />
+    <Compile Include="ExpandableListAdapter.cs" />
     <Compile Include="InitializeSqliteService.cs" />
     <Compile Include="MvxPanelPopToRootPresentationHint.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -269,6 +270,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_bottomNavigation.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\HeaderCustomLayout.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\ListItemCustomLayout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

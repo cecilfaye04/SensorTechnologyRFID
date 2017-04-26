@@ -6,6 +6,13 @@
     android:layout_height="match_parent">
     <include
         layout="@layout/toolbar_actionbar" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText2"
+        android:hint="Bagtag no."
+        android:gravity="center"
+        android:layout_gravity="center" />
     <LinearLayout
         android:orientation="horizontal"
         android:minWidth="25px"
@@ -15,7 +22,7 @@
         android:id="@+id/linearLayout1"
         android:paddingLeft="40dp">
         <TextView
-            android:text="Gate"
+            android:text="Position"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
@@ -38,10 +45,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/relativeLayout1"
-        android:layout_marginTop="10dp"
         android:paddingTop="10dp"
         android:paddingLeft="40dp"
-        android:paddingRight="30dp">
+        android:paddingRight="30dp"
+        android:layout_marginBottom="5dp">
         <TextView
             android:text="Scanned"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -72,7 +79,6 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="12dp"
         android:background="#757575"
         android:layout_below="@id/relativeLayout1" />
     <Button
@@ -82,7 +88,7 @@
         android:id="@+id/button1"
         android:background="@android:color/transparent"
         android:textColor="#3F51B5"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="10dp"
         android:textStyle="bold"
         android:textSize="17dp"
         android:layout_marginBottom="5dp" />
@@ -106,14 +112,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/relativeLayout2"
-        android:layout_marginTop="35dp"
+        android:layout_marginTop="20dp"
         android:gravity="center">
         <TextView
             android:text="00"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_height="wrap_content"
             android:id="@+id/textView6"
-            android:textSize="65dp"
+            android:textSize="55dp"
             android:layout_width="wrap_content"
             android:layout_marginLeft="20dp"
             android:textColor="#424242" />
@@ -140,7 +146,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/view1"
             android:id="@+id/textView8"
-            android:textSize="65dp"
+            android:textSize="55dp"
             android:layout_marginLeft="40dp"
             android:textColor="#424242" />
         <TextView
@@ -155,4 +161,31 @@
             android:layout_marginLeft="47dp"
             android:textColor="#424242" />
     </RelativeLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout3"
+        android:gravity="center"
+        android:layout_marginTop="25dp">
+        <Button
+            android:text="Retry"
+            android:id="@+id/btnRetry"
+            android:background="#3F51B5"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="15dp" />
+        <Button
+            android:text="Clear"
+            android:id="@+id/btnClear"
+            android:background="#3F51B5"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
 </LinearLayout>

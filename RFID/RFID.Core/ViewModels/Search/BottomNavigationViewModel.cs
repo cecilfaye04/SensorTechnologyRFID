@@ -13,6 +13,7 @@ namespace RFID.Core.ViewModels
         {
             ShowViewModel<SearchResultViewModel>();
         }
+
         public IMvxCommand ShowSearchResultCommand
         {
             get { return new MvxCommand(ShowSearchResultExecuted); }

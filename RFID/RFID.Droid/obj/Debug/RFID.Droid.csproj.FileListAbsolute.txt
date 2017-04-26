@@ -156,5 +156,7 @@ C:\Users\cecil.clemente\Desktop\RFID\RFID.Droid\obj\Debug\android\assets\System.
 C:\Users\cecil.clemente\Desktop\RFID\RFID.Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 C:\Users\cecil.clemente\Desktop\RFID\RFID.Droid\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Users\cecil.clemente\Desktop\RFID\RFID.Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
+C:\Users\cecil.clemente\Desktop\RFID\RFID.Droid\obj\Debug\res\layout\headercustomlayout.xml
+C:\Users\cecil.clemente\Desktop\RFID\RFID.Droid\obj\Debug\res\layout\listitemcustomlayout.xml
 C:\Users\cecil.clemente\Desktop\RFID\RFID.Droid\obj\Debug\RFID.Droid.dll.mdb
 C:\Users\cecil.clemente\Desktop\RFID\RFID.Droid\bin\Debug\RFID.Droid.dll.mdb

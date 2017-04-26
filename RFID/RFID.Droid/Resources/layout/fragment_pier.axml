@@ -6,10 +6,25 @@
     android:layout_height="match_parent">
     <include
         layout="@layout/toolbar_actionbar" />
-    <ScrollView
+    <!--<ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
-        <LinearLayout
+        android:layout_height="wrap_content">-->
+  <TextView
+              android:text="Select a Pier location"
+              android:textAppearance="?android:attr/textAppearanceLarge"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:id="@+id/textView1"
+              android:layout_gravity="center"
+              android:layout_marginTop="20dp"
+              android:textColor="#757575" />
+  
+      <ExpandableListView
+     android:id="@+id/lvExp"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent"
+     android:layout_margin="15dp" />
+        <!--<LinearLayout
             android:orientation="vertical"
             android:minWidth="25px"
             android:minHeight="25px"
@@ -323,8 +338,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="match_parent"
                         android:layout_weight="1" />
-                </LinearLayout>
-            </RelativeLayout>
-        </LinearLayout>
-    </ScrollView>
+                </LinearLayout>-->
+            <!--</RelativeLayout>
+        </LinearLayout>-->
+    <!--</ScrollView>-->
 </LinearLayout>

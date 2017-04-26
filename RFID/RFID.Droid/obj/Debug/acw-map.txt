@@ -1,3 +1,11 @@
+RFID.Droid.ExpandableListAdapter, RFID.Droid;md52a1e810ab93d0a660f0ca9278218e9dc.ExpandableListAdapter
+RFID.Droid.ExpandableListAdapter, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52a1e810ab93d0a660f0ca9278218e9dc.ExpandableListAdapter
+RFID.Droid.ExpandableListAdapter;md52a1e810ab93d0a660f0ca9278218e9dc.ExpandableListAdapter
+rfid.droid.ExpandableListAdapter;md52a1e810ab93d0a660f0ca9278218e9dc.ExpandableListAdapter
+RFID.Droid.ExpandableListAdapter/ViewHolderItem, RFID.Droid;md52a1e810ab93d0a660f0ca9278218e9dc.ExpandableListAdapter_ViewHolderItem
+RFID.Droid.ExpandableListAdapter+ViewHolderItem, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52a1e810ab93d0a660f0ca9278218e9dc.ExpandableListAdapter_ViewHolderItem
+RFID.Droid.ExpandableListAdapter.ViewHolderItem;md52a1e810ab93d0a660f0ca9278218e9dc.ExpandableListAdapter_ViewHolderItem
+rfid.droid.ExpandableListAdapter_ViewHolderItem;md52a1e810ab93d0a660f0ca9278218e9dc.ExpandableListAdapter_ViewHolderItem
 RFID.Droid.SplashScreen, RFID.Droid;md52a1e810ab93d0a660f0ca9278218e9dc.SplashScreen
 RFID.Droid.SplashScreen, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52a1e810ab93d0a660f0ca9278218e9dc.SplashScreen
 RFID.Droid.SplashScreen;md52a1e810ab93d0a660f0ca9278218e9dc.SplashScreen

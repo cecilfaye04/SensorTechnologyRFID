@@ -43,18 +43,18 @@
     <Compile Include="Services\SqliteDatabase.cs" />
     <Compile Include="Services\SqliteService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\BottomNavigationViewModel.cs" />
-    <Compile Include="ViewModels\DepartureScanViewModel.cs" />
-    <Compile Include="ViewModels\DepartureViewModel.cs" />
-    <Compile Include="ViewModels\HomeViewModel.cs" />
-    <Compile Include="ViewModels\LoginViewModel.cs" />
-    <Compile Include="ViewModels\MainViewModel.cs" />
-    <Compile Include="ViewModels\PierScanViewModel.cs" />
-    <Compile Include="ViewModels\PierViewModel.cs" />
-    <Compile Include="ViewModels\SearchResultViewModel.cs" />
-    <Compile Include="ViewModels\SearchTrackViewModel.cs" />
-    <Compile Include="ViewModels\SearchViewModel.cs" />
-    <Compile Include="ViewModels\SideMenuViewModel.cs" />
+    <Compile Include="ViewModels\Search\BottomNavigationViewModel.cs" />
+    <Compile Include="ViewModels\Departure\DepartureScanViewModel.cs" />
+    <Compile Include="ViewModels\Departure\DepartureViewModel.cs" />
+    <Compile Include="ViewModels\Home\HomeViewModel.cs" />
+    <Compile Include="ViewModels\Login\LoginViewModel.cs" />
+    <Compile Include="ViewModels\Home\MainViewModel.cs" />
+    <Compile Include="ViewModels\Pier\PierScanViewModel.cs" />
+    <Compile Include="ViewModels\Pier\PierViewModel.cs" />
+    <Compile Include="ViewModels\Search\SearchResultViewModel.cs" />
+    <Compile Include="ViewModels\Search\SearchTrackViewModel.cs" />
+    <Compile Include="ViewModels\Search\SearchViewModel.cs" />
+    <Compile Include="ViewModels\Home\SideMenuViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Acr.UserDialogs, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
