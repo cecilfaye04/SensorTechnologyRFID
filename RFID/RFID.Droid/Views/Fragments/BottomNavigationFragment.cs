@@ -33,8 +33,8 @@ namespace RFID.Droid.Views.Fragments
 
              _bottomNavigation = view.FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
             _bottomNavigation.SetOnNavigationItemSelectedListener(this);
-            if (savedInstanceState == null)
-            ViewModel.ShowSearch();
+            //if (savedInstanceState == null)
+            //ViewModel.ShowSearch();
             return view;
             //return base.OnCreateView(inflater, container, savedInstanceState);
 

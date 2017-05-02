@@ -30,29 +30,28 @@ namespace RFID.Droid.Views.Fragments
         Dictionary<string, List<string>> listDataChild;
         int previousGroup = -1;
 
+
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            ((MainView)Activity).Title = "Pier";
-            ShowHamburgerMenu = true;
-            var ignore = base.OnCreateView(inflater, container, savedInstanceState);
-            var view = this.BindingInflate(FragmentId, null);
 
-       
+            ShowHamburgerMenu = true;
+            ((MainView)Activity).Title = "Pier";
+
             var mainActivity = Activity as MainView;
 
+            View view = inflater.Inflate(Resource.Layout.fragment_pier,null);
+
             expListView = view.FindViewById<ExpandableListView>(Resource.Id.lvExp);
-       
             FnGetListData();
             listAdapter = new ExpandableListAdapter(mainActivity, listDataHeader, listDataChild);
             expListView.SetAdapter(listAdapter);
             FnClickEvents();
-
+            //return base.OnCreateView(inflater, container, savedInstanceState);
             return view;
-
-
 
         }
 
+   
         void FnGetListData()
         {
             listDataHeader = new List<string>();

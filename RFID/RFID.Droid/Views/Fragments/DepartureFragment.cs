@@ -25,19 +25,20 @@ namespace RFID.Droid.Views.Fragments
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            base.OnCreateView(inflater, container, savedInstanceState);
-            var view = this.BindingInflate(FragmentId, null);
+       
+            //var view = this.BindingInflate(FragmentId, null);
 
             ((MainView)Activity).Title = "Departure";
-            var mainActivity = Activity as MainView;
-
-            var outer = view.FindViewById<FrameLayout>(Resource.Id.outer);
-            //Toolbar toolbar = mainActivity.(Toolbar)findViewById(R.id.toolbar);
-            Toolbar = outer.FindViewById<Toolbar>(Resource.Id.toolbar);
-
 
             ShowHamburgerMenu = true;
-            return view;
+            //var mainActivity = Activity as MainView;
+
+            //var outer = view.FindViewById<FrameLayout>(Resource.Id.outer);
+            ////Toolbar toolbar = mainActivity.(Toolbar)findViewById(R.id.toolbar);
+            //Toolbar = outer.FindViewById<Toolbar>(Resource.Id.toolbar);
+
+
+            return base.OnCreateView(inflater, container, savedInstanceState); 
         }
 
         protected override int FragmentId => Resource.Layout.fragment_departure;

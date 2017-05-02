@@ -21,7 +21,7 @@ namespace RFID.Droid.Views.Fragments
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            ((MainView)Activity).Title = "Pier 1";
+            //((MainView)Activity).Title = "Pier 1";
             ShowBackButton = true;
             return base.OnCreateView(inflater, container, savedInstanceState);
         }
