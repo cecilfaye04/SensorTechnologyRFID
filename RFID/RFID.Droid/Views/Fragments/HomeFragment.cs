@@ -12,6 +12,8 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Shared.Attributes;
 using RFID.Core.ViewModels;
+using Android.Graphics;
+using Android.Graphics.Drawables;
 
 namespace RFID.Droid.Views
 {
@@ -28,7 +30,7 @@ namespace RFID.Droid.Views
         }
 
         protected override int FragmentId => Resource.Layout.fragment_home;
-
+        protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#3E50B4"));
 
     }
 }

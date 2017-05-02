@@ -16,6 +16,7 @@ using Android.Graphics;
 using static Android.InputMethodServices.InputMethodService;
 using MvvmCross.Binding.Droid.BindingContext;
 using static Android.Views.View;
+using Android.Graphics.Drawables;
 
 namespace RFID.Droid.Views.Fragments
 {
@@ -36,17 +37,14 @@ namespace RFID.Droid.Views.Fragments
 
             ShowHamburgerMenu = true;
             ((MainView)Activity).Title = "Pier";
-
             var mainActivity = Activity as MainView;
-
-            View view = inflater.Inflate(Resource.Layout.fragment_pier,null);
-
+            View view = base.OnCreateView(inflater, container, savedInstanceState);
             expListView = view.FindViewById<ExpandableListView>(Resource.Id.lvExp);
             FnGetListData();
             listAdapter = new ExpandableListAdapter(mainActivity, listDataHeader, listDataChild);
             expListView.SetAdapter(listAdapter);
             FnClickEvents();
-            //return base.OnCreateView(inflater, container, savedInstanceState);
+            mainActivity.SupportActionBar?.SetDisplayHomeAsUpEnabled(true);
             return view;
 
         }
@@ -123,5 +121,6 @@ namespace RFID.Droid.Views.Fragments
 
         }
         protected override int FragmentId => Resource.Layout.fragment_pier;
+        protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#283593"));
     }
 }

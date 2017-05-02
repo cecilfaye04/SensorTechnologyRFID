@@ -6,6 +6,8 @@ using MvvmCross.Droid.Support.V4;
 using MvvmCross.Droid.Support.V7.AppCompat;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Binding.Droid.BindingContext;
+using Android.Graphics.Drawables;
+using Android.Graphics;
 
 namespace RFID.Droid.Views
 {
@@ -35,6 +37,7 @@ namespace RFID.Droid.Views
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+
             var ignore = base.OnCreateView(inflater, container, savedInstanceState);
 
             var view = this.BindingInflate(FragmentId, null);
@@ -66,12 +69,14 @@ namespace RFID.Droid.Views
                 {
                     mainActivity.SupportActionBar?.SetDisplayHomeAsUpEnabled(true);
                 }
+                mainActivity.SupportActionBar?.SetBackgroundDrawable(backcolor);
             }
 
             return view;
         }
 
         protected abstract int FragmentId { get; }
+        protected abstract ColorDrawable backcolor { get; }
 
         public override void OnConfigurationChanged(Configuration newConfig)
         {

@@ -12,6 +12,8 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Shared.Attributes;
 using RFID.Core.ViewModels;
+using Android.Graphics;
+using Android.Graphics.Drawables;
 
 namespace RFID.Droid.Views.Fragments
 {
@@ -25,6 +27,7 @@ namespace RFID.Droid.Views.Fragments
             ShowBackButton = true;
             return base.OnCreateView(inflater, container, savedInstanceState);
         }
-        protected override int FragmentId => Resource.Layout.fragment_departure_scan;
+        protected override int FragmentId => Resource.Layout.fragment_departureScan;
+        protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#2196F3"));
     }
 }

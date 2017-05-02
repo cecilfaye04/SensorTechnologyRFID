@@ -1,3 +1,5 @@
+using Android.Graphics;
+using Android.Graphics.Drawables;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
@@ -6,7 +8,7 @@ using RFID.Core.ViewModels;
 
 namespace RFID.Droid.Views.Fragments
 {
-    [MvxFragment(typeof(MainViewModel), Resource.Id.content_frame,true)]
+    [MvxFragment(typeof(MainViewModel), Resource.Id.search_frame,true)]
     [Register("RFID.Droid.Views.SearchTrackFragment")]
     public class SearchTrackFragment : BaseFragment<SearchTrackViewModel>
     {
@@ -16,6 +18,7 @@ namespace RFID.Droid.Views.Fragments
             ShowBackButton = true;
             return base.OnCreateView(inflater, container, savedInstanceState);
         }
+        protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#3E50B4"));
         protected override int FragmentId => Resource.Layout.fragment_search_track;
     }
 }

@@ -319,5 +319,8 @@ C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\De
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\drawable\customborder.xml
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\drawable\logo_l.png
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_departurescan.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\RFID.Droid.dll.mdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\RFID.Droid.dll.mdb

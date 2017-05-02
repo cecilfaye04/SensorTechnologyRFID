@@ -13,6 +13,7 @@ using RFID.Core.ViewModels;
 using MvvmCross.Droid.Shared.Attributes;
 using Android.Graphics.Drawables;
 using Android.Graphics;
+using Toolbar = Android.Support.V7.Widget.Toolbar;
 using MvvmCross.Binding.Droid.BindingContext;
 
 namespace RFID.Droid.Views.Fragments
@@ -21,26 +22,28 @@ namespace RFID.Droid.Views.Fragments
     [Register("RFID.Droid.Views.DepartureFragment")]
     public class DepartureFragment : BaseFragment<DepartureViewModel>
     {
-        protected Toolbar Toolbar { get; private set; }
+        //protected Toolbar Toolbar { get; private set; }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-       
+
             //var view = this.BindingInflate(FragmentId, null);
-
             ((MainView)Activity).Title = "Departure";
-
             ShowHamburgerMenu = true;
-            //var mainActivity = Activity as MainView;
+            var mainActivity = Activity as MainView;
+            //var tool = mainActivity.FindViewById<Toolbar>(Resource.Id.toolbar);
 
-            //var outer = view.FindViewById<FrameLayout>(Resource.Id.outer);
-            ////Toolbar toolbar = mainActivity.(Toolbar)findViewById(R.id.toolbar);
-            //Toolbar = outer.FindViewById<Toolbar>(Resource.Id.toolbar);
-
-
+            //mainActivity.SetSupportActionBar(tool);
+            //mainActivity.SupportActionBar.SetBackgroundDrawable(new ColorDrawable(Color.Black));
+            
+            //mainActivity.SupportActionBar?.SetDisplayShowTitleEnabled(true);
+            //mainActivity.SupportActionBar?.SetDisplayShowTitleEnabled(false);
+            //bar.SetBackgroundDrawable(colorDrawable);
             return base.OnCreateView(inflater, container, savedInstanceState); 
         }
 
+
         protected override int FragmentId => Resource.Layout.fragment_departure;
+        protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#2196F3"));
     }
 }
