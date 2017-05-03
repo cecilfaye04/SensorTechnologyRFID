@@ -17,17 +17,17 @@ using Android.Graphics.Drawables;
 
 namespace RFID.Droid.Views.Fragments
 {
-    [MvxFragment(typeof(MainViewModel), Resource.Id.content_frame,true)]
+    [MvxFragment(typeof(MainMenuViewModel), Resource.Id.content_frame,true)]
     [Register("RFID.Droid.Views.PierScanFragment")]
-    public class PierScanFragment : BaseFragment<PierScanViewModel>
+    public class PierClaimScanFragment : BaseFragment<PierClaimScanViewModel>
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            //((MainView)Activity).Title = "Pier 1";
+            ((MainMenuView)Activity).Title = "Pier 1";
             ShowBackButton = true;
             return base.OnCreateView(inflater, container, savedInstanceState);
         }
-        protected override int FragmentId => Resource.Layout.fragment_pier_scan;
+        protected override int FragmentId => Resource.Layout.fragment_pier_claim_scan;
         protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#283593"));
     }
 }

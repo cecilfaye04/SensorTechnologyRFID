@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class DepartureViewModel : BaseViewModel
+    public class FlightEntryViewModel : BaseViewModel
     {
         private List<string> _flight = new List<string>()
             {
@@ -50,7 +50,7 @@ namespace RFID.Core.ViewModels
 
         private void ShowDepartmentScanExecuted()
         {
-            ShowViewModel<DepartureScanViewModel>();
+            ShowViewModel<DepArrScanScreenViewModel>();
         }
     }
 }

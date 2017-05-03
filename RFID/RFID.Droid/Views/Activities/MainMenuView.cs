@@ -13,14 +13,14 @@ namespace RFID.Droid.Views
 {
     [Activity(Label = "Home" ,Theme = "@style/AppTheme",
         LaunchMode = LaunchMode.SingleTop)]
-    public class MainView : MvxCachingFragmentCompatActivity<MainViewModel>
+    public class MainMenuView : MvxCachingFragmentCompatActivity<MainMenuViewModel>
     {
         public DrawerLayout DrawerLayout;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.activity_main_menu);
             DrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
             if (savedInstanceState == null)
                 ViewModel.ShowMenu();

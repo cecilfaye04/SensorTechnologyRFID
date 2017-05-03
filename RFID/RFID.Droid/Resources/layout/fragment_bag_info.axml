@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:local="http://schemas.android.com/apk/res-auto"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -10,20 +10,20 @@
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
-        android:id="@+id/relativeLayout1"
+        android:id="@+id/rlBagInfo"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:background="@drawable/shadow2"
         android:paddingTop="15dp"
         android:paddingLeft="20dp"
-        android:layout_height="280.0dp">
+        android:layout_height="207.3dp">
         <TextView
             android:text="Name"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView1"
+            android:id="@+id/tvName"
             android:textColor="#424242"
             android:layout_marginRight="13dp"
             android:layout_marginTop="4dp" />
@@ -32,8 +32,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView1"
-            android:id="@+id/textView2"
+            android:layout_below="@id/tvName"
+            android:id="@+id/tvFlight"
             android:textColor="#424242"
             android:layout_marginTop="9dp"
             android:layout_marginRight="15dp" />
@@ -42,8 +42,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView2"
-            android:id="@+id/textView3"
+            android:layout_below="@id/tvFlight"
+            android:id="@+id/tvFrom"
             android:textColor="#424242"
             android:layout_marginTop="5dp"
             android:layout_marginRight="17dp" />
@@ -52,8 +52,8 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView3"
-            android:id="@+id/textView4"
+            android:layout_below="@id/tvFrom"
+            android:id="@+id/tvTo"
             android:textColor="#424242"
             android:layout_marginTop="7dp"
             android:layout_marginRight="32dp" />
@@ -62,17 +62,17 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textView1"
-            android:id="@+id/textView5"
+            android:layout_toRightOf="@id/tvName"
+            android:id="@+id/tvNameValue"
             android:textColor="#212121" />
         <TextView
             android:text="PR478         31 Mar 17"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textView2"
-            android:id="@+id/textView6"
-            android:layout_below="@id/textView5"
+            android:layout_toRightOf="@id/tvFlight"
+            android:id="@+id/tvFlightValue"
+            android:layout_below="@id/tvNameValue"
             android:textColor="#212121"
             android:layout_marginTop="3dp" />
         <TextView
@@ -80,9 +80,9 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView6"
-            android:id="@+id/textView7"
-            android:layout_toRightOf="@id/textView3"
+            android:layout_below="@id/tvFlightValue"
+            android:id="@+id/tvFromValue"
+            android:layout_toRightOf="@id/tvFrom"
             android:textColor="#212121"
             android:layout_marginTop="2dp" />
         <TextView
@@ -90,9 +90,9 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView7"
-            android:id="@+id/textView8"
-            android:layout_toRightOf="@id/textView4"
+            android:layout_below="@id/tvFromValue"
+            android:id="@+id/tvToValue"
+            android:layout_toRightOf="@id/tvTo"
             android:textColor="#212121"
             android:layout_marginTop="2dp" />
         <TextView
@@ -100,9 +100,9 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textView6"
-            android:id="@+id/textView9"
-            android:layout_below="@id/textView5"
+            android:layout_toRightOf="@id/tvFlightValue"
+            android:id="@+id/tvGate"
+            android:layout_below="@id/tvNameValue"
             android:textColor="#424242"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="5dp" />
@@ -111,9 +111,9 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textView9"
-            android:id="@+id/textView10"
-            android:layout_below="@id/textView5"
+            android:layout_toRightOf="@id/tvGate"
+            android:id="@+id/tvGateValue"
+            android:layout_below="@id/tvNameValue"
             android:textColor="#212121"
             android:layout_marginLeft="5dp" />
         <TextView
@@ -121,9 +121,9 @@
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textView7"
-            android:id="@+id/textView11"
-            android:layout_below="@id/textView9"
+            android:layout_toRightOf="@id/tvFromValue"
+            android:id="@+id/tvSeat"
+            android:layout_below="@id/tvGate"
             android:textColor="#424242"
             android:layout_marginLeft="53dp"
             android:layout_marginTop="7dp" />
@@ -132,9 +132,9 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/textView11"
-            android:id="@+id/textView12"
-            android:layout_below="@id/textView10"
+            android:layout_toRightOf="@id/tvSeat"
+            android:id="@+id/tvSeatValue"
+            android:layout_below="@id/tvGateValue"
             android:textColor="#212121"
             android:layout_marginLeft="5dp" />
         <View
@@ -143,15 +143,15 @@
             android:layout_height="1dp"
             android:layout_marginTop="20dp"
             android:background="#757575"
-            android:layout_below="@id/textView4"
+            android:layout_below="@id/tvTo"
             android:layout_centerHorizontal="true"
-            android:id="@+id/view1" />
+            android:id="@+id/vwBaginfo" />
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView4"
-            android:id="@+id/linearLayout1"
+            android:layout_below="@id/tvTo"
+            android:id="@+id/llRFID"
             android:layout_marginTop="30dp"
             android:gravity="center">
             <TextView
@@ -159,7 +159,7 @@
                 android:textAppearance="?android:attr/textAppearanceSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textView15"
+                android:id="@+id/tvRFID"
                 android:textColor="#424242"
                 android:layout_marginTop="2dp"
                 android:layout_marginRight="15dp" />
@@ -168,7 +168,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/textView16"
+                android:id="@+id/tvRFIDValue"
                 android:textColor="#212121"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -179,20 +179,16 @@
             android:layout_marginTop="8dp"
             android:background="#757575"
             android:layout_marginRight="8dp"
-            android:layout_below="@id/linearLayout1"
+            android:layout_below="@id/llRFID"
             android:layout_centerHorizontal="true"
-            android:id="@+id/view2" />
-        <Button
-            android:text="Track my bag"
-            android:layout_width="200.0dp"
-            android:layout_height="41.3dp"
-            android:layout_below="@id/linearLayout1"
-            android:id="@+id/button1"
-            android:layout_marginTop="30dp"
-            android:textColor="#FFFFFF"
-               local:MvxBind="Click ShowSearchTrackCommand"
-            android:textStyle="bold"
-            android:background="#3F51B5"
-            android:layout_centerHorizontal="true" />
+            android:id="@+id/vwBaginfo2" />
     </RelativeLayout>
+  <android.support.design.widget.FloatingActionButton
+   android:id="@+id/ActionButton"
+   android:layout_width="wrap_content"
+   android:layout_height="wrap_content"
+   android:layout_gravity="end|bottom"
+   android:layout_margin="10dip"
+   local:backgroundTint="@android:color/holo_green_light"
+   android:src="@drawable/ic_bagLocate" />
 </LinearLayout>

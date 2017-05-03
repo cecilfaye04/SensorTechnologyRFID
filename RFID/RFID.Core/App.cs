@@ -27,7 +27,7 @@ namespace RFID.Core
             await Mvx.Resolve<IInitilializeSqliteService>().InitializeAsync();
             var user = await Mvx.Resolve<ISqliteService>().LoadUserAsync();
             if (user.IsLoggedIn)
-            { this.RegisterAppStart<ViewModels.MainViewModel>(); }
+            { this.RegisterAppStart<ViewModels.MainMenuViewModel>(); }
             else { this.RegisterAppStart<ViewModels.LoginViewModel>(); }
 
         }

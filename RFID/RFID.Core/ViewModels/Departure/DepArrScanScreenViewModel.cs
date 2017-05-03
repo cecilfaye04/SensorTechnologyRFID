@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class DepartureScanViewModel : BaseViewModel
+    public class DepArrScanScreenViewModel : BaseViewModel
     {
         private List<int> _gate = new List<int>()
             {

@@ -4,21 +4,21 @@
     p1:orientation="vertical"
     p1:layout_width="match_parent"
     p1:layout_height="match_parent"
-    p1:id="@+id/linearLayout1"
+    p1:id="@+id/ll_login"
     p1:paddingBottom="10dp"
     p1:paddingLeft="20dp"
     p1:paddingRight="20dp"
     p1:paddingTop="10dp">
     <Space
         p1:layout_width="match_parent"
-        p1:id="@+id/space1"
+        p1:id="@+id/space_login"
         p1:layout_weight="1"
         p1:layout_height="wrap_content" />
     <ImageView
         p1:src="@drawable/bagicon"
         p1:layout_width="158.7dp"
         p1:layout_height="125dp"
-        p1:id="@+id/imageView1"
+        p1:id="@+id/image_bagIcon"
         p1:layout_gravity="center"
         p1:layout_marginBottom="40dp"
         p1:layout_marginTop="40dp" />
@@ -29,7 +29,7 @@
         <EditText
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
-            p1:id="@+id/editText1"
+            p1:id="@+id/text_username"
             p1:layout_marginBottom="10dp"
             local:MvxBind="Text Username"
             p1:hint="Username" />
@@ -42,7 +42,7 @@
         <EditText
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
-            p1:id="@+id/editText2"
+            p1:id="@+id/text_password"
             local:MvxBind="Text Password"
             p1:layout_marginBottom="20dp"
             p1:hint="Password"
@@ -52,7 +52,7 @@
         p1:text="LOGIN"
         p1:layout_width="97.3dp"
         p1:layout_height="wrap_content"
-        p1:id="@+id/button1"
+        p1:id="@+id/button_login"
         local:MvxBind="Click LoginCommand"
         p1:layout_marginTop="10dp"
         p1:layout_gravity="center"
@@ -61,7 +61,7 @@
         p1:textStyle="bold" />
     <Space
         p1:layout_width="match_parent"
-        p1:id="@+id/space1"
+        p1:id="@+id/space_login2"
         p1:layout_weight="2"
         p1:layout_height="wrap_content" />
 </LinearLayout>

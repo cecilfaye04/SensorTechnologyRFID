@@ -4,19 +4,19 @@
   <item
       android:id="@+id/nav_result"
       android:enabled="true"
-      android:icon="@drawable/searchresult"
-      android:title="Result"
+      android:icon="@drawable/ic_bagInfo"
+      android:title="Information"
       app:showAsAction="ifRoom" />
   <item
       android:id="@+id/nav_location"
       android:enabled="true"
-      android:icon="@drawable/location"
-      android:title="Location"
+      android:icon="@drawable/ic_bagLocate"
+      android:title="Locate"
       app:showAsAction="ifRoom" />
   <item
       android:id="@+id/nav_track"
       android:enabled="true"
-      android:icon="@drawable/radar"
+      android:icon="@drawable/ic_bagTrack"
       android:title="Track"
       app:showAsAction="ifRoom" />
 </menu> 

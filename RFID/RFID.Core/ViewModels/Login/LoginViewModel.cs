@@ -44,7 +44,7 @@ namespace RFID.Core.ViewModels
                     var user = await Mvx.Resolve<ISqliteService>().LoadUserAsync();
                     user.IsLoggedIn = true;
                     await Mvx.Resolve<ISqliteService>().UpdateAsync(user);
-                    ShowViewModel<MainViewModel>();
+                    ShowViewModel<MainMenuViewModel>();
                     //}
                     //else
                     //{

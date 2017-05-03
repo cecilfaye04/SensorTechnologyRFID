@@ -20,9 +20,9 @@ using Android.Graphics.Drawables;
 
 namespace RFID.Droid.Views.Fragments
 {
-    [MvxFragment(typeof(MainViewModel), Resource.Id.content_frame)]
+    [MvxFragment(typeof(MainMenuViewModel), Resource.Id.content_frame)]
     [Register("RFID.Droid.Views.PierFragment")]
-    public class PierFragment : BaseFragment<PierViewModel>
+    public class PierClaimLocationFragment : BaseFragment<PierClaimLocationViewModel>
     {
         protected Toolbar Toolbars { get; private set; }
         ExpandableListAdapter listAdapter;
@@ -36,10 +36,10 @@ namespace RFID.Droid.Views.Fragments
         {
 
             ShowHamburgerMenu = true;
-            ((MainView)Activity).Title = "Pier";
-            var mainActivity = Activity as MainView;
+            ((MainMenuView)Activity).Title = "Pier";
+            var mainActivity = Activity as MainMenuView;
             View view = base.OnCreateView(inflater, container, savedInstanceState);
-            expListView = view.FindViewById<ExpandableListView>(Resource.Id.lvExp);
+            expListView = view.FindViewById<ExpandableListView>(Resource.Id.lvPierLocation);
             FnGetListData();
             listAdapter = new ExpandableListAdapter(mainActivity, listDataHeader, listDataChild);
             expListView.SetAdapter(listAdapter);
@@ -120,7 +120,7 @@ namespace RFID.Droid.Views.Fragments
             };
 
         }
-        protected override int FragmentId => Resource.Layout.fragment_pier;
+        protected override int FragmentId => Resource.Layout.fragment_pier_claim_location;
         protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#283593"));
     }
 }

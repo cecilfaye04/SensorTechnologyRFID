@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class SearchResultViewModel : BaseViewModel
+    public class BagInfoViewModel : BaseViewModel
     {
-        public SearchResultViewModel()
+        public BagInfoViewModel()
         {
 
         }
@@ -21,7 +21,7 @@ namespace RFID.Core.ViewModels
 
         private void ShowSearchTrackExecuted()
         {
-            ShowViewModel<SearchTrackViewModel>();
+            ShowViewModel<BagTrackViewModel>();
         }
     }
 }

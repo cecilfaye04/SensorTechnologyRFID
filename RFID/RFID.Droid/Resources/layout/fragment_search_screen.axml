@@ -9,22 +9,22 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/relativeLayout1"
+        android:id="@+id/rlSearch"
         android:layout_gravity="center"
         android:gravity="center">
         <ImageView
             android:src="@drawable/searchico2"
             android:layout_width="match_parent"
             android:layout_height="76.7dp"
-            android:id="@+id/imageView1"
+            android:id="@+id/imgSearchIco"
             android:layout_marginRight="10dp" />
         <TextView
             android:text="You can enter the RFID number"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/imageView1"
-            android:id="@+id/textView1"
+            android:layout_below="@id/imgSearchIco"
+            android:id="@+id/tvEnterRFID"
             android:layout_marginTop="25dp"
             android:textColor="#757575"
             android:gravity="center" />
@@ -33,8 +33,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView1"
-            android:id="@+id/textView2"
+            android:layout_below="@id/tvEnterRFID"
+            android:id="@+id/tvEnterRFID2"
             android:textColor="#757575"
             android:gravity="center" />
         <TextView
@@ -42,8 +42,8 @@
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/textView2"
-            android:id="@+id/textView3"
+            android:layout_below="@id/tvEnterRFID2"
+            android:id="@+id/tvEnterRFID3"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:textColor="#757575"
@@ -52,8 +52,8 @@
             android:text="Scan the RFID number"
             android:layout_width="186.0dp"
             android:layout_height="41.3dp"
-            android:layout_below="@id/textView3"
-            android:id="@+id/button1"
+            android:layout_below="@id/tvEnterRFID3"
+            android:id="@+id/btnScan"
             local:MvxBind="Click ShowSearchResultCommand"
             android:layout_centerHorizontal="true"
             android:background="#3F51B5"

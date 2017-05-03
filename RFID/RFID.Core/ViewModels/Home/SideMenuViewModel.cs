@@ -29,7 +29,7 @@ namespace RFID.Core.ViewModels
 
         private void ShowPierExecuted()
         {
-            ShowViewModel<PierViewModel>();
+            ShowViewModel<PierClaimLocationViewModel>();
         }
 
         public IMvxCommand ShowDepartureCommand
@@ -39,7 +39,7 @@ namespace RFID.Core.ViewModels
 
         private void ShowDepartureExecuted()
         {
-            ShowViewModel<DepartureViewModel>();
+            ShowViewModel<FlightEntryViewModel>();
         }
 
         public IMvxCommand LogoutCommand

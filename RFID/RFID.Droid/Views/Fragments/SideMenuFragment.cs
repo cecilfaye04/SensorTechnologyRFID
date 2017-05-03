@@ -19,7 +19,7 @@ using RFID.Core.ViewModels;
 
 namespace RFID.Droid.Views
 {
-    [MvxFragment(typeof(MainViewModel), Resource.Id.navigation_frame)]
+    [MvxFragment(typeof(MainMenuViewModel), Resource.Id.navigation_frame)]
     [Register("RFID.Droid.Views.SideMenuFragment")]
     public class SideMenuFragment : MvxFragment<SideMenuViewModel>, NavigationView.IOnNavigationItemSelectedListener
     {
@@ -58,7 +58,7 @@ namespace RFID.Droid.Views
 
         private async Task Navigate(int itemId)
         {
-            ((MainView)Activity).DrawerLayout.CloseDrawers();
+            ((MainMenuView)Activity).DrawerLayout.CloseDrawers();
 
             // add a small delay to prevent any UI issues
             await Task.Delay(TimeSpan.FromMilliseconds(250));

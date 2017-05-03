@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class PierScanViewModel : BaseViewModel
+    public class PierClaimScanViewModel : BaseViewModel
     {
     }
 }

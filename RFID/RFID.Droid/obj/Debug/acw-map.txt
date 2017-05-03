@@ -10,10 +10,10 @@ RFID.Droid.SplashScreen, RFID.Droid;md52a1e810ab93d0a660f0ca9278218e9dc.SplashSc
 RFID.Droid.SplashScreen, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md52a1e810ab93d0a660f0ca9278218e9dc.SplashScreen
 RFID.Droid.SplashScreen;md52a1e810ab93d0a660f0ca9278218e9dc.SplashScreen
 rfid.droid.SplashScreen;md52a1e810ab93d0a660f0ca9278218e9dc.SplashScreen
-RFID.Droid.Views.MainView, RFID.Droid;md5269bd7252ef3cb797ab39a922385c683.MainView
-RFID.Droid.Views.MainView, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5269bd7252ef3cb797ab39a922385c683.MainView
-RFID.Droid.Views.MainView;md5269bd7252ef3cb797ab39a922385c683.MainView
-rfid.droid.views.MainView;md5269bd7252ef3cb797ab39a922385c683.MainView
+RFID.Droid.Views.MainMenuView, RFID.Droid;md5269bd7252ef3cb797ab39a922385c683.MainMenuView
+RFID.Droid.Views.MainMenuView, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5269bd7252ef3cb797ab39a922385c683.MainMenuView
+RFID.Droid.Views.MainMenuView;md5269bd7252ef3cb797ab39a922385c683.MainMenuView
+rfid.droid.views.MainMenuView;md5269bd7252ef3cb797ab39a922385c683.MainMenuView
 RFID.Droid.Views.BaseFragment, RFID.Droid;md5269bd7252ef3cb797ab39a922385c683.BaseFragment
 RFID.Droid.Views.BaseFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5269bd7252ef3cb797ab39a922385c683.BaseFragment
 RFID.Droid.Views.BaseFragment;md5269bd7252ef3cb797ab39a922385c683.BaseFragment
@@ -38,33 +38,33 @@ RFID.Droid.Views.Fragments.BottomNavigationFragment, RFID.Droid;md5228e410b1ab37
 RFID.Droid.Views.Fragments.BottomNavigationFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5228e410b1ab3726e8cf5cc6b549a2bdb.BottomNavigationFragment
 RFID.Droid.Views.Fragments.BottomNavigationFragment;md5228e410b1ab3726e8cf5cc6b549a2bdb.BottomNavigationFragment
 rfid.droid.views.fragments.BottomNavigationFragment;md5228e410b1ab3726e8cf5cc6b549a2bdb.BottomNavigationFragment
-RFID.Droid.Views.Fragments.DepartureScanFragment, RFID.Droid;RFID.Droid.Views.DepartureScanFragment
-RFID.Droid.Views.Fragments.DepartureScanFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.DepartureScanFragment
-RFID.Droid.Views.Fragments.DepartureScanFragment;RFID.Droid.Views.DepartureScanFragment
+RFID.Droid.Views.Fragments.DepArrScanScreenFragment, RFID.Droid;RFID.Droid.Views.DepartureScanFragment
+RFID.Droid.Views.Fragments.DepArrScanScreenFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.DepartureScanFragment
+RFID.Droid.Views.Fragments.DepArrScanScreenFragment;RFID.Droid.Views.DepartureScanFragment
 RFID.Droid.Views.DepartureScanFragment;RFID.Droid.Views.DepartureScanFragment
-RFID.Droid.Views.Fragments.DepartureFragment, RFID.Droid;RFID.Droid.Views.DepartureFragment
-RFID.Droid.Views.Fragments.DepartureFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.DepartureFragment
-RFID.Droid.Views.Fragments.DepartureFragment;RFID.Droid.Views.DepartureFragment
+RFID.Droid.Views.Fragments.FlightEntryFragment, RFID.Droid;RFID.Droid.Views.DepartureFragment
+RFID.Droid.Views.Fragments.FlightEntryFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.DepartureFragment
+RFID.Droid.Views.Fragments.FlightEntryFragment;RFID.Droid.Views.DepartureFragment
 RFID.Droid.Views.DepartureFragment;RFID.Droid.Views.DepartureFragment
-RFID.Droid.Views.Fragments.PierFragment, RFID.Droid;RFID.Droid.Views.PierFragment
-RFID.Droid.Views.Fragments.PierFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.PierFragment
-RFID.Droid.Views.Fragments.PierFragment;RFID.Droid.Views.PierFragment
+RFID.Droid.Views.Fragments.PierClaimLocationFragment, RFID.Droid;RFID.Droid.Views.PierFragment
+RFID.Droid.Views.Fragments.PierClaimLocationFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.PierFragment
+RFID.Droid.Views.Fragments.PierClaimLocationFragment;RFID.Droid.Views.PierFragment
 RFID.Droid.Views.PierFragment;RFID.Droid.Views.PierFragment
-RFID.Droid.Views.Fragments.PierScanFragment, RFID.Droid;RFID.Droid.Views.PierScanFragment
-RFID.Droid.Views.Fragments.PierScanFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.PierScanFragment
-RFID.Droid.Views.Fragments.PierScanFragment;RFID.Droid.Views.PierScanFragment
+RFID.Droid.Views.Fragments.PierClaimScanFragment, RFID.Droid;RFID.Droid.Views.PierScanFragment
+RFID.Droid.Views.Fragments.PierClaimScanFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.PierScanFragment
+RFID.Droid.Views.Fragments.PierClaimScanFragment;RFID.Droid.Views.PierScanFragment
 RFID.Droid.Views.PierScanFragment;RFID.Droid.Views.PierScanFragment
 RFID.Droid.Views.Fragments.SearchFragment, RFID.Droid;RFID.Droid.Views.SearchFragment
 RFID.Droid.Views.Fragments.SearchFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.SearchFragment
 RFID.Droid.Views.Fragments.SearchFragment;RFID.Droid.Views.SearchFragment
 RFID.Droid.Views.SearchFragment;RFID.Droid.Views.SearchFragment
-RFID.Droid.Views.Fragments.SearchResultFragment, RFID.Droid;RFID.Droid.Views.SearchResultFragment
-RFID.Droid.Views.Fragments.SearchResultFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.SearchResultFragment
-RFID.Droid.Views.Fragments.SearchResultFragment;RFID.Droid.Views.SearchResultFragment
+RFID.Droid.Views.Fragments.BagInfoFragment, RFID.Droid;RFID.Droid.Views.SearchResultFragment
+RFID.Droid.Views.Fragments.BagInfoFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.SearchResultFragment
+RFID.Droid.Views.Fragments.BagInfoFragment;RFID.Droid.Views.SearchResultFragment
 RFID.Droid.Views.SearchResultFragment;RFID.Droid.Views.SearchResultFragment
-RFID.Droid.Views.Fragments.SearchTrackFragment, RFID.Droid;RFID.Droid.Views.SearchTrackFragment
-RFID.Droid.Views.Fragments.SearchTrackFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.SearchTrackFragment
-RFID.Droid.Views.Fragments.SearchTrackFragment;RFID.Droid.Views.SearchTrackFragment
+RFID.Droid.Views.Fragments.BagTrackFragment, RFID.Droid;RFID.Droid.Views.SearchTrackFragment
+RFID.Droid.Views.Fragments.BagTrackFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.SearchTrackFragment
+RFID.Droid.Views.Fragments.BagTrackFragment;RFID.Droid.Views.SearchTrackFragment
 RFID.Droid.Views.SearchTrackFragment;RFID.Droid.Views.SearchTrackFragment
 Acr.Support.Android.ActivityLifecycleCallbacks, Acr.Support.Android;md5cf6f91d9bcbb245b12b8f240e1ec031d.ActivityLifecycleCallbacks
 Acr.Support.Android.ActivityLifecycleCallbacks, Acr.Support.Android, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5cf6f91d9bcbb245b12b8f240e1ec031d.ActivityLifecycleCallbacks

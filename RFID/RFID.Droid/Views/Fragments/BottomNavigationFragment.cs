@@ -12,7 +12,7 @@ using Android.Graphics.Drawables;
 
 namespace RFID.Droid.Views.Fragments
 {
-    [MvxFragment(typeof(MainViewModel), Resource.Id.content_frame, false)]
+    [MvxFragment(typeof(MainMenuViewModel), Resource.Id.content_frame)]
     public class BottomNavigationFragment : BaseFragment<BottomNavigationViewModel>,BottomNavigationView.IOnNavigationItemSelectedListener
     {
         private BottomNavigationView _bottomNavigation;
@@ -20,7 +20,7 @@ namespace RFID.Droid.Views.Fragments
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            ((MainView)Activity).Title = "Search";
+            ((MainMenuView)Activity).Title = "Search";
             ShowBackButton = true;
 
 
@@ -52,7 +52,7 @@ namespace RFID.Droid.Views.Fragments
 
   
 
-        protected override int FragmentId => Resource.Layout.fragment_bottomNavigation;
+        protected override int FragmentId => Resource.Layout.fragment_search_bottom_nav;
         protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#3E50B4"));
 
     }

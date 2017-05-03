@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-   public class SearchTrackViewModel : BaseViewModel
+   public class BagTrackViewModel : BaseViewModel
     {
         public IMvxCommand ShowBottomNavigation
         {

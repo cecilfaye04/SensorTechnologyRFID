@@ -17,14 +17,14 @@ using Android.Graphics.Drawables;
 
 namespace RFID.Droid.Views
 {
-    [MvxFragment(typeof(MainViewModel), Resource.Id.content_frame)]
+    [MvxFragment(typeof(MainMenuViewModel), Resource.Id.content_frame)]
     [Register("RFID.Droid.Views.HomeFragment")]
     public class HomeFragment : BaseFragment<HomeViewModel>
     {
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            ((MainView)Activity).Title = "Home";
+            ((MainMenuView)Activity).Title = "Home";
             ShowHamburgerMenu = true;
             return base.OnCreateView(inflater, container, savedInstanceState);
         }

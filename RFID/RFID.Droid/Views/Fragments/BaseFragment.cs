@@ -45,7 +45,7 @@ namespace RFID.Droid.Views
             Toolbar = view.FindViewById<Toolbar>(Resource.Id.toolbar);
             if (Toolbar != null)
             {
-                var mainActivity = Activity as MainView;
+                var mainActivity = Activity as MainMenuView;
                 if (mainActivity == null) return view;
 
                 mainActivity.SetSupportActionBar(Toolbar);

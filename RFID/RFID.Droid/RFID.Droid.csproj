@@ -207,17 +207,17 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
-    <Compile Include="Views\Activities\MainView.cs" />
+    <Compile Include="Views\Activities\MainMenuView.cs" />
     <Compile Include="Views\Fragments\BaseFragment.cs" />
     <Compile Include="Views\Fragments\BottomNavigationFragment.cs" />
-    <Compile Include="Views\Fragments\DepartureScanFragment.cs" />
-    <Compile Include="Views\Fragments\DepartureFragment.cs" />
+    <Compile Include="Views\Fragments\DepArrScanScreenFragment.cs" />
+    <Compile Include="Views\Fragments\FlightEntryFragment.cs" />
     <Compile Include="Views\Fragments\HomeFragment.cs" />
-    <Compile Include="Views\Fragments\PierFragment.cs" />
-    <Compile Include="Views\Fragments\PierScanFragment.cs" />
+    <Compile Include="Views\Fragments\PierClaimLocationFragment.cs" />
+    <Compile Include="Views\Fragments\PierClaimScanFragment.cs" />
     <Compile Include="Views\Fragments\SearchFragment.cs" />
-    <Compile Include="Views\Fragments\SearchResultFragment.cs" />
-    <Compile Include="Views\Fragments\SearchTrackFragment.cs" />
+    <Compile Include="Views\Fragments\BagInfoFragment.cs" />
+    <Compile Include="Views\Fragments\BagTrackFragment.cs" />
     <Compile Include="Views\Fragments\SideMenuFragment.cs" />
     <Compile Include="Views\Activities\LoginView.cs" />
   </ItemGroup>
@@ -230,7 +230,7 @@
     <AndroidResource Include="Resources\layout\activity_login.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\activity_main.axml">
+    <AndroidResource Include="Resources\layout\activity_main_menu.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\toolbar_actionbar.axml">
@@ -248,37 +248,34 @@
     <AndroidResource Include="Resources\layout\fragment_navigation_header.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_pier.axml">
+    <AndroidResource Include="Resources\layout\fragment_pier_claim_location.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_departure.axml">
+    <AndroidResource Include="Resources\layout\fragment_flight_entry.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_search.axml">
+    <AndroidResource Include="Resources\layout\fragment_search_screen.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_search_result.axml">
+    <AndroidResource Include="Resources\layout\fragment_bag_info.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_pier_scan.axml">
+    <AndroidResource Include="Resources\layout\fragment_pier_claim_scan.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_departure_scan.axml">
+    <AndroidResource Include="Resources\layout\fragment_bag_track.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_search_track.axml">
+    <AndroidResource Include="Resources\layout\fragment_search_bottom_nav.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_bottomNavigation.axml">
+    <AndroidResource Include="Resources\layout\listview_headercustom_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\HeaderCustomLayout.axml">
+    <AndroidResource Include="Resources\layout\listview_listitemcustom_layout.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\ListItemCustomLayout.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_departureScan.axml">
+    <AndroidResource Include="Resources\layout\fragment_dep_arr_scan_screen.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -404,6 +401,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\logo_L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_bagLocate.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_bagTrack.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_bagInfo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

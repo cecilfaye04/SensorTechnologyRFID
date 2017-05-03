@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class PierViewModel : BaseViewModel
+    public class PierClaimLocationViewModel : BaseViewModel
     {
         public IMvxCommand ShowPierScanCommand
         {
@@ -16,7 +16,7 @@ namespace RFID.Core.ViewModels
 
         private void ShowPierScanExecuted()
         {
-            ShowViewModel<PierScanViewModel>();
+            ShowViewModel<PierClaimScanViewModel>();
         }
     }
 }

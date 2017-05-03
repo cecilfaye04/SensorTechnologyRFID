@@ -12,7 +12,7 @@ public class DepartureFragment
 		__md_methods = 
 			"n_onCreateView:(Landroid/view/LayoutInflater;Landroid/view/ViewGroup;Landroid/os/Bundle;)Landroid/view/View;:GetOnCreateView_Landroid_view_LayoutInflater_Landroid_view_ViewGroup_Landroid_os_Bundle_Handler\n" +
 			"";
-		mono.android.Runtime.register ("RFID.Droid.Views.Fragments.DepartureFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", DepartureFragment.class, __md_methods);
+		mono.android.Runtime.register ("RFID.Droid.Views.Fragments.FlightEntryFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", DepartureFragment.class, __md_methods);
 	}
 
 
@@ -20,7 +20,7 @@ public class DepartureFragment
 	{
 		super ();
 		if (getClass () == DepartureFragment.class)
-			mono.android.TypeManager.Activate ("RFID.Droid.Views.Fragments.DepartureFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("RFID.Droid.Views.Fragments.FlightEntryFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 

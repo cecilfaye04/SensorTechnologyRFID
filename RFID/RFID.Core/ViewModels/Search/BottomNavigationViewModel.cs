@@ -11,7 +11,7 @@ namespace RFID.Core.ViewModels
     {
         public void ShowSearch()
         {
-            ShowViewModel<SearchResultViewModel>();
+            ShowViewModel<BagInfoViewModel>();
         }
 
         public IMvxCommand ShowSearchResultCommand
@@ -21,7 +21,7 @@ namespace RFID.Core.ViewModels
 
         private void ShowSearchResultExecuted()
         {
-            ShowViewModel<SearchResultViewModel>();
+            ShowViewModel<BagInfoViewModel>();
         }
 
         public IMvxCommand ShowLocationCommand
@@ -31,7 +31,7 @@ namespace RFID.Core.ViewModels
 
         private void ShowLocationExecuted()
         {
-            ShowViewModel<SearchTrackViewModel>();
+            ShowViewModel<BagTrackViewModel>();
         }
     }
 }

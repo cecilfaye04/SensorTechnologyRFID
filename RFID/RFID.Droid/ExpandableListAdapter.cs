@@ -35,7 +35,7 @@ namespace RFID.Droid
             string childText = (string)GetChild(groupPosition, childPosition);
             if (convertView == null)
             {
-                convertView = _context.LayoutInflater.Inflate(Resource.Layout.ListItemCustomLayout, null);
+                convertView = _context.LayoutInflater.Inflate(Resource.Layout.listview_listitemcustom_layout, null);
             }
             TextView txtListChild = (TextView)convertView.FindViewById(Resource.Id.lblListItem);
             txtListChild.Text = childText;
@@ -65,7 +65,7 @@ namespace RFID.Droid
         {
             string headerTitle = (string)GetGroup(groupPosition);
 
-            convertView = convertView ?? _context.LayoutInflater.Inflate(Resource.Layout.HeaderCustomLayout, null);
+            convertView = convertView ?? _context.LayoutInflater.Inflate(Resource.Layout.listview_headercustom_layout, null);
             var lblListHeader = (TextView)convertView.FindViewById(Resource.Id.lblListHeader);
             lblListHeader.Text = headerTitle;
 

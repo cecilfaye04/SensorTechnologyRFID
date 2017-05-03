@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class MainViewModel : BaseViewModel
+    public class MainMenuViewModel : BaseViewModel
     {
         public void ShowMenu()
         {

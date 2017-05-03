@@ -17,17 +17,18 @@ using Android.Graphics.Drawables;
 
 namespace RFID.Droid.Views.Fragments
 {
-    [MvxFragment(typeof(MainViewModel), Resource.Id.content_frame,true)]
-    [Register("RFID.Droid.Views.DepartureScanFragment")]
-    public class DepartureScanFragment  : BaseFragment<DepartureScanViewModel>
+    [MvxFragment(typeof(MainMenuViewModel), Resource.Id.search_frame,true)]
+    [Register("RFID.Droid.Views.SearchResultFragment")]
+    public class BagInfoFragment : BaseFragment<BagInfoViewModel>
     {
-     
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            ((MainMenuView)Activity).Title = "0007820706";
             ShowBackButton = true;
             return base.OnCreateView(inflater, container, savedInstanceState);
         }
-        protected override int FragmentId => Resource.Layout.fragment_departureScan;
-        protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#2196F3"));
+
+        protected override int FragmentId => Resource.Layout.fragment_bag_info;
+        protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#3E50B4"));
     }
 }
