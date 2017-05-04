@@ -208,6 +208,7 @@
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
     <Compile Include="Views\Activities\MainMenuView.cs" />
+    <Compile Include="Views\Fragments\BagTrackFragment.cs" />
     <Compile Include="Views\Fragments\BaseFragment.cs" />
     <Compile Include="Views\Fragments\BottomNavigationFragment.cs" />
     <Compile Include="Views\Fragments\DepArrScanScreenFragment.cs" />
@@ -217,7 +218,7 @@
     <Compile Include="Views\Fragments\PierClaimScanFragment.cs" />
     <Compile Include="Views\Fragments\SearchFragment.cs" />
     <Compile Include="Views\Fragments\BagInfoFragment.cs" />
-    <Compile Include="Views\Fragments\BagTrackFragment.cs" />
+    <Compile Include="Views\Fragments\BagLocateFragment.cs" />
     <Compile Include="Views\Fragments\SideMenuFragment.cs" />
     <Compile Include="Views\Activities\LoginView.cs" />
   </ItemGroup>
@@ -263,7 +264,7 @@
     <AndroidResource Include="Resources\layout\fragment_pier_claim_scan.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\fragment_bag_track.axml">
+    <AndroidResource Include="Resources\layout\fragment_bag_locate.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_search_bottom_nav.axml">
@@ -276,6 +277,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_dep_arr_scan_screen.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_bag_track.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

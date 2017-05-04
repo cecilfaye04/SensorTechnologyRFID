@@ -314,7 +314,6 @@ C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\De
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_pier_claim_scan.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_search_screen.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_bag_info.xml
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_bag_track.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_flight_entry.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_dep_arr_scan_screen.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\layout\activity_main_menu.xml
@@ -324,4 +323,7 @@ C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\De
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\drawable\ic_baglocate.png
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\drawable\ic_bagtrack.png
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\drawable\ic_baginfo.png
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_bag_locate.xml
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_bag_track.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\RFID.Droid.dll.mdb
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\RFID.Droid.dll.mdb

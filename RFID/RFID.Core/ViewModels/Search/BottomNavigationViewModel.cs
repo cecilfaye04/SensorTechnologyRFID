@@ -1,4 +1,5 @@
 ﻿using MvvmCross.Core.ViewModels;
+using RFID.Core.ViewModels.Search;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -30,6 +31,16 @@ namespace RFID.Core.ViewModels
         }
 
         private void ShowLocationExecuted()
+        {
+            ShowViewModel<BagLocateViewModel>();
+        }
+
+        public IMvxCommand ShowTrackCommand
+        {
+            get { return new MvxCommand(ShowTrackExecuted); }
+        }
+
+        private void ShowTrackExecuted()
         {
             ShowViewModel<BagTrackViewModel>();
         }

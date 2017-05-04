@@ -44,6 +44,7 @@ namespace RFID.Droid.Views.Fragments
                     ViewModel.ShowLocationCommand.Execute();
                     break;
                 case Resource.Id.nav_track:
+                    ViewModel.ShowTrackCommand.Execute();
                     break;
             }
 

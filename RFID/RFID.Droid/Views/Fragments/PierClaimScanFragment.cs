@@ -14,6 +14,7 @@ using MvvmCross.Droid.Shared.Attributes;
 using RFID.Core.ViewModels;
 using Android.Graphics;
 using Android.Graphics.Drawables;
+using Android.Support.Design.Widget;
 
 namespace RFID.Droid.Views.Fragments
 {
@@ -23,9 +24,36 @@ namespace RFID.Droid.Views.Fragments
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
+            var view = base.OnCreateView(inflater, container, savedInstanceState);
             ((MainMenuView)Activity).Title = "Pier 1";
             ShowBackButton = true;
-            return base.OnCreateView(inflater, container, savedInstanceState);
+
+            Button clearButton = view.FindViewById<Button>(Resource.Id.btnClear);
+            Button retryButton = view.FindViewById<Button>(Resource.Id.btnRetry);
+            clearButton.Click += (s, e) =>
+            {
+                //Creates the Snackbar 
+                Snackbar snackBar = Snackbar.Make(clearButton, "Clear", Snackbar.LengthShort).SetAction("OK", (v) =>
+                {
+                });
+                
+                //Show the snackbar
+                snackBar.Show();
+            };
+            retryButton.Click += (s, e) =>
+            {
+                //Creates the Snackbar 
+                Snackbar snackBar = Snackbar.Make(retryButton, "No Internet Connection", Snackbar.LengthShort).SetAction("Retry", (v) =>
+                {
+
+                });
+
+                //Show the snackbar
+                snackBar.Show();
+            };
+
+
+            return view;
         }
         protected override int FragmentId => Resource.Layout.fragment_pier_claim_scan;
         protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#283593"));

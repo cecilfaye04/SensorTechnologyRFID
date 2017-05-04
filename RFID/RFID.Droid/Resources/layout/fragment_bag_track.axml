@@ -1,146 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include
-        layout="@layout/toolbar_actionbar" />
-    <FrameLayout
-        android:minWidth="25px"
-        android:minHeight="25px"
+  <include
+       layout="@layout/toolbar_actionbar" />
+  <FrameLayout
+       android:minWidth="25px"
+       android:minHeight="25px"
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:id="@+id/flBagtrack">
+    <fragment
+        android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/flBagtrack">
-        <fragment
-            android:id="@+id/map"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            class="com.google.android.gms.maps.MapFragment" />
-    </FrameLayout>
-  <!--<android.support.design.widget.FloatingActionButton
-     android:id="@+id/ActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="end|bottom"
-        android:layout_margin="10dip"
-        local:backgroundTint="@android:color/holo_green_light"
-         android:src="@drawable/ic_bagLocate" />-->
-  <!--<android.support.design.widget.FloatingActionButton   xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/fab"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:src="@drawable/ic_bagLocate"
-    android:layout_gravity="right|bottom"
-    app:borderWidth="0dp"
-    app:rippleColor="#ffffff"/>-->
-  <android.support.design.widget.CoordinatorLayout
-    android:id="@+id/content"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <android.support.design.widget.FloatingActionButton
-     android:id="@+id/ActionButton"
-     android:layout_width="wrap_content"
-     android:layout_height="wrap_content"
-     android:layout_gravity="end|bottom"
-     android:layout_margin="10dip"
-     local:backgroundTint="@android:color/holo_green_light"
-     android:src="@drawable/ic_bagLocate" />
-  </android.support.design.widget.CoordinatorLayout>
+        class="com.google.android.gms.maps.MapFragment" />
+  </FrameLayout>
 </LinearLayout>
-
-<!--<RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rlBagTrack"
-        android:layout_marginTop="15dp"
-        android:paddingLeft="75dp">
-        <TextView
-            android:text="Baggage Claimed"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvBaggageClaimed"
-            android:textStyle="bold" />
-        <TextView
-            android:text="Baggage Carousel 3, Terminal 1, HKG"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/tvBaggageClaimedValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvBaggageClaimed"
-            android:textSize="15dp" />
-        <View
-            android:id="@+id/view1"
-            android:layout_width="wrap_content"
-            android:layout_height="2dp"
-            android:layout_below="@id/tvBaggageClaimedValue"
-            android:background="#9E9E9E"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:text="Unloaded from Plane"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/tvUnloaded"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/view1"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp" />
-        <TextView
-            android:text="Hong Kong International Airport"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvUnloaded"
-            android:id="@+id/tvUnloadedValue"
-            android:textSize="15dp" />
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="2dp"
-            android:layout_below="@id/tvUnloadedValue"
-            android:id="@+id/view2"
-            android:background="#9E9E9E"
-            android:layout_marginTop="8dp" />
-        <TextView
-            android:text="Loaded on Plane"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/tvLoaded"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/view2"
-            android:layout_marginTop="10dp"
-            android:textStyle="bold" />
-        <TextView
-            android:text="Gate 62, NAIA Terminal 3, PH"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvLoaded"
-            android:id="@+id/tvLoadedValue"
-            android:textSize="15dp" />
-        <View
-            android:layout_width="wrap_content"
-            android:layout_height="2dp"
-            android:layout_below="@id/tvLoadedValue"
-            android:id="@+id/view3"
-            android:layout_marginTop="8dp"
-            android:background="#9E9E9E" />
-        <TextView
-            android:text="Checked Luggage"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvChecked"
-            android:layout_below="@id/view3"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp" />
-        <TextView
-            android:text="NAIA Terminal 3, PH"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:id="@+id/tvCheckedValue"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvChecked"
-            android:textSize="15dp" />
-    </RelativeLayout>-->

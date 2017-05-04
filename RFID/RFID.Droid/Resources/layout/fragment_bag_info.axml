@@ -183,12 +183,4 @@
             android:layout_centerHorizontal="true"
             android:id="@+id/vwBaginfo2" />
     </RelativeLayout>
-  <android.support.design.widget.FloatingActionButton
-   android:id="@+id/ActionButton"
-   android:layout_width="wrap_content"
-   android:layout_height="wrap_content"
-   android:layout_gravity="end|bottom"
-   android:layout_margin="10dip"
-   local:backgroundTint="@android:color/holo_green_light"
-   android:src="@drawable/ic_bagLocate" />
 </LinearLayout>

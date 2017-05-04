@@ -21,7 +21,7 @@ namespace RFID.Core.ViewModels
 
         private void ShowSearchTrackExecuted()
         {
-            ShowViewModel<BagTrackViewModel>();
+            ShowViewModel<BagLocateViewModel>();
         }
     }
 }
