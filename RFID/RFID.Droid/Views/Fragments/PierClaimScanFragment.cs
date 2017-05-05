@@ -24,10 +24,10 @@ namespace RFID.Droid.Views.Fragments
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            var view = base.OnCreateView(inflater, container, savedInstanceState);
+        
             ((MainMenuView)Activity).Title = "Pier 1";
             ShowBackButton = true;
-
+            var view = base.OnCreateView(inflater, container, savedInstanceState);
             Button clearButton = view.FindViewById<Button>(Resource.Id.btnClear);
             Button retryButton = view.FindViewById<Button>(Resource.Id.btnRetry);
             clearButton.Click += (s, e) =>

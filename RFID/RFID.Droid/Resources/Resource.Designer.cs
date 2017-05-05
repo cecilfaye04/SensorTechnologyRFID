@@ -3068,8 +3068,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b012c
 			public const int nav_items = 2131427628;
 			
-			// aapt resource value: 0x7f0b0129
-			public const int nav_location = 2131427625;
+			// aapt resource value: 0x7f0b012a
+			public const int nav_location = 2131427626;
 			
 			// aapt resource value: 0x7f0b0132
 			public const int nav_logout = 2131427634;
@@ -3083,8 +3083,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0128
 			public const int nav_result = 2131427624;
 			
-			// aapt resource value: 0x7f0b012a
-			public const int nav_track = 2131427626;
+			// aapt resource value: 0x7f0b0129
+			public const int nav_track = 2131427625;
 			
 			// aapt resource value: 0x7f0b0089
 			public const int navigation_frame = 2131427465;

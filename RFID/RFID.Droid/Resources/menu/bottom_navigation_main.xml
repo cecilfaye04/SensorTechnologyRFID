@@ -8,15 +8,16 @@
       android:title="Information"
       app:showAsAction="ifRoom" />
   <item
-      android:id="@+id/nav_location"
-      android:enabled="true"
-      android:icon="@drawable/ic_bagLocate"
-      android:title="Locate"
-      app:showAsAction="ifRoom" />
-  <item
       android:id="@+id/nav_track"
       android:enabled="true"
       android:icon="@drawable/ic_bagTrack"
       android:title="Track"
       app:showAsAction="ifRoom" />
+  <item
+      android:id="@+id/nav_location"
+      android:enabled="true"
+      android:icon="@drawable/ic_bagLocate"
+      android:title="Locate"
+      app:showAsAction="ifRoom" />
+  
 </menu> 

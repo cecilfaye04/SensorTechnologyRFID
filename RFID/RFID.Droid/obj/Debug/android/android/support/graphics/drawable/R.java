@@ -3303,12 +3303,12 @@ containing a value of this type.
         public static final int nav_footer=0x7f0b0131;
         public static final int nav_home=0x7f0b012d;
         public static final int nav_items=0x7f0b012c;
-        public static final int nav_location=0x7f0b0129;
+        public static final int nav_location=0x7f0b012a;
         public static final int nav_logout=0x7f0b0132;
         public static final int nav_pier=0x7f0b012e;
         public static final int nav_recyclerview=0x7f0b0130;
         public static final int nav_result=0x7f0b0128;
-        public static final int nav_track=0x7f0b012a;
+        public static final int nav_track=0x7f0b0129;
         public static final int navigation_frame=0x7f0b0089;
         public static final int navigation_header_container=0x7f0b0090;
         public static final int navigation_view=0x7f0b00e6;

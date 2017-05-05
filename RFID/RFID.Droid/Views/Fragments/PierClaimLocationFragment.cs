@@ -44,7 +44,6 @@ namespace RFID.Droid.Views.Fragments
             listAdapter = new ExpandableListAdapter(mainActivity, listDataHeader, listDataChild);
             expListView.SetAdapter(listAdapter);
             FnClickEvents();
-            mainActivity.SupportActionBar?.SetDisplayHomeAsUpEnabled(true);
             return view;
 
         }
