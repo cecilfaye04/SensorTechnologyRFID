@@ -8,7 +8,7 @@ namespace RFID.Core.Entities
 {
     public class GetPierClaimLocationResponse: BaseResponse
     {
-        public PierClaimLocations MainLocations { get; set; }
+        public PierClaimLocations[] MainLocations { get; set; }
     }
 
     public class PierClaimLocations
