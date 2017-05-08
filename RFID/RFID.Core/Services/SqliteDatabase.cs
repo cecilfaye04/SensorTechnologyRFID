@@ -31,7 +31,7 @@ namespace RFID.Core.Services
 
         public async Task<UserModel> LoadItem()
         {
-            return await Table<UserModel>().FirstOrDefaultllllAsync();
+            return await Table<UserModel>().FirstOrDefaultAsync();
         }
 
         public async Task<List<UserModel>> GetAll()

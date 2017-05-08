@@ -18,6 +18,7 @@ using System.Reflection;
 using MvvmCross.Droid.Views;
 using MvvmCross.Droid.Shared.Presenter;
 using MvvmCross.Platform.Droid.Platform;
+using RFID.Core.Interfaces;
 
 namespace RFID.Droid
 {

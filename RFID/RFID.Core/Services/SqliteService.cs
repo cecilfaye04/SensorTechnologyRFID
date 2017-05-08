@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using RFID.Core.Models;
+using RFID.Core.Interfaces;
 
 namespace RFID.Core.Services
 {

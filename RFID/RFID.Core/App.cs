@@ -1,6 +1,7 @@
 ﻿using Acr.UserDialogs;
 using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
+using RFID.Core.Interfaces;
 using RFID.Core.Services;
 using SQLite.Net.Async;
 using System;

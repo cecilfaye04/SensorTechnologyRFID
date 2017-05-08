@@ -1,5 +1,6 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using RFID.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;

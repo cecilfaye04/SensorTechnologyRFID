@@ -9,7 +9,7 @@ namespace RFID.Core.Entities
     public class GetFlightDetailsResponse: BaseResponse
     {
         public Flight Flight { get; set; }
-        public LoadSummary LoadSummary { get; set; }
+        //public LoadSummary LoadSummary { get; set; }
     }
 
     public class Flight

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels.Search
 {
-   public class BagTrackViewModel : BaseViewModel
+    public class BagTrackViewModel : BaseViewModel
     {
     }
 }

@@ -4,6 +4,7 @@ using SQLite.Net;
 using SQLite.Net.Platform.XamarinAndroid;
 using RFID.Core;
 using RFID.Core.Services;
+using RFID.Core.Interfaces;
 
 namespace RFID.Droid
 {

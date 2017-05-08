@@ -61,16 +61,17 @@
     <Compile Include="Services\SqliteDatabase.cs" />
     <Compile Include="Services\SqliteService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\Departure\DepArrScanScreenViewModel.cs" />
+    <Compile Include="ViewModels\Departure\FlightEntryViewModel.cs" />
+    <Compile Include="ViewModels\Home\MainMenuViewModel.cs" />
+    <Compile Include="ViewModels\Pier\PierClaimLocationViewModel.cs" />
+    <Compile Include="ViewModels\Pier\PierClaimScanViewModel.cs" />
+    <Compile Include="ViewModels\Search\BagInfoViewModel.cs" />
+    <Compile Include="ViewModels\Search\BagLocateViewModel.cs" />
+    <Compile Include="ViewModels\Search\BagTrackViewModel.cs" />
     <Compile Include="ViewModels\Search\BottomNavigationViewModel.cs" />
-    <Compile Include="ViewModels\Departure\DepartureScanViewModel.cs" />
-    <Compile Include="ViewModels\Departure\DepartureViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Login\LoginViewModel.cs" />
-    <Compile Include="ViewModels\Home\MainViewModel.cs" />
-    <Compile Include="ViewModels\Pier\PierScanViewModel.cs" />
-    <Compile Include="ViewModels\Pier\PierViewModel.cs" />
-    <Compile Include="ViewModels\Search\SearchResultViewModel.cs" />
-    <Compile Include="ViewModels\Search\SearchTrackViewModel.cs" />
     <Compile Include="ViewModels\Search\SearchViewModel.cs" />
     <Compile Include="ViewModels\Home\SideMenuViewModel.cs" />
   </ItemGroup>
