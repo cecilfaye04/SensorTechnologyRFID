@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using RFID.Core.Interfaces;
 
 namespace RFID.Core.Services
 {
@@ -30,7 +31,7 @@ namespace RFID.Core.Services
 
         public async Task<UserModel> LoadItem()
         {
-            return await Table<UserModel>().FirstOrDefaultAsync();
+            return await Table<UserModel>().FirstOrDefaultllllAsync();
         }
 
         public async Task<List<UserModel>> GetAll()

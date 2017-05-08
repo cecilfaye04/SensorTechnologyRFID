@@ -9,5 +9,6 @@ namespace RFID.Core.Models
         public int UserId { get; set; }
         public string Username { get; set; }
         public bool IsLoggedIn { get; set; }
+        public string[] AppAccess { get; set; }
     }
 }

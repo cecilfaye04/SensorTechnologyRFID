@@ -35,25 +35,42 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="Entities\AuthenticateUserInput.cs" />
+    <Compile Include="Entities\AuthenticateUserResponse.cs" />
+    <Compile Include="Entities\BaseInput.cs" />
+    <Compile Include="Entities\BaseResponse.cs" />
+    <Compile Include="Entities\DepArrScanInput.cs" />
+    <Compile Include="Entities\DepArrScanResponse.cs" />
+    <Compile Include="Entities\GetBagInfoInput.cs" />
+    <Compile Include="Entities\GetBagInfoResponse.cs" />
+    <Compile Include="Entities\GetFlightDetailsInput.cs" />
+    <Compile Include="Entities\GetFlightDetailsResponse.cs" />
+    <Compile Include="Entities\GetPierClaimLocationInput.cs" />
+    <Compile Include="Entities\GetPierClaimLocationResponse.cs" />
+    <Compile Include="Entities\PierClaimScanInput.cs" />
+    <Compile Include="Entities\PierClaimScanResponse.cs" />
+    <Compile Include="Interfaces\IRestService.cs" />
+    <Compile Include="Models\BagInfo.cs" />
     <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\PierClaimBagScan.cs" />
     <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\IInitializeSqliteService.cs" />
-    <Compile Include="Services\ISqliteService.cs" />
+    <Compile Include="Interfaces\IInitializeSqliteService.cs" />
+    <Compile Include="Interfaces\ISqliteService.cs" />
+    <Compile Include="Services\RestService.cs" />
     <Compile Include="Services\SqliteDatabase.cs" />
     <Compile Include="Services\SqliteService.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
-    <Compile Include="ViewModels\Search\BagTrackViewModel.cs" />
     <Compile Include="ViewModels\Search\BottomNavigationViewModel.cs" />
-    <Compile Include="ViewModels\Departure\DepArrScanScreenViewModel.cs" />
-    <Compile Include="ViewModels\Departure\FlightEntryViewModel.cs" />
+    <Compile Include="ViewModels\Departure\DepartureScanViewModel.cs" />
+    <Compile Include="ViewModels\Departure\DepartureViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Login\LoginViewModel.cs" />
-    <Compile Include="ViewModels\Home\MainMenuViewModel.cs" />
-    <Compile Include="ViewModels\Pier\PierClaimScanViewModel.cs" />
-    <Compile Include="ViewModels\Pier\PierClaimLocationViewModel.cs" />
-    <Compile Include="ViewModels\Search\BagInfoViewModel.cs" />
-    <Compile Include="ViewModels\Search\BagLocateViewModel.cs" />
+    <Compile Include="ViewModels\Home\MainViewModel.cs" />
+    <Compile Include="ViewModels\Pier\PierScanViewModel.cs" />
+    <Compile Include="ViewModels\Pier\PierViewModel.cs" />
+    <Compile Include="ViewModels\Search\SearchResultViewModel.cs" />
+    <Compile Include="ViewModels\Search\SearchTrackViewModel.cs" />
     <Compile Include="ViewModels\Search\SearchViewModel.cs" />
     <Compile Include="ViewModels\Home\SideMenuViewModel.cs" />
   </ItemGroup>
@@ -98,6 +115,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
