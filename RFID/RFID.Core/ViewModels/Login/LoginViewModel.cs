@@ -70,9 +70,9 @@ namespace RFID.Core.ViewModels
             {
                 Username = Username,
                 Password = Password,
-                DeviceName = "as",
-                Station = "asd",
-                Version = "qwe"
+                DeviceName = "Apple",
+                Station = "123",
+                Version = "1"
             };
             return Mvx.Resolve<IRestService>().AuthenticateUser(userTry);
 

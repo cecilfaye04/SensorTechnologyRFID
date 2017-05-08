@@ -17,10 +17,10 @@
         android:background="@drawable/shadow2"
         android:paddingTop="15dp"
         android:paddingLeft="20dp"
-        android:layout_height="207.3dp">
+        android:layout_height="146.0dp">
         <TextView
-            android:text="Name"
-            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Name:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/tvName"
@@ -28,8 +28,8 @@
             android:layout_marginRight="13dp"
             android:layout_marginTop="4dp" />
         <TextView
-            android:text="Flight"
-            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Flight:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/tvName"
@@ -37,7 +37,7 @@
             android:textColor="#424242"
             android:layout_marginTop="9dp"
             android:layout_marginRight="15dp" />
-        <TextView
+    <!--<TextView
             android:text="From"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
@@ -56,7 +56,7 @@
             android:id="@+id/tvTo"
             android:textColor="#424242"
             android:layout_marginTop="7dp"
-            android:layout_marginRight="32dp" />
+            android:layout_marginRight="32dp" />-->
         <TextView
             android:text="Jennifer Smith"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -64,18 +64,21 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/tvName"
             android:id="@+id/tvNameValue"
-            android:textColor="#212121" />
+            local:MvxBind="Text Name"
+            android:textColor="#212121"
+            android:layout_marginTop="3dp" />
         <TextView
-            android:text="PR478         31 Mar 17"
+            android:text="PR478"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/tvFlight"
             android:id="@+id/tvFlightValue"
             android:layout_below="@id/tvNameValue"
+            local:MvxBind="Text Flight"
             android:textColor="#212121"
-            android:layout_marginTop="3dp" />
-        <TextView
+            android:layout_marginTop="10dp" />
+    <!--<TextView
             android:text="PHL PHILIPPINES"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
@@ -94,8 +97,8 @@
             android:id="@+id/tvToValue"
             android:layout_toRightOf="@id/tvTo"
             android:textColor="#212121"
-            android:layout_marginTop="2dp" />
-        <TextView
+            android:layout_marginTop="2dp" />-->
+    <!--<TextView
             android:text="Gate"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
@@ -136,8 +139,8 @@
             android:id="@+id/tvSeatValue"
             android:layout_below="@id/tvGateValue"
             android:textColor="#212121"
-            android:layout_marginLeft="5dp" />
-        <View
+            android:layout_marginLeft="5dp" />-->
+    <!--<View
             android:layout_width="160.0dp"
             android:layout_weight="2"
             android:layout_height="1dp"
@@ -145,8 +148,8 @@
             android:background="#757575"
             android:layout_below="@id/tvTo"
             android:layout_centerHorizontal="true"
-            android:id="@+id/vwBaginfo" />
-        <LinearLayout
+            android:id="@+id/vwBaginfo" />-->
+    <!--<LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -171,16 +174,50 @@
                 android:id="@+id/tvRFIDValue"
                 android:textColor="#212121"
                 android:textStyle="bold" />
-        </LinearLayout>
-        <View
-            android:layout_width="160.0dp"
-            android:layout_weight="2"
-            android:layout_height="1dp"
-            android:layout_marginTop="8dp"
-            android:background="#757575"
-            android:layout_marginRight="8dp"
-            android:layout_below="@id/llRFID"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/vwBaginfo2" />
+        </LinearLayout>-->
+        <TextView
+            android:text="Flight Date:"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvNameValue"
+            android:id="@+id/tvFlightDate"
+            android:layout_marginLeft="25dp"
+            android:textColor="#424242"
+            android:layout_marginTop="9dp"
+            android:layout_below="@id/tvNameValue" />
+        <TextView
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvFlightDate"
+            android:id="@+id/tvFlightDateValue"
+            android:text="March 4"
+            local:MvxBind="Text FlightDate"
+            android:textColor="#212121"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@id/tvNameValue" />
+        <TextView
+            android:text="Itinerary:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvFlight"
+            android:id="@+id/tvItinerary"
+            android:textColor="#424242"
+            android:layout_marginTop="9dp"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+        <TextView
+            android:text="-"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tvItinerary"
+            android:id="@+id/tvItineraryValue"
+            local:MvxBind="Text Itinerary"
+            android:layout_below="@id/tvFlightValue"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="5dp"
+            android:textColor="#212121" />
     </RelativeLayout>
 </LinearLayout>

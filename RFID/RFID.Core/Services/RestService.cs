@@ -82,6 +82,7 @@ namespace RFID.Core.Services
             GetBagInfoResponse getBagInfoResponse = new GetBagInfoResponse();
             getBagInfoResponse.FltCode = "DL";
             getBagInfoResponse.FltDate = DateTime.Now.ToString("MMMdd");
+            getBagInfoResponse.FltNum = "1234";
             getBagInfoResponse.ReturnCode = "1";
             getBagInfoResponse.PaxName = "Bill Gates";
             getBagInfoResponse.PaxItinerary = "MNL-NRT-MSP";

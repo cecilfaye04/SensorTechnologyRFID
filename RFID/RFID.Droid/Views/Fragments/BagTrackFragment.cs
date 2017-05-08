@@ -74,6 +74,7 @@ namespace RFID.Droid.Views.Fragments
         {
             this.googleMap = googleMap;
             this.googleMap.MyLocationEnabled = true;
+
         }
 
         protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#3E50B4"));

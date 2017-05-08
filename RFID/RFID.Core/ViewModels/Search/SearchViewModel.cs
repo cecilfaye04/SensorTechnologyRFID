@@ -1,4 +1,7 @@
 ﻿using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
+using RFID.Core.Entities;
+using RFID.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +12,7 @@ namespace RFID.Core.ViewModels
 {
     public class SearchViewModel : BaseViewModel
     {
+
         public IMvxCommand ShowSearchResultCommand
         {
             get { return new MvxCommand(ShowSearchResultExecuted); }
@@ -19,5 +23,8 @@ namespace RFID.Core.ViewModels
             ShowViewModel<BottomNavigationViewModel>();
             ShowViewModel<BagInfoViewModel>();
         }
+
+     
+
     }
 }
