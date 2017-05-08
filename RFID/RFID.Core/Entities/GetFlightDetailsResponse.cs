@@ -9,7 +9,7 @@ namespace RFID.Core.Entities
     public class GetFlightDetailsResponse: BaseResponse
     {
         public Flight Flight { get; set; }
-        //public LoadSummary LoadSummary { get; set; }
+        public LoadSummary LoadSummary { get; set; }
     }
 
     public class Flight
@@ -27,7 +27,7 @@ namespace RFID.Core.Entities
         public string Destination { get; set; }
     }
 
-    class LoadSummary
+    public class LoadSummary
     {
         public string PercentLoaded { get; set; }
         public string Bags { get; set; }

@@ -25,7 +25,7 @@ namespace RFID.Droid
 
         private static string GetDatabasePath()
         {
-            return System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "RFID.db3");
+            return System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal), "RFIDXamarin.db3");
         }
 
         private static SQLiteConnectionWithLock GetConnection()

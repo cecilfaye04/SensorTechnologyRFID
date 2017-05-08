@@ -26,7 +26,7 @@ namespace RFID.Core.Services
 
         private async Task SeedAsync()
         {
-            await InsertAsync(new UserModel { Username = "user", IsLoggedIn = false });
+            await InsertAsync(new UserModel { Username = "user", IsLoggedIn = false , Name = String.Empty});
         }
 
         public async Task<UserModel> LoadItem()

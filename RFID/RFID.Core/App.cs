@@ -23,7 +23,7 @@ namespace RFID.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            Mvx.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
+            //Mvx.RegisterSingleton<IUserDialogs>(() => UserDialogs.Instance);
 
             await Mvx.Resolve<IInitilializeSqliteService>().InitializeAsync();
             var user = await Mvx.Resolve<ISqliteService>().LoadUserAsync();

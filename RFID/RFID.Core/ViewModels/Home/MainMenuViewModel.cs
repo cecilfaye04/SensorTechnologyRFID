@@ -9,6 +9,9 @@ namespace RFID.Core.ViewModels
 {
     public class MainMenuViewModel : BaseViewModel
     {
+     
+
+      
         public void ShowMenu()
         {
             ShowViewModel<HomeViewModel>();

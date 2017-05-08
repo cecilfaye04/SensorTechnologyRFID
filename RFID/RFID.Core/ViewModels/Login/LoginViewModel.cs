@@ -1,5 +1,6 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using RFID.Core.Entities;
 using RFID.Core.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace RFID.Core.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
+        AuthenticateUserResponse loginResponse;
+
         private string _userName;
         public string Username
         {
@@ -38,21 +41,40 @@ namespace RFID.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(async () =>
+                return new MvxCommand(async() =>
                 {
-                    //if (await _service.ValidateLogin(Username, Password))
-                    //{
-                    var user = await Mvx.Resolve<ISqliteService>().LoadUserAsync();
-                    user.IsLoggedIn = true;
-                    await Mvx.Resolve<ISqliteService>().UpdateAsync(user);
-                    ShowViewModel<MainMenuViewModel>();
-                    //}
-                    //else
-                    //{
-                    //    _udialog.Alert("Incorrect Username or Password");
-                    //}
+                    
+                    loginResponse = new AuthenticateUserResponse();
+                    loginResponse = IsAuthenticated();
+
+                    if (loginResponse.ReturnCode == "1")
+                    {
+                        var user = await Mvx.Resolve<ISqliteService>().LoadUserAsync();
+                        user.IsLoggedIn = true;
+                        user.Name = loginResponse.Name;
+                        await Mvx.Resolve<ISqliteService>().UpdateAsync(user);
+                        ShowViewModel<MainMenuViewModel>();
+                    }
+                    else
+                    {
+                        //Not successful login
+                    }
                 });
             }
+        }
+
+        public AuthenticateUserResponse IsAuthenticated()
+        {
+            AuthenticateUserInput userTry = new AuthenticateUserInput()
+            {
+                Username = Username,
+                Password = Password,
+                DeviceName = "as",
+                Station = "asd",
+                Version = "qwe"
+            };
+            return Mvx.Resolve<IRestService>().AuthenticateUser(userTry);
+
         }
 
 
