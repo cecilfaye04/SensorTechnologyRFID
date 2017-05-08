@@ -3,7 +3,7 @@
   <xs:import schemaLocation="schemas.android.com.apk.res.android.xsd" namespace="http://schemas.android.com/apk/res/android" />
   <xs:annotation>
     <xs:documentation>v23</xs:documentation>
-    <xs:documentation>5/4/2017 5:41:28 PM</xs:documentation>
+    <xs:documentation>5/8/2017 4:16:38 PM</xs:documentation>
   </xs:annotation>
   <xs:group name="any-view">
     <xs:choice>
@@ -103,6 +103,9 @@
       <xs:element ref="MvvmCross.Droid.Support.V7.AppCompat.Widget.MvxAppCompatImageView" />
       <xs:element ref="MvvmCross.Droid.Support.V7.AppCompat.Widget.MvxAppCompatAutoCompleteTextView" />
       <xs:element ref="MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout" />
+      <xs:element ref="com.google.android.gms.common.SignInButton" />
+      <xs:element ref="com.google.android.gms.maps.StreetViewPanoramaView" />
+      <xs:element ref="com.google.android.gms.maps.MapView" />
       <xs:element ref="android.support.v7.view.menu.ExpandedMenuView" />
       <xs:element ref="android.support.v7.view.menu.ListMenuItemView" />
       <xs:element ref="android.support.v7.view.menu.ActionMenuItemView" />
@@ -162,9 +165,6 @@
       <xs:element ref="android.support.v4.view.PagerTitleStrip" />
       <xs:element ref="android.support.v4.view.PagerTabStrip" />
       <xs:element ref="android.support.v4.app.FragmentTabHost" />
-      <xs:element ref="com.google.android.gms.common.SignInButton" />
-      <xs:element ref="com.google.android.gms.maps.StreetViewPanoramaView" />
-      <xs:element ref="com.google.android.gms.maps.MapView" />
     </xs:choice>
   </xs:group>
   <xs:element name="CheckBox" type="CheckBox">
@@ -390,15 +390,6 @@
     <xs:attribute ref="android:scrollIndicators" />
     <xs:attribute ref="android:layout_width" />
     <xs:attribute ref="android:layout_height" />
-    <xs:attribute ref="android:layout_weight" />
-    <xs:attribute ref="android:layout_gravity" />
-    <xs:attribute ref="android:layout_margin" />
-    <xs:attribute ref="android:layout_marginLeft" />
-    <xs:attribute ref="android:layout_marginTop" />
-    <xs:attribute ref="android:layout_marginRight" />
-    <xs:attribute ref="android:layout_marginBottom" />
-    <xs:attribute ref="android:layout_marginStart" />
-    <xs:attribute ref="android:layout_marginEnd" />
     <xs:attribute ref="android:style" />
   </xs:complexType>
   <xs:element name="SurfaceView" type="SurfaceView">
@@ -1447,15 +1438,6 @@
     <xs:attribute ref="android:fragmentAllowReturnTransitionOverlap" />
     <xs:attribute ref="android:layout_width" />
     <xs:attribute ref="android:layout_height" />
-    <xs:attribute ref="android:layout_weight" />
-    <xs:attribute ref="android:layout_gravity" />
-    <xs:attribute ref="android:layout_margin" />
-    <xs:attribute ref="android:layout_marginLeft" />
-    <xs:attribute ref="android:layout_marginTop" />
-    <xs:attribute ref="android:layout_marginRight" />
-    <xs:attribute ref="android:layout_marginBottom" />
-    <xs:attribute ref="android:layout_marginStart" />
-    <xs:attribute ref="android:layout_marginEnd" />
     <xs:attribute ref="android:style" />
   </xs:complexType>
   <xs:element name="AndroidHUD.ProgressWheel" type="AndroidHUD.ProgressWheel">
@@ -1686,6 +1668,36 @@
   <xs:complexType name="MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout">
     <xs:complexContent mixed="false">
       <xs:extension base="ViewGroup" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="com.google.android.gms.common.SignInButton" type="com.google.android.gms.common.SignInButton">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Gms.Common.SignInButton</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="com.google.android.gms.common.SignInButton">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FrameLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="com.google.android.gms.maps.StreetViewPanoramaView" type="com.google.android.gms.maps.StreetViewPanoramaView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Gms.Maps.StreetViewPanoramaView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="com.google.android.gms.maps.StreetViewPanoramaView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FrameLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="com.google.android.gms.maps.MapView" type="com.google.android.gms.maps.MapView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Gms.Maps.MapView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="com.google.android.gms.maps.MapView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FrameLayout" />
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="android.support.v7.view.menu.ExpandedMenuView" type="android.support.v7.view.menu.ExpandedMenuView">
@@ -2339,36 +2351,6 @@
   <xs:complexType name="android.support.v4.app.FragmentTabHost">
     <xs:complexContent mixed="false">
       <xs:extension base="TabHost" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="com.google.android.gms.common.SignInButton" type="com.google.android.gms.common.SignInButton">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Gms.Common.SignInButton</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="com.google.android.gms.common.SignInButton">
-    <xs:complexContent mixed="false">
-      <xs:extension base="FrameLayout" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="com.google.android.gms.maps.StreetViewPanoramaView" type="com.google.android.gms.maps.StreetViewPanoramaView">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Gms.Maps.StreetViewPanoramaView</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="com.google.android.gms.maps.StreetViewPanoramaView">
-    <xs:complexContent mixed="false">
-      <xs:extension base="FrameLayout" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="com.google.android.gms.maps.MapView" type="com.google.android.gms.maps.MapView">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Gms.Maps.MapView</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="com.google.android.gms.maps.MapView">
-    <xs:complexContent mixed="false">
-      <xs:extension base="FrameLayout" />
     </xs:complexContent>
   </xs:complexType>
 </xs:schema>

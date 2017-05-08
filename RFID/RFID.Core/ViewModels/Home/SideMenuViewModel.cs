@@ -11,6 +11,24 @@ namespace RFID.Core.ViewModels
 {
     public class SideMenuViewModel : BaseViewModel
     {
+
+        public override async void Start()
+        {
+            await Mvx.Resolve<IInitilializeSqliteService>().InitializeAsync();
+            var user = await Mvx.Resolve<ISqliteService>().LoadUserAsync();
+            List<string> appAccess = user.AppAccess.Split(',').ToList<string>();
+            appAccess.Reverse();
+            AppAccess = appAccess;
+        }
+
+        private List<string> appAccess;
+
+        public List<string> AppAccess
+        {
+            get { return appAccess; }
+            set { appAccess = value; }
+        }
+
         #region Cross Platform Commands & Handlers
 
         public IMvxCommand ShowHomeCommand

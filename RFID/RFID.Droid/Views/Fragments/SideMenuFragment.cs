@@ -29,12 +29,35 @@ namespace RFID.Droid.Views
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             var ignore = base.OnCreateView(inflater, container, savedInstanceState);
-
             var view = this.BindingInflate(Resource.Layout.fragment_navigation, null);
 
             _navigationView = view.FindViewById<NavigationView>(Resource.Id.navigation_view);
             _navigationView.SetNavigationItemSelectedListener(this);
             _navigationView.Menu.FindItem(Resource.Id.nav_home).SetChecked(true);
+
+
+            if (!ViewModel.AppAccess.Contains("BSO"))
+            {
+                _navigationView.Menu.FindItem(Resource.Id.nav_bso).SetVisible(false);
+            }
+            if (!ViewModel.AppAccess.Contains("Pier"))
+            {
+                _navigationView.Menu.FindItem(Resource.Id.nav_pier).SetVisible(false);
+            }
+            if (!ViewModel.AppAccess.Contains("Claim"))
+            {
+                _navigationView.Menu.FindItem(Resource.Id.nav_claim).SetVisible(false);
+            }
+            if (!ViewModel.AppAccess.Contains("Arrival"))
+            {
+                _navigationView.Menu.FindItem(Resource.Id.nav_arrival).SetVisible(false);
+            }
+            if (!ViewModel.AppAccess.Contains("Departure"))
+            {
+                _navigationView.Menu.FindItem(Resource.Id.nav_departure).SetVisible(false);
+            }
+
+          
 
             return view;
         }

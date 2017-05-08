@@ -22,13 +22,13 @@ xmlns:local="http://schemas.android.com/apk/res-auto">
         android:id="@+id/nav_departure"
         android:title="Departure" />
       <item
-  android:id="@+id/nav_recyclerview"
+  android:id="@+id/nav_arrival"
   android:title="Arrival" />
       <item
-  android:id="@+id/nav_recyclerview"
+  android:id="@+id/nav_claim"
   android:title="Claim" />
       <item
-  android:id="@+id/nav_recyclerview"
+  android:id="@+id/nav_bso"
   android:title="BSO" />
     </menu>
   </item>

@@ -8,6 +8,7 @@ using MvvmCross.Droid.Support.V7.AppCompat;
 using Android.Support.V4.Widget;
 using Android.Views.InputMethods;
 using Android.Support.V4.View;
+using System.Collections.Generic;
 
 namespace RFID.Droid.Views
 {
@@ -22,8 +23,12 @@ namespace RFID.Droid.Views
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main_menu);
             DrawerLayout = FindViewById<DrawerLayout>(Resource.Id.drawer_layout);
+
+            List<string> appAccess = new List<string>();
+
             if (savedInstanceState == null)
                 ViewModel.ShowMenu();
+                
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
