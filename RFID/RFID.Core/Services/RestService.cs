@@ -22,7 +22,7 @@ namespace RFID.Core.Services
                 AuthenticateUserResponse loginResponse = new AuthenticateUserResponse()
                 {
                     ReturnCode = "1",
-                    Name = "XamarinRFID",
+                    Name = "Admin User",
                     Message = "Successfully Login",
                     AppAccess = "Pier,Departure,Claim,Arrival"
                 };
@@ -44,27 +44,114 @@ namespace RFID.Core.Services
 
         public DepArrScanResponse DepArrScan(DepArrScanInput input)
         {
-            throw new NotImplementedException();
+            DepArrScanResponse depArrScanResponse = new DepArrScanResponse();
+            depArrScanResponse.ReturnCode = "1";
+
+            Flight flight = new Flight();
+            flight.Destination = "NRT";
+            flight.Origin = "MNL";
+            flight.FltNum = "1234";
+            flight.FltCode = "5J";
+            flight.Gate = "G23";
+            flight.NoseNumber = "004321";
+
+            LoadSummary loadSummary = new LoadSummary();
+            loadSummary.Ballast = "1/1";
+            loadSummary.Bags = "2/2";
+            loadSummary.Comat = "3/3";
+            loadSummary.Freight = "4/4";
+            loadSummary.Mail = "5/5";
+            loadSummary.PercentLoaded = "100";
+            
+            if (input.AppName == "Departures")
+            {
+                flight.ETD = DateTime.Now.ToString();
+            }
+            else {
+                flight.ETA = DateTime.Now.ToString();
+            }
+
+            depArrScanResponse.Flight = flight;
+            depArrScanResponse.LoadSummary = loadSummary;
+           
+            return depArrScanResponse;
         }
 
         public GetBagInfoResponse GetBagInfo(GetBagInfoInput input)
         {
-            throw new NotImplementedException();
+            GetBagInfoResponse getBagInfoResponse = new GetBagInfoResponse();
+            getBagInfoResponse.FltCode = "DL";
+            getBagInfoResponse.FltDate = DateTime.Now.ToString("MMMdd");
+            getBagInfoResponse.ReturnCode = "1";
+            getBagInfoResponse.PaxName = "Bill Gates";
+            getBagInfoResponse.PaxItinerary = "MNL-NRT-MSP";
+            getBagInfoResponse.Latitude = "47.72980";
+            getBagInfoResponse.Logitude = "-122.14931";
+
+            return getBagInfoResponse;
+
         }
 
         public GetFlightDetailsResponse GetFlightDetails(GetFlightDetailsInput input)
         {
-            throw new NotImplementedException();
+            GetFlightDetailsResponse getFlightDetailsResponse = new GetFlightDetailsResponse();
+            getFlightDetailsResponse.ReturnCode = "1";
+
+            Flight flight = new Flight();
+            flight.Destination = "NRT";
+            flight.Origin = "MNL";
+            flight.FltNum = "1234";
+            flight.FltCode = "5J";
+            flight.Gate = "G23";
+            flight.NoseNumber = "004321";
+
+            LoadSummary loadSummary = new LoadSummary();
+            loadSummary.Ballast = "1/1";
+            loadSummary.Bags = "2/2";
+            loadSummary.Comat = "3/3";
+            loadSummary.Freight = "4/4";
+            loadSummary.Mail = "5/5";
+            loadSummary.PercentLoaded = "100";
+
+            if (input.AppName == "Departures")
+            {
+                flight.ETD = DateTime.Now.ToString();
+            }
+            else
+            {
+                flight.ETA = DateTime.Now.ToString();
+            }
+
+            getFlightDetailsResponse.Flight = flight;
+            getFlightDetailsResponse.LoadSummary = loadSummary;
+
+            return getFlightDetailsResponse;
         }
 
         public GetPierClaimLocationResponse GetPierClaimLocation(GetPierClaimLocationInput input)
         {
-            throw new NotImplementedException();
+            GetPierClaimLocationResponse getPierClaimLocationResponse = new GetPierClaimLocationResponse();
+            PierClaimLocations main1 = new PierClaimLocations();
+            main1.Name = "Pier";
+            main1.SubLocations = new string[] { "Pier 1", "Pier 2", "Pier 3" };
+            PierClaimLocations main2 = new PierClaimLocations();
+            main2.Name = "DCI Bullpen";
+            main2.SubLocations = new string[] { };
+            PierClaimLocations main3 = new PierClaimLocations();
+            main3.Name = "Arrivals";
+            main3.SubLocations = new string[] {"DL Arvl", "OA Arvl", "AS Arvl" };
+
+            getPierClaimLocationResponse.MainLocations = new PierClaimLocations[] { main1, main2, main3 };
+            getPierClaimLocationResponse.ReturnCode = "1";
+            return getPierClaimLocationResponse;
         }
 
-        public PierClaimScanInput PierClaimScan(PierClaimScanInput input)
+        public PierClaimScanResponse PierClaimScan(PierClaimScanInput input)
         {
-            throw new NotImplementedException();
+            PierClaimScanResponse pierClaimScan = new PierClaimScanResponse();
+            pierClaimScan.ReturnCode = "1";
+
+            return pierClaimScan;
         }
     }
 }
