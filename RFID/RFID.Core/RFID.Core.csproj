@@ -49,6 +49,7 @@
     <Compile Include="Entities\GetPierClaimLocationResponse.cs" />
     <Compile Include="Entities\PierClaimScanInput.cs" />
     <Compile Include="Entities\PierClaimScanResponse.cs" />
+    <Compile Include="Interfaces\IRegistry.cs" />
     <Compile Include="Interfaces\IRestService.cs" />
     <Compile Include="Models\BagInfo.cs" />
     <Compile Include="Models\Location.cs" />

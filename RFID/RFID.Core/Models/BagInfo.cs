@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.Models
 {
-    class BagInfo
+    public class BagInfo
     {
         public string FltCode { get; set; }
         public string FltNum { get; set; }
@@ -18,7 +18,7 @@ namespace RFID.Core.Models
 
     }
 
-    class BagScanPoint
+    public class BagScanPoint
     {
         public string ScanPoint { get; set; }
         public string DateTime { get; set; }
