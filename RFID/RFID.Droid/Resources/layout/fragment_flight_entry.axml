@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/tvFlight" />
         <TextView
-            android:text="Gate"
+            android:text="Position"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -64,12 +64,11 @@
                 android:layout_height="match_parent"
                 android:id="@+id/etFlight"
                 android:layout_weight="3" />
-            <MvvmCross.Binding.Droid.Views.MvxSpinner
+            <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:id="@+id/spnGate"
-                local:MvxBind="ItemsSource Gate;SelectedItem SelectedGate"
-                android:layout_weight="3" />
+                android:id="@+id/editText1"
+                android:layout_weight="7" />
         </LinearLayout>
     </RelativeLayout>
     <DatePicker

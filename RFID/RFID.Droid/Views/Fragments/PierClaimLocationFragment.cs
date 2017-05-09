@@ -40,61 +40,72 @@ namespace RFID.Droid.Views.Fragments
             var mainActivity = Activity as MainMenuView;
             View view = base.OnCreateView(inflater, container, savedInstanceState);
             expListView = view.FindViewById<ExpandableListView>(Resource.Id.lvPierLocation);
-            FnGetListData();
+            //FnGetListData();
+            Try();
             listAdapter = new ExpandableListAdapter(mainActivity, listDataHeader, listDataChild);
             expListView.SetAdapter(listAdapter);
             FnClickEvents();
+        
             return view;
 
         }
-
-   
-        void FnGetListData()
+        void Try()
         {
             listDataHeader = new List<string>();
             listDataChild = new Dictionary<string, List<string>>();
-
-            // Adding child data
-            listDataHeader.Add("Pier 1");
-            listDataHeader.Add("Pier 2");
-            listDataHeader.Add("Pier 3");
-            listDataHeader.Add("Pier 4");
-
-            // Adding child data
-            var pier1 = new List<string>();
-            pier1.Add("Location 1");
-            pier1.Add("Location 2");
-            pier1.Add("Location 3");
-            pier1.Add("Location 4");
-            pier1.Add("Location 5");
-
-            var pier2 = new List<string>();
-            pier2.Add("Location 1");
-            pier2.Add("Location 2");
-            pier2.Add("Location 3");
-            pier2.Add("Location 4");
-            pier2.Add("Location 5");
-
-            var pier3 = new List<string>();
-            pier3.Add("Location 1");
-            pier3.Add("Location 2");
-            pier3.Add("Location 3");
-            pier3.Add("Location 4");
-            pier3.Add("Location 5");
-
-            var pier4 = new List<string>();
-            pier4.Add("Location 1");
-            pier4.Add("Location 2");
-            pier4.Add("Location 3");
-            pier4.Add("Location 4");
-            pier4.Add("Location 5");
-
-            // Header, Child data
-            listDataChild.Add(listDataHeader[0], pier1);
-            listDataChild.Add(listDataHeader[1], pier2);
-            listDataChild.Add(listDataHeader[2], pier3);
-            listDataChild.Add(listDataHeader[3], pier4);
+                foreach (var item in ViewModel.PierResponse.MainLocations)
+                {
+                    listDataHeader.Add(item.Name);
+                    listDataChild.Add(item.Name, item.SubLocations.ToList());
+                }
         }
+   
+        //void FnGetListData()
+        //{
+        //    listDataHeader = new List<string>();
+        //    listDataChild = new Dictionary<string, List<string>>();
+
+        //    // Adding child data
+        //    listDataHeader.Add("Pier 1");
+        //    listDataHeader.Add("Pier 2");
+        //    listDataHeader.Add("Pier 3");
+        //    listDataHeader.Add("Pier 4");
+
+        //    // Adding child data
+        //    var pier1 = new List<string>();
+        //    pier1.Add("Location 1");
+        //    pier1.Add("Location 2");
+        //    pier1.Add("Location 3");
+        //    pier1.Add("Location 4");
+        //    pier1.Add("Location 5");
+
+        //    var pier2 = new List<string>();
+        //    pier2.Add("Location 1");
+        //    pier2.Add("Location 2");
+        //    pier2.Add("Location 3");
+        //    pier2.Add("Location 4");
+        //    pier2.Add("Location 5");
+
+        //    var pier3 = new List<string>();
+        //    pier3.Add("Location 1");
+        //    pier3.Add("Location 2");
+        //    pier3.Add("Location 3");
+        //    pier3.Add("Location 4");
+        //    pier3.Add("Location 5");
+
+        //    var pier4 = new List<string>();
+        //    pier4.Add("Location 1");
+        //    pier4.Add("Location 2");
+        //    pier4.Add("Location 3");
+        //    pier4.Add("Location 4");
+        //    pier4.Add("Location 5");
+
+        //    // Header, Child data
+        //    listDataChild.Add(listDataHeader[0], pier1);
+        //    listDataChild.Add(listDataHeader[1], pier2);
+        //    listDataChild.Add(listDataHeader[2], pier3);
+        //    listDataChild.Add(listDataHeader[3], pier4);
+        //}
 
         void FnClickEvents()
         {

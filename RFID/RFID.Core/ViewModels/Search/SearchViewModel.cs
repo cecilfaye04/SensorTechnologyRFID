@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class SearchViewModel : BaseViewModel
+    public class SearchViewModel : BaseViewModel    
     {
 
         public IMvxCommand ShowSearchResultCommand
@@ -21,10 +21,23 @@ namespace RFID.Core.ViewModels
         private void ShowSearchResultExecuted()
         {
             ShowViewModel<BottomNavigationViewModel>();
+            KeyValuePair<string, string> kvpAct1 = new KeyValuePair<string, string>("bagtagNos", BagtagNo);
             ShowViewModel<BagInfoViewModel>();
         }
 
-     
+        private string _bagtagNo;
+
+        public string BagtagNo
+        {
+            get { return _bagtagNo; }
+            set {
+                _bagtagNo = value;
+                RaisePropertyChanged(() => BagtagNo);
+            }
+        }
+
+
+
 
     }
 }

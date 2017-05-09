@@ -24,6 +24,26 @@ namespace RFID.Core.ViewModels
             Itinerary = bagInfo.PaxItinerary;
         }
 
+        protected override void InitFromBundle(IMvxBundle parameters)
+        {
+            if (parameters.Data.ContainsKey("Value"))
+            {
+                var mykey1value = parameters.Data["Value"];
+                BagtagNo = mykey1value;
+            }
+
+
+            // And so on
+
+            base.InitFromBundle(parameters);
+        }
+
+        public BagInfoViewModel(string bagtagNos)
+        {
+
+        }
+      
+
         public IMvxCommand ShowSearchTrackCommand
         {
             get { return new MvxCommand(ShowSearchTrackExecuted); }
@@ -78,7 +98,9 @@ namespace RFID.Core.ViewModels
         public string BagtagNo
         {
             get { return _bagtag; }
-            set { _bagtag = value; }
+            set { _bagtag = value;
+                RaisePropertyChanged(() => BagtagNo);
+            }
         }
     }
 }

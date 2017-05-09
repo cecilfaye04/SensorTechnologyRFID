@@ -23,7 +23,7 @@ namespace RFID.Droid.Views.Fragments
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            ((MainMenuView)Activity).Title = "0007820706";
+            ((MainMenuView)Activity).Title = ViewModel.BagtagNo;
             ShowBackButton = true;
             return base.OnCreateView(inflater, container, savedInstanceState);
         }

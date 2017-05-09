@@ -2747,38 +2747,38 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0023
 			public const int bottom = 2131427363;
 			
-			// aapt resource value: 0x7f0b00f9
-			public const int bottom_navigation = 2131427577;
-			
-			// aapt resource value: 0x7f0b00f6
-			public const int btnClear = 2131427574;
-			
-			// aapt resource value: 0x7f0b00d3
-			public const int btnNext = 2131427539;
+			// aapt resource value: 0x7f0b00f8
+			public const int bottom_navigation = 2131427576;
 			
 			// aapt resource value: 0x7f0b00f5
-			public const int btnRetry = 2131427573;
+			public const int btnClear = 2131427573;
+			
+			// aapt resource value: 0x7f0b00d2
+			public const int btnNext = 2131427538;
+			
+			// aapt resource value: 0x7f0b00f4
+			public const int btnRetry = 2131427572;
 			
 			// aapt resource value: 0x7f0b00ff
 			public const int btnScan = 2131427583;
 			
-			// aapt resource value: 0x7f0b00eb
-			public const int btnSync = 2131427563;
+			// aapt resource value: 0x7f0b00ea
+			public const int btnSync = 2131427562;
 			
-			// aapt resource value: 0x7f0b00d6
-			public const int button1 = 2131427542;
+			// aapt resource value: 0x7f0b00d5
+			public const int button1 = 2131427541;
 			
-			// aapt resource value: 0x7f0b00d8
-			public const int button2 = 2131427544;
+			// aapt resource value: 0x7f0b00d7
+			public const int button2 = 2131427543;
 			
-			// aapt resource value: 0x7f0b00da
-			public const int button3 = 2131427546;
+			// aapt resource value: 0x7f0b00d9
+			public const int button3 = 2131427545;
 			
-			// aapt resource value: 0x7f0b00dc
-			public const int button4 = 2131427548;
+			// aapt resource value: 0x7f0b00db
+			public const int button4 = 2131427547;
 			
-			// aapt resource value: 0x7f0b00de
-			public const int button5 = 2131427550;
+			// aapt resource value: 0x7f0b00dd
+			public const int button5 = 2131427549;
 			
 			// aapt resource value: 0x7f0b0057
 			public const int buttonPanel = 2131427415;
@@ -2852,8 +2852,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b003e
 			public const int disableHome = 2131427390;
 			
-			// aapt resource value: 0x7f0b00d2
-			public const int dpFlightDate = 2131427538;
+			// aapt resource value: 0x7f0b00d1
+			public const int dpFlightDate = 2131427537;
 			
 			// aapt resource value: 0x7f0b0086
 			public const int drawer_layout = 2131427462;
@@ -2876,8 +2876,11 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b001f
 			public const int enterAlwaysCollapsed = 2131427359;
 			
-			// aapt resource value: 0x7f0b00e6
-			public const int etBagNo = 2131427558;
+			// aapt resource value: 0x7f0b00e5
+			public const int etBagNo = 2131427557;
+			
+			// aapt resource value: 0x7f0b00fd
+			public const int etBagtagNo = 2131427581;
 			
 			// aapt resource value: 0x7f0b00d0
 			public const int etFlight = 2131427536;
@@ -2951,11 +2954,11 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0081
 			public const int image_bagIcon = 2131427457;
 			
-			// aapt resource value: 0x7f0b00e0
-			public const int image_view_row_icon = 2131427552;
+			// aapt resource value: 0x7f0b00df
+			public const int image_view_row_icon = 2131427551;
 			
-			// aapt resource value: 0x7f0b00fb
-			public const int imgSearchIco = 2131427579;
+			// aapt resource value: 0x7f0b00fa
+			public const int imgSearchIco = 2131427578;
 			
 			// aapt resource value: 0x7f0b0113
 			public const int info = 2131427603;
@@ -2993,17 +2996,17 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0054
 			public const int list_item = 2131427412;
 			
-			// aapt resource value: 0x7f0b00d9
-			public const int llArrival = 2131427545;
+			// aapt resource value: 0x7f0b00d8
+			public const int llArrival = 2131427544;
 			
-			// aapt resource value: 0x7f0b00dd
-			public const int llBSO = 2131427549;
+			// aapt resource value: 0x7f0b00dc
+			public const int llBSO = 2131427548;
 			
-			// aapt resource value: 0x7f0b00db
-			public const int llClaim = 2131427547;
+			// aapt resource value: 0x7f0b00da
+			public const int llClaim = 2131427546;
 			
-			// aapt resource value: 0x7f0b00d7
-			public const int llDeparture = 2131427543;
+			// aapt resource value: 0x7f0b00d6
+			public const int llDeparture = 2131427542;
 			
 			// aapt resource value: 0x7f0b00cb
 			public const int llFlightEntry = 2131427531;
@@ -3011,8 +3014,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b00ce
 			public const int llFlightGate = 2131427534;
 			
-			// aapt resource value: 0x7f0b00d5
-			public const int llPier = 2131427541;
+			// aapt resource value: 0x7f0b00d4
+			public const int llPier = 2131427540;
 			
 			// aapt resource value: 0x7f0b007f
 			public const int ll_login = 2131427455;
@@ -3026,11 +3029,11 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0105
 			public const int loadingProgressWheel = 2131427589;
 			
-			// aapt resource value: 0x7f0b00e5
-			public const int lvPierLocation = 2131427557;
+			// aapt resource value: 0x7f0b00e4
+			public const int lvPierLocation = 2131427556;
 			
-			// aapt resource value: 0x7f0b00d4
-			public const int main_content = 2131427540;
+			// aapt resource value: 0x7f0b00d3
+			public const int main_content = 2131427539;
 			
 			// aapt resource value: 0x7f0b0087
 			public const int main_frame = 2131427463;
@@ -3098,8 +3101,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0090
 			public const int navigation_header_container = 2131427472;
 			
-			// aapt resource value: 0x7f0b00df
-			public const int navigation_view = 2131427551;
+			// aapt resource value: 0x7f0b00de
+			public const int navigation_view = 2131427550;
 			
 			// aapt resource value: 0x7f0b004b
 			public const int never = 2131427403;
@@ -3170,17 +3173,17 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b00cc
 			public const int rlFlightEntry = 2131427532;
 			
-			// aapt resource value: 0x7f0b00f4
-			public const int rlRetryClear = 2131427572;
+			// aapt resource value: 0x7f0b00f3
+			public const int rlRetryClear = 2131427571;
 			
-			// aapt resource value: 0x7f0b00e7
-			public const int rlScannedBaggage = 2131427559;
+			// aapt resource value: 0x7f0b00e6
+			public const int rlScannedBaggage = 2131427558;
 			
-			// aapt resource value: 0x7f0b00fa
-			public const int rlSearch = 2131427578;
+			// aapt resource value: 0x7f0b00f9
+			public const int rlSearch = 2131427577;
 			
-			// aapt resource value: 0x7f0b00ee
-			public const int rlSuccessFailed = 2131427566;
+			// aapt resource value: 0x7f0b00ed
+			public const int rlSuccessFailed = 2131427565;
 			
 			// aapt resource value: 0x7f0b0014
 			public const int satellite = 2131427348;
@@ -3218,8 +3221,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0076
 			public const int search_edit_frame = 2131427446;
 			
-			// aapt resource value: 0x7f0b00f8
-			public const int search_frame = 2131427576;
+			// aapt resource value: 0x7f0b00f7
+			public const int search_frame = 2131427575;
 			
 			// aapt resource value: 0x7f0b007c
 			public const int search_go_btn = 2131427452;
@@ -3236,8 +3239,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b007d
 			public const int search_voice_btn = 2131427453;
 			
-			// aapt resource value: 0x7f0b00f7
-			public const int searchmain_frame = 2131427575;
+			// aapt resource value: 0x7f0b00f6
+			public const int searchmain_frame = 2131427574;
 			
 			// aapt resource value: 0x7f0b007e
 			public const int select_dialog_listview = 2131427454;
@@ -3283,9 +3286,6 @@ namespace RFID.Droid
 			
 			// aapt resource value: 0x7f0b00cf
 			public const int spnFlight = 2131427535;
-			
-			// aapt resource value: 0x7f0b00d1
-			public const int spnGate = 2131427537;
 			
 			// aapt resource value: 0x7f0b0039
 			public const int src_atop = 2131427385;
@@ -3404,8 +3404,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0103
 			public const int textViewStatus = 2131427587;
 			
-			// aapt resource value: 0x7f0b00e1
-			public const int text_container = 2131427553;
+			// aapt resource value: 0x7f0b00e0
+			public const int text_container = 2131427552;
 			
 			// aapt resource value: 0x7f0b0095
 			public const int text_input_password_toggle = 2131427477;
@@ -3416,11 +3416,11 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0082
 			public const int text_username = 2131427458;
 			
-			// aapt resource value: 0x7f0b00e2
-			public const int text_view_fullname = 2131427554;
+			// aapt resource value: 0x7f0b00e1
+			public const int text_view_fullname = 2131427553;
 			
-			// aapt resource value: 0x7f0b00e3
-			public const int text_view_username = 2131427555;
+			// aapt resource value: 0x7f0b00e2
+			public const int text_view_username = 2131427554;
 			
 			// aapt resource value: 0x7f0b0000
 			public const int textinput_counter = 2131427328;
@@ -3458,23 +3458,23 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b000e
 			public const int transition_scene_layoutid_cache = 2131427342;
 			
-			// aapt resource value: 0x7f0b00ea
-			public const int tvBaggage = 2131427562;
+			// aapt resource value: 0x7f0b00e9
+			public const int tvBaggage = 2131427561;
+			
+			// aapt resource value: 0x7f0b00fb
+			public const int tvEnterRFID = 2131427579;
 			
 			// aapt resource value: 0x7f0b00fc
-			public const int tvEnterRFID = 2131427580;
-			
-			// aapt resource value: 0x7f0b00fd
-			public const int tvEnterRFID2 = 2131427581;
+			public const int tvEnterRFID2 = 2131427580;
 			
 			// aapt resource value: 0x7f0b00fe
 			public const int tvEnterRFID3 = 2131427582;
 			
-			// aapt resource value: 0x7f0b00f3
-			public const int tvFailed = 2131427571;
-			
 			// aapt resource value: 0x7f0b00f2
-			public const int tvFailedValue = 2131427570;
+			public const int tvFailed = 2131427570;
+			
+			// aapt resource value: 0x7f0b00f1
+			public const int tvFailedValue = 2131427569;
 			
 			// aapt resource value: 0x7f0b0098
 			public const int tvFlight = 2131427480;
@@ -3503,26 +3503,26 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0099
 			public const int tvNameValue = 2131427481;
 			
-			// aapt resource value: 0x7f0b00e4
-			public const int tvPierSelect = 2131427556;
+			// aapt resource value: 0x7f0b00e3
+			public const int tvPierSelect = 2131427555;
+			
+			// aapt resource value: 0x7f0b00eb
+			public const int tvScanInfo = 2131427563;
 			
 			// aapt resource value: 0x7f0b00ec
-			public const int tvScanInfo = 2131427564;
+			public const int tvScanInfo2 = 2131427564;
 			
-			// aapt resource value: 0x7f0b00ed
-			public const int tvScanInfo2 = 2131427565;
+			// aapt resource value: 0x7f0b00e7
+			public const int tvScanned = 2131427559;
 			
 			// aapt resource value: 0x7f0b00e8
-			public const int tvScanned = 2131427560;
+			public const int tvScannedValue = 2131427560;
 			
-			// aapt resource value: 0x7f0b00e9
-			public const int tvScannedValue = 2131427561;
+			// aapt resource value: 0x7f0b00ee
+			public const int tvSuccessValue = 2131427566;
 			
 			// aapt resource value: 0x7f0b00ef
-			public const int tvSuccessValue = 2131427567;
-			
-			// aapt resource value: 0x7f0b00f0
-			public const int tvSuccessful = 2131427568;
+			public const int tvSuccessful = 2131427567;
 			
 			// aapt resource value: 0x7f0b000b
 			public const int up = 2131427339;
@@ -3545,8 +3545,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b011f
 			public const int visible = 2131427615;
 			
-			// aapt resource value: 0x7f0b00f1
-			public const int vwDivider = 2131427569;
+			// aapt resource value: 0x7f0b00f0
+			public const int vwDivider = 2131427568;
 			
 			// aapt resource value: 0x7f0b001a
 			public const int wide = 2131427354;

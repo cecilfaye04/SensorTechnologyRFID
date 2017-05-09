@@ -37,6 +37,16 @@
             android:id="@+id/tvEnterRFID2"
             android:textColor="#757575"
             android:gravity="center" />
+        <EditText
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvEnterRFID2"
+            android:id="@+id/etBagtagNo"
+            android:layout_width="match_parent"
+            android:layout_marginLeft="60dp"
+            android:layout_marginRight="60dp"
+            android:hint="Bagtag no."
+            local:MvxBind="Text BagtagNo"
+            android:gravity="center" />
         <TextView
             android:text="or"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -44,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvEnterRFID2"
             android:id="@+id/tvEnterRFID3"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="55dp"
             android:layout_marginBottom="20dp"
             android:textColor="#757575"
             android:gravity="center" />
