@@ -21,8 +21,9 @@ namespace RFID.Core.ViewModels
         private void ShowSearchResultExecuted()
         {
             ShowViewModel<BottomNavigationViewModel>();
-            KeyValuePair<string, string> kvpAct1 = new KeyValuePair<string, string>("bagtagNos", BagtagNo);
-            ShowViewModel<BagInfoViewModel>();
+            base.StoreParam("Bagtag", BagtagNo);
+            ShowViewModel<BagInfoViewModel>(base.SParam);
+
         }
 
         private string _bagtagNo;

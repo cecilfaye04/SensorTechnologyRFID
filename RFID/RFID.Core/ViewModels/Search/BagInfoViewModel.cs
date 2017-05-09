@@ -22,27 +22,24 @@ namespace RFID.Core.ViewModels
             Flight = bagInfo.FltCode + bagInfo.FltNum;
             FlightDate = bagInfo.FltDate;
             Itinerary = bagInfo.PaxItinerary;
+            BagLatitude = bagInfo.Latitude;
+            BagLongitude = bagInfo.Longitude;
+           
+        }
+        public override void Start()
+        {
+            BagtagNo = base.GetParam("Bagtag");
         }
 
         protected override void InitFromBundle(IMvxBundle parameters)
         {
-            if (parameters.Data.ContainsKey("Value"))
+            if (parameters.Data.Count > 0)
             {
-                var mykey1value = parameters.Data["Value"];
-                BagtagNo = mykey1value;
+                base.RParam = (Dictionary<string, string>)parameters.Data;
             }
-
-
-            // And so on
-
-            base.InitFromBundle(parameters);
         }
 
-        public BagInfoViewModel(string bagtagNos)
-        {
 
-        }
-      
 
         public IMvxCommand ShowSearchTrackCommand
         {
@@ -51,7 +48,9 @@ namespace RFID.Core.ViewModels
 
         private void ShowSearchTrackExecuted()
         {
-            ShowViewModel<BagLocateViewModel>();
+            base.StoreParam("BagLatitude", BagLatitude);
+            base.StoreParam("BagLongitude", BagLongitude);
+            ShowViewModel<BagLocateViewModel>(base.SParam);
         }
 
 
@@ -102,5 +101,23 @@ namespace RFID.Core.ViewModels
                 RaisePropertyChanged(() => BagtagNo);
             }
         }
+
+        private string _baglatitude;
+
+        public string BagLatitude
+        {
+            get { return _baglatitude; }
+            set { _baglatitude = value; }
+        }
+
+        private string _bagLongitude;
+
+        public string BagLongitude
+        {
+            get { return _bagLongitude; }
+            set { _bagLongitude = value; }
+        }
+
+
     }
 }

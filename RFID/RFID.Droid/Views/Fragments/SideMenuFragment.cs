@@ -35,32 +35,32 @@ namespace RFID.Droid.Views
             _navigationView.SetNavigationItemSelectedListener(this);
             _navigationView.Menu.FindItem(Resource.Id.nav_home).SetChecked(true);
 
-            if (ViewModel.AppAccess.Count > 0)
-            {
-                if (!ViewModel.AppAccess.Contains("BSO"))
-                {
-                    _navigationView.Menu.FindItem(Resource.Id.nav_bso).SetVisible(false);
-                }
+            //if (ViewModel.AppAccess.Count > 0)
+            //{
+            //    if (!ViewModel.AppAccess.Contains("BSO"))
+            //    {
+            //        _navigationView.Menu.FindItem(Resource.Id.nav_bso).SetVisible(false);
+            //    }
 
-                if (!ViewModel.AppAccess.Contains("Pier"))
-                {
-                    _navigationView.Menu.FindItem(Resource.Id.nav_pier).SetVisible(false);
-                }
-                if (!ViewModel.AppAccess.Contains("Claim"))
-                {
-                    _navigationView.Menu.FindItem(Resource.Id.nav_claim).SetVisible(false);
-                }
-                if (!ViewModel.AppAccess.Contains("Arrival"))
-                {
-                    _navigationView.Menu.FindItem(Resource.Id.nav_arrival).SetVisible(false);
-                }
-                if (!ViewModel.AppAccess.Contains("Departure"))
-                {
-                    _navigationView.Menu.FindItem(Resource.Id.nav_departure).SetVisible(false);
-                }
-            }
-            else
-            { }
+            //    if (!ViewModel.AppAccess.Contains("Pier"))
+            //    {
+            //        _navigationView.Menu.FindItem(Resource.Id.nav_pier).SetVisible(false);
+            //    }
+            //    if (!ViewModel.AppAccess.Contains("Claim"))
+            //    {
+            //        _navigationView.Menu.FindItem(Resource.Id.nav_claim).SetVisible(false);
+            //    }
+            //    if (!ViewModel.AppAccess.Contains("Arrival"))
+            //    {
+            //        _navigationView.Menu.FindItem(Resource.Id.nav_arrival).SetVisible(false);
+            //    }
+            //    if (!ViewModel.AppAccess.Contains("Departure"))
+            //    {
+            //        _navigationView.Menu.FindItem(Resource.Id.nav_departure).SetVisible(false);
+            //    }
+            //}
+            //else
+            //{ }
          
 
 

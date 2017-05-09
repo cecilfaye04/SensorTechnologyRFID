@@ -32,12 +32,22 @@ namespace RFID.Core.ViewModels
 
         public IMvxCommand ShowPierScanCommand
         {
-            get { return new MvxCommand(ShowPierScanExecuted); }
+            get {
+                return new MvxCommand(ShowPierScanExecuted); }
         }
 
         private void ShowPierScanExecuted()
         {
-            ShowViewModel<PierClaimScanViewModel>();
+            base.StoreParam("PierLocation", PierLocation);
+            ShowViewModel<PierClaimScanViewModel>(base.SParam);
+        }
+
+        private string _pierLocation;
+
+        public string PierLocation
+        {
+            get { return _pierLocation; }
+            set { _pierLocation = value; }
         }
 
         private GetPierClaimLocationResponse _pierResponse;

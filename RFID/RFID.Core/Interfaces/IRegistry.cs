@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.Interfaces
 {
-    interface IRegistry
+    public interface IRegistry
     {
         String DeviceName { get; set; }
         String Station { get; set; }

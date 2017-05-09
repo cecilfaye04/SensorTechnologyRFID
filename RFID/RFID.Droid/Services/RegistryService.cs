@@ -13,8 +13,45 @@ using RFID.Core.Interfaces;
 
 namespace RFID.Droid.Services
 {
-    public class RegistryService: IRegistry
+    public class RegistryService : IRegistry
     {
-        
+        public string DeviceName
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Station
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public string Version
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

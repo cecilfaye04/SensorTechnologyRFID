@@ -7,32 +7,43 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-   public class BaseViewModel : MvxViewModel
+    public class BaseViewModel : MvxViewModel
     {
-        Dictionary<string, string> SParam;
-        Dictionary<string, string> RParam;
+        protected Dictionary<string, string> SParam;
+        protected Dictionary<string, string> RParam;
 
-        void StoreParam(string key, string value) {
+        protected void StoreParam(string key, string value)
+        {
+
             if (SParam == null)
             {
                 SParam = new Dictionary<string, string>();
             }
 
-            SParam.Add(key, value);
-        }
-
-        protected override void InitFromBundle(IMvxBundle parameters)
-        {
-
-            if (parameters.Data.Count > 0)
+            if (SParam.ContainsKey(key))
             {
-                RParam = (Dictionary<string, string>)parameters.Data;
+                SParam[key] = value;
+            }
+            else
+            {
+                SParam.Add(key, value);
             }
 
-            base.InitFromBundle(parameters);
         }
 
-        string GetParam(string key, string value) {
+        //protected override void InitFromBundle(IMvxBundle parameters)
+        //{
+
+        //    if (parameters.Data.Count > 0)
+        //    {
+        //        RParam = (Dictionary<string, string>)parameters.Data;
+        //    }
+
+        //    base.InitFromBundle(parameters);
+        //}
+
+        protected string GetParam(string key)
+        {
             string sReturn = "";
 
             if (RParam != null && RParam.ContainsKey(key))

@@ -14,7 +14,7 @@ namespace RFID.Core.Entities
         public string PaxName { get; set; }
         public string PaxItinerary { get; set; }
         public BagHistory BagHistory { get; set; }
-        public string Logitude { get; set; }
+        public string Longitude { get; set; }
         public string Latitude { get; set; }
     }
 

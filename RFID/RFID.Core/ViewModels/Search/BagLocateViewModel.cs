@@ -9,14 +9,15 @@ namespace RFID.Core.ViewModels
 {
     public class BagLocateViewModel : BaseViewModel
     {
-        public IMvxCommand ShowBottomNavigation
-        {
-            get { return new MvxCommand(ShowBottomExecuted); }
-        }
+      
+        //public IMvxCommand ShowBottomNavigation
+        //{
+        //    get { return new MvxCommand(ShowBottomExecuted); }
+        //}
 
-        private void ShowBottomExecuted()
-        {
-            ShowViewModel<BottomNavigationViewModel>();
-        }
+        //private void ShowBottomExecuted()
+        //{
+        //    ShowViewModel<BottomNavigationViewModel>();
+        //}
     }
 }
