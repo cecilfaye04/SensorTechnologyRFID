@@ -53,5 +53,14 @@ namespace RFID.Core.ViewModels
 
             return sReturn;
         }
+
+        private bool progressBarVisible;
+
+        public bool ProgressBarVisible
+        {
+            get { return progressBarVisible; }
+            set { progressBarVisible = value; RaisePropertyChanged(() => ProgressBarVisible); }
+        }
+
     }
 }

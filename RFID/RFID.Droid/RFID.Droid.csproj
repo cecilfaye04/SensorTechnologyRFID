@@ -220,6 +220,7 @@
     <Compile Include="Views\Fragments\BagTrackFragment.cs" />
     <Compile Include="Views\Fragments\BaseFragment.cs" />
     <Compile Include="Views\Fragments\BottomNavigationFragment.cs" />
+    <Compile Include="Views\Fragments\CustomMapFragment.cs" />
     <Compile Include="Views\Fragments\DepArrScanScreenFragment.cs" />
     <Compile Include="Views\Fragments\FlightEntryFragment.cs" />
     <Compile Include="Views\Fragments\HomeFragment.cs" />
@@ -233,6 +234,7 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\Roboto-Regular.ttf" />
+    <None Include="app.config" />
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />
     <None Include="Resources\AboutResources.txt" />
@@ -289,6 +291,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\fragment_bag_track.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\listview_scanhistorycustom.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -423,6 +428,15 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\ic_bagInfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_arrival.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_departure.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_checkin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -2,7 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Android.Webkit;
+using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
@@ -23,7 +24,6 @@ using System.IO;
 using Polylines = Android.Gms.Maps.Model.Polyline;
 using Javax.Net.Ssl;
 using Newtonsoft.Json;
-
 namespace RFID.Droid.Views.Fragments
 {
     [MvxFragment(typeof(MainMenuViewModel), Resource.Id.search_frame, true)]
@@ -31,27 +31,39 @@ namespace RFID.Droid.Views.Fragments
     public class BagTrackFragment : BaseFragment<BagTrackViewModel>, IOnMapReadyCallback
     {
         private GoogleMap googleMap;
+        MapView mapView;
         public PolylineOptions RouteLine { get; set; }
         public Polylines Routes { get; set; }
+        //MyLocationOverlay myLocationOverlay;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            ((MainMenuView)Activity).Title = "Jennifer Smith's Bag";
+            ((MainMenuView)Activity).Title = "Bill Gates' Bag";
             ShowBackButton = true;
-            var mainActivity = Activity as MainMenuView;
             var rootView = base.OnCreateView(inflater, container, savedInstanceState);
-            var mapFragment = (MapFragment)mainActivity.FragmentManager.FindFragmentById(Resource.Id.map);
-            FragmentManager  fm = ChildFragmentManager;
-            SupportMapFragment mapwFragment = (SupportMapFragment)fm.FindFragmentById(Resource.Id.map);
-            mapFragment.GetMapAsync(this);
+            //var mainActivity = Activity as MainMenuView;
+            //var mapFragment = (SupportMapFragment)rootView.FragmentManager.FindFragmentById(Resource.Id.map);
+            //FragmentManager  fm = ChildFragmentManager;
+            //SupportMapFragment mapwFragment = (SupportMapFragment)fm.FindFragmentById(Resource.Id.map);
+            //mapwFragment.GetMapAsync(this);
+            //SetContentView(Resource.Layout.main);
+
+            mapView = rootView.FindViewById<MapView>(Resource.Id.map);
+            mapView.OnCreate(savedInstanceState);
+            mapView.GetMapAsync(this);
+           
+          
             return rootView;
 
         }
 
+
         public void OnMapReady(GoogleMap googleMap)
         {
+
             this.googleMap = googleMap;
-            this.googleMap.MyLocationEnabled = true;
+            //googleMap.MyLocationEnabled = true;
+            //googleMap.UiSettings.ScrollGesturesEnabled = true;
             MarkerOptions mrkerBagLocation = new MarkerOptions();
             mrkerBagLocation.SetPosition(new LatLng(47.636372, -122.126888));
             mrkerBagLocation.SetTitle("Bag Location");
@@ -59,30 +71,36 @@ namespace RFID.Droid.Views.Fragments
             MarkerOptions mrkerUserLocation = new MarkerOptions();
             mrkerUserLocation.SetPosition(new LatLng(47.639466, -122.130665));
             mrkerUserLocation.SetTitle("Your Location");
-            this.googleMap.AddMarker(mrkerUserLocation);
-            this.googleMap.AddMarker(mrkerBagLocation);
+            googleMap.AddMarker(mrkerUserLocation);
+            googleMap.AddMarker(mrkerBagLocation);
+            googleMap.MoveCamera(CameraUpdateFactory.NewLatLng(new LatLng(47.639466, -122.130665)));
             GetRouteInfo();
 
         }
         public async void GetRouteInfo()
         {
             string response = string.Empty;
-
-            await Task.Run(() =>
+            try
             {
-                URL url = new URL(string.Format("https://maps.googleapis.com/maps/api/directions/json?" + "origin={0},{1}&destination={2},{3}&key={4}",
-                     47.636372, -122.126888, 47.639466, -122.130665, "AIzaSyCn2XMz_4-GjsAu2Ge1M6h8mFBVpResBYs"));
-
-                HttpsURLConnection urlConnection = (HttpsURLConnection)url.OpenConnection();
-                urlConnection.Connect();
-                var stream = urlConnection.InputStream;
-
-                using (var streamReader = new StreamReader(stream))
+                await Task.Run(() =>
                 {
-                    response = streamReader.ReadToEnd();
-                }
-            });
+                    URL url = new URL(string.Format("https://maps.googleapis.com/maps/api/directions/json?" + "origin={0},{1}&destination={2},{3}&key={4}",
+                         47.636372, -122.126888, 47.639466, -122.130665, "AIzaSyCn2XMz_4-GjsAu2Ge1M6h8mFBVpResBYs"));
 
+                    HttpsURLConnection urlConnection = (HttpsURLConnection)url.OpenConnection();
+                    urlConnection.Connect();
+                    var stream = urlConnection.InputStream;
+
+                    using (var streamReader = new StreamReader(stream))
+                    {
+                        response = streamReader.ReadToEnd();
+                    }
+                });
+            }
+            catch (Exception e)
+            {
+                var x = e.Message;
+            }
             if (Routes != null)
             {
                 Routes.Remove();

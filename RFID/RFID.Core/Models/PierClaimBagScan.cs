@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite.Net.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.Models
 {
-    class PierClaimBagScan: Location
+    [Table("PierClaimBagScan")]
+    public class PierClaimBagScan: Location
     {
         public string Bagtag { get; set; }
         public bool IsUploaded { get; set; }

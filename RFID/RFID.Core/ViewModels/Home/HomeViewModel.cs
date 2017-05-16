@@ -1,6 +1,7 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Interfaces;
+using RFID.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,15 +13,66 @@ namespace RFID.Core.ViewModels
    public class HomeViewModel : BaseViewModel
     {
 
-        public override async void Start()
+
+
+        public async void InitializeButton()
         {
+            ProgressBarVisible = true;
             await Mvx.Resolve<IInitilializeSqliteService>().InitializeAsync();
             var user = await Mvx.Resolve<ISqliteService>().LoadUserAsync();
-            List<string> appAccess = user.AppAccess.Split(',').ToList<string>();
-            appAccess.Reverse();
-            AppAccess = appAccess;
+            EnableApps(user.AppAccess);
+            ProgressBarVisible = false;
         }
 
+        private void EnableApps(string appAccess)
+        {
+
+            IsPierVisible = appAccess.Contains("Pier");
+            IsDepartureVisible = appAccess.Contains("Departure");
+            IsArrivalVisible = appAccess.Contains("Arrival");
+            IsClaimVisible = appAccess.Contains("Claim");
+            IsBSOVisible = appAccess.Contains("BSO");
+        }
+
+        private bool isPierVisible;
+
+        public bool IsPierVisible
+        {
+            get { return isPierVisible; }
+            set { isPierVisible = value; RaisePropertyChanged(() => IsPierVisible); }
+        }
+
+        private bool isDepartureVisible;
+
+        public bool IsDepartureVisible
+        {
+            get { return isDepartureVisible; }
+            set { isDepartureVisible = value; RaisePropertyChanged(() => IsDepartureVisible); }
+        }
+
+        private bool isArrivalVisible;
+
+        public bool IsArrivalVisible
+        {
+            get { return isArrivalVisible; }
+            set { isArrivalVisible = value; RaisePropertyChanged(() => IsArrivalVisible); }
+        }
+
+        private bool isClaimVisible;
+
+        public bool IsClaimVisible
+        {
+            get { return isClaimVisible; }
+            set { isClaimVisible = value; RaisePropertyChanged(() => IsClaimVisible); }
+        }
+
+        private bool isBSOVisible;
+
+        public bool IsBSOVisible
+        {
+            get { return isBSOVisible; }
+            set { isBSOVisible = value; RaisePropertyChanged(() => IsPierVisible); }
+        }
 
         private List<string> appAccess;
 

@@ -166,6 +166,8 @@ class MonoPackageManager_Resources {
 		"System.Reflection.Primitives.dll",
 		"System.Text.Encoding.Extensions.dll",
 		"System.Runtime.InteropServices.dll",
+		"SQLiteNetExtensions.dll",
+		"SQLiteNetExtensionsAsync.dll",
 	};
 	public static final String[] Dependencies = new String[]{
 	};

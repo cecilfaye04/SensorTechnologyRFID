@@ -20,8 +20,13 @@ namespace RFID.Core.Services
 
         public async Task InitializeAsync()
         {
-            await CreateTableAsync<UserModel>();
-            await SeedAsync();
+        
+                await CreateTableAsync<UserModel>();
+                await CreateTableAsync<BagInfo>();
+                await CreateTableAsync<PierClaimBagScan>();
+                await SeedAsync();
+     
+           
         }
 
         private async Task SeedAsync()

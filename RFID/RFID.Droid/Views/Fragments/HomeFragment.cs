@@ -28,30 +28,7 @@ namespace RFID.Droid.Views
             ShowHamburgerMenu = true;
 
             var view = base.OnCreateView(inflater, container, savedInstanceState);
-          
-                //if (!ViewModel.AppAccess.Contains("BSO"))
-                //{
-                //    view.FindViewById<LinearLayout>(Resource.Id.llBSO).Visibility = ViewStates.Gone;
-                //}
-                //if (!ViewModel.AppAccess.Contains("Pier"))
-                //{
-                //    view.FindViewById<LinearLayout>(Resource.Id.llPier).Visibility = ViewStates.Gone;
-                //}
-                //if (!ViewModel.AppAccess.Contains("Claim"))
-                //{
-                //    view.FindViewById<LinearLayout>(Resource.Id.llClaim).Visibility = ViewStates.Gone;
-                //}
-                //if (!ViewModel.AppAccess.Contains("Arrival"))
-                //{
-                //    view.FindViewById<LinearLayout>(Resource.Id.llArrival).Visibility = ViewStates.Gone;
-                //}
-                //if (!ViewModel.AppAccess.Contains("Departure"))
-                //{
-                //    view.FindViewById<LinearLayout>(Resource.Id.llDeparture).Visibility = ViewStates.Gone;
-                //}
-         
-
-
+            ViewModel.InitializeButton();
             return view;
         }
 

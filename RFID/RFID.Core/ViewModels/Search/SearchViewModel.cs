@@ -2,6 +2,7 @@
 using MvvmCross.Platform;
 using RFID.Core.Entities;
 using RFID.Core.Interfaces;
+using RFID.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,11 +21,46 @@ namespace RFID.Core.ViewModels
 
         private void ShowSearchResultExecuted()
         {
+            ProgressBarVisible = true;
             ShowViewModel<BottomNavigationViewModel>();
             base.StoreParam("Bagtag", BagtagNo);
-            ShowViewModel<BagInfoViewModel>(base.SParam);
 
+            GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, DeviceName = "Apple", Station = "123", Username = "admin", Version = "1" };
+
+            var bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);
+
+            if (bagInfo.ReturnCode == "1") {
+                  var mBagInfo = new BagInfo();
+
+                BagScanPoint scanPoint;
+                List<BagScanPoint> mscanHistory = new List<BagScanPoint>();
+                foreach (var item in bagInfo.BagHistory)
+                {
+                    scanPoint = new BagScanPoint();
+                    scanPoint.Icon = item.ScanType;
+                    scanPoint.ScanPoint = item.Location;
+                    scanPoint.ScanTime = item.DateTime;
+                    mscanHistory.Add(scanPoint);
+                }
+                mBagInfo.Bagtag = BagtagNo;
+                mBagInfo.PaxName = bagInfo.PaxName;
+                mBagInfo.PaxItinerary = bagInfo.PaxItinerary;
+                mBagInfo.Latitude = bagInfo.Latitude;
+                mBagInfo.Longitude = bagInfo.Longitude;
+                mBagInfo.FltCode = bagInfo.FltCode;
+                mBagInfo.FltDate = bagInfo.FltDate;
+                mBagInfo.FltNum = bagInfo.FltNum;
+
+                mBagInfo.BagScanPoints = mscanHistory;
+                Mvx.Resolve<ISqliteService>().UpdateBagInfoAsync(mBagInfo);
+                ShowViewModel<BagInfoViewModel>(base.SParam);
+            }
+          
+            ProgressBarVisible = false;
         }
+
+
+        
 
         private string _bagtagNo;
 

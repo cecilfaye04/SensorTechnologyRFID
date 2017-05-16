@@ -26,8 +26,9 @@
             android:layout_below="@id/imgSearchIco"
             android:id="@+id/tvEnterRFID"
             android:layout_marginTop="25dp"
-            android:textColor="#757575"
-            android:gravity="center" />
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="20dp" />
         <TextView
             android:text="at the search box"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -35,8 +36,9 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/tvEnterRFID"
             android:id="@+id/tvEnterRFID2"
-            android:textColor="#757575"
-            android:gravity="center" />
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="20dp" />
         <EditText
             android:layout_height="wrap_content"
             android:layout_below="@id/tvEnterRFID2"
@@ -56,8 +58,9 @@
             android:id="@+id/tvEnterRFID3"
             android:layout_marginTop="55dp"
             android:layout_marginBottom="20dp"
-            android:textColor="#757575"
-            android:gravity="center" />
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="20dp" />
         <Button
             android:text="Scan the RFID number"
             android:layout_width="186.0dp"
@@ -69,5 +72,17 @@
             android:background="#3F51B5"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="true"
+            android:indeterminateOnly="true"
+            android:isScrollContainer="true"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:soundEffectsEnabled="false"
+            android:layout_centerVertical="true"
+            local:MvxBind="Visible ProgressBarVisible"
+            android:visibility="invisible" />
     </RelativeLayout>
 </LinearLayout>

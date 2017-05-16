@@ -9,17 +9,22 @@
         android:layout_height="match_parent">
         <include
             layout="@layout/toolbar_actionbar" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:id="@+id/view1"
+            android:layout_marginTop="20dp" />
         <LinearLayout
             android:orientation="horizontal"
             android:background="@drawable/shadow"
-            android:minWidth="25px"
-            android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:id="@+id/llPier"
-            android:layout_marginTop="65dp"
+            android:layout_below="@id/view1"
+            android:layout_marginTop="10dp"
+            local:MvxBind="Visible IsPierVisible"
             android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginRight="20dp"
+            android:id="@+id/llPier">
             <ImageView
                 android:src="@drawable/pier"
                 android:layout_width="120dp"
@@ -46,15 +51,14 @@
         <LinearLayout
             android:orientation="horizontal"
             android:background="@drawable/shadow"
-            android:minWidth="25px"
-            android:minHeight="25px"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:id="@+id/llDeparture"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_below="@id/llPier"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            local:MvxBind="Visible IsDepartureVisible">
             <ImageView
                 android:src="@drawable/departure"
                 android:layout_width="120dp"
@@ -81,15 +85,14 @@
         <LinearLayout
             android:orientation="horizontal"
             android:background="@drawable/shadow"
-            android:minWidth="25px"
-            android:minHeight="25px"
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:id="@+id/llArrival"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_below="@id/llDeparture"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            local:MvxBind="Visible IsArrivalVisible">
             <ImageView
                 android:src="@drawable/arrival"
                 android:layout_width="120dp"
@@ -123,7 +126,8 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:layout_below="@id/llArrival"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            local:MvxBind="Visible IsClaimVisible">
             <ImageView
                 android:src="@drawable/claim"
                 android:layout_width="120dp"
@@ -158,7 +162,8 @@
             android:layout_marginBottom="30dp"
             android:layout_marginRight="20dp"
             android:layout_below="@id/llClaim"
-            android:layout_marginTop="10dp">
+            android:layout_marginTop="10dp"
+            local:MvxBind="Visible IsBSOVisible">
             <ImageView
                 android:src="@drawable/bso"
                 android:layout_width="120dp"
@@ -181,5 +186,17 @@
                 android:textColor="#3F51B5"
                 android:textStyle="bold" />
         </LinearLayout>
+        <ProgressBar
+            android:id="@+id/pb"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="true"
+            android:indeterminateOnly="true"
+            android:isScrollContainer="true"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:soundEffectsEnabled="false"
+            android:layout_centerVertical="true"
+            local:MvxBind="Visible ProgressBarVisible"
+            android:visibility="invisible" />
     </RelativeLayout>
 </ScrollView>

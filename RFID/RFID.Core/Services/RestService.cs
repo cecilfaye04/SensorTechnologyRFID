@@ -24,7 +24,7 @@ namespace RFID.Core.Services
                     ReturnCode = "1",
                     Name = "Admin User",
                     Message = "Successfully Login",
-                    AppAccess = "Pier,Departure,Claim,Arrival"
+                    AppAccess = "Pier,Arrival,Departure,Claim,BSO"
                 };
                 return loginResponse;
             }
@@ -89,8 +89,28 @@ namespace RFID.Core.Services
             getBagInfoResponse.Latitude = "47.72980";
             getBagInfoResponse.Longitude = "-122.14931";
 
+            
+            List<ScanPoint> scanHistory = new List<ScanPoint>();
+            scanHistory.Add(newscanPoint("ic_checkin", "Checkin - MNL - Manila, Philippines"));
+            scanHistory.Add(newscanPoint("ic_departure", "Departure - MNL - Manila, Philippines"));
+            scanHistory.Add(newscanPoint("ic_arrival", "Arrival - NRT - Tokyo, Japan"));
+            scanHistory.Add(newscanPoint("ic_departure", "Departure - NRT - Tokyo, Japan"));
+            scanHistory.Add(newscanPoint("ic_arrival", "Arrival - MSP - Minneapolis, USA"));
+            scanHistory.Add(newscanPoint("ic_departure", "Departure - MSP - Minneapolis, USA"));
+            getBagInfoResponse.BagHistory = scanHistory.ToArray<ScanPoint>();
+
+        
             return getBagInfoResponse;
 
+        }
+
+        private ScanPoint newscanPoint(string icon, string name)
+        {
+            ScanPoint mscanpoint = new ScanPoint();
+            mscanpoint.ScanType = icon;
+            mscanpoint.Location = name;
+            mscanpoint.DateTime = DateTime.Now.ToString("HH:mm MMM dd, yyyy");
+            return mscanpoint;
         }
 
         public GetFlightDetailsResponse GetFlightDetails(GetFlightDetailsInput input)

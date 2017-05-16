@@ -72,7 +72,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvScanInfo"
         android:gravity="center"
-        android:textSize="15dp" />
+        android:textSize="18dp"
+        android:textColor="#000000" />
     <TextView
         android:text="uploaded to the system"
         android:textAppearance="?android:attr/textAppearanceSmall"
@@ -80,7 +81,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/tvScanInfo2"
         android:gravity="center"
-        android:textSize="15dp" />
+        android:textSize="18dp"
+        android:textColor="#000000" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -95,7 +97,7 @@
             android:textSize="55dp"
             android:layout_width="wrap_content"
             android:layout_marginLeft="20dp"
-            android:textColor="#424242" />
+            android:textColor="#000000" />
         <TextView
             android:text="Successful"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -105,7 +107,7 @@
             android:layout_below="@id/tvSuccessValue"
             android:gravity="center"
             android:layout_marginRight="40dp"
-            android:textColor="#424242" />
+            android:textColor="#000000" />
         <View
             android:layout_width="2dp"
             android:layout_height="122.0dp"
@@ -121,7 +123,7 @@
             android:id="@+id/tvFailedValue"
             android:textSize="55dp"
             android:layout_marginLeft="40dp"
-            android:textColor="#424242" />
+            android:textColor="#000000" />
         <TextView
             android:text="Failed"
             android:textAppearance="?android:attr/textAppearanceLarge"
@@ -132,7 +134,7 @@
             android:layout_toRightOf="@id/tvSuccessful"
             android:gravity="center"
             android:layout_marginLeft="47dp"
-            android:textColor="#424242" />
+            android:textColor="#000000" />
     </RelativeLayout>
     <LinearLayout
         android:orientation="horizontal"

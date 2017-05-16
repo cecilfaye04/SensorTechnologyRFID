@@ -13,14 +13,15 @@ namespace RFID.Core.Entities
         public string FltDate { get; set; }
         public string PaxName { get; set; }
         public string PaxItinerary { get; set; }
-        public BagHistory BagHistory { get; set; }
+        public ScanPoint[] BagHistory { get; set; }
         public string Longitude { get; set; }
         public string Latitude { get; set; }
     }
 
-    public class BagHistory
+    public class ScanPoint
     {
         public string Location { get; set; }
         public string DateTime { get; set; }
+        public string ScanType { get; set; }
     }
 }

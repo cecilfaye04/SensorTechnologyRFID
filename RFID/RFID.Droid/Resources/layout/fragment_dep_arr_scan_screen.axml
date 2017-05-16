@@ -24,7 +24,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/textView1"
-            android:layout_marginLeft="15dp" />
+            android:layout_marginLeft="15dp"
+            android:textColor="#000000"
+            android:textSize="20dp" />
         <TextView
             android:text="Dest Station:"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -33,24 +35,30 @@
             android:layout_below="@id/textView1"
             android:id="@+id/textView2"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="15dp" />
+            android:layout_marginLeft="15dp"
+            android:textColor="#000000"
+            android:textSize="20dp" />
         <TextView
-            android:text=" 138"
+            android:text="1"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/textView1"
             android:id="@+id/textView3"
-            android:layout_below="@id/textView3" />
+            android:layout_below="@id/textView3"
+            android:textColor="#000000"
+            android:textSize="20dp" />
         <TextView
-            android:text=" PHL"
+            android:text="MNL"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/textView2"
             android:id="@+id/textView4"
             android:layout_below="@id/textView3"
-            android:layout_marginTop="5dp" />
+            android:layout_marginTop="5dp"
+            android:textColor="#000000"
+            android:textSize="20dp" />
         <TextView
             android:text="Date:"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -58,14 +66,18 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/textView3"
             android:id="@+id/textView5"
-            android:layout_marginLeft="85dp" />
+            android:layout_marginLeft="115dp"
+            android:textColor="#000000"
+            android:textSize="20dp" />
         <TextView
             android:text=" 5/2/2017"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/textView5"
-            android:id="@+id/textView6" />
+            android:id="@+id/textView6"
+            android:textColor="#000000"
+            android:textSize="20dp" />
         <TextView
             android:text="ETA: 16:00"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -75,7 +87,9 @@
             android:id="@+id/textView7"
             android:layout_below="@id/textView5"
             android:layout_marginTop="5dp"
-            android:layout_marginLeft="48dp" />
+            android:layout_marginLeft="48dp"
+            android:textColor="#000000"
+            android:textSize="20dp" />
     </RelativeLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -149,7 +163,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/textView26"
         android:gravity="center"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:textColor="#000000" />
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
@@ -161,7 +176,7 @@
         android:layout_height="68.7dp"
         android:id="@+id/relativeLayout2"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginRight="10dp">
         <ImageView
             android:src="@drawable/logo_L"
@@ -170,13 +185,15 @@
             android:id="@+id/imageView1"
             android:layout_marginLeft="20dp" />
         <TextView
-            android:text="Loaded"
+            android:text="Mail"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView1"
             android:id="@+id/textView13"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+            android:textSize="17dp" />
         <TextView
             android:text="72/187"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -185,7 +202,9 @@
             android:layout_toRightOf="@id/imageView1"
             android:id="@+id/textView14"
             android:layout_below="@id/textView13"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="20dp" />
         <Space
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -199,13 +218,15 @@
             android:id="@+id/imageView2"
             android:layout_marginLeft="50dp" />
         <TextView
-            android:text="Loaded"
+            android:text="Freight"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView2"
             android:id="@+id/textView15"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+            android:textSize="17dp" />
         <TextView
             android:text="72/187"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -214,14 +235,16 @@
             android:layout_toRightOf="@id/imageView2"
             android:id="@+id/textView16"
             android:layout_below="@id/textView15"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="20dp" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="68.7dp"
         android:id="@+id/relativeLayout3"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginRight="10dp">
         <ImageView
             android:src="@drawable/logo_L"
@@ -230,13 +253,15 @@
             android:id="@+id/imageView3"
             android:layout_marginLeft="20dp" />
         <TextView
-            android:text="Loaded"
+            android:text="Ballast"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView3"
             android:id="@+id/textView17"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+            android:textSize="17dp" />
         <TextView
             android:text="72/187"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -245,7 +270,9 @@
             android:layout_toRightOf="@id/imageView3"
             android:id="@+id/textView18"
             android:layout_below="@id/textView17"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="20dp" />
         <ImageView
             android:src="@drawable/logo_L"
             android:layout_width="77.3dp"
@@ -254,13 +281,15 @@
             android:id="@+id/imageView4"
             android:layout_marginLeft="50dp" />
         <TextView
-            android:text="Loaded"
+            android:text="Comat"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView4"
             android:id="@+id/textView19"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+            android:textSize="17dp" />
         <TextView
             android:text="72/187"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -269,14 +298,16 @@
             android:layout_toRightOf="@id/imageView4"
             android:id="@+id/textView20"
             android:layout_below="@id/textView19"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="20dp" />
     </RelativeLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="68.7dp"
         android:id="@+id/relativeLayout4"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginLeft="5dp"
         android:layout_marginRight="10dp">
         <ImageView
             android:src="@drawable/logo_L"
@@ -285,13 +316,15 @@
             android:id="@+id/imageView5"
             android:layout_marginLeft="20dp" />
         <TextView
-            android:text="Loaded"
+            android:text="Bags to Unload"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView5"
             android:id="@+id/textView21"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+            android:textSize="17dp" />
         <TextView
             android:text="72/187"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -300,7 +333,9 @@
             android:layout_toRightOf="@id/imageView5"
             android:id="@+id/textView22"
             android:layout_below="@id/textView21"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="20dp" />
         <ImageView
             android:src="@drawable/logo_L"
             android:layout_width="77.3dp"
@@ -309,13 +344,15 @@
             android:id="@+id/imageView6"
             android:layout_marginLeft="50dp" />
         <TextView
-            android:text="Loaded"
+            android:text="Utility Devices"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView6"
             android:id="@+id/textView23"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="8dp"
+            android:textColor="#000000"
+            android:textSize="17dp" />
         <TextView
             android:text="72/187"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -324,6 +361,8 @@
             android:layout_toRightOf="@id/imageView6"
             android:id="@+id/textView24"
             android:layout_below="@id/textView23"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textColor="#000000"
+            android:textSize="20dp" />
     </RelativeLayout>
 </LinearLayout>

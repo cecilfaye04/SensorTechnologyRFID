@@ -2,6 +2,7 @@
 using MvvmCross.Platform;
 using RFID.Core.Entities;
 using RFID.Core.Interfaces;
+using RFID.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,20 @@ namespace RFID.Core.ViewModels
 {
     public class BagInfoViewModel : BaseViewModel
     {
+
+
         public BagInfoViewModel()
+        {
+
+
+            RetrieveDisplayBagInfo();
+            testScanHistory();
+        }
+
+        /// <summary>
+        /// delete after solving the issue in LoadBagInfoAsync
+        /// </summary>
+        private void testScanHistory()
         {
             GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, DeviceName = "Apple", Station = "123", Username = "admin", Version = "1" };
 
@@ -24,8 +38,36 @@ namespace RFID.Core.ViewModels
             Itinerary = bagInfo.PaxItinerary;
             BagLatitude = bagInfo.Latitude;
             BagLongitude = bagInfo.Longitude;
-           
+
+            BagScanPoint scanPoint;
+            List<BagScanPoint> mscanHistory = new List<BagScanPoint>();
+            foreach (var item in bagInfo.BagHistory)
+            {
+                scanPoint = new BagScanPoint();
+                scanPoint.Icon = item.ScanType;
+                scanPoint.ScanPoint = item.Location;
+                scanPoint.ScanTime = item.DateTime;
+                mscanHistory.Add(scanPoint);
+            }
+
+
+            ScanHistory = mscanHistory;
+
         }
+
+        private async void RetrieveDisplayBagInfo()
+        {
+            var mBagInfo = await Mvx.Resolve<ISqliteService>().LoadBagInfoAsync("123");
+            Name = mBagInfo.PaxName;
+            Flight = mBagInfo.FltCode + mBagInfo.FltNum;
+            FlightDate = mBagInfo.FltDate;
+            Itinerary = mBagInfo.PaxItinerary;
+            BagLatitude = mBagInfo.Latitude.ToString();
+            BagLongitude = mBagInfo.Longitude.ToString();
+            //scanHistory = mBagInfo.BagScanPoints;
+        }
+
+
         public override void Start()
         {
             BagtagNo = base.GetParam("Bagtag");
@@ -59,7 +101,8 @@ namespace RFID.Core.ViewModels
         public string Itinerary
         {
             get { return _itinerary; }
-            set { _itinerary = value; }
+            set { _itinerary = value;
+                RaisePropertyChanged(() => Itinerary); }
         }
 
         private string _flightDate;
@@ -67,7 +110,8 @@ namespace RFID.Core.ViewModels
         public string FlightDate
         {
             get { return _flightDate; }
-            set { _flightDate = value; }
+            set { _flightDate = value;
+                RaisePropertyChanged(() => FlightDate); }
         }
 
         private string _name;
@@ -118,6 +162,15 @@ namespace RFID.Core.ViewModels
             set { _bagLongitude = value; }
         }
 
+        private List<BagScanPoint> scanHistory;
+
+        public List<BagScanPoint> ScanHistory
+        {
+            get { return scanHistory; }
+            set { scanHistory = value; RaisePropertyChanged(() => ScanHistory); }
+        }
 
     }
+
+
 }
