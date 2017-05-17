@@ -17,6 +17,9 @@ using static Android.InputMethodServices.InputMethodService;
 using MvvmCross.Binding.Droid.BindingContext;
 using static Android.Views.View;
 using Android.Graphics.Drawables;
+using MvvmCross.Platform.Droid.WeakSubscription;
+using System.ComponentModel;
+using MvvmCross.Platform.WeakSubscription;
 
 namespace RFID.Droid.Views.Fragments
 {
@@ -30,22 +33,46 @@ namespace RFID.Droid.Views.Fragments
         List<string> listDataHeader;
         Dictionary<string, List<string>> listDataChild;
         int previousGroup = -1;
+        MvxNotifyPropertyChangedEventSubscription _token;
+
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-
             ShowHamburgerMenu = true;
             ((MainMenuView)Activity).Title = "Pier";
-            var mainActivity = Activity as MainMenuView;
             View view = base.OnCreateView(inflater, container, savedInstanceState);
             expListView = view.FindViewById<ExpandableListView>(Resource.Id.lvPierLocation);
-            GetPierLocations();
-            listAdapter = new ExpandableListAdapter(mainActivity, listDataHeader, listDataChild);
-            expListView.SetAdapter(listAdapter);
-            FnClickEvents();
             return view;
-
         }
+
+        public override void OnResume()
+        {
+            _token = ViewModel.WeakSubscribe(ViewModelPropertyChanged);
+            ViewModel.InitializeList();
+            base.OnResume();
+        }
+
+        public override void OnPause()
+        {
+            _token.Dispose();
+            base.OnPause();
+        }
+
+        private void ViewModelPropertyChanged(object sender, PropertyChangedEventArgs args)
+        {
+            if (args.PropertyName == "PierResponse")
+            {
+                if (ViewModel.PierResponse != null)
+                {
+                    GetPierLocations();
+                    var mainActivity = Activity as MainMenuView;
+                    listAdapter = new ExpandableListAdapter(mainActivity, listDataHeader, listDataChild);
+                    expListView.SetAdapter(listAdapter);
+                    FnClickEvents();
+                }
+            }
+        }
+
         void GetPierLocations()
         {
             listDataHeader = new List<string>();

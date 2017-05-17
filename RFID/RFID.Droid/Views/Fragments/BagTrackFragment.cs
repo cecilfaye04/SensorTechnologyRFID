@@ -51,7 +51,6 @@ namespace RFID.Droid.Views.Fragments
             mapView = rootView.FindViewById<MapView>(Resource.Id.map);
             mapView.OnCreate(savedInstanceState);
             mapView.GetMapAsync(this);
-           
           
             return rootView;
 
@@ -62,8 +61,9 @@ namespace RFID.Droid.Views.Fragments
         {
 
             this.googleMap = googleMap;
-            //googleMap.MyLocationEnabled = true;
-            //googleMap.UiSettings.ScrollGesturesEnabled = true;
+            googleMap.MyLocationEnabled = true;
+            googleMap.UiSettings.MyLocationButtonEnabled = true;
+            googleMap.UiSettings.ScrollGesturesEnabled = true;
             MarkerOptions mrkerBagLocation = new MarkerOptions();
             mrkerBagLocation.SetPosition(new LatLng(47.636372, -122.126888));
             mrkerBagLocation.SetTitle("Bag Location");
