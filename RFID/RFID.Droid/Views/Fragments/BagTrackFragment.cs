@@ -26,7 +26,7 @@ using Javax.Net.Ssl;
 using Newtonsoft.Json;
 namespace RFID.Droid.Views.Fragments
 {
-    [MvxFragment(typeof(MainMenuViewModel), Resource.Id.search_frame, true)]
+    [MvxFragment(typeof(MainMenuViewModel), Resource.Id.search_frame)]
     [Register("RFID.Droid.Views.BagTrackFragment")]
     public class BagTrackFragment : BaseFragment<BagTrackViewModel>, IOnMapReadyCallback
     {
@@ -34,35 +34,33 @@ namespace RFID.Droid.Views.Fragments
         MapView mapView;
         public PolylineOptions RouteLine { get; set; }
         public Polylines Routes { get; set; }
-        //MyLocationOverlay myLocationOverlay;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             ((MainMenuView)Activity).Title = "Bill Gates' Bag";
             ShowBackButton = true;
             var rootView = base.OnCreateView(inflater, container, savedInstanceState);
-            //var mainActivity = Activity as MainMenuView;
-            //var mapFragment = (SupportMapFragment)rootView.FragmentManager.FindFragmentById(Resource.Id.map);
-            //FragmentManager  fm = ChildFragmentManager;
-            //SupportMapFragment mapwFragment = (SupportMapFragment)fm.FindFragmentById(Resource.Id.map);
-            //mapwFragment.GetMapAsync(this);
-            //SetContentView(Resource.Layout.main);
-
+            var mainActivity = Activity as MainMenuView;
             mapView = rootView.FindViewById<MapView>(Resource.Id.map);
             mapView.OnCreate(savedInstanceState);
             mapView.GetMapAsync(this);
-          
+            MapsInitializer.Initialize(mainActivity);
             return rootView;
 
         }
 
+        public override void OnResume()
+        {
+            mapView.OnResume();
+            base.OnResume();
+        }
 
         public void OnMapReady(GoogleMap googleMap)
         {
 
             this.googleMap = googleMap;
             googleMap.MyLocationEnabled = true;
-            googleMap.UiSettings.MyLocationButtonEnabled = true;
+            this.googleMap.UiSettings.MyLocationButtonEnabled = true;
             googleMap.UiSettings.ScrollGesturesEnabled = true;
             MarkerOptions mrkerBagLocation = new MarkerOptions();
             mrkerBagLocation.SetPosition(new LatLng(47.636372, -122.126888));

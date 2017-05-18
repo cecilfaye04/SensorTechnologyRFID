@@ -17,8 +17,11 @@ namespace RFID.Core.Services
 
         public async Task<BagInfo> LoadBagInfoAsync(string bagtag)
         {
-            return await App.Connection.GetWithChildrenAsync<BagInfo>(bagtag);
-            //return await App.Connection.Table<BagInfo>().FirstOrDefaultAsync();
+            var x = await App.Connection.GetWithChildrenAsync<BagInfo>(bagtag);
+            //var z = await App.Connection.Table<BagInfo>().FirstOrDefaultAsync();
+            //var xz = await App.Connection.Table<BagInfo>().FirstAsync();
+            //var y = await App.Connection.GetAllWithChildrenAsync<BagInfo>(xs => xs.Bagtag == bagtag);
+            return x;
         }
 
         public async Task<List<BagInfo>> GetBagInfoAsync()
@@ -39,8 +42,7 @@ namespace RFID.Core.Services
 
         public async Task UpdateBagInfoAsync(BagInfo i)
         {
-
-            await App.Connection.InsertOrReplaceWithChildrenAsync(i);
+            await App.Connection.InsertOrReplaceWithChildrenAsync(i,true);
         }
 
         public async Task UpdatePierClaimBagScan(PierClaimBagScan i)

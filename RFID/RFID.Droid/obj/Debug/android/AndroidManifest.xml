@@ -15,8 +15,10 @@
   <application android:label="RFID.Droid" android:name="android.app.Application" android:allowBackup="true" android:icon="@drawable/icon" android:debuggable="true">
     <!--<meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCb-flO69xSsF081N609qz0ZqW3n176P3c" />-->
     <!--<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCb-flO69xSsF081N609qz0ZqW3n176P3c" />-->
-    <meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCb-AIzaSyCq_pBdCpc75FF7vzevz20JJk5hMrUQJkU" />
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCb-flO69xSsF081N609qz0ZqW3n176P3c" />
     <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
+    <!--<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="AIzaSyCb-AIzaSyCq_pBdCpc75FF7vzevz20JJk5hMrUQJkU" />
+		<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />-->
     <activity android:icon="@drawable/icon" android:label="RFID.Droid" android:noHistory="true" android:screenOrientation="portrait" android:name="md52a1e810ab93d0a660f0ca9278218e9dc.SplashScreen">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

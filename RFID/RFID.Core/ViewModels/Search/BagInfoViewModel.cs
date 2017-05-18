@@ -1,5 +1,6 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using Newtonsoft.Json;
 using RFID.Core.Entities;
 using RFID.Core.Interfaces;
 using RFID.Core.Models;
@@ -20,7 +21,7 @@ namespace RFID.Core.ViewModels
 
 
             RetrieveDisplayBagInfo();
-            testScanHistory();
+            //testScanHistory();
         }
 
         /// <summary>
@@ -64,6 +65,8 @@ namespace RFID.Core.ViewModels
             Itinerary = mBagInfo.PaxItinerary;
             BagLatitude = mBagInfo.Latitude.ToString();
             BagLongitude = mBagInfo.Longitude.ToString();
+            var y = JsonConvert.DeserializeObject<List<BagScanPoint>>(mBagInfo.BagScanPointsBlobbed);
+            ScanHistory = y;
             //scanHistory = mBagInfo.BagScanPoints;
         }
 

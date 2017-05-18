@@ -12,8 +12,6 @@ namespace RFID.Core.ViewModels
 {
     public class PierClaimLocationViewModel : BaseViewModel
     {
-
-
         public async void InitializeList()
         {
             await Mvx.Resolve<IInitilializeSqliteService>().InitializeAsync();
@@ -21,13 +19,11 @@ namespace RFID.Core.ViewModels
             GetPierClaimLocationInput pierInput = new GetPierClaimLocationInput()
             { AppName = user.Name, Username = user.Username, DeviceName = "Apple", Station = "123", Version = "1" };
             PierResponse = Mvx.Resolve<IRestService>().GetPierClaimLocation(pierInput);
-           
         }
 
         public IMvxCommand ShowPierScanCommand
         {
-            get {
-                return new MvxCommand(ShowPierScanExecuted); }
+            get { return new MvxCommand(ShowPierScanExecuted); }
         }
 
         private void ShowPierScanExecuted()
@@ -37,7 +33,6 @@ namespace RFID.Core.ViewModels
         }
 
         private string _pierLocation;
-
         public string PierLocation
         {
             get { return _pierLocation; }
@@ -45,7 +40,6 @@ namespace RFID.Core.ViewModels
         }
 
         private GetPierClaimLocationResponse _pierResponse;
-
         public  GetPierClaimLocationResponse PierResponse
         {
             get { return _pierResponse; }

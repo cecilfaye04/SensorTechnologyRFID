@@ -25,8 +25,6 @@ namespace RFID.Core.Services
                 await CreateTableAsync<BagInfo>();
                 await CreateTableAsync<PierClaimBagScan>();
                 await SeedAsync();
-     
-           
         }
 
         private async Task SeedAsync()

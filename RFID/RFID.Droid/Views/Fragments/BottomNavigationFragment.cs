@@ -12,7 +12,7 @@ using Android.Graphics.Drawables;
 
 namespace RFID.Droid.Views.Fragments
 {
-    [MvxFragment(typeof(MainMenuViewModel), Resource.Id.content_frame)]
+    [MvxFragment(typeof(MainMenuViewModel), Resource.Id.content_frame,true)]
     public class BottomNavigationFragment : BaseFragment<BottomNavigationViewModel>,BottomNavigationView.IOnNavigationItemSelectedListener
     {
         private BottomNavigationView _bottomNavigation;

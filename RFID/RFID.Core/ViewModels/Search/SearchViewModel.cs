@@ -1,5 +1,6 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using Newtonsoft.Json;
 using RFID.Core.Entities;
 using RFID.Core.Interfaces;
 using RFID.Core.Models;
@@ -52,7 +53,10 @@ namespace RFID.Core.ViewModels
                 mBagInfo.FltNum = bagInfo.FltNum;
 
                 mBagInfo.BagScanPoints = mscanHistory;
+                //var xss = JsonConvert.SerializeObject(mBagInfo.BagScanPoints);
+                //mBagInfo.BagScanPointsBlobbed = xss;
                 Mvx.Resolve<ISqliteService>().UpdateBagInfoAsync(mBagInfo);
+
                 ShowViewModel<BagInfoViewModel>(base.SParam);
             }
           

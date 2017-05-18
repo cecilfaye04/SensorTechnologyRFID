@@ -1,1 +1,1 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:RFID="http://schemas.android.com/apk/res-auto"><item android:id="@+id/menu_search" android:icon="@drawable/searchico" RFID:showAsAction="always" android:title="Search" /></menu>
+<menu xmlns:RFID="http://schemas.android.com/apk/res-auto" xmlns:android="http://schemas.android.com/apk/res/android"><item android:id="@+id/menu_search" android:icon="@drawable/searchico" RFID:showAsAction="always" android:title="Search" /></menu>

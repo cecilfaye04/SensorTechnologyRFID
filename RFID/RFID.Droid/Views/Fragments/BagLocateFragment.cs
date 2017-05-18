@@ -15,7 +15,7 @@ using System;
 
 namespace RFID.Droid.Views.Fragments
 {
-    [MvxFragment(typeof(MainMenuViewModel), Resource.Id.search_frame,true)]
+    [MvxFragment(typeof(MainMenuViewModel), Resource.Id.search_frame)]
     [Register("RFID.Droid.Views.SearchTrackFragment")]
     public class BagLocateFragment : BaseFragment<BagLocateViewModel> /*, IOnMapReadyCallback*/
     {
