@@ -11,57 +11,22 @@ using SQLiteNetExtensionsAsync.Extensions;
 
 namespace RFID.Core.Services
 {
-    public class SqliteService: ISqliteService
+    public class SqliteService<T> : ISqliteService<T> where T : class, new()
     {
-
-
-        public async Task<BagInfo> LoadBagInfoAsync(string bagtag)
+        public async Task InsertUpdate(T entity)
         {
-            var x = await App.Connection.GetWithChildrenAsync<BagInfo>(bagtag);
-            //var z = await App.Connection.Table<BagInfo>().FirstOrDefaultAsync();
-            //var xz = await App.Connection.Table<BagInfo>().FirstAsync();
-            //var y = await App.Connection.GetAllWithChildrenAsync<BagInfo>(xs => xs.Bagtag == bagtag);
-            return x;
+            await App.Connection.InsertOrReplaceWithChildrenAsync(entity);
         }
 
-        public async Task<List<BagInfo>> GetBagInfoAsync()
+        public async Task<T> Load()
         {
 
-            return await App.Connection.GetAllWithChildrenAsync<BagInfo>();
+            return await App.Connection.Table<T>().FirstOrDefaultAsync();
         }
 
-        public async Task<List<PierClaimBagScan>> LoadPierClaimBagScan()
+        public async Task<T> Load(string id)
         {
-            return await App.Connection.Table<PierClaimBagScan>().ToListAsync();
+            return await App.Connection.GetWithChildrenAsync<T>(id);
         }
-
-        public async Task<UserModel> LoadUserAsync()
-        {
-            return await App.Connection.Table<UserModel>().FirstOrDefaultAsync();
-        }
-
-        public async Task UpdateBagInfoAsync(BagInfo i)
-        {
-            await App.Connection.InsertOrReplaceWithChildrenAsync(i,true);
-        }
-
-        public async Task UpdatePierClaimBagScan(PierClaimBagScan i)
-        {
-            await App.Connection.InsertOrReplaceAsync(i);
-        }
-
-        public Task UpdatePierClaimLocationAsync()
-        {
-            throw new NotImplementedException();
-        }
-
-        public async Task UpdateUserAsync(UserModel i)
-        {
-            await App.Connection.InsertOrReplaceAsync(i);
-        }
-
-
     }
-
-
 }

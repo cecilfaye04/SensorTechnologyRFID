@@ -10,8 +10,6 @@ namespace RFID.Core.ViewModels
 {
    public class BottomNavigationViewModel : BaseViewModel
     {
-
-
         public void ShowSearch()
         {
 

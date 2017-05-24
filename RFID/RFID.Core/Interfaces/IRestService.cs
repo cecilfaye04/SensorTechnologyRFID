@@ -15,6 +15,5 @@ namespace RFID.Core.Interfaces
         GetFlightDetailsResponse GetFlightDetails(GetFlightDetailsInput input);
         GetPierClaimLocationResponse GetPierClaimLocation(GetPierClaimLocationInput input);
         PierClaimScanResponse PierClaimScan(PierClaimScanInput input);
-
     }
 }

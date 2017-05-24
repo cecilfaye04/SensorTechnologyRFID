@@ -31,17 +31,6 @@ namespace RFID.Core.ViewModels
 
         }
 
-        //protected override void InitFromBundle(IMvxBundle parameters)
-        //{
-
-        //    if (parameters.Data.Count > 0)
-        //    {
-        //        RParam = (Dictionary<string, string>)parameters.Data;
-        //    }
-
-        //    base.InitFromBundle(parameters);
-        //}
-
         protected string GetParam(string key)
         {
             string sReturn = "";

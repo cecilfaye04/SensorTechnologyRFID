@@ -1,6 +1,8 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Interfaces;
+using RFID.Core.Models;
+using RFID.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +13,11 @@ namespace RFID.Core.ViewModels
 {
     public class SideMenuViewModel : BaseViewModel
     {
-
         public override async void Start()
         {
             await Mvx.Resolve<IInitilializeSqliteService>().InitializeAsync();
-            var user = await Mvx.Resolve<ISqliteService>().LoadUserAsync();
+            ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
+            var user = await userRepo.Load();
             List<string> appAccess = user.AppAccess.Split(',').ToList<string>();
             appAccess.Reverse();
             AppAccess = appAccess;
@@ -67,29 +69,15 @@ namespace RFID.Core.ViewModels
             {
                 return new MvxCommand(async () =>
                 {
-                    var user = await Mvx.Resolve<ISqliteService>().LoadUserAsync();
+                    ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
+                    var user = await userRepo.Load();
                     user.IsLoggedIn = false;
-                    await Mvx.Resolve<ISqliteService>().UpdateUserAsync(user);
+                    await userRepo.InsertUpdate(user);
                     ShowViewModel<LoginViewModel>();
                 });
             }
         }
-        //public IMvxCommand ShowSettingCommand
-        //{
-        //    get { return new MvxCommand(ShowSettingsExecuted); }
-        //}
 
-
-
-        //public IMvxCommand ShowHelpCommand
-        //{
-        //    get { return new MvxCommand(ShowHelpExecuted); }
-        //}
-
-        //private void ShowHelpExecuted()
-        //{
-        //    ShowViewModel<HelpAndFeedbackViewModel>();
-        //}
 
         #endregion
 

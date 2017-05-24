@@ -2,6 +2,7 @@
 using MvvmCross.Platform;
 using RFID.Core.Interfaces;
 using RFID.Core.Models;
+using RFID.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,14 +13,12 @@ namespace RFID.Core.ViewModels
 {
    public class HomeViewModel : BaseViewModel
     {
-
-
-
         public async void InitializeButton()
         {
             ProgressBarVisible = true;
             await Mvx.Resolve<IInitilializeSqliteService>().InitializeAsync();
-            var user = await Mvx.Resolve<ISqliteService>().LoadUserAsync();
+            ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
+            var user = await userRepo.Load();
             EnableApps(user.AppAccess);
             ProgressBarVisible = false;
         }

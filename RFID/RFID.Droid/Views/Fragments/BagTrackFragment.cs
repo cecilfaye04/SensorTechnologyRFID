@@ -24,6 +24,9 @@ using System.IO;
 using Polylines = Android.Gms.Maps.Model.Polyline;
 using Javax.Net.Ssl;
 using Newtonsoft.Json;
+using MvvmCross.Platform;
+using RFID.Core.Interfaces;
+
 namespace RFID.Droid.Views.Fragments
 {
     [MvxFragment(typeof(MainMenuViewModel), Resource.Id.search_frame)]
@@ -77,6 +80,7 @@ namespace RFID.Droid.Views.Fragments
         }
         public async void GetRouteInfo()
         {
+
             string response = string.Empty;
             try
             {

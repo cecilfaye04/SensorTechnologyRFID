@@ -19,11 +19,8 @@ namespace RFID.Core.Models
         public string FltDate { get; set; }
         public string PaxItinerary { get; set; }
         public string PaxName { get; set; }
-
-        //public Location LastSeen { get; set; }
         public string Longitude { get; set; }
         public string Latitude { get; set; }
-
 
         [TextBlob("BagScanPointsBlobbed")]
         public List<BagScanPoint> BagScanPoints { get; set; }

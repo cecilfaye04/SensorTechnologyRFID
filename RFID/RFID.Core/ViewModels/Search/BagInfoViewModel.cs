@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using RFID.Core.Entities;
 using RFID.Core.Interfaces;
 using RFID.Core.Models;
+using RFID.Core.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,12 +15,8 @@ namespace RFID.Core.ViewModels
 {
     public class BagInfoViewModel : BaseViewModel
     {
-
-
         public BagInfoViewModel()
         {
-
-
             RetrieveDisplayBagInfo();
             //testScanHistory();
         }
@@ -30,7 +27,6 @@ namespace RFID.Core.ViewModels
         private void testScanHistory()
         {
             GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, DeviceName = "Apple", Station = "123", Username = "admin", Version = "1" };
-
             var bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);
 
             Name = bagInfo.PaxName;
@@ -50,24 +46,20 @@ namespace RFID.Core.ViewModels
                 scanPoint.ScanTime = item.DateTime;
                 mscanHistory.Add(scanPoint);
             }
-
-
             ScanHistory = mscanHistory;
-
         }
 
         private async void RetrieveDisplayBagInfo()
         {
-            var mBagInfo = await Mvx.Resolve<ISqliteService>().LoadBagInfoAsync("123");
+            ISqliteService<BagInfo> bagRepo = new SqliteService<BagInfo>();
+            var mBagInfo = await bagRepo.Load("123");
             Name = mBagInfo.PaxName;
             Flight = mBagInfo.FltCode + mBagInfo.FltNum;
             FlightDate = mBagInfo.FltDate;
             Itinerary = mBagInfo.PaxItinerary;
             BagLatitude = mBagInfo.Latitude.ToString();
             BagLongitude = mBagInfo.Longitude.ToString();
-            var y = JsonConvert.DeserializeObject<List<BagScanPoint>>(mBagInfo.BagScanPointsBlobbed);
-            ScanHistory = y;
-            //scanHistory = mBagInfo.BagScanPoints;
+            ScanHistory = mBagInfo.BagScanPoints;
         }
 
 
@@ -83,8 +75,6 @@ namespace RFID.Core.ViewModels
                 base.RParam = (Dictionary<string, string>)parameters.Data;
             }
         }
-
-
 
         public IMvxCommand ShowSearchTrackCommand
         {

@@ -1,20 +1,15 @@
 ﻿using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
-using Newtonsoft.Json;
 using RFID.Core.Entities;
 using RFID.Core.Interfaces;
 using RFID.Core.Models;
-using System;
+using RFID.Core.Services;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
     public class SearchViewModel : BaseViewModel    
     {
-
         public IMvxCommand ShowSearchResultCommand
         {
             get { return new MvxCommand(ShowSearchResultExecuted); }
@@ -51,20 +46,14 @@ namespace RFID.Core.ViewModels
                 mBagInfo.FltCode = bagInfo.FltCode;
                 mBagInfo.FltDate = bagInfo.FltDate;
                 mBagInfo.FltNum = bagInfo.FltNum;
-
                 mBagInfo.BagScanPoints = mscanHistory;
-                //var xss = JsonConvert.SerializeObject(mBagInfo.BagScanPoints);
-                //mBagInfo.BagScanPointsBlobbed = xss;
-                Mvx.Resolve<ISqliteService>().UpdateBagInfoAsync(mBagInfo);
-
+                ISqliteService<BagInfo> bagRepo = new SqliteService<BagInfo>();
+                var user = bagRepo.InsertUpdate(mBagInfo);
                 ShowViewModel<BagInfoViewModel>(base.SParam);
-            }
+            } 
           
             ProgressBarVisible = false;
         }
-
-
-        
 
         private string _bagtagNo;
 

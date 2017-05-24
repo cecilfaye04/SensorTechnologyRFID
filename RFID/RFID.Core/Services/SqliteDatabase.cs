@@ -20,31 +20,14 @@ namespace RFID.Core.Services
 
         public async Task InitializeAsync()
         {
-        
                 await CreateTableAsync<UserModel>();
                 await CreateTableAsync<BagInfo>();
                 await CreateTableAsync<PierClaimBagScan>();
                 await SeedAsync();
         }
-
         private async Task SeedAsync()
         {
             await InsertAsync(new UserModel { Username = "user", IsLoggedIn = false , Name = String.Empty, AppAccess = String.Empty});
-        }
-
-        public async Task<UserModel> LoadItem()
-        {
-            return await Table<UserModel>().FirstOrDefaultAsync();
-        }
-
-        public async Task<List<UserModel>> GetAll()
-        {
-            return await Table<UserModel>().ToListAsync();
-        }
-
-        public async Task InsertOrUpdateAsync(UserModel i)
-        {
-            await this.InsertOrReplaceAsync(i);
         }
     }
 }

@@ -10,19 +10,10 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.Interfaces
 {
-    public interface ISqliteService
+    public interface ISqliteService<T> where T : class,new()
     {
-        Task UpdateUserAsync(UserModel i);
-        Task<UserModel> LoadUserAsync();
-        Task UpdateBagInfoAsync(BagInfo i);
-        Task<BagInfo> LoadBagInfoAsync(String bagtag);
-        Task<List<BagInfo>> GetBagInfoAsync();
-        Task UpdatePierClaimLocationAsync();
-        Task UpdatePierClaimBagScan(PierClaimBagScan i);
-        Task<List<PierClaimBagScan>> LoadPierClaimBagScan();
-
-
-
-
+        Task<T> Load();
+        Task<T> Load(string id);
+        Task InsertUpdate(T entity);
     }
 }
