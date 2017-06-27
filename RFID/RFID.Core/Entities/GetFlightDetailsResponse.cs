@@ -6,12 +6,21 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.Entities
 {
-    public class GetFlightDetailsResponse: BaseResponse
+
+    public class GetFlightDetailsResponse : BaseResponse
     {
+        public GetFlightDetailsResponse()
+        {
+            Flight = new Flight();
+            LoadSummary = new LoadSummary();
+        }
+
+
         public Flight Flight { get; set; }
         public LoadSummary LoadSummary { get; set; }
     }
 
+   
     public class Flight
     {
         public string FltNum { get; set; }

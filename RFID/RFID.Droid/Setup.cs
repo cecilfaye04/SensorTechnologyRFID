@@ -19,6 +19,9 @@ using MvvmCross.Droid.Views;
 using MvvmCross.Droid.Shared.Presenter;
 using MvvmCross.Platform.Droid.Platform;
 using RFID.Core.Interfaces;
+using Acr.UserDialogs;
+using System.Threading.Tasks;
+using Android.Util;
 
 namespace RFID.Droid
 {
@@ -31,9 +34,19 @@ namespace RFID.Droid
         protected override IMvxApplication CreateApp()
         {
             Mvx.RegisterSingleton<IInitilializeSqliteService>(new InitializeSqliteService());
-            return new RFID.Core.App();
+            UserDialogs.Init(() => Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
+            AndroidEnvironment.UnhandledExceptionRaiser -= StoreLogger;
+            AndroidEnvironment.UnhandledExceptionRaiser += StoreLogger;
+            //TaskScheduler.UnobservedTaskException += TaskSchedulerOnUnobservedTaskException;
+            return new  RFID.Core.App();
         }
 
+        private void StoreLogger(object sender, RaiseThrowableEventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine(e.Exception.Message);
+        }
+
+      
         protected override IEnumerable<Assembly> AndroidViewAssemblies => new List<Assembly>(base.AndroidViewAssemblies)
         {
             typeof(Android.Support.Design.Widget.NavigationView).Assembly,

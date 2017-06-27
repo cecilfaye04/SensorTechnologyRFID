@@ -11,6 +11,7 @@ namespace RFID.Core.ViewModels
     {
         protected Dictionary<string, string> SParam;
         protected Dictionary<string, string> RParam;
+        //protected static Logger logger = LogManager.GetCurrentClassLogger();
 
         protected void StoreParam(string key, string value)
         {

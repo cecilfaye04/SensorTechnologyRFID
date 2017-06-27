@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RFID.Core", "RFID.Core\RFID
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RFID.Droid", "RFID.Droid\RFID.Droid.csproj", "{ACDE589C-7FE3-4A28-8AA3-48A7E449F84F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RFIDUnitTest", "RFIDUnitTest\RFIDUnitTest.csproj", "{AC8BB2C4-5084-48E0-ABA8-3BB1DDADAD22}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{ACDE589C-7FE3-4A28-8AA3-48A7E449F84F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACDE589C-7FE3-4A28-8AA3-48A7E449F84F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{ACDE589C-7FE3-4A28-8AA3-48A7E449F84F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{AC8BB2C4-5084-48E0-ABA8-3BB1DDADAD22}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC8BB2C4-5084-48E0-ABA8-3BB1DDADAD22}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC8BB2C4-5084-48E0-ABA8-3BB1DDADAD22}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC8BB2C4-5084-48E0-ABA8-3BB1DDADAD22}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

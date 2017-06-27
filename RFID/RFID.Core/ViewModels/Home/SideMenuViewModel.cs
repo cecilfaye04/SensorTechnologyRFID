@@ -1,4 +1,5 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Acr.UserDialogs;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Interfaces;
 using RFID.Core.Models;
@@ -15,12 +16,20 @@ namespace RFID.Core.ViewModels
     {
         public override async void Start()
         {
-            await Mvx.Resolve<IInitilializeSqliteService>().InitializeAsync();
-            ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
-            var user = await userRepo.Load();
-            List<string> appAccess = user.AppAccess.Split(',').ToList<string>();
-            appAccess.Reverse();
-            AppAccess = appAccess;
+            try
+            {
+                //logger.Trace("SqliteService<UserModel> : LoadUser")
+                ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
+                var user = await userRepo.Load();
+                List<string> appAccess = user.AppAccess.Split(',').ToList<string>();
+                appAccess.Reverse();
+                AppAccess = appAccess;
+            }
+            catch (Exception)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
         }
 
         private List<string> appAccess;
@@ -40,7 +49,16 @@ namespace RFID.Core.ViewModels
 
         private void ShowHomeExecuted()
         {
-            ShowViewModel<HomeViewModel>();
+            try
+            {
+                //logger.Trace("ShowViewModel : HomeViewModel")
+                ShowViewModel<HomeViewModel>();
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
         }
 
         public IMvxCommand ShowPierCommand
@@ -50,7 +68,16 @@ namespace RFID.Core.ViewModels
 
         private void ShowPierExecuted()
         {
-            ShowViewModel<PierClaimLocationViewModel>();
+            try
+            {
+                //logger.Trace("ShowViewModel : PierClaimLocationViewModel")
+                ShowViewModel<PierClaimLocationViewModel>();
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
         }
 
         public IMvxCommand ShowDepartureCommand
@@ -60,7 +87,16 @@ namespace RFID.Core.ViewModels
 
         private void ShowDepartureExecuted()
         {
-            ShowViewModel<FlightEntryViewModel>();
+            try
+            {
+                //logger.Trace("ShowViewModel : FlightEntryViewModel")
+                ShowViewModel<FlightEntryViewModel>();
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
         }
 
         public IMvxCommand LogoutCommand
@@ -69,11 +105,22 @@ namespace RFID.Core.ViewModels
             {
                 return new MvxCommand(async () =>
                 {
-                    ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
-                    var user = await userRepo.Load();
-                    user.IsLoggedIn = false;
-                    await userRepo.InsertUpdate(user);
+                    try
+                    {
+                        //logger.Trace("SqliteService<UserModel> : LoadUser")
+                        ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
+                        var user = await userRepo.Load();
+                        user.IsLoggedIn = false;
+                        await userRepo.InsertUpdate(user);
+                    }
+                    catch (Exception)
+                    {
+                        Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                        //logger.Log(LogLevel.Info,e.ToString);
+                    }
+
                     ShowViewModel<LoginViewModel>();
+
                 });
             }
         }

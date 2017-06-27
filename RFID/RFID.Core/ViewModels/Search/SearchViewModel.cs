@@ -1,9 +1,11 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Acr.UserDialogs;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Entities;
 using RFID.Core.Interfaces;
 using RFID.Core.Models;
 using RFID.Core.Services;
+using System;
 using System.Collections.Generic;
 
 namespace RFID.Core.ViewModels
@@ -18,44 +20,73 @@ namespace RFID.Core.ViewModels
         private void ShowSearchResultExecuted()
         {
             ProgressBarVisible = true;
-            ShowViewModel<BottomNavigationViewModel>();
             base.StoreParam("Bagtag", BagtagNo);
 
-            GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, DeviceName = "Apple", Station = "123", Username = "admin", Version = "1" };
-
-            var bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);
-
-            if (bagInfo.ReturnCode == "1") {
-                  var mBagInfo = new BagInfo();
-
-                BagScanPoint scanPoint;
-                List<BagScanPoint> mscanHistory = new List<BagScanPoint>();
-                foreach (var item in bagInfo.BagHistory)
+            if (Mvx.Resolve<IValidation>().Is10Digits(BagtagNo))
+            {
+                try
                 {
-                    scanPoint = new BagScanPoint();
-                    scanPoint.Icon = item.ScanType;
-                    scanPoint.ScanPoint = item.Location;
-                    scanPoint.ScanTime = item.DateTime;
-                    mscanHistory.Add(scanPoint);
+                    //logger.Trace("ShowViewModel : BottomNavigationViewModel")
+                    ShowViewModel<BottomNavigationViewModel>();
                 }
-                mBagInfo.Bagtag = BagtagNo;
-                mBagInfo.PaxName = bagInfo.PaxName;
-                mBagInfo.PaxItinerary = bagInfo.PaxItinerary;
-                mBagInfo.Latitude = bagInfo.Latitude;
-                mBagInfo.Longitude = bagInfo.Longitude;
-                mBagInfo.FltCode = bagInfo.FltCode;
-                mBagInfo.FltDate = bagInfo.FltDate;
-                mBagInfo.FltNum = bagInfo.FltNum;
-                mBagInfo.BagScanPoints = mscanHistory;
-                ISqliteService<BagInfo> bagRepo = new SqliteService<BagInfo>();
-                var user = bagRepo.InsertUpdate(mBagInfo);
-                ShowViewModel<BagInfoViewModel>(base.SParam);
-            } 
+                catch (Exception e)
+                {
+                    Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                    //logger.Log(LogLevel.Info,e.ToString);
+                }
+
+                GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, DeviceName = "Apple", Station = "123", Username = "admin", Version = "1" };
+                var bagInfo = new GetBagInfoResponse();
+                try
+                {
+                    //logger.Trace("Service : IRestService, Method : GetBagInfo , Request : GetBagInfoInput = {"Bagtag" = BagtagNo, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
+                    bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);
+                    //logger.Trace("Service : IRestService , Method : GetBagInfo , Response : GetBagInfoResponse = {"BagHistory":bagInfo.BagHistory, "ReturnCode":bagInfo.ReturnCode,"Message":bagInfo.Message};
+
+                }
+                catch (Exception)
+                {
+                    Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                    //logger.Log(LogLevel.Info,e.ToString);
+                }
+
+                if (bagInfo.ReturnCode == "1")
+                {
+                    var mBagInfo = new BagInfo();
+
+                    BagScanPoint scanPoint;
+                    List<BagScanPoint> mscanHistory = new List<BagScanPoint>();
+                    foreach (var item in bagInfo.BagHistory)
+                    {
+                        scanPoint = new BagScanPoint();
+                        scanPoint.Icon = item.ScanType;
+                        scanPoint.ScanPoint = item.Location;
+                        scanPoint.ScanTime = item.DateTime;
+                        mscanHistory.Add(scanPoint);
+                    }
+                    mBagInfo.Bagtag = BagtagNo;
+                    mBagInfo.PaxName = bagInfo.PaxName;
+                    mBagInfo.PaxItinerary = bagInfo.PaxItinerary;
+                    mBagInfo.Latitude = bagInfo.Latitude;
+                    mBagInfo.Longitude = bagInfo.Longitude;
+                    mBagInfo.FltCode = bagInfo.FltCode;
+                    mBagInfo.FltDate = bagInfo.FltDate;
+                    mBagInfo.FltNum = bagInfo.FltNum;
+                    mBagInfo.BagScanPoints = mscanHistory;
+                    ISqliteService<BagInfo> bagRepo = new SqliteService<BagInfo>();
+                    var user = bagRepo.InsertUpdate(mBagInfo);
+                    ShowViewModel<BagInfoViewModel>(base.SParam);
+                }
+            }
+            else
+            {
+                Mvx.Resolve<IUserDialogs>().Alert("Bagtag no must contains 10 digits.","Invalid Bagtag no!","Dismiss");
+            }
           
             ProgressBarVisible = false;
         }
 
-        private string _bagtagNo;
+        private string _bagtagNo ;
 
         public string BagtagNo
         {
@@ -63,11 +94,7 @@ namespace RFID.Core.ViewModels
             set {
                 _bagtagNo = value;
                 RaisePropertyChanged(() => BagtagNo);
-            }
-        }
-
-
-
-
+            } 
+        } 
     }
 }

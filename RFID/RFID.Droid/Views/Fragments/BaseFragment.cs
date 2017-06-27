@@ -60,7 +60,7 @@ namespace RFID.Droid.Views
                         Toolbar,                               // nav drawer icon to replace 'Up' caret
                         Resource.String.drawer_open,            // "open drawer" description
                         Resource.String.drawer_close            // "close drawer" description
-                    );
+                    ); 
 
                     DrawerToggle.DrawerOpened += (sender, e) => mainActivity?.HideSoftKeyboard();
                     mainActivity.DrawerLayout.AddDrawerListener(DrawerToggle);

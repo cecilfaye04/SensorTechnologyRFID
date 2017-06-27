@@ -1,4 +1,5 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Acr.UserDialogs;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Interfaces;
 using RFID.Core.Models;
@@ -14,8 +15,17 @@ namespace RFID.Core.ViewModels
     {
         public void ShowMenu()
         {
-            ShowViewModel<HomeViewModel>();
-            ShowViewModel<SideMenuViewModel>();
+            try
+            {
+                //logger.Trace("ShowViewModel : HomeViewModel,SideMenuViewModel")
+                ShowViewModel<HomeViewModel>();
+                ShowViewModel<SideMenuViewModel>();
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
         }
 
         public IMvxCommand ShowSearchCommand
@@ -25,7 +35,16 @@ namespace RFID.Core.ViewModels
 
         private void ShowSearchExecuted()
         {
-            ShowViewModel<SearchViewModel>();
+            try
+            {
+                //logger.Trace("ShowViewModel : SearchViewModel")
+                ShowViewModel<SearchViewModel>();
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
         }
     }
 }

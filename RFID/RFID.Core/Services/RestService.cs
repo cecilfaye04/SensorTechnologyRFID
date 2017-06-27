@@ -119,28 +119,28 @@ namespace RFID.Core.Services
             getFlightDetailsResponse.ReturnCode = "1";
 
             Flight flight = new Flight();
-            flight.Destination = "NRT";
-            flight.Origin = "MNL";
-            flight.FltNum = "1234";
-            flight.FltCode = "5J";
-            flight.Gate = "G23";
-            flight.NoseNumber = "004321";
+            getFlightDetailsResponse.Flight.Destination = "NRT";
+            getFlightDetailsResponse.Flight.Origin = "MNL";
+            getFlightDetailsResponse.Flight.FltNum = "1234";
+            getFlightDetailsResponse.Flight.FltCode = "5J";
+            getFlightDetailsResponse.Flight.Gate = "G23";
+            getFlightDetailsResponse.Flight.NoseNumber = "004321";
 
             LoadSummary loadSummary = new LoadSummary();
-            loadSummary.Ballast = "1/1";
-            loadSummary.Bags = "2/2";
-            loadSummary.Comat = "3/3";
-            loadSummary.Freight = "4/4";
-            loadSummary.Mail = "5/5";
-            loadSummary.PercentLoaded = "100";
+            getFlightDetailsResponse.LoadSummary.Ballast = "1/1";
+            getFlightDetailsResponse.LoadSummary.Bags = "2/2";
+            getFlightDetailsResponse.LoadSummary.Comat = "3/3";
+            getFlightDetailsResponse.LoadSummary.Freight = "4/4";
+            getFlightDetailsResponse.LoadSummary.Mail = "5/5";
+            getFlightDetailsResponse.LoadSummary.PercentLoaded = "100";
 
             if (input.AppName == "Departures")
             {
-                flight.ETD = DateTime.Now.ToString();
+                getFlightDetailsResponse.Flight.ETD = DateTime.Now.ToString();
             }
             else
             {
-                flight.ETA = DateTime.Now.ToString();
+                getFlightDetailsResponse.Flight.ETA = DateTime.Now.ToString();
             }
 
             getFlightDetailsResponse.Flight = flight;

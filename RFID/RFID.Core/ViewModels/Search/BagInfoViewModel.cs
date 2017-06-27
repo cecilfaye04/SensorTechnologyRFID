@@ -1,4 +1,5 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Acr.UserDialogs;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using Newtonsoft.Json;
 using RFID.Core.Entities;
@@ -27,7 +28,18 @@ namespace RFID.Core.ViewModels
         private void testScanHistory()
         {
             GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, DeviceName = "Apple", Station = "123", Username = "admin", Version = "1" };
-            var bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);
+            var bagInfo = new GetBagInfoResponse();
+            try
+            {
+                //logger.Trace("Service : IRestService, Method : GetBagInfo , Request : GetBagInfoInput = {"Bagtag" = BagtagNo, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
+                bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);
+                //logger.Trace("Service : IRestService , Method : GetBagInfo , Response : GetBagInfoResponse = {"BagHistory":bagInfo.BagHistory, "ReturnCode":bagInfo.ReturnCode,"Message":bagInfo.Message};
+            }
+            catch (Exception)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
 
             Name = bagInfo.PaxName;
             Flight = bagInfo.FltCode + bagInfo.FltNum;
@@ -51,15 +63,25 @@ namespace RFID.Core.ViewModels
 
         private async void RetrieveDisplayBagInfo()
         {
-            ISqliteService<BagInfo> bagRepo = new SqliteService<BagInfo>();
-            var mBagInfo = await bagRepo.Load("123");
-            Name = mBagInfo.PaxName;
-            Flight = mBagInfo.FltCode + mBagInfo.FltNum;
-            FlightDate = mBagInfo.FltDate;
-            Itinerary = mBagInfo.PaxItinerary;
-            BagLatitude = mBagInfo.Latitude.ToString();
-            BagLongitude = mBagInfo.Longitude.ToString();
-            ScanHistory = mBagInfo.BagScanPoints;
+            try
+            {
+                //logger.Trace("SqliteService<BagInfo> : LoadBag")
+                ISqliteService<BagInfo> bagRepo = new SqliteService<BagInfo>();
+                var mBagInfo = await bagRepo.Load("123");
+                Name = mBagInfo.PaxName;
+                Flight = mBagInfo.FltCode + mBagInfo.FltNum;
+                FlightDate = mBagInfo.FltDate;
+                Itinerary = mBagInfo.PaxItinerary;
+                BagLatitude = mBagInfo.Latitude.ToString();
+                BagLongitude = mBagInfo.Longitude.ToString();
+                ScanHistory = mBagInfo.BagScanPoints;
+            }
+            catch (Exception)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+
         }
 
 
@@ -85,7 +107,16 @@ namespace RFID.Core.ViewModels
         {
             base.StoreParam("BagLatitude", BagLatitude);
             base.StoreParam("BagLongitude", BagLongitude);
-            ShowViewModel<BagLocateViewModel>(base.SParam);
+            try
+            {
+                //logger.Trace("ShowViewModel : BagLocateViewModel")
+                ShowViewModel<BagLocateViewModel>(base.SParam);
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
         }
 
 

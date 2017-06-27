@@ -1,4 +1,5 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Acr.UserDialogs;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Entities;
 using RFID.Core.Interfaces;
@@ -51,17 +52,26 @@ namespace RFID.Core.ViewModels
 
                     if (loginResponse.ReturnCode == "1")
                     {
-                        ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
-                        var user = await userRepo.Load();
-                        user.IsLoggedIn = true;
-                        user.Name = loginResponse.Name;
-                        user.AppAccess = loginResponse.AppAccess;
-                        await userRepo.InsertUpdate(user);
+                        try
+                        {
+                            //logger.Trace("SqliteService<UserModel> : LoadUser")
+                            ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
+                            var user = await userRepo.Load();
+                            user.IsLoggedIn = true;
+                            user.Name = loginResponse.Name;
+                            user.AppAccess = loginResponse.AppAccess;
+                            await userRepo.InsertUpdate(user);
+                        }
+                        catch (Exception)
+                        {
+                            Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                            //logger.Log(LogLevel.Info,e.ToString);
+                        }
                         ShowViewModel<MainMenuViewModel>();
                     }
                     else
                     {
-                        //Not successful login
+                        Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");
                     }
                 });
             }
@@ -77,10 +87,20 @@ namespace RFID.Core.ViewModels
                 Station = "123",
                 Version = "1"
             };
-            return Mvx.Resolve<IRestService>().AuthenticateUser(userTry);
+            var authResponse = new AuthenticateUserResponse();
+            try
+            {
+                //logger.Trace("Service : IRestService , Method : AuthenticateUser , Request : AuthenticateUserInput = { "Username":Username, "Password":Password, "DeviceName":"Apple ,"Station":"123", Version : "1" };
+                authResponse = Mvx.Resolve<IRestService>().AuthenticateUser(userTry);
+                //logger.Trace("Service : IRestService , Method : AuthenticateUser , Response : AuthenticateUserResponse = {"Name":authResponse.Name, "ReturnCode":authResponse.ReturnCode,"Message":authResponse.Message,"AppAccess":authResponse.AppAccess };
 
+            }
+            catch (Exception)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+            return authResponse;
         }
-
-
     }
 }

@@ -1,4 +1,7 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Acr.UserDialogs;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
+using RFID.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +14,7 @@ namespace RFID.Core.ViewModels
     {
         private List<string> _flight = new List<string>()
             {
-              "ZE","PH","JPN","ABC","DEF","GHI","JKL","MNO","PQR","STU","VWX","YZ"
+              "PR","DL","TG","AA","HA","AS","AR","NH","AI","SR","MP","MX"
             };
         public List<string> Flight
         {
@@ -26,22 +29,22 @@ namespace RFID.Core.ViewModels
             set { _selectedflight = value; RaisePropertyChanged(() => SelectedFlight); }
         }
 
-        private List<int> _gate = new List<int>()
-            {
-              191,192,193,194,195,196,197,964,489,164,165,971,369,741
-            };
-        public List<int> Gate
+        private string _flightNo = "";
+
+        public string FlightNo
         {
-            get { return _gate; }
-            set { _gate = value; RaisePropertyChanged(() => Gate); }
+            get { return _flightNo; }
+            set { _flightNo = value; }
         }
 
-        private string _selectedGate = "";
-        public string SelectedGate
+        private string _position = "";
+
+        public string Position
         {
-            get { return _selectedGate; }
-            set { _selectedGate = value; RaisePropertyChanged(() => SelectedGate); }
+            get { return _position; }
+            set { _position = value; }
         }
+
 
         public IMvxCommand ShowDepartmentScanCommand
         {
@@ -50,7 +53,30 @@ namespace RFID.Core.ViewModels
 
         private void ShowDepartmentScanExecuted()
         {
-            ShowViewModel<DepArrScanScreenViewModel>();
+            string newFlightno;
+
+            if (!Mvx.Resolve<IValidation>().IsFlightNo(FlightNo, out newFlightno))
+            {
+                Mvx.Resolve<IUserDialogs>().Alert("Invalid Flight No.", null, "Dismiss");
+            }
+            else if (!Mvx.Resolve<IValidation>().IsPosition(Position))
+            {
+                Mvx.Resolve<IUserDialogs>().Alert("Invalid Position.", null, "Dismiss");
+            }
+            else
+            {
+                try
+                {
+                    //logger.Trace("ShowViewModel : DepArrScanScreenViewModel")
+                    ShowViewModel<DepArrScanScreenViewModel>();
+                    //throw new System.ArgumentException("Parameter cannot be null", "original");
+                }
+                catch (Exception e)
+                {
+                    Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                    //logger.Log(LogLevel.Info,e.ToString);
+                }
+            }
         }
     }
 }

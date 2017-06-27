@@ -1,4 +1,5 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Acr.UserDialogs;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Entities;
 using RFID.Core.Interfaces;
@@ -16,12 +17,24 @@ namespace RFID.Core.ViewModels
     {
         public async void InitializeList()
         {
-            await Mvx.Resolve<IInitilializeSqliteService>().InitializeAsync();
-            ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
-            var user = await userRepo.Load();
-            GetPierClaimLocationInput pierInput = new GetPierClaimLocationInput()
-            { AppName = user.Name, Username = user.Username, DeviceName = "Apple", Station = "123", Version = "1" };
-            PierResponse = Mvx.Resolve<IRestService>().GetPierClaimLocation(pierInput);
+            try
+            {
+                //logger.Trace("SqliteService<UserModel> : LoadUser")
+                ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
+                var user = await userRepo.Load();
+                GetPierClaimLocationInput pierInput = new GetPierClaimLocationInput()
+                { AppName = user.Name, Username = user.Username, DeviceName = "Apple", Station = "123", Version = "1" };
+                //logger.Trace("Service : IRestService, Method : GetPierClaimLocation, Request : GetPierClaimLocationInput = {"Appname":user.Name,"Username" : user.Username, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
+                PierResponse = Mvx.Resolve<IRestService>().GetPierClaimLocation(pierInput);
+                //logger.Trace("Service : IRestService , Method : GetPierClaimLocation , Response : GetPierClaimLocationResponse = {"MainLocation":PierResponse.MainLocation, "ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
+
+
+            }
+            catch (Exception)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
         }
 
         public IMvxCommand ShowPierScanCommand
@@ -32,7 +45,17 @@ namespace RFID.Core.ViewModels
         private void ShowPierScanExecuted()
         {
             base.StoreParam("PierLocation", PierLocation);
-            ShowViewModel<PierClaimScanViewModel>(base.SParam);
+            try
+            {
+                //logger.Trace("ShowViewModel : PierClaimScanViewModel")
+                ShowViewModel<PierClaimScanViewModel>(base.SParam);
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+
         }
 
         private string _pierLocation;

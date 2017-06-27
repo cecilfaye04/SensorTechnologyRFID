@@ -15,18 +15,22 @@ namespace RFID.Core.Services
     {
         public async Task InsertUpdate(T entity)
         {
-            await App.Connection.InsertOrReplaceWithChildrenAsync(entity);
+           await App.Connection.InsertOrReplaceWithChildrenAsync(entity);
+            //logger.Trace("SqliteService<UserModel> : InsertUpdate, Query : InsertOrReplaceWithChildrenAsync(entity), Result : value")
         }
 
         public async Task<T> Load()
         {
-
-            return await App.Connection.Table<T>().FirstOrDefaultAsync();
+            var retValue = await App.Connection.Table<T>().FirstOrDefaultAsync();
+            //logger.Trace("SqliteService<UserModel> : Load, Query : FirstOrDefaultAsync>(id), Result : value")
+            return retValue;
         }
 
         public async Task<T> Load(string id)
         {
-            return await App.Connection.GetWithChildrenAsync<T>(id);
+            var retValue = await App.Connection.GetWithChildrenAsync<T>(id);
+            //logger.Trace("SqliteService<UserModel> : LoadSpecific, Query : GetWithChildrenAsync<T>(id), Result : value")
+            return retValue;
         }
     }
 }

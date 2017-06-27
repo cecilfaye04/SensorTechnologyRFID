@@ -1,4 +1,5 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Acr.UserDialogs;
+using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Interfaces;
 using RFID.Core.Models;
@@ -13,15 +14,6 @@ namespace RFID.Core.ViewModels
 {
    public class HomeViewModel : BaseViewModel
     {
-        public async void InitializeButton()
-        {
-            ProgressBarVisible = true;
-            await Mvx.Resolve<IInitilializeSqliteService>().InitializeAsync();
-            ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
-            var user = await userRepo.Load();
-            EnableApps(user.AppAccess);
-            ProgressBarVisible = false;
-        }
 
         private void EnableApps(string appAccess)
         {
@@ -76,6 +68,7 @@ namespace RFID.Core.ViewModels
         private List<string> appAccess;
 
         public List<string> AppAccess
+
         {
             get { return appAccess; }
             set { appAccess = value; }
@@ -89,7 +82,16 @@ namespace RFID.Core.ViewModels
 
         private void ShowPeirExecuted()
         {
-            ShowViewModel<PierClaimLocationViewModel>();
+            try
+            {
+                //logger.Trace("ShowViewModel : PierClaimLocationViewModel")
+                ShowViewModel<PierClaimLocationViewModel>();
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
         }
 
         public IMvxCommand ShowDepartureCommand
@@ -99,7 +101,34 @@ namespace RFID.Core.ViewModels
 
         private void ShowDepartureExecuted()
         {
-            ShowViewModel<FlightEntryViewModel>();
+            try
+            {
+                //logger.Trace("ShowViewModel : FlightEntryViewModel")
+                ShowViewModel<FlightEntryViewModel>();
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+        }
+
+        public async void InitializeButton()
+        {
+            ProgressBarVisible = true;
+            try
+            {
+                //logger.Trace("SqliteService<UserModel> : LoadUser")
+                ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
+                var user = await userRepo.Load();
+                EnableApps(user.AppAccess);
+            }
+            catch (Exception)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+            ProgressBarVisible = false;
         }
 
     }
