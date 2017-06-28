@@ -23,7 +23,7 @@ namespace RFID.Core.ViewModels
         }
 
         /// <summary>
-        /// delete after solving the issue in LoadBagInfoAsync
+        /// delete after solving the issue in LoadBagInfoAsync 
         /// </summary>
         private void testScanHistory()
         {
@@ -31,9 +31,10 @@ namespace RFID.Core.ViewModels
             var bagInfo = new GetBagInfoResponse();
             try
             {
-                //logger.Trace("Service : IRestService, Method : GetBagInfo , Request : GetBagInfoInput = {"Bagtag" = BagtagNo, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
-                bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);
-                //logger.Trace("Service : IRestService , Method : GetBagInfo , Response : GetBagInfoResponse = {"BagHistory":bagInfo.BagHistory, "ReturnCode":bagInfo.ReturnCode,"Message":bagInfo.Message};
+                if (Mvx.Resolve<IValidation>().ObjectIsNotNull(baginput))
+                {
+                    bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);
+                }
             }
             catch (Exception)
             {
@@ -125,8 +126,11 @@ namespace RFID.Core.ViewModels
         public string Itinerary
         {
             get { return _itinerary; }
-            set { _itinerary = value;
-                RaisePropertyChanged(() => Itinerary); }
+            set
+            {
+                _itinerary = value;
+                RaisePropertyChanged(() => Itinerary);
+            }
         }
 
         private string _flightDate;
@@ -134,8 +138,11 @@ namespace RFID.Core.ViewModels
         public string FlightDate
         {
             get { return _flightDate; }
-            set { _flightDate = value;
-                RaisePropertyChanged(() => FlightDate); }
+            set
+            {
+                _flightDate = value;
+                RaisePropertyChanged(() => FlightDate);
+            }
         }
 
         private string _name;
@@ -165,7 +172,9 @@ namespace RFID.Core.ViewModels
         public string BagtagNo
         {
             get { return _bagtag; }
-            set { _bagtag = value;
+            set
+            {
+                _bagtag = value;
                 RaisePropertyChanged(() => BagtagNo);
             }
         }

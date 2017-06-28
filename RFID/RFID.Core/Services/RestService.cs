@@ -12,38 +12,36 @@ namespace RFID.Core.Services
     {
         public AuthenticateUserResponse AuthenticateUser(AuthenticateUserInput input)
         {
+            //logger.Trace("Service : IRestService, Method : AuthenticateUser , Request : AuthenticateUserInput = {"Username" : input.username,"Password" : input.Password, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
+            AuthenticateUserResponse loginResponse = new AuthenticateUserResponse();
+
             if (input.Username == "admin" && input.Password == "password")
             {
-                //Entities.App pierApp = new Entities.App() { AppName = "Pier", Color = "Blue" };
-                //Entities.App claimApp = new Entities.App() { AppName = "Claim", Color = "Violet" };
-                //Entities.App departureApp = new Entities.App() { AppName = "Departure", Color = "Red" };
-                //Entities.App[] listOfApp = new Entities.App[] { pierApp, departureApp, claimApp };
-
-                AuthenticateUserResponse loginResponse = new AuthenticateUserResponse()
+                loginResponse = new AuthenticateUserResponse()
                 {
                     ReturnCode = "1",
                     Name = "Admin User",
                     Message = "Successfully Login",
                     AppAccess = "Pier,Arrival,Departure,Claim,BSO"
                 };
-                return loginResponse;
             }
-
             else
             {
-                AuthenticateUserResponse loginResponse = new AuthenticateUserResponse()
+                 loginResponse = new AuthenticateUserResponse()
                 {
                     ReturnCode = "0",
                     Name = "XamarinRFID",
                     Message = "Failed Login",
                     AppAccess = null
                 };
-                return loginResponse;
             }
+            //logger.Trace("Service : IRestService , Method : AuthenticateUser , Response : AuthenticateUserResponse = {"Name" : loginResponse.Name , "AppAccess" : loginResponse.AppAccess, "ReturnCode" : loginResponse.ReturnCode,"Message" : loginResponse.Message};
+            return loginResponse;
         }
 
         public DepArrScanResponse DepArrScan(DepArrScanInput input)
         {
+            //logger.Trace("Service : IRestService, Method : DepArrScan , Request : DepArrScanInput = {"CommodityID" : input.CommodityID,"FltCode" : input.FltCode,"FltDate" : input.FltDate,"FltNum" : input.FltNum, "FltPosition" : input.FltPosition,"DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             DepArrScanResponse depArrScanResponse = new DepArrScanResponse();
             depArrScanResponse.ReturnCode = "1";
 
@@ -73,12 +71,13 @@ namespace RFID.Core.Services
 
             depArrScanResponse.Flight = flight;
             depArrScanResponse.LoadSummary = loadSummary;
-           
+            //logger.Trace("Service : IRestService , Method : DepArrScan , Response : DepArrScanResponse = {"Flight": depArrScanResponse.Flight , "LoadSummary" : depArrScanResponse.LoadSummary , "ReturnCode":bagInfo.ReturnCode,"Message":bagInfo.Message};
             return depArrScanResponse;
         }
 
         public GetBagInfoResponse GetBagInfo(GetBagInfoInput input)
         {
+            //logger.Trace("Service : IRestService, Method : GetBagInfo , Request : GetBagInfoInput = {"Bagtag" : input.Bagtag, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             GetBagInfoResponse getBagInfoResponse = new GetBagInfoResponse();
             getBagInfoResponse.FltCode = "DL";
             getBagInfoResponse.FltDate = DateTime.Now.ToString("MMMdd");
@@ -99,22 +98,25 @@ namespace RFID.Core.Services
             scanHistory.Add(newscanPoint("ic_departure", "Departure - MSP - Minneapolis, USA"));
             getBagInfoResponse.BagHistory = scanHistory.ToArray<ScanPoint>();
 
-        
+            //logger.Trace("Service : IRestService , Method : GetBagInfo , Response : GetBagInfoResponse = {"BagHistory": bagInfo.BagHistory, "ReturnCode":bagInfo.ReturnCode,"Message":bagInfo.Message};
             return getBagInfoResponse;
 
         }
 
         private ScanPoint newscanPoint(string icon, string name)
         {
+            //logger.Trace("Service : IRestService, Method : newscanPoint , Request : {"Icon" : icon, "Name" : name };")
             ScanPoint mscanpoint = new ScanPoint();
             mscanpoint.ScanType = icon;
             mscanpoint.Location = name;
             mscanpoint.DateTime = DateTime.Now.ToString("HH:mm MMM dd, yyyy");
+            //logger.Trace("Service : IRestService, Method : newscanPoint , Response : ScanPoint = {"ScanType" :  mscanpoint.ScanType, "Location" :  mscanpoint.Location , "DateTime" = mscanpoint.DateTime };")
             return mscanpoint;
         }
 
         public GetFlightDetailsResponse GetFlightDetails(GetFlightDetailsInput input)
         {
+            //logger.Trace("Service : IRestService, Method : GetFlightDetails , Request : GetFlightDetailsResponse = {"CommodityID" : input.CommodityID,"FltCode" : input.FltCode,"FltDate" : input.FltDate,"FltNum" : input.FltNum, "FltPosition" : input.FltPosition,"DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             GetFlightDetailsResponse getFlightDetailsResponse = new GetFlightDetailsResponse();
             getFlightDetailsResponse.ReturnCode = "1";
 
@@ -145,12 +147,13 @@ namespace RFID.Core.Services
 
             getFlightDetailsResponse.Flight = flight;
             getFlightDetailsResponse.LoadSummary = loadSummary;
-
+            //logger.Trace("Service : IRestService , Method : GetFlightDetails , Response : GetFlightDetailsResponse = {"Flight": depArrScanResponse.Flight , "LoadSummary" : depArrScanResponse.LoadSummary , "ReturnCode":bagInfo.ReturnCode,"Message":bagInfo.Message};
             return getFlightDetailsResponse;
         }
 
         public GetPierClaimLocationResponse GetPierClaimLocation(GetPierClaimLocationInput input)
         {
+            //logger.Trace("Service : IRestService, Method : GetPierClaimLocation, Request : GetPierClaimLocationInput = {"Appname":user.Name,"Username" : user.Username, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             GetPierClaimLocationResponse getPierClaimLocationResponse = new GetPierClaimLocationResponse();
             PierClaimLocations main1 = new PierClaimLocations();
             main1.Name = "Pier";
@@ -164,14 +167,16 @@ namespace RFID.Core.Services
 
             getPierClaimLocationResponse.MainLocations = new PierClaimLocations[] { main1, main2, main3 };
             getPierClaimLocationResponse.ReturnCode = "1";
+            //logger.Trace("Service : IRestService , Method : GetPierClaimLocation , Response : GetPierClaimLocationResponse = {"MainLocation":PierResponse.MainLocation, "ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
             return getPierClaimLocationResponse;
         }
 
         public PierClaimScanResponse PierClaimScan(PierClaimScanInput input)
         {
+            //logger.Trace("Service : IRestService, Method : PierClaimScan , Request : PierClaimScanInput = {"Bags" : input.Bags, "DeviceName" : input.DeviceName,"MyProperty" : input.MyProperty,"PierClaimLocation": input.PierClaimLocation, "Station" : input.Station, "Version" : input.Version};")
             PierClaimScanResponse pierClaimScan = new PierClaimScanResponse();
             pierClaimScan.ReturnCode = "1";
-
+            //logger.Trace("Service : IRestService , Method : PierClaimScan , Response : PierClaimScanResponse =  {"ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
             return pierClaimScan;
         }
     }

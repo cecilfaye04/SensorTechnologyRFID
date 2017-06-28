@@ -13,5 +13,6 @@ namespace RFID.Core.Interfaces
         bool Is10Digits(string value);
         bool IsFlightNo(string value, out string newValue);
         bool IsPosition(string value);
+        bool ObjectIsNotNull(object value);
     }
 }

@@ -24,10 +24,10 @@ namespace RFID.Core.ViewModels
                 var user = await userRepo.Load();
                 GetPierClaimLocationInput pierInput = new GetPierClaimLocationInput()
                 { AppName = user.Name, Username = user.Username, DeviceName = "Apple", Station = "123", Version = "1" };
-                //logger.Trace("Service : IRestService, Method : GetPierClaimLocation, Request : GetPierClaimLocationInput = {"Appname":user.Name,"Username" : user.Username, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
-                PierResponse = Mvx.Resolve<IRestService>().GetPierClaimLocation(pierInput);
-                //logger.Trace("Service : IRestService , Method : GetPierClaimLocation , Response : GetPierClaimLocationResponse = {"MainLocation":PierResponse.MainLocation, "ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
-
+                if (Mvx.Resolve<IValidation>().ObjectIsNotNull(pierInput))
+                {
+                    PierResponse = Mvx.Resolve<IRestService>().GetPierClaimLocation(pierInput);
+                }
 
             }
             catch (Exception)

@@ -90,10 +90,10 @@ namespace RFID.Core.ViewModels
             var authResponse = new AuthenticateUserResponse();
             try
             {
-                //logger.Trace("Service : IRestService , Method : AuthenticateUser , Request : AuthenticateUserInput = { "Username":Username, "Password":Password, "DeviceName":"Apple ,"Station":"123", Version : "1" };
-                authResponse = Mvx.Resolve<IRestService>().AuthenticateUser(userTry);
-                //logger.Trace("Service : IRestService , Method : AuthenticateUser , Response : AuthenticateUserResponse = {"Name":authResponse.Name, "ReturnCode":authResponse.ReturnCode,"Message":authResponse.Message,"AppAccess":authResponse.AppAccess };
-
+                if (Mvx.Resolve<IValidation>().ObjectIsNotNull(userTry))
+                {
+                    authResponse = Mvx.Resolve<IRestService>().AuthenticateUser(userTry);
+                }
             }
             catch (Exception)
             {

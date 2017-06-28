@@ -42,5 +42,10 @@ namespace RFID.Core.Services
         {
             return value.Length == 3 ? true : false;
         }
+
+        public bool ObjectIsNotNull(object x)
+        {
+            return x != null;
+        }
     }
 }

@@ -39,10 +39,10 @@ namespace RFID.Core.ViewModels
                 var bagInfo = new GetBagInfoResponse();
                 try
                 {
-                    //logger.Trace("Service : IRestService, Method : GetBagInfo , Request : GetBagInfoInput = {"Bagtag" = BagtagNo, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
-                    bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);
-                    //logger.Trace("Service : IRestService , Method : GetBagInfo , Response : GetBagInfoResponse = {"BagHistory":bagInfo.BagHistory, "ReturnCode":bagInfo.ReturnCode,"Message":bagInfo.Message};
-
+                    if (Mvx.Resolve<IValidation>().ObjectIsNotNull(baginput))
+                    {
+                        bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);
+                    }
                 }
                 catch (Exception)
                 {
