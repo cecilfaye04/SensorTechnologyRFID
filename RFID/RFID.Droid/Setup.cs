@@ -22,6 +22,7 @@ using RFID.Core.Interfaces;
 using Acr.UserDialogs;
 using System.Threading.Tasks;
 using Android.Util;
+using RFID.Droid.Services;
 
 namespace RFID.Droid
 {
@@ -34,6 +35,7 @@ namespace RFID.Droid
         protected override IMvxApplication CreateApp()
         {
             Mvx.RegisterSingleton<IInitilializeSqliteService>(new InitializeSqliteService());
+            Mvx.RegisterSingleton<ILogService>(new LogService());
             UserDialogs.Init(() => Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
             AndroidEnvironment.UnhandledExceptionRaiser -= StoreLogger;
             AndroidEnvironment.UnhandledExceptionRaiser += StoreLogger;

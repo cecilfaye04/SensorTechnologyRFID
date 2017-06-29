@@ -116,6 +116,7 @@ class MonoPackageManager_Resources {
 		"MvvmCross.Platform.dll",
 		"MvvmCross.Platform.Droid.dll",
 		"Newtonsoft.Json.dll",
+		"NLog.dll",
 		"Serilog.dll",
 		"Serilog.Sinks.File.dll",
 		"Splat.dll",

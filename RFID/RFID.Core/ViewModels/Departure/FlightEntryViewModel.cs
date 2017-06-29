@@ -69,11 +69,12 @@ namespace RFID.Core.ViewModels
                 {
                     //logger.Trace("ShowViewModel : DepArrScanScreenViewModel")
                     ShowViewModel<DepArrScanScreenViewModel>();
-                    //throw new System.ArgumentException("Parameter cannot be null", "original");
+                    throw new System.ArgumentException("Parameter cannot be null", "original");
                 }
                 catch (Exception e)
                 {
                     Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                    Mvx.Resolve<ILogService>().Trace("e");
                     //logger.Log(LogLevel.Info,e.ToString);
                 }
             }
