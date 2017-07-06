@@ -10,5 +10,7 @@ namespace RFID.Core.Models
     {
         public double Latitude { get; set; }
         public double Longitude { get; set; }
+
+        public int test { get; set; }
     }
 }
