@@ -26,6 +26,8 @@ namespace RFID.Core.Models
         public List<BagScanPoint> BagScanPoints { get; set; }
 
         public string BagScanPointsBlobbed { get; set; }
+
+        public string CommitTest { get; set; }
     }
 
     public class BagScanPoint
