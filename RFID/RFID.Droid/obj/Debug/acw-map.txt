@@ -14,6 +14,10 @@ RFID.Droid.Views.MainMenuView, RFID.Droid;md5269bd7252ef3cb797ab39a922385c683.Ma
 RFID.Droid.Views.MainMenuView, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5269bd7252ef3cb797ab39a922385c683.MainMenuView
 RFID.Droid.Views.MainMenuView;md5269bd7252ef3cb797ab39a922385c683.MainMenuView
 rfid.droid.views.MainMenuView;md5269bd7252ef3cb797ab39a922385c683.MainMenuView
+RFID.Droid.Views.Activity1, RFID.Droid;md5269bd7252ef3cb797ab39a922385c683.Activity1
+RFID.Droid.Views.Activity1, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5269bd7252ef3cb797ab39a922385c683.Activity1
+RFID.Droid.Views.Activity1;md5269bd7252ef3cb797ab39a922385c683.Activity1
+rfid.droid.views.Activity1;md5269bd7252ef3cb797ab39a922385c683.Activity1
 RFID.Droid.Views.BaseFragment, RFID.Droid;md5269bd7252ef3cb797ab39a922385c683.BaseFragment
 RFID.Droid.Views.BaseFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5269bd7252ef3cb797ab39a922385c683.BaseFragment
 RFID.Droid.Views.BaseFragment;md5269bd7252ef3cb797ab39a922385c683.BaseFragment

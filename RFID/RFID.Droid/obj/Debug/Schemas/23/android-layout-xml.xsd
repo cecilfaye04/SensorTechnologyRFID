@@ -3,7 +3,7 @@
   <xs:import schemaLocation="schemas.android.com.apk.res.android.xsd" namespace="http://schemas.android.com/apk/res/android" />
   <xs:annotation>
     <xs:documentation>v23</xs:documentation>
-    <xs:documentation>7/5/2017 8:09:58 PM</xs:documentation>
+    <xs:documentation>7/17/2017 4:44:34 PM</xs:documentation>
   </xs:annotation>
   <xs:group name="any-view">
     <xs:choice>
@@ -97,35 +97,18 @@
       <xs:element ref="MvvmCross.Binding.Droid.Views.MvxFrameControl" />
       <xs:element ref="MvvmCross.Binding.Droid.Views.MvxExpandableListView" />
       <xs:element ref="MvvmCross.Binding.Droid.Views.MvxBaseListItemView" />
-      <xs:element ref="MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout" />
       <xs:element ref="MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView" />
       <xs:element ref="MvvmCross.Droid.Support.V7.AppCompat.Widget.MvxAppCompatSpinner" />
       <xs:element ref="MvvmCross.Droid.Support.V7.AppCompat.Widget.MvxAppCompatRadioGroup" />
       <xs:element ref="MvvmCross.Droid.Support.V7.AppCompat.Widget.MvxAppCompatImageView" />
       <xs:element ref="MvvmCross.Droid.Support.V7.AppCompat.Widget.MvxAppCompatAutoCompleteTextView" />
-      <xs:element ref="android.support.design.widget.TextInputEditText" />
-      <xs:element ref="android.support.design.widget.TabItem" />
-      <xs:element ref="android.support.design.widget.NavigationView" />
-      <xs:element ref="android.support.design.widget.CheckableImageButton" />
-      <xs:element ref="android.support.design.widget.BottomNavigationView" />
-      <xs:element ref="android.support.design.widget.BaseTransientBottomBar.SnackbarBaseLayout" />
-      <xs:element ref="android.support.design.widget.TextInputLayout" />
-      <xs:element ref="android.support.design.widget.TabLayout" />
-      <xs:element ref="android.support.design.widget.TabLayout.TabView" />
-      <xs:element ref="android.support.design.widget.FloatingActionButton" />
-      <xs:element ref="android.support.design.widget.VisibilityAwareImageButton" />
-      <xs:element ref="android.support.design.widget.CoordinatorLayout" />
-      <xs:element ref="android.support.design.widget.Snackbar.SnackbarLayout" />
-      <xs:element ref="android.support.design.widget.CollapsingToolbarLayout" />
-      <xs:element ref="android.support.design.widget.AppBarLayout" />
-      <xs:element ref="android.support.design.internal.SnackbarContentLayout" />
-      <xs:element ref="android.support.design.internal.ScrimInsetsFrameLayout" />
-      <xs:element ref="android.support.design.internal.NavigationMenuView" />
-      <xs:element ref="android.support.design.internal.ForegroundLinearLayout" />
-      <xs:element ref="android.support.design.internal.BottomNavigationMenuView" />
-      <xs:element ref="android.support.design.internal.BaselineLayout" />
-      <xs:element ref="android.support.design.internal.NavigationMenuItemView" />
-      <xs:element ref="android.support.v7.widget.RecyclerView" />
+      <xs:element ref="MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout" />
+      <xs:element ref="com.google.android.gms.common.SignInButton" />
+      <xs:element ref="com.google.android.gms.maps.StreetViewPanoramaView" />
+      <xs:element ref="com.google.android.gms.maps.MapView" />
+      <xs:element ref="android.support.v7.view.menu.ExpandedMenuView" />
+      <xs:element ref="android.support.v7.view.menu.ListMenuItemView" />
+      <xs:element ref="android.support.v7.view.menu.ActionMenuItemView" />
       <xs:element ref="android.support.v7.widget.ViewStubCompat" />
       <xs:element ref="android.support.v7.widget.SwitchCompat" />
       <xs:element ref="android.support.v7.widget.SearchView" />
@@ -149,9 +132,29 @@
       <xs:element ref="android.support.v7.widget.ActionBarContainer" />
       <xs:element ref="android.support.v7.widget.AbsActionBarView" />
       <xs:element ref="android.support.v7.widget.Toolbar" />
-      <xs:element ref="android.support.v7.view.menu.ExpandedMenuView" />
-      <xs:element ref="android.support.v7.view.menu.ListMenuItemView" />
-      <xs:element ref="android.support.v7.view.menu.ActionMenuItemView" />
+      <xs:element ref="android.support.v7.widget.RecyclerView" />
+      <xs:element ref="android.support.design.widget.TextInputEditText" />
+      <xs:element ref="android.support.design.widget.TabItem" />
+      <xs:element ref="android.support.design.widget.NavigationView" />
+      <xs:element ref="android.support.design.widget.CheckableImageButton" />
+      <xs:element ref="android.support.design.widget.BottomNavigationView" />
+      <xs:element ref="android.support.design.widget.BaseTransientBottomBar.SnackbarBaseLayout" />
+      <xs:element ref="android.support.design.widget.TextInputLayout" />
+      <xs:element ref="android.support.design.widget.TabLayout" />
+      <xs:element ref="android.support.design.widget.TabLayout.TabView" />
+      <xs:element ref="android.support.design.widget.FloatingActionButton" />
+      <xs:element ref="android.support.design.widget.VisibilityAwareImageButton" />
+      <xs:element ref="android.support.design.widget.CoordinatorLayout" />
+      <xs:element ref="android.support.design.widget.Snackbar.SnackbarLayout" />
+      <xs:element ref="android.support.design.widget.CollapsingToolbarLayout" />
+      <xs:element ref="android.support.design.widget.AppBarLayout" />
+      <xs:element ref="android.support.design.internal.SnackbarContentLayout" />
+      <xs:element ref="android.support.design.internal.ScrimInsetsFrameLayout" />
+      <xs:element ref="android.support.design.internal.NavigationMenuView" />
+      <xs:element ref="android.support.design.internal.ForegroundLinearLayout" />
+      <xs:element ref="android.support.design.internal.BottomNavigationMenuView" />
+      <xs:element ref="android.support.design.internal.BaselineLayout" />
+      <xs:element ref="android.support.design.internal.NavigationMenuItemView" />
       <xs:element ref="android.support.v4.widget.Space" />
       <xs:element ref="android.support.v4.widget.SlidingPaneLayout" />
       <xs:element ref="android.support.v4.widget.NestedScrollView" />
@@ -162,9 +165,6 @@
       <xs:element ref="android.support.v4.view.PagerTitleStrip" />
       <xs:element ref="android.support.v4.view.PagerTabStrip" />
       <xs:element ref="android.support.v4.app.FragmentTabHost" />
-      <xs:element ref="com.google.android.gms.common.SignInButton" />
-      <xs:element ref="com.google.android.gms.maps.StreetViewPanoramaView" />
-      <xs:element ref="com.google.android.gms.maps.MapView" />
     </xs:choice>
   </xs:group>
   <xs:element name="CheckBox" type="CheckBox">
@@ -1628,16 +1628,6 @@
       <xs:extension base="FrameLayout" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout" type="MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout">
-    <xs:complexContent mixed="false">
-      <xs:extension base="ViewGroup" />
-    </xs:complexContent>
-  </xs:complexType>
   <xs:element name="MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView" type="MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView">
     <xs:annotation>
       <xs:documentation>Runtime Type: MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerView</xs:documentation>
@@ -1688,234 +1678,74 @@
       <xs:extension base="AutoCompleteTextView" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="android.support.design.widget.TextInputEditText" type="android.support.design.widget.TextInputEditText">
+  <xs:element name="MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout" type="MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout">
     <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.TextInputEditText</xs:documentation>
+      <xs:documentation>Runtime Type: MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:complexType name="android.support.design.widget.TextInputEditText">
+  <xs:complexType name="MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout">
     <xs:complexContent mixed="false">
-      <xs:extension base="EditText" />
+      <xs:extension base="ViewGroup" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="android.support.design.widget.TabItem" type="android.support.design.widget.TabItem">
+  <xs:element name="com.google.android.gms.common.SignInButton" type="com.google.android.gms.common.SignInButton">
     <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.TabItem</xs:documentation>
+      <xs:documentation>Runtime Type: Android.Gms.Common.SignInButton</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:complexType name="android.support.design.widget.TabItem">
-    <xs:complexContent mixed="false">
-      <xs:extension base="View" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.widget.NavigationView" type="android.support.design.widget.NavigationView">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.NavigationView</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.widget.NavigationView">
+  <xs:complexType name="com.google.android.gms.common.SignInButton">
     <xs:complexContent mixed="false">
       <xs:extension base="FrameLayout" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="android.support.design.widget.CheckableImageButton" type="android.support.design.widget.CheckableImageButton">
+  <xs:element name="com.google.android.gms.maps.StreetViewPanoramaView" type="com.google.android.gms.maps.StreetViewPanoramaView">
     <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.CheckableImageButton</xs:documentation>
+      <xs:documentation>Runtime Type: Android.Gms.Maps.StreetViewPanoramaView</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:complexType name="android.support.design.widget.CheckableImageButton">
-    <xs:complexContent mixed="false">
-      <xs:extension base="ImageButton" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.widget.BottomNavigationView" type="android.support.design.widget.BottomNavigationView">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.BottomNavigationView</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.widget.BottomNavigationView">
+  <xs:complexType name="com.google.android.gms.maps.StreetViewPanoramaView">
     <xs:complexContent mixed="false">
       <xs:extension base="FrameLayout" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="android.support.design.widget.BaseTransientBottomBar.SnackbarBaseLayout" type="android.support.design.widget.BaseTransientBottomBar.SnackbarBaseLayout">
+  <xs:element name="com.google.android.gms.maps.MapView" type="com.google.android.gms.maps.MapView">
     <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.BaseTransientBottomBar+SnackbarBaseLayout</xs:documentation>
+      <xs:documentation>Runtime Type: Android.Gms.Maps.MapView</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:complexType name="android.support.design.widget.BaseTransientBottomBar.SnackbarBaseLayout">
+  <xs:complexType name="com.google.android.gms.maps.MapView">
     <xs:complexContent mixed="false">
       <xs:extension base="FrameLayout" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="android.support.design.widget.TextInputLayout" type="android.support.design.widget.TextInputLayout">
+  <xs:element name="android.support.v7.view.menu.ExpandedMenuView" type="android.support.v7.view.menu.ExpandedMenuView">
     <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.TextInputLayout</xs:documentation>
+      <xs:documentation>Runtime Type: Android.Support.V7.View.Menu.ExpandedMenuView</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:complexType name="android.support.design.widget.TextInputLayout">
+  <xs:complexType name="android.support.v7.view.menu.ExpandedMenuView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ListView" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.v7.view.menu.ListMenuItemView" type="android.support.v7.view.menu.ListMenuItemView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.V7.View.Menu.ListMenuItemView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.v7.view.menu.ListMenuItemView">
     <xs:complexContent mixed="false">
       <xs:extension base="LinearLayout" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="android.support.design.widget.TabLayout" type="android.support.design.widget.TabLayout">
+  <xs:element name="android.support.v7.view.menu.ActionMenuItemView" type="android.support.v7.view.menu.ActionMenuItemView">
     <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.TabLayout</xs:documentation>
+      <xs:documentation>Runtime Type: Android.Support.V7.View.Menu.ActionMenuItemView</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:complexType name="android.support.design.widget.TabLayout">
+  <xs:complexType name="android.support.v7.view.menu.ActionMenuItemView">
     <xs:complexContent mixed="false">
-      <xs:extension base="HorizontalScrollView" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.widget.TabLayout.TabView" type="android.support.design.widget.TabLayout.TabView">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.TabLayout+TabView</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.widget.TabLayout.TabView">
-    <xs:complexContent mixed="false">
-      <xs:extension base="LinearLayout" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.widget.FloatingActionButton" type="android.support.design.widget.FloatingActionButton">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.FloatingActionButton</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.widget.FloatingActionButton">
-    <xs:complexContent mixed="false">
-      <xs:extension base="ImageButton" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.widget.VisibilityAwareImageButton" type="android.support.design.widget.VisibilityAwareImageButton">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.VisibilityAwareImageButton</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.widget.VisibilityAwareImageButton">
-    <xs:complexContent mixed="false">
-      <xs:extension base="ImageButton" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.widget.CoordinatorLayout" type="android.support.design.widget.CoordinatorLayout">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.CoordinatorLayout</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.widget.CoordinatorLayout">
-    <xs:complexContent mixed="false">
-      <xs:extension base="ViewGroup" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.widget.Snackbar.SnackbarLayout" type="android.support.design.widget.Snackbar.SnackbarLayout">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.Snackbar+SnackbarLayout</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.widget.Snackbar.SnackbarLayout">
-    <xs:complexContent mixed="false">
-      <xs:extension base="FrameLayout" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.widget.CollapsingToolbarLayout" type="android.support.design.widget.CollapsingToolbarLayout">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.CollapsingToolbarLayout</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.widget.CollapsingToolbarLayout">
-    <xs:complexContent mixed="false">
-      <xs:extension base="FrameLayout" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.widget.AppBarLayout" type="android.support.design.widget.AppBarLayout">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Widget.AppBarLayout</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.widget.AppBarLayout">
-    <xs:complexContent mixed="false">
-      <xs:extension base="LinearLayout" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.internal.SnackbarContentLayout" type="android.support.design.internal.SnackbarContentLayout">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Internal.SnackbarContentLayout</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.internal.SnackbarContentLayout">
-    <xs:complexContent mixed="false">
-      <xs:extension base="LinearLayout" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.internal.ScrimInsetsFrameLayout" type="android.support.design.internal.ScrimInsetsFrameLayout">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Internal.ScrimInsetsFrameLayout</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.internal.ScrimInsetsFrameLayout">
-    <xs:complexContent mixed="false">
-      <xs:extension base="FrameLayout" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.internal.NavigationMenuView" type="android.support.design.internal.NavigationMenuView">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Internal.NavigationMenuView</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.internal.NavigationMenuView">
-    <xs:complexContent mixed="false">
-      <xs:extension base="ViewGroup" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.internal.ForegroundLinearLayout" type="android.support.design.internal.ForegroundLinearLayout">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Internal.ForegroundLinearLayout</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.internal.ForegroundLinearLayout">
-    <xs:complexContent mixed="false">
-      <xs:extension base="ViewGroup" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.internal.BottomNavigationMenuView" type="android.support.design.internal.BottomNavigationMenuView">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Internal.BottomNavigationMenuView</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.internal.BottomNavigationMenuView">
-    <xs:complexContent mixed="false">
-      <xs:extension base="ViewGroup" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.internal.BaselineLayout" type="android.support.design.internal.BaselineLayout">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Internal.BaselineLayout</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.internal.BaselineLayout">
-    <xs:complexContent mixed="false">
-      <xs:extension base="ViewGroup" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.design.internal.NavigationMenuItemView" type="android.support.design.internal.NavigationMenuItemView">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.Design.Internal.NavigationMenuItemView</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.design.internal.NavigationMenuItemView">
-    <xs:complexContent mixed="false">
-      <xs:extension base="ViewGroup" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="android.support.v7.widget.RecyclerView" type="android.support.v7.widget.RecyclerView">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.V7.Widget.RecyclerView</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="android.support.v7.widget.RecyclerView">
-    <xs:complexContent mixed="false">
-      <xs:extension base="ViewGroup" />
+      <xs:extension base="TextView" />
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="android.support.v7.widget.ViewStubCompat" type="android.support.v7.widget.ViewStubCompat">
@@ -2211,34 +2041,234 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="android.support.v7.view.menu.ExpandedMenuView" type="android.support.v7.view.menu.ExpandedMenuView">
+  <xs:element name="android.support.v7.widget.RecyclerView" type="android.support.v7.widget.RecyclerView">
     <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.V7.View.Menu.ExpandedMenuView</xs:documentation>
+      <xs:documentation>Runtime Type: Android.Support.V7.Widget.RecyclerView</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:complexType name="android.support.v7.view.menu.ExpandedMenuView">
+  <xs:complexType name="android.support.v7.widget.RecyclerView">
     <xs:complexContent mixed="false">
-      <xs:extension base="ListView" />
+      <xs:extension base="ViewGroup" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="android.support.v7.view.menu.ListMenuItemView" type="android.support.v7.view.menu.ListMenuItemView">
+  <xs:element name="android.support.design.widget.TextInputEditText" type="android.support.design.widget.TextInputEditText">
     <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.V7.View.Menu.ListMenuItemView</xs:documentation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.TextInputEditText</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:complexType name="android.support.v7.view.menu.ListMenuItemView">
+  <xs:complexType name="android.support.design.widget.TextInputEditText">
+    <xs:complexContent mixed="false">
+      <xs:extension base="EditText" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.TabItem" type="android.support.design.widget.TabItem">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.TabItem</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.TabItem">
+    <xs:complexContent mixed="false">
+      <xs:extension base="View" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.NavigationView" type="android.support.design.widget.NavigationView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.NavigationView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.NavigationView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FrameLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.CheckableImageButton" type="android.support.design.widget.CheckableImageButton">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.CheckableImageButton</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.CheckableImageButton">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ImageButton" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.BottomNavigationView" type="android.support.design.widget.BottomNavigationView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.BottomNavigationView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.BottomNavigationView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FrameLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.BaseTransientBottomBar.SnackbarBaseLayout" type="android.support.design.widget.BaseTransientBottomBar.SnackbarBaseLayout">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.BaseTransientBottomBar+SnackbarBaseLayout</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.BaseTransientBottomBar.SnackbarBaseLayout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FrameLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.TextInputLayout" type="android.support.design.widget.TextInputLayout">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.TextInputLayout</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.TextInputLayout">
     <xs:complexContent mixed="false">
       <xs:extension base="LinearLayout" />
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="android.support.v7.view.menu.ActionMenuItemView" type="android.support.v7.view.menu.ActionMenuItemView">
+  <xs:element name="android.support.design.widget.TabLayout" type="android.support.design.widget.TabLayout">
     <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Support.V7.View.Menu.ActionMenuItemView</xs:documentation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.TabLayout</xs:documentation>
     </xs:annotation>
   </xs:element>
-  <xs:complexType name="android.support.v7.view.menu.ActionMenuItemView">
+  <xs:complexType name="android.support.design.widget.TabLayout">
     <xs:complexContent mixed="false">
-      <xs:extension base="TextView" />
+      <xs:extension base="HorizontalScrollView" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.TabLayout.TabView" type="android.support.design.widget.TabLayout.TabView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.TabLayout+TabView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.TabLayout.TabView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LinearLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.FloatingActionButton" type="android.support.design.widget.FloatingActionButton">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.FloatingActionButton</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.FloatingActionButton">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ImageButton" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.VisibilityAwareImageButton" type="android.support.design.widget.VisibilityAwareImageButton">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.VisibilityAwareImageButton</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.VisibilityAwareImageButton">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ImageButton" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.CoordinatorLayout" type="android.support.design.widget.CoordinatorLayout">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.CoordinatorLayout</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.CoordinatorLayout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ViewGroup" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.Snackbar.SnackbarLayout" type="android.support.design.widget.Snackbar.SnackbarLayout">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.Snackbar+SnackbarLayout</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.Snackbar.SnackbarLayout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FrameLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.CollapsingToolbarLayout" type="android.support.design.widget.CollapsingToolbarLayout">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.CollapsingToolbarLayout</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.CollapsingToolbarLayout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FrameLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.widget.AppBarLayout" type="android.support.design.widget.AppBarLayout">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Widget.AppBarLayout</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.widget.AppBarLayout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LinearLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.internal.SnackbarContentLayout" type="android.support.design.internal.SnackbarContentLayout">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Internal.SnackbarContentLayout</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.internal.SnackbarContentLayout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="LinearLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.internal.ScrimInsetsFrameLayout" type="android.support.design.internal.ScrimInsetsFrameLayout">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Internal.ScrimInsetsFrameLayout</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.internal.ScrimInsetsFrameLayout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="FrameLayout" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.internal.NavigationMenuView" type="android.support.design.internal.NavigationMenuView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Internal.NavigationMenuView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.internal.NavigationMenuView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ViewGroup" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.internal.ForegroundLinearLayout" type="android.support.design.internal.ForegroundLinearLayout">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Internal.ForegroundLinearLayout</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.internal.ForegroundLinearLayout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ViewGroup" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.internal.BottomNavigationMenuView" type="android.support.design.internal.BottomNavigationMenuView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Internal.BottomNavigationMenuView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.internal.BottomNavigationMenuView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ViewGroup" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.internal.BaselineLayout" type="android.support.design.internal.BaselineLayout">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Internal.BaselineLayout</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.internal.BaselineLayout">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ViewGroup" />
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="android.support.design.internal.NavigationMenuItemView" type="android.support.design.internal.NavigationMenuItemView">
+    <xs:annotation>
+      <xs:documentation>Runtime Type: Android.Support.Design.Internal.NavigationMenuItemView</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="android.support.design.internal.NavigationMenuItemView">
+    <xs:complexContent mixed="false">
+      <xs:extension base="ViewGroup" />
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="android.support.v4.widget.Space" type="android.support.v4.widget.Space">
@@ -2339,36 +2369,6 @@
   <xs:complexType name="android.support.v4.app.FragmentTabHost">
     <xs:complexContent mixed="false">
       <xs:extension base="TabHost" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="com.google.android.gms.common.SignInButton" type="com.google.android.gms.common.SignInButton">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Gms.Common.SignInButton</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="com.google.android.gms.common.SignInButton">
-    <xs:complexContent mixed="false">
-      <xs:extension base="FrameLayout" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="com.google.android.gms.maps.StreetViewPanoramaView" type="com.google.android.gms.maps.StreetViewPanoramaView">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Gms.Maps.StreetViewPanoramaView</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="com.google.android.gms.maps.StreetViewPanoramaView">
-    <xs:complexContent mixed="false">
-      <xs:extension base="FrameLayout" />
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="com.google.android.gms.maps.MapView" type="com.google.android.gms.maps.MapView">
-    <xs:annotation>
-      <xs:documentation>Runtime Type: Android.Gms.Maps.MapView</xs:documentation>
-    </xs:annotation>
-  </xs:element>
-  <xs:complexType name="com.google.android.gms.maps.MapView">
-    <xs:complexContent mixed="false">
-      <xs:extension base="FrameLayout" />
     </xs:complexContent>
   </xs:complexType>
 </xs:schema>
