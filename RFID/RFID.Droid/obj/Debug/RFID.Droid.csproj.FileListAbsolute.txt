@@ -41,6 +41,8 @@ C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\RFID.Core.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Serilog.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.File.dll
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.Literate.dll
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.RollingFile.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Splat.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\SQLite.Net.Async.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\SQLite.Net.dll
@@ -77,6 +79,8 @@ C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\NLog.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Serilog.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.File.xml
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.Literate.xml
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.RollingFile.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Splat.dll.mdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\RFID.Droid.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\RFID.Droid.pdb
@@ -100,6 +104,7 @@ C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_dep_arr_scan_screen.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_bag_track.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\res\layout\listview_scanhistorycustom.xml
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_rfid_encoder.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\res\values\strings.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\res\drawable\icon.png
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\res\drawable\splash.png
@@ -187,10 +192,6 @@ C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.RollingFile.dll
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.RollingFile.xml
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.Literate.dll
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.Literate.xml
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\res\layout\layout1.xml
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\res\layout\fragment_search_multiple.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\RFID.Droid.dll.mdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\RFID.Droid.dll.mdb

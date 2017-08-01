@@ -70,13 +70,15 @@
     <Compile Include="ViewModels\Home\MainMenuViewModel.cs" />
     <Compile Include="ViewModels\Pier\PierClaimLocationViewModel.cs" />
     <Compile Include="ViewModels\Pier\PierClaimScanViewModel.cs" />
-    <Compile Include="ViewModels\Search\BagInfoViewModel.cs" />
-    <Compile Include="ViewModels\Search\BagLocateViewModel.cs" />
-    <Compile Include="ViewModels\Search\BagTrackViewModel.cs" />
-    <Compile Include="ViewModels\Search\BottomNavigationViewModel.cs" />
+    <Compile Include="ViewModels\Utility\RfidEncoderViewModel.cs" />
+    <Compile Include="ViewModels\Utility\BagInfoViewModel.cs" />
+    <Compile Include="ViewModels\Utility\BagLocateViewModel.cs" />
+    <Compile Include="ViewModels\Utility\BagTrackViewModel.cs" />
+    <Compile Include="ViewModels\Utility\BottomNavigationViewModel.cs" />
     <Compile Include="ViewModels\Home\HomeViewModel.cs" />
     <Compile Include="ViewModels\Login\LoginViewModel.cs" />
-    <Compile Include="ViewModels\Search\SearchViewModel.cs" />
+    <Compile Include="ViewModels\Utility\SearchMultipleViewModel.cs" />
+    <Compile Include="ViewModels\Utility\SearchViewModel.cs" />
     <Compile Include="ViewModels\Home\SideMenuViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

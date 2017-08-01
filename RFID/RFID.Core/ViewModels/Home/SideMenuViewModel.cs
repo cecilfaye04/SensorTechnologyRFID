@@ -99,6 +99,43 @@ namespace RFID.Core.ViewModels
             }
         }
 
+        public IMvxCommand ShowEncoderCommand
+        {
+            get { return new MvxCommand(ShowEncoderExecuted); }
+        }
+
+        private void ShowEncoderExecuted()
+        {
+            try
+            {
+                //logger.Trace("ShowViewModel : PierClaimLocationViewModel")
+                ShowViewModel<RfidEncoderViewModel>();
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+        }
+
+        public IMvxCommand ShowSearchCommand
+        {
+            get { return new MvxCommand(ShowSearchExecuted); }
+        }
+
+        private void ShowSearchExecuted()
+        {
+            try
+            {
+                //logger.Trace("ShowViewModel : PierClaimLocationViewModel")
+                ShowViewModel<SearchViewModel>();
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+        }
         public IMvxCommand LogoutCommand
         {
             get

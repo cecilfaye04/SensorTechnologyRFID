@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include
+        android:id="@+id/outer"
+        layout="@layout/toolbar_actionbar" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/llHeading"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <TextView
+            android:text="⇕ Bagtag #"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvLabelBagtag"
+            android:layout_weight="1"
+            android:gravity="left" />
+        <TextView
+            android:text="⇕ Dest"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvLabelDest"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:text="⇕ Flight #"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvLabelFlight"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:text="⇕ Status"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvLabelStatus"
+            android:layout_weight="1"
+            android:gravity="right" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:id="@+id/view1"
+        android:layout_marginTop="5dp"
+        android:background="#CCCCCC" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/llResult1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:text="1111111111"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvBtag"
+            android:layout_weight="1"
+            android:gravity="left" />
+        <TextView
+            android:text="NRT"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvDest"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:text="DL1234"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvFlight"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:text="RRT"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvStatus"
+            android:layout_weight="1"
+            android:gravity="right" />
+        <Button
+            android:text="&gt;"
+            android:layout_width="33.3dp"
+            android:layout_height="22.7dp"
+            android:id="@+id/btnNext"
+            android:layout_weight="1"
+            android:gravity="center" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/llResult2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:text="2222222222"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvBtag2"
+            android:layout_weight="1"
+            android:gravity="left" />
+        <TextView
+            android:text="NRT"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvDest2"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:text="DL1234"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvFlight2"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:text="RRT"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvStatus2"
+            android:layout_weight="1"
+            android:gravity="right" />
+        <Button
+            android:text="&gt;"
+            android:layout_width="33.3dp"
+            android:layout_height="22.7dp"
+            android:id="@+id/btnNext2"
+            android:layout_weight="1"
+            android:gravity="center" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:id="@+id/llResult3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="5dp">
+        <TextView
+            android:text="3333333333"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvBtag3"
+            android:layout_weight="1"
+            android:gravity="left" />
+        <TextView
+            android:text="NRT"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvDest3"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:text="DL1234"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvFlight3"
+            android:layout_weight="1"
+            android:gravity="center" />
+        <TextView
+            android:text="RRT"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/tvStatus3"
+            android:layout_weight="1"
+            android:gravity="right" />
+        <Button
+            android:text="&gt;"
+            android:layout_width="33.3dp"
+            android:layout_height="22.7dp"
+            android:id="@+id/btnNext3"
+            android:layout_weight="1"
+            android:gravity="center" />
+    </LinearLayout>
+</LinearLayout>

@@ -55,16 +55,16 @@ namespace RFID.Core.ViewModels
         {
             string newFlightno;
 
-            if (!Mvx.Resolve<IValidation>().IsFlightNo(FlightNo, out newFlightno))
-            {
-                Mvx.Resolve<IUserDialogs>().Alert("Invalid Flight No.", null, "Dismiss");
-            }
-            else if (!Mvx.Resolve<IValidation>().IsPosition(Position))
-            {
-                Mvx.Resolve<IUserDialogs>().Alert("Invalid Position.", null, "Dismiss");
-            }
-            else
-            {
+            //if (!Mvx.Resolve<IValidation>().IsFlightNo(FlightNo, out newFlightno))
+            //{
+            //    Mvx.Resolve<IUserDialogs>().Alert("Invalid Flight No.", null, "Dismiss");
+            //}
+            //else if (!Mvx.Resolve<IValidation>().IsPosition(Position))
+            //{
+            //    Mvx.Resolve<IUserDialogs>().Alert("Invalid Position.", null, "Dismiss");
+            //}
+            //else
+            //{
                 try
                 {
                     //logger.Trace("ShowViewModel : DepArrScanScreenViewModel")
@@ -77,7 +77,7 @@ namespace RFID.Core.ViewModels
                     Mvx.Resolve<ILogService>().Trace("e");
                     //logger.Log(LogLevel.Info,e.ToString);
                 }
-            }
+            //}
         }
     }
 }

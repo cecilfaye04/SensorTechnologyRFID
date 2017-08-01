@@ -6,4 +6,10 @@
        android:icon="@drawable/searchico"
        RFID:showAsAction="always"
        android:title="Search" />
+  <!--<item
+       android:id="@+id/menu_spinner"
+       android:title="ActionBar Spinner"
+       RFID:actionViewClass="android.widget.Spinner"
+       android:background="#ff00"
+       RFID:showAsAction="always" />-->
 </menu>

@@ -247,9 +247,11 @@
     <Compile Include="Views\Fragments\HomeFragment.cs" />
     <Compile Include="Views\Fragments\PierClaimLocationFragment.cs" />
     <Compile Include="Views\Fragments\PierClaimScanFragment.cs" />
+    <Compile Include="Views\Fragments\RfidEncoderFragment.cs" />
     <Compile Include="Views\Fragments\SearchFragment.cs" />
     <Compile Include="Views\Fragments\BagInfoFragment.cs" />
     <Compile Include="Views\Fragments\BagLocateFragment.cs" />
+    <Compile Include="Views\Fragments\SearchMultipleFragment.cs" />
     <Compile Include="Views\Fragments\SideMenuFragment.cs" />
     <Compile Include="Views\Activities\LoginView.cs" />
   </ItemGroup>
@@ -324,6 +326,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\listview_scanhistorycustom.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_rfid_encoder.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\fragment_search_multiple.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
