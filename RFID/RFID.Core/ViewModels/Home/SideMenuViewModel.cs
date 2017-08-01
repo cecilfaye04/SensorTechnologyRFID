@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Interfaces;
@@ -14,6 +15,13 @@ namespace RFID.Core.ViewModels
 {
     public class SideMenuViewModel : BaseViewModel
     {
+        private readonly IMvxNavigationService _navigationService;
+
+        public SideMenuViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
+
         public override async void Start()
         {
             try
@@ -51,8 +59,8 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("ShowViewModel : HomeViewModel")
-                ShowViewModel<HomeViewModel>();
+                //logger.Trace("Navigate : HomeViewModel")
+                _navigationService.Navigate<HomeViewModel>();
             }
             catch (Exception e)
             {
@@ -70,8 +78,8 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("ShowViewModel : PierClaimLocationViewModel")
-                ShowViewModel<PierClaimLocationViewModel>();
+                //logger.Trace("Navigate : PierClaimLocationViewModel")
+                _navigationService.Navigate<PierClaimLocationViewModel>();
             }
             catch (Exception e)
             {
@@ -89,8 +97,8 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("ShowViewModel : FlightEntryViewModel")
-                ShowViewModel<FlightEntryViewModel>();
+                //logger.Trace("Navigate : FlightEntryViewModel")
+                _navigationService.Navigate<FlightEntryViewModel>();
             }
             catch (Exception e)
             {
@@ -108,8 +116,8 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("ShowViewModel : PierClaimLocationViewModel")
-                ShowViewModel<RfidEncoderViewModel>();
+                //logger.Trace("Navigate : RfidEncoderViewModel")
+                _navigationService.Navigate<DepArrScanScreenViewModel>();
             }
             catch (Exception e)
             {
@@ -127,8 +135,8 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("ShowViewModel : PierClaimLocationViewModel")
-                ShowViewModel<SearchViewModel>();
+                //logger.Trace("Navigate : SearchViewModel")
+                _navigationService.Navigate<SearchViewModel>();
             }
             catch (Exception e)
             {
@@ -156,36 +164,11 @@ namespace RFID.Core.ViewModels
                         //logger.Log(LogLevel.Info,e.ToString);
                     }
 
-                    ShowViewModel<LoginViewModel>();
-
+                    await _navigationService.Navigate<LoginViewModel>();
                 });
             }
         }
 
-
-        #endregion
-
-        #region Android Specific Demos
-
-        //public IMvxCommand ShowRecyclerCommand
-        //{
-        //    get { return new MvxCommand(ShowRecyclerExecuted); }
-        //}
-
-        ////private void ShowRecyclerExecuted()
-        ////{
-        ////    ShowViewModel<ExampleRecyclerViewModel>();
-        ////}
-
-        //public IMvxCommand ShowViewPagerCommand
-        //{
-        //    get { return new MvxCommand(ShowViewPagerExecuted); }
-        //}
-
-        //private void ShowViewPagerExecuted()
-        //{
-        //    ShowViewModel<ExampleViewPagerViewModel>();
-        //}
 
         #endregion
     }

@@ -22,6 +22,10 @@
         android:minSdkVersion="9"
         tools:overrideLibrary="android.support.fragment" />
 
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="25.3.1" />
+
     <application />
 
 </manifest>

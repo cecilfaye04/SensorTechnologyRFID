@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Entities;
@@ -17,6 +18,12 @@ namespace RFID.Core.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         AuthenticateUserResponse loginResponse;
+        private readonly IMvxNavigationService _navigationService;
+
+        public LoginViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
 
         private string _userName;
         public string Username
@@ -67,7 +74,7 @@ namespace RFID.Core.ViewModels
                             Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
                             //logger.Log(LogLevel.Info,e.ToString);
                         }
-                        ShowViewModel<MainMenuViewModel>();
+                        await _navigationService.Navigate<MainMenuViewModel>();
                     }
                     else
                     {

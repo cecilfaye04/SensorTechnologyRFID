@@ -16,12 +16,12 @@
     <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\NLog\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Splat\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\SQLite.Net.Platform.XamarinAndroid\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.Transition\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.RecyclerView\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.AppCompat\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.Design\library_project_imports\res</ResolvedResourceDirectory>
-    <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.GooglePlayServices.Basement\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.Transition\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.AppCompat\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.RecyclerView\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.GooglePlayServices.Base\library_project_imports\res</ResolvedResourceDirectory>
+    <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.GooglePlayServices.Basement\library_project_imports\res</ResolvedResourceDirectory>
     <ResolvedResourceDirectory>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.GooglePlayServices.Maps\library_project_imports\res</ResolvedResourceDirectory>
   </ResolvedResourceDirectories>
   <ResolvedAssetDirectories>
@@ -56,12 +56,12 @@
     <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\NLog.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Splat.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\SQLite.Net.Platform.XamarinAndroid.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.Transition.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.RecyclerView.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.AppCompat.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.Design.stamp</ResolvedResourceDirectoryStamp>
-    <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.GooglePlayServices.Basement.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.Transition.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.AppCompat.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.Android.Support.v7.RecyclerView.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.GooglePlayServices.Base.stamp</ResolvedResourceDirectoryStamp>
+    <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.GooglePlayServices.Basement.stamp</ResolvedResourceDirectoryStamp>
     <ResolvedResourceDirectoryStamp>C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\__library_projects__\Xamarin.GooglePlayServices.Maps.stamp</ResolvedResourceDirectoryStamp>
   </ResolvedResourceDirectoryStamps>
 </Paths>

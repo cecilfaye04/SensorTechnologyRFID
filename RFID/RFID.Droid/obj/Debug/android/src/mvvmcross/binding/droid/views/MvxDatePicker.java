@@ -13,7 +13,7 @@ public class MvxDatePicker
 		__md_methods = 
 			"n_onDateChanged:(Landroid/widget/DatePicker;III)V:GetOnDateChanged_Landroid_widget_DatePicker_IIIHandler:Android.Widget.DatePicker/IOnDateChangedListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
 			"";
-		mono.android.Runtime.register ("MvvmCross.Binding.Droid.Views.MvxDatePicker, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", MvxDatePicker.class, __md_methods);
+		mono.android.Runtime.register ("MvvmCross.Binding.Droid.Views.MvxDatePicker, MvvmCross.Binding.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", MvxDatePicker.class, __md_methods);
 	}
 
 
@@ -21,7 +21,7 @@ public class MvxDatePicker
 	{
 		super (p0);
 		if (getClass () == MvxDatePicker.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxDatePicker, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0 });
+			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxDatePicker, MvvmCross.Binding.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0 });
 	}
 
 
@@ -29,7 +29,7 @@ public class MvxDatePicker
 	{
 		super (p0, p1);
 		if (getClass () == MvxDatePicker.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxDatePicker, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0, p1 });
+			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxDatePicker, MvvmCross.Binding.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0, p1 });
 	}
 
 
@@ -37,7 +37,7 @@ public class MvxDatePicker
 	{
 		super (p0, p1, p2);
 		if (getClass () == MvxDatePicker.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxDatePicker, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.Int32, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1, p2 });
+			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxDatePicker, MvvmCross.Binding.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.Int32, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1, p2 });
 	}
 
 
@@ -45,7 +45,7 @@ public class MvxDatePicker
 	{
 		super (p0, p1, p2, p3);
 		if (getClass () == MvxDatePicker.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxDatePicker, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.Int32, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e:System.Int32, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1, p2, p3 });
+			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxDatePicker, MvvmCross.Binding.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.Int32, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e:System.Int32, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1, p2, p3 });
 	}
 
 

@@ -13,7 +13,7 @@ public class MvxCachingFragmentStatePagerAdapter
 			"n_getCount:()I:GetGetCountHandler\n" +
 			"n_getPageTitle:(I)Ljava/lang/CharSequence;:GetGetPageTitle_IHandler\n" +
 			"";
-		mono.android.Runtime.register ("MvvmCross.Droid.Support.V4.MvxCachingFragmentStatePagerAdapter, MvvmCross.Droid.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", MvxCachingFragmentStatePagerAdapter.class, __md_methods);
+		mono.android.Runtime.register ("MvvmCross.Droid.Support.V4.MvxCachingFragmentStatePagerAdapter, MvvmCross.Droid.Support.Fragment, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", MvxCachingFragmentStatePagerAdapter.class, __md_methods);
 	}
 
 
@@ -21,14 +21,14 @@ public class MvxCachingFragmentStatePagerAdapter
 	{
 		super ();
 		if (getClass () == MvxCachingFragmentStatePagerAdapter.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxCachingFragmentStatePagerAdapter, MvvmCross.Droid.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxCachingFragmentStatePagerAdapter, MvvmCross.Droid.Support.Fragment, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 	public MvxCachingFragmentStatePagerAdapter (android.support.v4.app.FragmentManager p0) throws java.lang.Throwable
 	{
 		super ();
 		if (getClass () == MvxCachingFragmentStatePagerAdapter.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxCachingFragmentStatePagerAdapter, MvvmCross.Droid.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Support.V4.App.FragmentManager, Xamarin.Android.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", this, new java.lang.Object[] { p0 });
+			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxCachingFragmentStatePagerAdapter, MvvmCross.Droid.Support.Fragment, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Support.V4.App.FragmentManager, Xamarin.Android.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", this, new java.lang.Object[] { p0 });
 	}
 
 

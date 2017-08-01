@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Interfaces;
@@ -14,6 +15,12 @@ namespace RFID.Core.ViewModels
 {
    public class HomeViewModel : BaseViewModel
     {
+        private readonly IMvxNavigationService _navigationService;
+
+        public HomeViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
 
         private void EnableApps(string appAccess)
         {
@@ -84,8 +91,8 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("ShowViewModel : PierClaimLocationViewModel")
-                ShowViewModel<PierClaimLocationViewModel>();
+                //logger.Trace("Navigate : PierClaimLocationViewModel")
+                _navigationService.Navigate<PierClaimLocationViewModel>();
             }
             catch (Exception e)
             {
@@ -103,8 +110,8 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("ShowViewModel : FlightEntryViewModel")
-                ShowViewModel<FlightEntryViewModel>();
+                //logger.Trace("Navigate : FlightEntryViewModel")
+                _navigationService.Navigate<FlightEntryViewModel>();
             }
             catch (Exception e)
             {

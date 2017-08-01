@@ -11,7 +11,7 @@ public class MvxRadioGroup
 	static {
 		__md_methods = 
 			"";
-		mono.android.Runtime.register ("MvvmCross.Binding.Droid.Views.MvxRadioGroup, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", MvxRadioGroup.class, __md_methods);
+		mono.android.Runtime.register ("MvvmCross.Binding.Droid.Views.MvxRadioGroup, MvvmCross.Binding.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", MvxRadioGroup.class, __md_methods);
 	}
 
 
@@ -19,7 +19,7 @@ public class MvxRadioGroup
 	{
 		super (p0);
 		if (getClass () == MvxRadioGroup.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxRadioGroup, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0 });
+			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxRadioGroup, MvvmCross.Binding.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0 });
 	}
 
 
@@ -27,7 +27,7 @@ public class MvxRadioGroup
 	{
 		super (p0, p1);
 		if (getClass () == MvxRadioGroup.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxRadioGroup, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0, p1 });
+			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxRadioGroup, MvvmCross.Binding.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0, p1 });
 	}
 
 	private java.util.ArrayList refList;

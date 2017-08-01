@@ -11,7 +11,7 @@ public class MvxSwipeRefreshLayout
 	static {
 		__md_methods = 
 			"";
-		mono.android.Runtime.register ("MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout, MvvmCross.Droid.Support.Core.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", MvxSwipeRefreshLayout.class, __md_methods);
+		mono.android.Runtime.register ("MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout, MvvmCross.Droid.Support.Core.UI, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", MvxSwipeRefreshLayout.class, __md_methods);
 	}
 
 
@@ -19,7 +19,7 @@ public class MvxSwipeRefreshLayout
 	{
 		super (p0);
 		if (getClass () == MvxSwipeRefreshLayout.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout, MvvmCross.Droid.Support.Core.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0 });
+			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout, MvvmCross.Droid.Support.Core.UI, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0 });
 	}
 
 
@@ -27,7 +27,7 @@ public class MvxSwipeRefreshLayout
 	{
 		super (p0, p1);
 		if (getClass () == MvxSwipeRefreshLayout.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout, MvvmCross.Droid.Support.Core.UI, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0, p1 });
+			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxSwipeRefreshLayout, MvvmCross.Droid.Support.Core.UI, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0, p1 });
 	}
 
 	private java.util.ArrayList refList;

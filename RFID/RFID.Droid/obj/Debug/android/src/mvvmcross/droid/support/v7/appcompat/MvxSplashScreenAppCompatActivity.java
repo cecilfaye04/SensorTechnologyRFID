@@ -14,7 +14,7 @@ public abstract class MvxSplashScreenAppCompatActivity
 			"n_onResume:()V:GetOnResumeHandler\n" +
 			"n_onPause:()V:GetOnPauseHandler\n" +
 			"";
-		mono.android.Runtime.register ("MvvmCross.Droid.Support.V7.AppCompat.MvxSplashScreenAppCompatActivity, MvvmCross.Droid.Support.V7.AppCompat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", MvxSplashScreenAppCompatActivity.class, __md_methods);
+		mono.android.Runtime.register ("MvvmCross.Droid.Support.V7.AppCompat.MvxSplashScreenAppCompatActivity, MvvmCross.Droid.Support.V7.AppCompat, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", MvxSplashScreenAppCompatActivity.class, __md_methods);
 	}
 
 
@@ -22,7 +22,7 @@ public abstract class MvxSplashScreenAppCompatActivity
 	{
 		super ();
 		if (getClass () == MvxSplashScreenAppCompatActivity.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V7.AppCompat.MvxSplashScreenAppCompatActivity, MvvmCross.Droid.Support.V7.AppCompat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V7.AppCompat.MvxSplashScreenAppCompatActivity, MvvmCross.Droid.Support.V7.AppCompat, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 

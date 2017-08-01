@@ -16,7 +16,7 @@ public class MvxCachingFragmentCompatActivity
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"n_onNewIntent:(Landroid/content/Intent;)V:GetOnNewIntent_Landroid_content_Intent_Handler\n" +
 			"";
-		mono.android.Runtime.register ("MvvmCross.Droid.Support.V7.AppCompat.MvxCachingFragmentCompatActivity, MvvmCross.Droid.Support.V7.AppCompat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", MvxCachingFragmentCompatActivity.class, __md_methods);
+		mono.android.Runtime.register ("MvvmCross.Droid.Support.V7.AppCompat.MvxCachingFragmentCompatActivity, MvvmCross.Droid.Support.V7.AppCompat, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", MvxCachingFragmentCompatActivity.class, __md_methods);
 	}
 
 
@@ -24,7 +24,7 @@ public class MvxCachingFragmentCompatActivity
 	{
 		super ();
 		if (getClass () == MvxCachingFragmentCompatActivity.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V7.AppCompat.MvxCachingFragmentCompatActivity, MvvmCross.Droid.Support.V7.AppCompat, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V7.AppCompat.MvxCachingFragmentCompatActivity, MvvmCross.Droid.Support.V7.AppCompat, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 

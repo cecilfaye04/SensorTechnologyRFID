@@ -15,7 +15,7 @@ public class MvxLayoutInflater_PrivateFactoryWrapper2
 			"n_onCreateView:(Landroid/view/View;Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;:GetOnCreateView_Landroid_view_View_Ljava_lang_String_Landroid_content_Context_Landroid_util_AttributeSet_Handler:Android.Views.LayoutInflater/IFactory2Invoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
 			"n_onCreateView:(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;)Landroid/view/View;:GetOnCreateView_Ljava_lang_String_Landroid_content_Context_Landroid_util_AttributeSet_Handler:Android.Views.LayoutInflater/IFactoryInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
 			"";
-		mono.android.Runtime.register ("MvvmCross.Binding.Droid.Views.MvxLayoutInflater+PrivateFactoryWrapper2, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", MvxLayoutInflater_PrivateFactoryWrapper2.class, __md_methods);
+		mono.android.Runtime.register ("MvvmCross.Binding.Droid.Views.MvxLayoutInflater+PrivateFactoryWrapper2, MvvmCross.Binding.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", MvxLayoutInflater_PrivateFactoryWrapper2.class, __md_methods);
 	}
 
 
@@ -23,7 +23,7 @@ public class MvxLayoutInflater_PrivateFactoryWrapper2
 	{
 		super ();
 		if (getClass () == MvxLayoutInflater_PrivateFactoryWrapper2.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxLayoutInflater+PrivateFactoryWrapper2, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxLayoutInflater+PrivateFactoryWrapper2, MvvmCross.Binding.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 

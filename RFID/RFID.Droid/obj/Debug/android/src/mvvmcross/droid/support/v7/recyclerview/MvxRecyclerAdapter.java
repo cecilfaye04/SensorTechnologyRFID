@@ -18,7 +18,7 @@ public class MvxRecyclerAdapter
 			"n_onBindViewHolder:(Landroid/support/v7/widget/RecyclerView$ViewHolder;I)V:GetOnBindViewHolder_Landroid_support_v7_widget_RecyclerView_ViewHolder_IHandler\n" +
 			"n_getItemCount:()I:GetGetItemCountHandler\n" +
 			"";
-		mono.android.Runtime.register ("MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerAdapter, MvvmCross.Droid.Support.V7.RecyclerView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", MvxRecyclerAdapter.class, __md_methods);
+		mono.android.Runtime.register ("MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerAdapter, MvvmCross.Droid.Support.V7.RecyclerView, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", MvxRecyclerAdapter.class, __md_methods);
 	}
 
 
@@ -26,7 +26,7 @@ public class MvxRecyclerAdapter
 	{
 		super ();
 		if (getClass () == MvxRecyclerAdapter.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerAdapter, MvvmCross.Droid.Support.V7.RecyclerView, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V7.RecyclerView.MvxRecyclerAdapter, MvvmCross.Droid.Support.V7.RecyclerView, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 

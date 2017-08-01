@@ -7,20 +7,27 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class PierClaimScanViewModel : BaseViewModel
+    public class PierClaimScanViewModel : MvxViewModel<string>
     {
-        public override void Start()
+        //public override void Start()
+        //{
+        //    PierLocation = base.GetParam("PierLocation");
+        //}
+
+        //protected override void InitFromBundle(IMvxBundle parameters)
+        //{
+        //    if (parameters.Data.Count > 0)
+        //    {
+        //        base.RParam = (Dictionary<string, string>)parameters.Data;
+        //    }
+        //}
+
+        public override Task Initialize(string parameter)
         {
-            PierLocation = base.GetParam("PierLocation");
+            PierLocation = parameter;
+            return Task.FromResult(true);
         }
 
-        protected override void InitFromBundle(IMvxBundle parameters)
-        {
-            if (parameters.Data.Count > 0)
-            {
-                base.RParam = (Dictionary<string, string>)parameters.Data;
-            }
-        }
 
         private string _pierLocation;
 

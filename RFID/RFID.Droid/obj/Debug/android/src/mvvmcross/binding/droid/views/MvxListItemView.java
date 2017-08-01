@@ -2,49 +2,44 @@ package mvvmcross.binding.droid.views;
 
 
 public class MvxListItemView
-	extends md5bf0126c95bf9fc0db24c02c9adb4cfa7.MvxBaseListItemView
+	extends java.lang.Object
 	implements
-		mono.android.IGCUserPeer
+		mono.android.IGCUserPeer,
+		android.view.View.OnAttachStateChangeListener
 {
 /** @hide */
 	public static final String __md_methods;
 	static {
 		__md_methods = 
+			"n_onViewAttachedToWindow:(Landroid/view/View;)V:GetOnViewAttachedToWindow_Landroid_view_View_Handler:Android.Views.View/IOnAttachStateChangeListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
+			"n_onViewDetachedFromWindow:(Landroid/view/View;)V:GetOnViewDetachedFromWindow_Landroid_view_View_Handler:Android.Views.View/IOnAttachStateChangeListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null\n" +
 			"";
-		mono.android.Runtime.register ("MvvmCross.Binding.Droid.Views.MvxListItemView, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", MvxListItemView.class, __md_methods);
+		mono.android.Runtime.register ("MvvmCross.Binding.Droid.Views.MvxListItemView, MvvmCross.Binding.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", MvxListItemView.class, __md_methods);
 	}
 
 
-	public MvxListItemView (android.content.Context p0) throws java.lang.Throwable
+	public MvxListItemView () throws java.lang.Throwable
 	{
-		super (p0);
+		super ();
 		if (getClass () == MvxListItemView.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxListItemView, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0 });
+			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxListItemView, MvvmCross.Binding.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 
-	public MvxListItemView (android.content.Context p0, android.util.AttributeSet p1) throws java.lang.Throwable
+	public void onViewAttachedToWindow (android.view.View p0)
 	{
-		super (p0, p1);
-		if (getClass () == MvxListItemView.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxListItemView, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065", this, new java.lang.Object[] { p0, p1 });
+		n_onViewAttachedToWindow (p0);
 	}
 
+	private native void n_onViewAttachedToWindow (android.view.View p0);
 
-	public MvxListItemView (android.content.Context p0, android.util.AttributeSet p1, int p2) throws java.lang.Throwable
+
+	public void onViewDetachedFromWindow (android.view.View p0)
 	{
-		super (p0, p1, p2);
-		if (getClass () == MvxListItemView.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxListItemView, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.Int32, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1, p2 });
+		n_onViewDetachedFromWindow (p0);
 	}
 
-
-	public MvxListItemView (android.content.Context p0, android.util.AttributeSet p1, int p2, int p3) throws java.lang.Throwable
-	{
-		super (p0, p1, p2, p3);
-		if (getClass () == MvxListItemView.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Binding.Droid.Views.MvxListItemView, MvvmCross.Binding.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Content.Context, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:Android.Util.IAttributeSet, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=84e04ff9cfb79065:System.Int32, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e:System.Int32, mscorlib, Version=2.0.5.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e", this, new java.lang.Object[] { p0, p1, p2, p3 });
-	}
+	private native void n_onViewDetachedFromWindow (android.view.View p0);
 
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)

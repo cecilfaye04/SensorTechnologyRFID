@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Interfaces;
@@ -12,6 +13,13 @@ namespace RFID.Core.ViewModels
 {
     public class FlightEntryViewModel : BaseViewModel
     {
+        private readonly IMvxNavigationService _navigationService;
+
+        public FlightEntryViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
+
         private List<string> _flight = new List<string>()
             {
               "PR","DL","TG","AA","HA","AS","AR","NH","AI","SR","MP","MX"
@@ -67,8 +75,8 @@ namespace RFID.Core.ViewModels
             //{
                 try
                 {
-                    //logger.Trace("ShowViewModel : DepArrScanScreenViewModel")
-                    ShowViewModel<DepArrScanScreenViewModel>();
+                    //logger.Trace("Navigate : DepArrScanScreenViewModel")
+                _navigationService.Navigate<DepArrScanScreenViewModel>();
                     //throw new System.ArgumentException("Parameter cannot be null", "original");
                 }
                 catch (Exception e)

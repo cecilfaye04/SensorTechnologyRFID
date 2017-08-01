@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Interfaces;
@@ -13,13 +14,20 @@ namespace RFID.Core.ViewModels
 {
     public class MainMenuViewModel : BaseViewModel
     {
+        private readonly IMvxNavigationService _navigationService;
+
+        public MainMenuViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
+
         public void ShowMenu()
         {
             try
             {
-                //logger.Trace("ShowViewModel : HomeViewModel,SideMenuViewModel")
-                ShowViewModel<HomeViewModel>();
-                ShowViewModel<SideMenuViewModel>();
+                //logger.Trace("Navigate : HomeViewModel,SideMenuViewModel")
+                _navigationService.Navigate<HomeViewModel>();
+                _navigationService.Navigate<SideMenuViewModel>();
             }
             catch (Exception e)
             {
@@ -37,8 +45,8 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("ShowViewModel : SearchViewModel")
-                ShowViewModel<SearchViewModel>();
+                //logger.Trace("Navigate: SearchViewModel")
+                _navigationService.Navigate<SearchViewModel>();
             }
             catch (Exception e)
             {

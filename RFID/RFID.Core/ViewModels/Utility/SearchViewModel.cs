@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Entities;
@@ -10,8 +11,15 @@ using System.Collections.Generic;
 
 namespace RFID.Core.ViewModels
 {
-    public class SearchViewModel : BaseViewModel    
+    public class SearchViewModel : BaseViewModel 
     {
+        private readonly IMvxNavigationService _navigationService;
+
+        public SearchViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
+
         public IMvxCommand ShowSearchResultCommand
         {
             get { return new MvxCommand(ShowSearchResultExecuted); }
@@ -26,8 +34,8 @@ namespace RFID.Core.ViewModels
             {
                 try
                 {
-                    //logger.Trace("ShowViewModel : BottomNavigationViewModel")
-                    ShowViewModel<BottomNavigationViewModel>();
+                    //logger.Trace("Navigate : BottomNavigationViewModel")
+                    _navigationService.Navigate<BottomNavigationViewModel>();
                 }
                 catch (Exception e)
                 {

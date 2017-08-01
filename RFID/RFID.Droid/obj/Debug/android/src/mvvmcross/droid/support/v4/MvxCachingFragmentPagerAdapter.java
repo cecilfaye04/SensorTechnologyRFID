@@ -17,9 +17,8 @@ public abstract class MvxCachingFragmentPagerAdapter
 			"n_restoreState:(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V:GetRestoreState_Landroid_os_Parcelable_Ljava_lang_ClassLoader_Handler\n" +
 			"n_saveState:()Landroid/os/Parcelable;:GetSaveStateHandler\n" +
 			"n_setPrimaryItem:(Landroid/view/ViewGroup;ILjava/lang/Object;)V:GetSetPrimaryItem_Landroid_view_ViewGroup_ILjava_lang_Object_Handler\n" +
-			"n_startUpdate:(Landroid/view/View;)V:GetStartUpdate_Landroid_view_View_Handler\n" +
 			"";
-		mono.android.Runtime.register ("MvvmCross.Droid.Support.V4.MvxCachingFragmentPagerAdapter, MvvmCross.Droid.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", MvxCachingFragmentPagerAdapter.class, __md_methods);
+		mono.android.Runtime.register ("MvvmCross.Droid.Support.V4.MvxCachingFragmentPagerAdapter, MvvmCross.Droid.Support.Fragment, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", MvxCachingFragmentPagerAdapter.class, __md_methods);
 	}
 
 
@@ -27,14 +26,14 @@ public abstract class MvxCachingFragmentPagerAdapter
 	{
 		super ();
 		if (getClass () == MvxCachingFragmentPagerAdapter.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxCachingFragmentPagerAdapter, MvvmCross.Droid.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxCachingFragmentPagerAdapter, MvvmCross.Droid.Support.Fragment, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 	public MvxCachingFragmentPagerAdapter (android.support.v4.app.FragmentManager p0) throws java.lang.Throwable
 	{
 		super ();
 		if (getClass () == MvxCachingFragmentPagerAdapter.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxCachingFragmentPagerAdapter, MvvmCross.Droid.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Support.V4.App.FragmentManager, Xamarin.Android.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", this, new java.lang.Object[] { p0 });
+			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxCachingFragmentPagerAdapter, MvvmCross.Droid.Support.Fragment, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Support.V4.App.FragmentManager, Xamarin.Android.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", this, new java.lang.Object[] { p0 });
 	}
 
 
@@ -92,14 +91,6 @@ public abstract class MvxCachingFragmentPagerAdapter
 	}
 
 	private native void n_setPrimaryItem (android.view.ViewGroup p0, int p1, java.lang.Object p2);
-
-
-	public void startUpdate (android.view.View p0)
-	{
-		n_startUpdate (p0);
-	}
-
-	private native void n_startUpdate (android.view.View p0);
 
 	private java.util.ArrayList refList;
 	public void monodroidAddReference (java.lang.Object obj)
