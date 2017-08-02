@@ -65,10 +65,6 @@
       <Project>{7b4f60e4-8078-4857-afff-6801d447f303}</Project>
       <Name>RFID.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RFID.Droid\RFID.Droid.csproj">
-      <Project>{acde589c-7fe3-4a28-8aa3-48a7e449f84f}</Project>
-      <Name>RFID.Droid</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
