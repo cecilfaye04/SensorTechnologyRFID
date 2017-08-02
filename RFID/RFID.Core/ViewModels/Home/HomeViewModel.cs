@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Interfaces;
@@ -14,10 +15,15 @@ namespace RFID.Core.ViewModels
 {
    public class HomeViewModel : BaseViewModel
     {
+        private readonly IMvxNavigationService _navigationService;
+
+        public HomeViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
 
         private void EnableApps(string appAccess)
         {
-
             IsPierVisible = appAccess.Contains("Pier");
             IsDepartureVisible = appAccess.Contains("Departure");
             IsArrivalVisible = appAccess.Contains("Arrival");
@@ -84,8 +90,8 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("ShowViewModel : PierClaimLocationViewModel")
-                ShowViewModel<PierClaimLocationViewModel>();
+                //logger.Trace("Navigate : PierClaimLocationViewModel")
+                _navigationService.Navigate<PierClaimLocationViewModel>();
             }
             catch (Exception e)
             {
@@ -103,8 +109,8 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("ShowViewModel : FlightEntryViewModel")
-                ShowViewModel<FlightEntryViewModel>();
+                //logger.Trace("Navigate : FlightEntryViewModel")
+                _navigationService.Navigate<FlightEntryViewModel>();
             }
             catch (Exception e)
             {
@@ -112,6 +118,46 @@ namespace RFID.Core.ViewModels
                 //logger.Log(LogLevel.Info,e.ToString);
             }
         }
+
+        public IMvxCommand ShowSearchCommand
+        {
+            get { return new MvxCommand(ShowSearchExecuted); }
+        }
+
+        private void ShowSearchExecuted()
+        {
+            try
+            {
+                //logger.Trace("Navigate : SearchViewModel")
+                _navigationService.Navigate<SearchViewModel>();
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+        }
+
+
+        public IMvxCommand ShowRFIDEncoderCommand
+        {
+            get { return new MvxCommand(ShowRFIDEncoderExecuted); }
+        }
+
+        private void ShowRFIDEncoderExecuted()
+        {
+            try
+            {
+                //logger.Trace("Navigate : RfidEncoderViewModel")
+                _navigationService.Navigate<RfidEncoderViewModel>();
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+        }
+
 
         public async void InitializeButton()
         {

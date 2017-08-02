@@ -32,7 +32,19 @@ xmlns:local="http://schemas.android.com/apk/res-auto">
   android:title="BSO" />
     </menu>
   </item>
-
+  
+  <item
+      android:icon="@drawable/scanpoint"
+      android:title="Utility"  >
+    <menu>
+      <item
+          android:id="@+id/nav_search"
+          android:title="Search" />
+      <item
+     android:id="@+id/nav_encoder"
+     android:title="RFID Encoder" />
+    </menu>
+  </item>
   <group android:id="@+id/nav_footer">
     <item
         android:id="@+id/nav_logout"

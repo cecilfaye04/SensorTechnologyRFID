@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Entities;
@@ -15,6 +16,13 @@ namespace RFID.Core.ViewModels
 {
     public class PierClaimLocationViewModel : BaseViewModel
     {
+        private readonly IMvxNavigationService _navigationService;
+
+        public PierClaimLocationViewModel(IMvxNavigationService navigationService)
+        {
+            _navigationService = navigationService;
+        }
+
         public async void InitializeList()
         {
             try
@@ -47,8 +55,8 @@ namespace RFID.Core.ViewModels
             base.StoreParam("PierLocation", PierLocation);
             try
             {
-                //logger.Trace("ShowViewModel : PierClaimScanViewModel")
-                ShowViewModel<PierClaimScanViewModel>(base.SParam);
+                //logger.Trace("Navigate : PierClaimScanViewModel")
+                _navigationService.Navigate<PierClaimScanViewModel,string>(PierLocation);
             }
             catch (Exception e)
             {

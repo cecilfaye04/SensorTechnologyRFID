@@ -85,8 +85,8 @@ namespace RFID.Core.Services
             getBagInfoResponse.ReturnCode = "1";
             getBagInfoResponse.PaxName = "Bill Gates";
             getBagInfoResponse.PaxItinerary = "MNL-NRT-MSP";
-            getBagInfoResponse.Latitude = "47.72980";
-            getBagInfoResponse.Longitude = "-122.14931";
+            getBagInfoResponse.Latitude = "47.636372";
+            getBagInfoResponse.Longitude = "-122.126888";
 
             
             List<ScanPoint> scanHistory = new List<ScanPoint>();

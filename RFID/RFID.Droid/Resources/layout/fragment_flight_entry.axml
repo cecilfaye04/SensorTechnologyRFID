@@ -13,69 +13,31 @@
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/llFlightEntry" />
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/rlFlightEntry"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginRight="40dp">
-        <TextView
-            android:text="Flight"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="78.0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/tvFlight" />
-        <TextView
-            android:text="Position"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@id/tvFlight"
-            android:id="@+id/tvGate"
-            android:gravity="right"
-            android:paddingRight="30dp" />
-        <View
-            android:layout_width="match_parent"
-            android:layout_weight="2"
-            android:layout_height="1dp"
-            android:layout_marginTop="2dp"
-            android:background="#E6E6E6"
-            android:layout_below="@id/tvFlight"
-            android:layout_marginRight="8dp"
-            android:id="@+id/view2" />
-        <LinearLayout
-            android:orientation="horizontal"
-            android:minWidth="25px"
-            android:minHeight="25px"
-            android:id="@+id/llFlightGate"
-            android:layout_width="match_parent"
-            android:layout_height="54.7dp"
-            android:layout_below="@id/tvFlight">
-            <MvvmCross.Binding.Droid.Views.MvxSpinner
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/spnFlight"
-                local:MvxBind="ItemsSource Flight;SelectedItem SelectedFlight"
-                android:layout_weight="3" />
-            <EditText
-                android:layout_width="78.0dp"
-                android:layout_height="match_parent"
-                android:id="@+id/etFlight"
-                 local:MvxBind="Text FlightNo"
-                android:layout_weight="3" />
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/etPosition"
-                local:MvxBind="Text Position"
-                android:layout_weight="7" />
-        </LinearLayout>
-    </RelativeLayout>
+        android:id="@+id/llFlightEntry"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp">
+        <EditText
+            android:layout_height="match_parent"
+            android:id="@+id/editText1"
+            android:hint="Flight No."
+            android:gravity="center"
+            android:layout_weight="15"
+            android:layout_width="wrap_content"
+            android:layout_marginRight="10dp" />
+        <Button
+            android:text="Next&gt;"
+            android:id="@+id/btnNext"
+            local:MvxBind="Click ShowDepartmentScanCommand"
+            android:background="#3F51B5"
+            android:textColor="#FFFFFF"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+    </LinearLayout>
     <DatePicker
         android:layout_width="match_parent"
-        android:layout_height="248.0dp"
+        android:layout_height="306.7dp"
         android:id="@+id/dpFlightDate"
         android:datePickerMode="calendar"
         android:spinnersShown="false"
@@ -86,14 +48,4 @@
         android:calendarViewShown="true"
         android:clipChildren="true"
         android:layoutMode="clipBounds" />
-    <Button
-        android:text="Next"
-        android:layout_width="121.3dp"
-        android:layout_height="41.3dp"
-        android:id="@+id/btnNext"
-        local:MvxBind="Click ShowDepartmentScanCommand"
-        android:layout_gravity="center"
-        android:background="#3F51B5"
-        android:textColor="#FFFFFF"
-        android:layout_marginTop="15dp" />
 </LinearLayout>

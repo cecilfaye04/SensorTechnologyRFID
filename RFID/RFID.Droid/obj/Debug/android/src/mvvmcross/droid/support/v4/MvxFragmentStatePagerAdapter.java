@@ -15,7 +15,7 @@ public class MvxFragmentStatePagerAdapter
 			"n_getPageTitle:(I)Ljava/lang/CharSequence;:GetGetPageTitle_IHandler\n" +
 			"n_restoreState:(Landroid/os/Parcelable;Ljava/lang/ClassLoader;)V:GetRestoreState_Landroid_os_Parcelable_Ljava_lang_ClassLoader_Handler\n" +
 			"";
-		mono.android.Runtime.register ("MvvmCross.Droid.Support.V4.MvxFragmentStatePagerAdapter, MvvmCross.Droid.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", MvxFragmentStatePagerAdapter.class, __md_methods);
+		mono.android.Runtime.register ("MvvmCross.Droid.Support.V4.MvxFragmentStatePagerAdapter, MvvmCross.Droid.Support.Fragment, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", MvxFragmentStatePagerAdapter.class, __md_methods);
 	}
 
 
@@ -23,7 +23,7 @@ public class MvxFragmentStatePagerAdapter
 	{
 		super (p0);
 		if (getClass () == MvxFragmentStatePagerAdapter.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxFragmentStatePagerAdapter, MvvmCross.Droid.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "Android.Support.V4.App.FragmentManager, Xamarin.Android.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", this, new java.lang.Object[] { p0 });
+			mono.android.TypeManager.Activate ("MvvmCross.Droid.Support.V4.MvxFragmentStatePagerAdapter, MvvmCross.Droid.Support.Fragment, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "Android.Support.V4.App.FragmentManager, Xamarin.Android.Support.Fragment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", this, new java.lang.Object[] { p0 });
 	}
 
 

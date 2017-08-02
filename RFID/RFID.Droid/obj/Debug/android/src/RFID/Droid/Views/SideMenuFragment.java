@@ -2,7 +2,7 @@ package RFID.Droid.Views;
 
 
 public class SideMenuFragment
-	extends md570b5b9be6f3c074883adecf80193fcf3.MvxFragment_1
+	extends md56817c7b947ef029e2f4da384e2242ce3.MvxFragment_1
 	implements
 		mono.android.IGCUserPeer,
 		android.support.design.widget.NavigationView.OnNavigationItemSelectedListener

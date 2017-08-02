@@ -9,6 +9,8 @@ using Android.Support.V4.Widget;
 using Android.Views.InputMethods;
 using Android.Support.V4.View;
 using System.Collections.Generic;
+using Android.Widget;
+using System.Collections;
 
 namespace RFID.Droid.Views
 {
@@ -33,7 +35,14 @@ namespace RFID.Droid.Views
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
-            MenuInflater.Inflate(Resource.Menu.home, menu);
+           MenuInflater.Inflate(Resource.Menu.home, menu);
+            //FOR SPINNER AT DEPT ARR SCAN SCREEN
+           //var y = menu.FindItem(Resource.Id.menu_spinner);
+           // Spinner spin = (Spinner)MenuItemCompat.GetActionView(y);
+           // var adapter = ArrayAdapter.CreateFromResource(
+           //  this, Resource.Array.position_list, Android.Resource.Layout.SimpleSpinnerItem);
+           // adapter.SetDropDownViewResource(Android.Resource.Layout.SimpleSpinnerDropDownItem);
+           // spin.Adapter = adapter;
             return base.OnCreateOptionsMenu(menu);
         }
 

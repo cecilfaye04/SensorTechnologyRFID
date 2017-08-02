@@ -11,7 +11,7 @@ public class MvxSimpleBindingActivity
 	static {
 		__md_methods = 
 			"";
-		mono.android.Runtime.register ("MvvmCross.Droid.Simple.MvxSimpleBindingActivity, MvvmCross.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", MvxSimpleBindingActivity.class, __md_methods);
+		mono.android.Runtime.register ("MvvmCross.Droid.Simple.MvxSimpleBindingActivity, MvvmCross.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", MvxSimpleBindingActivity.class, __md_methods);
 	}
 
 
@@ -19,7 +19,7 @@ public class MvxSimpleBindingActivity
 	{
 		super ();
 		if (getClass () == MvxSimpleBindingActivity.class)
-			mono.android.TypeManager.Activate ("MvvmCross.Droid.Simple.MvxSimpleBindingActivity, MvvmCross.Droid, Version=4.0.0.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
+			mono.android.TypeManager.Activate ("MvvmCross.Droid.Simple.MvxSimpleBindingActivity, MvvmCross.Droid, Version=5.1.1.0, Culture=neutral, PublicKeyToken=null", "", this, new java.lang.Object[] {  });
 	}
 
 	private java.util.ArrayList refList;
