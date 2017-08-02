@@ -117,7 +117,7 @@ namespace RFID.Core.ViewModels
             try
             {
                 //logger.Trace("Navigate : RfidEncoderViewModel")
-                _navigationService.Navigate<DepArrScanScreenViewModel>();
+                _navigationService.Navigate<RfidEncoderViewModel>();
             }
             catch (Exception e)
             {

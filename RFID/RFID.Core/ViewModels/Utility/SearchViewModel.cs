@@ -6,6 +6,7 @@ using RFID.Core.Entities;
 using RFID.Core.Interfaces;
 using RFID.Core.Models;
 using RFID.Core.Services;
+using RFID.Core.ViewModels.Search;
 using System;
 using System.Collections.Generic;
 
@@ -14,7 +15,7 @@ namespace RFID.Core.ViewModels
     public class SearchViewModel : BaseViewModel 
     {
         private readonly IMvxNavigationService _navigationService;
-
+        private BagInfo mBagInfo = new BagInfo();
         public SearchViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
@@ -28,21 +29,9 @@ namespace RFID.Core.ViewModels
         private void ShowSearchResultExecuted()
         {
             ProgressBarVisible = true;
-            base.StoreParam("Bagtag", BagtagNo);
 
             if (Mvx.Resolve<IValidation>().Is10Digits(BagtagNo))
             {
-                try
-                {
-                    //logger.Trace("Navigate : BottomNavigationViewModel")
-                    _navigationService.Navigate<BottomNavigationViewModel>();
-                }
-                catch (Exception e)
-                {
-                    Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                    //logger.Log(LogLevel.Info,e.ToString);
-                }
-
                 GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, DeviceName = "Apple", Station = "123", Username = "admin", Version = "1" };
                 var bagInfo = new GetBagInfoResponse();
                 try
@@ -60,8 +49,6 @@ namespace RFID.Core.ViewModels
 
                 if (bagInfo.ReturnCode == "1")
                 {
-                    var mBagInfo = new BagInfo();
-
                     BagScanPoint scanPoint;
                     List<BagScanPoint> mscanHistory = new List<BagScanPoint>();
                     foreach (var item in bagInfo.BagHistory)
@@ -83,7 +70,8 @@ namespace RFID.Core.ViewModels
                     mBagInfo.BagScanPoints = mscanHistory;
                     ISqliteService<BagInfo> bagRepo = new SqliteService<BagInfo>();
                     var user = bagRepo.InsertUpdate(mBagInfo);
-                    ShowViewModel<BagInfoViewModel>(base.SParam);
+                    _navigationService.Navigate<BottomNavigationViewModel, BagInfo>(mBagInfo);
+                    _navigationService.Navigate<BagInfoViewModel, BagInfo>(mBagInfo);
                 }
             }
             else
@@ -103,6 +91,25 @@ namespace RFID.Core.ViewModels
                 _bagtagNo = value;
                 RaisePropertyChanged(() => BagtagNo);
             } 
-        } 
+        }
+
+        public IMvxCommand ShowMultipleSearchCommand
+        {
+            get { return new MvxCommand(ShowMultipleSearchExecuted); }
+        }
+
+        private void ShowMultipleSearchExecuted()
+        {
+            try
+            {
+                //logger.Trace("Navigate : SearchMultipleViewModel")
+                _navigationService.Navigate<SearchMultipleViewModel>();
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+        }
     }
 }

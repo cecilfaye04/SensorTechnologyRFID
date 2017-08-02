@@ -1,22 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Android.Webkit;
-using Android.App;
-using Android.Content;
 using Android.OS;
 using Android.Runtime;
-using Android.Util;
 using Android.Views;
-using Android.Widget;
 using RFID.Core.ViewModels.Search;
 using MvvmCross.Droid.Shared.Attributes;
 using RFID.Core.ViewModels;
 using Android.Graphics.Drawables;
 using Android.Graphics;
 using Android.Gms.Maps;
-using Android.Support.V4.App;
 using Android.Gms.Maps.Model;
 using System.Threading.Tasks;
 using Java.Net;
@@ -24,8 +16,6 @@ using System.IO;
 using Polylines = Android.Gms.Maps.Model.Polyline;
 using Javax.Net.Ssl;
 using Newtonsoft.Json;
-using MvvmCross.Platform;
-using RFID.Core.Interfaces;
 
 namespace RFID.Droid.Views.Fragments
 {
@@ -40,7 +30,7 @@ namespace RFID.Droid.Views.Fragments
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            ((MainMenuView)Activity).Title = "Bill Gates' Bag";
+            ((MainMenuView)Activity).Title = ViewModel.PaxName + "' Bag";
             ShowBackButton = true;
             var rootView = base.OnCreateView(inflater, container, savedInstanceState);
             var mainActivity = Activity as MainMenuView;
@@ -66,7 +56,7 @@ namespace RFID.Droid.Views.Fragments
             this.googleMap.UiSettings.MyLocationButtonEnabled = true;
             googleMap.UiSettings.ScrollGesturesEnabled = true;
             MarkerOptions mrkerBagLocation = new MarkerOptions();
-            mrkerBagLocation.SetPosition(new LatLng(47.636372, -122.126888));
+            mrkerBagLocation.SetPosition(new LatLng(Double.Parse(ViewModel.BagLatitude),Double.Parse(ViewModel.BagLongitude)));
             mrkerBagLocation.SetTitle("Bag Location");
 
             MarkerOptions mrkerUserLocation = new MarkerOptions();
@@ -87,7 +77,7 @@ namespace RFID.Droid.Views.Fragments
                 await Task.Run(() =>
                 {
                     URL url = new URL(string.Format("https://maps.googleapis.com/maps/api/directions/json?" + "origin={0},{1}&destination={2},{3}&key={4}",
-                         47.636372, -122.126888, 47.639466, -122.130665, "AIzaSyCn2XMz_4-GjsAu2Ge1M6h8mFBVpResBYs"));
+                        Double.Parse(ViewModel.BagLatitude),Double.Parse(ViewModel.BagLongitude), 47.639466, -122.130665, "AIzaSyCn2XMz_4-GjsAu2Ge1M6h8mFBVpResBYs"));
 
                     HttpsURLConnection urlConnection = (HttpsURLConnection)url.OpenConnection();
                     urlConnection.Connect();

@@ -1,4 +1,5 @@
 ﻿using Acr.UserDialogs;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using Newtonsoft.Json;
@@ -14,89 +15,25 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class BagInfoViewModel : BaseViewModel
+    public class BagInfoViewModel : MvxViewModel<BagInfo>
     {
-        public BagInfoViewModel()
+        private readonly IMvxNavigationService _navigationService;
+        public BagInfoViewModel(IMvxNavigationService navigationService)
         {
-            RetrieveDisplayBagInfo();
-            //testScanHistory();
+            _navigationService = navigationService;
         }
-
-        /// <summary>
-        /// delete after solving the issue in LoadBagInfoAsync 
-        /// </summary>
-        private void testScanHistory()
+        
+        public override Task Initialize(BagInfo parameter)
         {
-            GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, DeviceName = "Apple", Station = "123", Username = "admin", Version = "1" };
-            var bagInfo = new GetBagInfoResponse();
-            try
-            {
-                if (Mvx.Resolve<IValidation>().ObjectIsNotNull(baginput))
-                {
-                    bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);
-                }
-            }
-            catch (Exception)
-            {
-                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
-            }
-
-            Name = bagInfo.PaxName;
-            Flight = bagInfo.FltCode + bagInfo.FltNum;
-            FlightDate = bagInfo.FltDate;
-            Itinerary = bagInfo.PaxItinerary;
-            BagLatitude = bagInfo.Latitude;
-            BagLongitude = bagInfo.Longitude;
-
-            BagScanPoint scanPoint;
-            List<BagScanPoint> mscanHistory = new List<BagScanPoint>();
-            foreach (var item in bagInfo.BagHistory)
-            {
-                scanPoint = new BagScanPoint();
-                scanPoint.Icon = item.ScanType;
-                scanPoint.ScanPoint = item.Location;
-                scanPoint.ScanTime = item.DateTime;
-                mscanHistory.Add(scanPoint);
-            }
-            ScanHistory = mscanHistory;
-        }
-
-        private async void RetrieveDisplayBagInfo()
-        {
-            try
-            {
-                //logger.Trace("SqliteService<BagInfo> : LoadBag")
-                ISqliteService<BagInfo> bagRepo = new SqliteService<BagInfo>();
-                var mBagInfo = await bagRepo.Load("123");
-                Name = mBagInfo.PaxName;
-                Flight = mBagInfo.FltCode + mBagInfo.FltNum;
-                FlightDate = mBagInfo.FltDate;
-                Itinerary = mBagInfo.PaxItinerary;
-                BagLatitude = mBagInfo.Latitude.ToString();
-                BagLongitude = mBagInfo.Longitude.ToString();
-                ScanHistory = mBagInfo.BagScanPoints;
-            }
-            catch (Exception)
-            {
-                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
-            }
-
-        }
-
-
-        public override void Start()
-        {
-            BagtagNo = base.GetParam("Bagtag");
-        }
-
-        protected override void InitFromBundle(IMvxBundle parameters)
-        {
-            if (parameters.Data.Count > 0)
-            {
-                base.RParam = (Dictionary<string, string>)parameters.Data;
-            }
+            BagtagNo = parameter.Bagtag;
+            Name = parameter.PaxName;
+            Flight = parameter.FltCode + parameter.FltNum;
+            FlightDate = parameter.FltDate;
+            Itinerary = parameter.PaxItinerary;
+            BagLatitude = parameter.Latitude.ToString();
+            BagLongitude = parameter.Longitude.ToString();
+            ScanHistory = parameter.BagScanPoints;
+            return Task.FromResult(true);
         }
 
         public IMvxCommand ShowSearchTrackCommand
@@ -106,12 +43,9 @@ namespace RFID.Core.ViewModels
 
         private void ShowSearchTrackExecuted()
         {
-            base.StoreParam("BagLatitude", BagLatitude);
-            base.StoreParam("BagLongitude", BagLongitude);
             try
             {
-                //logger.Trace("ShowViewModel : BagLocateViewModel")
-                ShowViewModel<BagLocateViewModel>(base.SParam);
+                _navigationService.Navigate<BagLocateViewModel>();
             }
             catch (Exception e)
             {
@@ -119,8 +53,7 @@ namespace RFID.Core.ViewModels
                 //logger.Log(LogLevel.Info,e.ToString);
             }
         }
-
-
+     
         private string _itinerary;
 
         public string Itinerary

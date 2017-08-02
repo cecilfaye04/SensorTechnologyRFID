@@ -1,4 +1,5 @@
 ﻿using MvvmCross.Core.ViewModels;
+using RFID.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,20 +8,14 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels.Search
 {
-    public class BagTrackViewModel : BaseViewModel
+    public class BagTrackViewModel : MvxViewModel<BagInfo>
     {
-        public override void Start()
+        public override Task Initialize(BagInfo parameter)
         {
-            BagLatitude = base.GetParam("BagLatitude");
-            BagLongitude = base.GetParam("BagLongitude");
-        }
-
-        protected override void InitFromBundle(IMvxBundle parameters)
-        {
-            if (parameters.Data.Count > 0)
-            {
-                base.RParam = (Dictionary<string, string>)parameters.Data;
-            }
+            BagLatitude = parameter.Latitude;
+            BagLongitude = parameter.Longitude;
+            PaxName = parameter.PaxName;
+            return Task.FromResult(true);
         }
 
         private string _baglatitude;
@@ -38,5 +33,14 @@ namespace RFID.Core.ViewModels.Search
             get { return _bagLongitude; }
             set { _bagLongitude = value; }
         }
+
+        private string _paxName;
+
+        public string PaxName
+        {
+            get { return _paxName; }
+            set { _paxName = value; }
+        }
+
     }
 }

@@ -2,6 +2,7 @@
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using RFID.Core.Models;
 using RFID.Core.ViewModels.Search;
 using System;
 using System.Collections.Generic;
@@ -11,18 +12,24 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-   public class BottomNavigationViewModel : BaseViewModel
+   public class BottomNavigationViewModel : MvxViewModel<BagInfo>
     {
         private readonly IMvxNavigationService _navigationService;
-
+        private BagInfo _BagInfo = new BagInfo();
         public BottomNavigationViewModel(IMvxNavigationService navigationService)
         {
             _navigationService = navigationService;
         }
 
+        public override Task Initialize(BagInfo parameter)
+        {
+            _BagInfo = parameter;
+            return Task.FromResult(true);
+        }
+
         public void ShowSearch()
         {
-            _navigationService.Navigate<BagInfoViewModel>();
+            _navigationService.Navigate<BagInfoViewModel, BagInfo>(_BagInfo);
         }
 
         public IMvxCommand ShowSearchResultCommand
@@ -35,7 +42,7 @@ namespace RFID.Core.ViewModels
             try
             {
                 //logger.Trace("Navigate : BagInfoViewModel")
-                _navigationService.Navigate<BagInfoViewModel>();
+                _navigationService.Navigate<BagInfoViewModel, BagInfo>(_BagInfo);
             }
             catch (Exception e)
             {
@@ -73,7 +80,7 @@ namespace RFID.Core.ViewModels
             try
             {
                 //logger.Trace("Navigate : BagTrackViewModel")
-                _navigationService.Navigate<BagTrackViewModel>();
+                _navigationService.Navigate<BagTrackViewModel, BagInfo>(_BagInfo);
             }
             catch (Exception e)
             {
@@ -81,5 +88,7 @@ namespace RFID.Core.ViewModels
                 //logger.Log(LogLevel.Info,e.ToString);
             }
         }
+
+      
     }
 }

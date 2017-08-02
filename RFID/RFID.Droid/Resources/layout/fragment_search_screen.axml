@@ -19,7 +19,7 @@
             android:id="@+id/imgSearchIco"
             android:layout_marginRight="10dp" />
         <TextView
-            android:text="You can enter the RFID number"
+            android:text="You can enter the Bagtag #"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,50 +39,85 @@
             android:textColor="#000000"
             android:gravity="center"
             android:textSize="20dp" />
-        <EditText
-            android:layout_height="wrap_content"
-            android:layout_below="@id/tvEnterRFID2"
-            android:id="@+id/etBagtagNo"
+        <LinearLayout
+            android:orientation="horizontal"
+            android:minWidth="25px"
+            android:minHeight="25px"
             android:layout_width="match_parent"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp"
-            android:hint="Bagtag no."
-            local:MvxBind="Text BagtagNo"
-            android:gravity="center" />
+            android:layout_height="wrap_content"
+            android:id="@+id/llBarcode"
+            android:layout_below="@id/tvEnterRFID2"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="15dp">
+            <EditText
+                android:id="@+id/etBagtagNo"
+                android:hint="Bagtag no."
+                local:MvxBind="Text BagtagNo"
+                android:gravity="center"
+                android:layout_width="188.7dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="35dp" />
+            <Button
+                android:text="&gt;"
+                android:id="@+id/btnNext"
+                local:MvxBind="Click ShowSearchResultCommand"
+                android:background="#3F51B5"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_width="50.7dp"
+                android:layout_height="46.7dp"
+                android:layout_marginRight="35dp"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
         <TextView
             android:text="or"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tvEnterRFID2"
+            android:layout_below="@id/llBarcode"
             android:id="@+id/tvEnterRFID3"
-            android:layout_marginTop="55dp"
-            android:layout_marginBottom="20dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginBottom="15dp"
             android:textColor="#000000"
             android:gravity="center"
             android:textSize="20dp" />
-        <Button
-            android:text="Scan the RFID number"
-            android:layout_width="186.0dp"
-            android:layout_height="41.3dp"
-            android:layout_below="@id/tvEnterRFID3"
-            android:id="@+id/btnScan"
-            local:MvxBind="Click ShowSearchResultCommand"
-            android:layout_centerHorizontal="true"
-            android:background="#3F51B5"
-            android:textColor="#FFFFFF"
-            android:textStyle="bold" />
-        <ProgressBar
-            android:id="@+id/pb"
+        <LinearLayout
+            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:indeterminate="true"
-            android:indeterminateOnly="true"
-            android:isScrollContainer="true"
-            android:layout_gravity="center_vertical|center_horizontal"
-            android:soundEffectsEnabled="false"
-            android:layout_centerVertical="true"
-            local:MvxBind="Visible ProgressBarVisible"
-            android:visibility="invisible" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvEnterRFID3"
+            android:id="@+id/linearLayout1"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:gravity="center">
+            <TextView
+                android:text="Pull the trigger to scan"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:id="@+id/tvPull"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="15dp" />
+            <Button
+                android:text="&gt;"
+                android:id="@+id/btnScan"
+                local:MvxBind="Click ShowMultipleSearchCommand"
+                android:background="#3F51B5"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_width="50.7dp"
+                android:layout_height="46.7dp"
+                android:textSize="20dp" />
+        </LinearLayout>
+        <View
+            android:id="@+id/view1"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:layout_below="@id/linearLayout1" />
     </RelativeLayout>
 </LinearLayout>

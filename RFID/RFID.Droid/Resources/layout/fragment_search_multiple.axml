@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -21,7 +22,8 @@
             android:layout_height="match_parent"
             android:id="@+id/tvLabelBagtag"
             android:layout_weight="1"
-            android:gravity="left" />
+            android:gravity="left"
+            android:textColor="#000000" />
         <TextView
             android:text="⇕ Dest"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -29,7 +31,8 @@
             android:layout_height="match_parent"
             android:id="@+id/tvLabelDest"
             android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="#000000" />
         <TextView
             android:text="⇕ Flight #"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -37,7 +40,8 @@
             android:layout_height="match_parent"
             android:id="@+id/tvLabelFlight"
             android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="#000000" />
         <TextView
             android:text="⇕ Status"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -45,7 +49,8 @@
             android:layout_height="match_parent"
             android:id="@+id/tvLabelStatus"
             android:layout_weight="1"
-            android:gravity="right" />
+            android:gravity="right"
+            android:textColor="#000000" />
     </LinearLayout>
     <View
         android:layout_width="match_parent"
@@ -68,7 +73,9 @@
             android:layout_height="match_parent"
             android:id="@+id/tvBtag"
             android:layout_weight="1"
-            android:gravity="left" />
+            android:gravity="left"
+            android:layout_marginTop="7dp"
+            android:textColor="#000000" />
         <TextView
             android:text="NRT"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -76,7 +83,8 @@
             android:layout_height="match_parent"
             android:id="@+id/tvDest"
             android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="#000000" />
         <TextView
             android:text="DL1234"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -84,7 +92,8 @@
             android:layout_height="match_parent"
             android:id="@+id/tvFlight"
             android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="#000000" />
         <TextView
             android:text="RRT"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -92,14 +101,19 @@
             android:layout_height="match_parent"
             android:id="@+id/tvStatus"
             android:layout_weight="1"
-            android:gravity="right" />
+            android:gravity="right"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="5dp"
+            android:textColor="#000000" />
         <Button
             android:text="&gt;"
-            android:layout_width="33.3dp"
-            android:layout_height="22.7dp"
+            android:layout_width="35dp"
+            android:layout_height="39.3dp"
             android:id="@+id/btnNext"
-            android:layout_weight="1"
-            android:gravity="center" />
+            local:MvxBind="Click ShowSearchResultCommand"
+            android:gravity="center"
+            android:background="#3F51B5"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -116,7 +130,9 @@
             android:layout_height="match_parent"
             android:id="@+id/tvBtag2"
             android:layout_weight="1"
-            android:gravity="left" />
+            android:gravity="left"
+            android:layout_marginTop="7dp"
+            android:textColor="#000000" />
         <TextView
             android:text="NRT"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -124,7 +140,8 @@
             android:layout_height="match_parent"
             android:id="@+id/tvDest2"
             android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="#000000" />
         <TextView
             android:text="DL1234"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -132,7 +149,8 @@
             android:layout_height="match_parent"
             android:id="@+id/tvFlight2"
             android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="#000000" />
         <TextView
             android:text="RRT"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -140,14 +158,19 @@
             android:layout_height="match_parent"
             android:id="@+id/tvStatus2"
             android:layout_weight="1"
-            android:gravity="right" />
+            android:gravity="right"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="5dp"
+            android:textColor="#000000" />
         <Button
             android:text="&gt;"
-            android:layout_width="33.3dp"
-            android:layout_height="22.7dp"
+            local:MvxBind="Click ShowSearchResultCommand"
+            android:layout_width="35dp"
+            android:layout_height="39.3dp"
             android:id="@+id/btnNext2"
-            android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:background="#3F51B5"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -164,7 +187,9 @@
             android:layout_height="match_parent"
             android:id="@+id/tvBtag3"
             android:layout_weight="1"
-            android:gravity="left" />
+            android:gravity="left"
+            android:layout_marginTop="7dp"
+            android:textColor="#000000" />
         <TextView
             android:text="NRT"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -172,7 +197,8 @@
             android:layout_height="match_parent"
             android:id="@+id/tvDest3"
             android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="#000000" />
         <TextView
             android:text="DL1234"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -180,7 +206,8 @@
             android:layout_height="match_parent"
             android:id="@+id/tvFlight3"
             android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:textColor="#000000" />
         <TextView
             android:text="RRT"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -188,13 +215,18 @@
             android:layout_height="match_parent"
             android:id="@+id/tvStatus3"
             android:layout_weight="1"
-            android:gravity="right" />
+            android:gravity="right"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="5dp"
+            android:textColor="#000000" />
         <Button
             android:text="&gt;"
-            android:layout_width="33.3dp"
-            android:layout_height="22.7dp"
+            local:MvxBind="Click ShowSearchResultCommand"
+            android:layout_width="35dp"
+            android:layout_height="39.3dp"
             android:id="@+id/btnNext3"
-            android:layout_weight="1"
-            android:gravity="center" />
+            android:gravity="center"
+            android:background="#3F51B5"
+            android:textColor="#FFFFFF" />
     </LinearLayout>
 </LinearLayout>
