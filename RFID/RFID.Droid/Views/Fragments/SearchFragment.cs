@@ -25,7 +25,7 @@ namespace RFID.Droid.Views.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             ((MainMenuView)Activity).Title = "Search a bag";
-            ShowBackButton = true;
+            ShowHamburgerMenu = true;
             return base.OnCreateView(inflater, container, savedInstanceState);
         }
         protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#3E50B4"));

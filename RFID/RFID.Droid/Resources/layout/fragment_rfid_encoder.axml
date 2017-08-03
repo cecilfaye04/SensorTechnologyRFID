@@ -10,7 +10,7 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/linearLayout1"
+        android:id="@+id/llRfidEncoder"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
@@ -18,7 +18,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="152.0dp"
-            android:id="@+id/relativeLayout1"
+            android:id="@+id/rlBagtag"
             android:layout_weight="0"
             android:layout_marginBottom="15dp"
             android:background="@drawable/customborder"
@@ -28,7 +28,7 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="wrap_content"
                 android:layout_height="34.0dp"
-                android:id="@+id/textView1"
+                android:id="@+id/tvBagtagNo"
                 android:gravity="center"
                 android:layout_marginBottom="3dp"
                 android:layout_marginLeft="5dp"
@@ -36,7 +36,7 @@
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="2dp"
-                android:layout_below="@id/textView1"
+                android:layout_below="@id/tvBagtagNo"
                 android:id="@+id/view1"
                 android:background="#CCCCCC" />
           <RadioButton
@@ -51,7 +51,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/rbBagtag"
-                android:id="@+id/editText1"
+                android:id="@+id/etBagtagNo"
                 android:layout_below="@id/view1"
                 android:layout_marginTop="30dp"
                 android:layout_marginLeft="15dp"
@@ -62,7 +62,7 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="138.0dp"
-            android:id="@+id/relativeLayout3"
+            android:id="@+id/rlRFID"
             android:layout_weight="2"
             android:layout_marginTop="25dp"
             android:background="@drawable/customborder"
@@ -72,14 +72,14 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="wrap_content"
                 android:layout_height="34.0dp"
-                android:id="@+id/textView2"
+                android:id="@+id/tvRfidTag"
                 android:layout_marginBottom="3dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="2dp" />
             <View
                 android:layout_width="wrap_content"
                 android:layout_height="2dp"
-                android:layout_below="@id/textView2"
+                android:layout_below="@id/tvRfidTag"
                 android:id="@+id/view2"
                 android:background="#CCCCCC" />
             <TextView
@@ -88,7 +88,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/view2"
-                android:id="@+id/textView3"
+                android:id="@+id/tvEpc"
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="5dp" />
             <TextView
@@ -96,8 +96,8 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/textView3"
-                android:id="@+id/textView4"
+                android:layout_toRightOf="@id/tvEpc"
+                android:id="@+id/tvEpcID"
                 android:layout_below="@id/view2"
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="5dp" />
@@ -107,15 +107,15 @@
                android:layout_height="wrap_content"
                android:layout_marginLeft="25dp"
                android:layout_marginTop="40dp"
-               android:layout_below="@id/textView3" />
+               android:layout_below="@id/tvEpc" />
             <TextView
                 android:text="SUCCESS"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_toRightOf="@id/rbRFID"
-                android:id="@+id/textView5"
-                android:layout_below="@id/textView4"
+                android:id="@+id/tvRfidResult"
+                android:layout_below="@id/tvEpcID"
                 android:textStyle="bold"
                 android:textSize="45dp"
                 android:layout_marginLeft="17dp"
@@ -123,7 +123,7 @@
             <RadioGroup
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@id/textView4"
+                android:layout_toRightOf="@id/tvEpcID"
                 android:id="@+id/radioGroup1"
                 android:minWidth="25px"
                 android:minHeight="25px" />

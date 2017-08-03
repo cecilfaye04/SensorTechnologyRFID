@@ -23,7 +23,7 @@ namespace RFID.Droid.Views.Fragments
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             ((MainMenuView)Activity).Title = "RFID Encoder";
-            ShowBackButton = true;
+            ShowHamburgerMenu = true;
             var view = base.OnCreateView(inflater, container, savedInstanceState);
             return view;
         }
