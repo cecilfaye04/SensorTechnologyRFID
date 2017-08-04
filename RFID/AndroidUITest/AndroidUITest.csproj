@@ -55,7 +55,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Tests.cs" />
+    <Compile Include="BaseTest.cs" />
+    <Compile Include="DepartureTest.cs" />
+    <Compile Include="LoginTest.cs" />
+    <Compile Include="PierTest.cs" />
+    <Compile Include="UtilityTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RFID.Core\RFID.Core.csproj">
