@@ -5,11 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using RFID.Core.Entities;
 using RFID.Core.Interfaces;
+using System.Net;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace RFID.Core.Services
 {
     public class RestService : IRestService
     {
+
+
         public AuthenticateUserResponse AuthenticateUser(AuthenticateUserInput input)
         {
             //logger.Trace("Service : IRestService, Method : AuthenticateUser , Request : AuthenticateUserInput = {"Username" : input.username,"Password" : input.Password, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
@@ -178,6 +183,52 @@ namespace RFID.Core.Services
             pierClaimScan.ReturnCode = "1";
             //logger.Trace("Service : IRestService , Method : PierClaimScan , Response : PierClaimScanResponse =  {"ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
             return pierClaimScan;
+        }
+
+
+        public async Task<string> Consume()
+        {
+            Uri uri = new Uri(_webConfig["uri"]);
+            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
+            request.ContentType = _webConfig["contentType"];
+            request.Method = _webConfig["method"];
+
+            string json = JsonConvert.SerializeObject(_parameters, Formatting.Indented);
+
+            ///write the rest of the parameters in postData
+
+            using (WebResponse response = await request.GetResponseAsync())
+            {
+
+                using (Stream stream = response.GetResponseStream())
+                {
+                    await Task.Run(() => stream);
+
+                    StreamReader reader = new StreamReader(stream, Encoding.UTF8);
+                    return reader.ReadToEnd();
+                }
+            }
+
+        }
+
+
+        private Dictionary<string, string> _parameters;
+        public Dictionary<string, string> Parameters
+        {
+            set
+            {
+                _parameters = value;
+            }
+        }
+
+        private Dictionary<string, string> _webConfig;
+        public string WebMethod
+        {
+            set
+            {
+                /// use the to update value of _webConfig like uri, method, content etc.
+                /// read the values from a local XML config
+            }
         }
     }
 }
