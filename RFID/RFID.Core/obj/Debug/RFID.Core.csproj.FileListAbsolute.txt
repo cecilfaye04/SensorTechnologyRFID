@@ -32,14 +32,10 @@ C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\obj\Debug\RFID.Core.csprojResolveAssemblyReference.cache
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\obj\Debug\RFID.Core.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\obj\Debug\RFID.Core.pdb
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\Flurl.dll
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\Flurl.Http.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\Microsoft.Threading.Tasks.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\Microsoft.Threading.Tasks.Extensions.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\PCLStorage.Abstractions.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\PCLStorage.dll
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\Flurl.xml
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\Flurl.Http.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\Microsoft.Threading.Tasks.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\Microsoft.Threading.Tasks.Extensions.xml
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\PCLStorage.xml

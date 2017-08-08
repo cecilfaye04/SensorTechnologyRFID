@@ -8,7 +8,7 @@ namespace RFID.Core.Entities
 {
     public class BaseResponse
     {
-        public string Success { get; set; }
+        public Boolean Success { get; set; }
         public string Message { get; set; }
     }
 }

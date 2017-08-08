@@ -92,5 +92,6 @@ C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.Console.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.Runtime.InteropServices.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\android\assets\Mono.CSharp.dll
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.Net.Requests.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\android\assets\SQLiteNetExtensions.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\android\assets\SQLiteNetExtensionsAsync.dll

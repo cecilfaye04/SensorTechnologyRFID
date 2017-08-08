@@ -177,6 +177,7 @@ class MonoPackageManager_Resources {
 		"System.IO.FileSystem.Primitives.dll",
 		"System.Console.dll",
 		"System.Runtime.InteropServices.dll",
+		"System.Net.Requests.dll",
 		"SQLiteNetExtensions.dll",
 		"SQLiteNetExtensionsAsync.dll",
 	};

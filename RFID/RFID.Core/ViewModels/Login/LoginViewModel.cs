@@ -52,51 +52,48 @@ namespace RFID.Core.ViewModels
             }
         }
 
+        //Working
         public ICommand LoginCommand
         {
             get
             {
-                return new MvxCommand(async() =>
+                return new MvxCommand(async () =>
                 {
-                    AuthenticateUserInput userTry = new AuthenticateUserInput()
+                AuthenticateUserInput userTry = new AuthenticateUserInput()
+                {
+                    Username = Username,
+                    Password = Password,
+                    Device = "Android",
+                    Station = "MNL",
+                    Version = "0.1"
+                };
+
+                var loginResponse = await Mvx.Resolve<IRestService>().AuthenticateUser(userTry);
+
+                    if (loginResponse.Success == true)
                     {
-                        Username = Username,
-                        Password = Password,
-                        Device = "Android",
-                        Station = "MNL",
-                        Version = "0.1"
-                    };
-
-                    var loginResponse = await Mvx.Resolve<IRestService>().AuthenticateUser(userTry);
-
-                    await _navigationService.Navigate<MainMenuViewModel>();
-
-                    //loginResponse = new AuthenticateUserResponse();
-                    //loginResponse = IsAuthenticated();
-
-                    //if (loginResponse.ReturnCode == "1")
-                    //{
-                    //    try
-                    //    {
-                    //        //logger.Trace("SqliteService<UserModel> : LoadUser")
-                    //        ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
-                    //        var user = await userRepo.Load();
-                    //        user.IsLoggedIn = true;
-                    //        user.Name = loginResponse.Name;
-                    //        user.AppAccess = loginResponse.AppAccess;
-                    //        await userRepo.InsertUpdate(user);
-                    //    }
-                    //    catch (Exception)
-                    //    {
-                    //        Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                    //        //logger.Log(LogLevel.Info,e.ToString);
-                    //    }
-                    //    await _navigationService.Navigate<MainMenuViewModel>();
-                    //}
-                    //else
-                    //{
-                    //    Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");
-                    //}
+                        try
+                        {
+                            //logger.Trace("SqliteService<UserModel> : LoadUser")
+                            ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
+                            var user = await userRepo.Load();
+                            user.IsLoggedIn = true;
+                            user.Name = loginResponse.Name;
+                            //user.AppAccess = loginResponse.Application;
+                            user.AppAccess = "Pier,Arrival,Departure,Claim,BSO";
+                            await userRepo.InsertUpdate(user);
+                        }
+                        catch (Exception)
+                        {
+                            Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                            //logger.Log(LogLevel.Info,e.ToString);
+                        }
+                        await _navigationService.Navigate<MainMenuViewModel>();
+                    }
+                    else
+                    {
+                        Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");
+                    }
                 });
             }
         }
@@ -104,11 +101,13 @@ namespace RFID.Core.ViewModels
 
         ///implement this on all view model. This property will be used to avoid multiple process at the same time
         ///possibly add a wait screet when IsBusy is set to true
-        private bool IsBusy { get; set; } 
-        public ICommand LoginCommanNew {
-            get {
+        private bool IsBusy { get; set; }
+        public ICommand LoginCommanNew
+        {
+            get
+            {
 
-                return new MvxCommand(async () =>  await AuthenticateUser());
+                return new MvxCommand(async () => await AuthenticateUser());
             }
         }
 
@@ -124,75 +123,64 @@ namespace RFID.Core.ViewModels
                 IsBusy = true;
                 try
                 {
-
                     Dictionary<string, string> parameters = new Dictionary<string, string>();
-                    ///add all the input parameters to parameters dictionary
+                    parameters.Add("username", Username);
+                    parameters.Add("password", Password);
                     var restService = Mvx.Resolve<IRestService>();
                     restService.WebMethod = "AuthenticateUser";
                     restService.Parameters = parameters;
+
                     string response = await restService.Consume();
-                    JObject jResponse = JObject.Parse(response);
+                    AuthenticateUserResponse authResponse = JsonConvert.DeserializeObject<AuthenticateUserResponse>(response);
+
+                    //Junvic used success boolean instead of returnCode
+                    if (authResponse.Success == true)
+                    {
+                        await _navigationService.Navigate<MainMenuViewModel>();
+                    }
+                    else
+                    {
+                        Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");
+                    }
+                    //JObject jResponse = JObject.Parse(response);
 
                     ///process response using the return code. Coordinate with junvic on possible error codes
-                    switch (jResponse.GetValue("returnCode").ToString()){
-                        case "1":
-                            //successful
-                            await _navigationService.Navigate<MainMenuViewModel>();
-                            break;
-                        case "2":
-                            //process error response. Use the message from the JResponse
-                            break;
-                        default:
-                            //display generic error
-                            break;
+                
+                    //switch (jResponse.GetValue("returnCode").ToString())
+                    //{
+                    //    case "1":
+                    //        //successful
+                    //        await _navigationService.Navigate<MainMenuViewModel>();
+                    //        break;
+                    //    case "2":
+                    //        //process error response. Use the message from the JResponse
+                    //        break;
+                    //    default:
+                    //        //display generic error
+                    //        break;
 
-                    }
-
-
+                    //}
                 }
-                catch (JsonReaderException e) {
+                catch (JsonReaderException e)
+                {
                 }
-                catch (WebException e) {
+                catch (WebException e)
+                {
                     ///process web requests exception
                 }
-                catch (Exception e) {
-
+                catch (Exception e)
+                {
+                    var x = e.Message;
                     ///generic exception handler
                 }
-                finally {
+                finally
+                {
 
                     IsBusy = false;
                 }
-    
-              }
 
-          }
-
-
-        public AuthenticateUserResponse IsAuthenticated()
-        {
-            AuthenticateUserInput userTry = new AuthenticateUserInput()
-            {
-                Username = Username,
-                Password = Password,
-                DeviceName = "Apple",
-                Station = "123",
-                Version = "1"
-            };
-            var authResponse = new AuthenticateUserResponse();
-            try
-            {
-                if (Mvx.Resolve<IValidation>().ObjectIsNotNull(userTry))
-                {
-                    authResponse = Mvx.Resolve<IRestService>().AuthenticateUser(userTry);
-                }
             }
-            catch (Exception)
-            {
-                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
-            }
-            return authResponse;
+
         }
     }
 }

@@ -8,11 +8,8 @@ using RFID.Core.Interfaces;
 using Newtonsoft.Json;
 using System.Net;
 using System.Net.Http;
-using Flurl;
-using Flurl.Http;
 using System.Net.Http.Headers;
-//using RestSharp.Portable.HttpClient;
-//using RestSharp.Portable;
+using System.IO;
 
 namespace RFID.Core.Services
 {
@@ -22,13 +19,15 @@ namespace RFID.Core.Services
 
         public RestService()
         {
+         
             client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
         }
 
+        //Working
         public async Task<AuthenticateUserResponse> AuthenticateUser(AuthenticateUserInput input)
         {
-
+            //logger.Trace("Service : IRestService, Method : AuthenticateUser , Request : AuthenticateUserInput = {"Username" : input.username,"Password" : input.Password, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             var items = new AuthenticateUserResponse();
             var restUrl = "http://172.26.82.21:5000/login";
             var uri = new Uri(string.Format(restUrl, string.Empty));
@@ -44,39 +43,15 @@ namespace RFID.Core.Services
                 items = JsonConvert.DeserializeObject<AuthenticateUserResponse>(contents);
             }
             return items;
+            //logger.Trace("Service : IRestService , Method : AuthenticateUser , Response : AuthenticateUserResponse = {"Name" : loginResponse.Name , "AppAccess" : loginResponse.AppAccess, "ReturnCode" : loginResponse.ReturnCode,"Message" : loginResponse.Message};
 
-            //logger.Trace("Service : IRestService, Method : AuthenticateUser , Request : AuthenticateUserInput = {"Username" : input.username,"Password" : input.Password, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
-            //AuthenticateUserResponse loginResponse = new AuthenticateUserResponse();
-
-            //if (input.Username == "admin" && input.Password == "password")
-            //{
-            //    loginResponse = new AuthenticateUserResponse()
-            //    {
-            //        ReturnCode = "1",
-            //        Name = "Admin User",
-            //        Message = "Successfully Login",
-            //        AppAccess = "Pier,Arrival,Departure,Claim,BSO"
-            //    };
-            //}
-            //else
-            //{
-            //     loginResponse = new AuthenticateUserResponse()
-            //    {
-            //        ReturnCode = "0",
-            //        Name = "XamarinRFID",
-            //        Message = "Failed Login",
-            //        AppAccess = null
-            //    };
-            //}
-            ////logger.Trace("Service : IRestService , Method : AuthenticateUser , Response : AuthenticateUserResponse = {"Name" : loginResponse.Name , "AppAccess" : loginResponse.AppAccess, "ReturnCode" : loginResponse.ReturnCode,"Message" : loginResponse.Message};
-            //return loginResponse;
         }
 
         public DepArrScanResponse DepArrScan(DepArrScanInput input)
         {
             //logger.Trace("Service : IRestService, Method : DepArrScan , Request : DepArrScanInput = {"CommodityID" : input.CommodityID,"FltCode" : input.FltCode,"FltDate" : input.FltDate,"FltNum" : input.FltNum, "FltPosition" : input.FltPosition,"DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             DepArrScanResponse depArrScanResponse = new DepArrScanResponse();
-            depArrScanResponse.Success = "1";
+            depArrScanResponse.Success = true;
 
             Flight flight = new Flight();
             flight.Destination = "NRT";
@@ -116,7 +91,7 @@ namespace RFID.Core.Services
             getBagInfoResponse.FltCode = "DL";
             getBagInfoResponse.FltDate = DateTime.Now.ToString("MMMdd");
             getBagInfoResponse.FltNum = "1234";
-            getBagInfoResponse.Success = "1";
+            getBagInfoResponse.Success = true;
             getBagInfoResponse.PaxName = "Bill Gates";
             getBagInfoResponse.PaxItinerary = "MNL-NRT-MSP";
             getBagInfoResponse.Latitude = "47.636372";
@@ -152,7 +127,7 @@ namespace RFID.Core.Services
         {
             //logger.Trace("Service : IRestService, Method : GetFlightDetails , Request : GetFlightDetailsResponse = {"CommodityID" : input.CommodityID,"FltCode" : input.FltCode,"FltDate" : input.FltDate,"FltNum" : input.FltNum, "FltPosition" : input.FltPosition,"DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             GetFlightDetailsResponse getFlightDetailsResponse = new GetFlightDetailsResponse();
-            getFlightDetailsResponse.Success = "1";
+            getFlightDetailsResponse.Success = true;
 
             Flight flight = new Flight();
             getFlightDetailsResponse.Flight.Destination = "NRT";
@@ -200,7 +175,7 @@ namespace RFID.Core.Services
             main3.SubLocations = new string[] { "DL Arvl", "OA Arvl", "AS Arvl" };
 
             getPierClaimLocationResponse.MainLocations = new PierClaimLocations[] { main1, main2, main3 };
-            getPierClaimLocationResponse.Success = "1";
+            getPierClaimLocationResponse.Success = true;
             //logger.Trace("Service : IRestService , Method : GetPierClaimLocation , Response : GetPierClaimLocationResponse = {"MainLocation":PierResponse.MainLocation, "ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
             return getPierClaimLocationResponse;
         }
@@ -209,34 +184,46 @@ namespace RFID.Core.Services
         {
             //logger.Trace("Service : IRestService, Method : PierClaimScan , Request : PierClaimScanInput = {"Bags" : input.Bags, "DeviceName" : input.DeviceName,"MyProperty" : input.MyProperty,"PierClaimLocation": input.PierClaimLocation, "Station" : input.Station, "Version" : input.Version};")
             PierClaimScanResponse pierClaimScan = new PierClaimScanResponse();
-            pierClaimScan.Success = "1";
+            pierClaimScan.Success = true;
             //logger.Trace("Service : IRestService , Method : PierClaimScan , Response : PierClaimScanResponse =  {"ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
             return pierClaimScan;
         }
 
-
+        //Working.
+        //Used HttpClient instead of HttpWebRequest
         public async Task<string> Consume()
         {
+
             Uri uri = new Uri(_webConfig["uri"]);
-            HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
-            request.ContentType = _webConfig["contentType"];
-            request.Method = _webConfig["method"];
-
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            /////write the rest of the parameters in postData
+            _parameters.Add("Station", "MNL");
+            _parameters.Add("Device", "Android");
+            _parameters.Add("Version", "0.1");
             string json = JsonConvert.SerializeObject(_parameters, Formatting.Indented);
+            var content = new StringContent(json, Encoding.UTF8, _webConfig["contentType"]);
 
-            ///write the rest of the parameters in postData
+            var response = await client.PostAsync(uri, content);
+            return await response.Content.ReadAsStringAsync();
+            //Uri uri = new Uri(_webConfig["uri"]);
+            //HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
+            //request.ContentType = _webConfig["contentType"];
+            //request.Method = _webConfig["method"];
+            //string json = JsonConvert.SerializeObject(_parameters, Formatting.Indented);
 
-            using (WebResponse response = await request.GetResponseAsync())
-            {
+            /////write the rest of the parameters in postData
 
-                using (Stream stream = response.GetResponseStream())
-                {
-                    await Task.Run(() => stream);
 
-                    StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-                    return reader.ReadToEnd();
-                }
-            }
+            //using (WebResponse response = await request.GetResponseAsync())
+            //{
+            //    using (Stream stream = response.GetResponseStream())
+            //    {
+            //        await Task.Run(() => stream);
+
+            //        StreamReader reader = new StreamReader(stream, Encoding.UTF8);
+            //        return reader.ReadToEnd();
+            //    }
+            //}
 
         }
 
@@ -255,6 +242,10 @@ namespace RFID.Core.Services
         {
             set
             {
+                _webConfig = new Dictionary<string, string>();
+                _webConfig.Add("uri", "http://172.26.82.21:5000/login");
+                _webConfig.Add("method", "POST");
+                _webConfig.Add("contentType", "application/json");
                 /// use the to update value of _webConfig like uri, method, content etc.
                 /// read the values from a local XML config
             }

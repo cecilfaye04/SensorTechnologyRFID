@@ -53,7 +53,7 @@
         p1:layout_width="97.3dp"
         p1:layout_height="wrap_content"
         p1:id="@+id/button_login"
-        local:MvxBind="Click LoginCommand"
+        local:MvxBind="Click LoginCommanNew"
         p1:layout_marginTop="10dp"
         p1:layout_gravity="center"
         p1:background="#3F51B5"

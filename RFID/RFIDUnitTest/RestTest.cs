@@ -47,8 +47,8 @@ namespace RFIDUnitTest
 
             var expected = new GetBagInfoResponse()
             {
-                Success = "1",
-                FltCode = "DL",
+                Success = true,
+            FltCode = "DL",
                 FltDate = DateTime.Now.ToString("MMMdd"),
                 FltNum = "1234",
                 PaxName = "Bill Gates",
@@ -82,8 +82,8 @@ namespace RFIDUnitTest
             main3.Name = "Arrivals";
             main3.SubLocations = new string[] { "DL Arvl", "OA Arvl", "AS Arvl" };
             expected.MainLocations = new PierClaimLocations[] { main1, main2, main3 };
-            expected.Success = "1";
-         
+            expected.Success = true;
+
 
             //Act
             var actual = SystemUnderTest.GetPierClaimLocation(dependency);
