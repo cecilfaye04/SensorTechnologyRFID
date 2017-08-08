@@ -9,7 +9,7 @@ namespace RFID.Core.Entities
     public class AuthenticateUserResponse: BaseResponse
     {
         public string Name { get; set; }
-        public string AppAccess { get; set; }
+        public string Application { get; set; }
     }
 
     //public class App

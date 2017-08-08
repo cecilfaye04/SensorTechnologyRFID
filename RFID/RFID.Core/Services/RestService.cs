@@ -5,45 +5,78 @@ using System.Text;
 using System.Threading.Tasks;
 using RFID.Core.Entities;
 using RFID.Core.Interfaces;
+using Newtonsoft.Json;
+using System.Net;
+using System.Net.Http;
+using Flurl;
+using Flurl.Http;
+using System.Net.Http.Headers;
+//using RestSharp.Portable.HttpClient;
+//using RestSharp.Portable;
 
 namespace RFID.Core.Services
 {
     public class RestService : IRestService
     {
-        public AuthenticateUserResponse AuthenticateUser(AuthenticateUserInput input)
-        {
-            //logger.Trace("Service : IRestService, Method : AuthenticateUser , Request : AuthenticateUserInput = {"Username" : input.username,"Password" : input.Password, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
-            AuthenticateUserResponse loginResponse = new AuthenticateUserResponse();
+        HttpClient client;
 
-            if (input.Username == "admin" && input.Password == "password")
+        public RestService()
+        {
+            client = new HttpClient();
+            client.MaxResponseContentBufferSize = 256000;
+        }
+
+        public async Task<AuthenticateUserResponse> AuthenticateUser(AuthenticateUserInput input)
+        {
+
+            var items = new AuthenticateUserResponse();
+            var restUrl = "http://172.26.82.21:5000/login";
+            var uri = new Uri(string.Format(restUrl, string.Empty));
+
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var json = JsonConvert.SerializeObject(input);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(uri, content);
+            if (response.IsSuccessStatusCode)
             {
-                loginResponse = new AuthenticateUserResponse()
-                {
-                    ReturnCode = "1",
-                    Name = "Admin User",
-                    Message = "Successfully Login",
-                    AppAccess = "Pier,Arrival,Departure,Claim,BSO"
-                };
+                var contents = await response.Content.ReadAsStringAsync();
+                items = JsonConvert.DeserializeObject<AuthenticateUserResponse>(contents);
             }
-            else
-            {
-                 loginResponse = new AuthenticateUserResponse()
-                {
-                    ReturnCode = "0",
-                    Name = "XamarinRFID",
-                    Message = "Failed Login",
-                    AppAccess = null
-                };
-            }
-            //logger.Trace("Service : IRestService , Method : AuthenticateUser , Response : AuthenticateUserResponse = {"Name" : loginResponse.Name , "AppAccess" : loginResponse.AppAccess, "ReturnCode" : loginResponse.ReturnCode,"Message" : loginResponse.Message};
-            return loginResponse;
+            return items;
+
+            //logger.Trace("Service : IRestService, Method : AuthenticateUser , Request : AuthenticateUserInput = {"Username" : input.username,"Password" : input.Password, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
+            //AuthenticateUserResponse loginResponse = new AuthenticateUserResponse();
+
+            //if (input.Username == "admin" && input.Password == "password")
+            //{
+            //    loginResponse = new AuthenticateUserResponse()
+            //    {
+            //        ReturnCode = "1",
+            //        Name = "Admin User",
+            //        Message = "Successfully Login",
+            //        AppAccess = "Pier,Arrival,Departure,Claim,BSO"
+            //    };
+            //}
+            //else
+            //{
+            //     loginResponse = new AuthenticateUserResponse()
+            //    {
+            //        ReturnCode = "0",
+            //        Name = "XamarinRFID",
+            //        Message = "Failed Login",
+            //        AppAccess = null
+            //    };
+            //}
+            ////logger.Trace("Service : IRestService , Method : AuthenticateUser , Response : AuthenticateUserResponse = {"Name" : loginResponse.Name , "AppAccess" : loginResponse.AppAccess, "ReturnCode" : loginResponse.ReturnCode,"Message" : loginResponse.Message};
+            //return loginResponse;
         }
 
         public DepArrScanResponse DepArrScan(DepArrScanInput input)
         {
             //logger.Trace("Service : IRestService, Method : DepArrScan , Request : DepArrScanInput = {"CommodityID" : input.CommodityID,"FltCode" : input.FltCode,"FltDate" : input.FltDate,"FltNum" : input.FltNum, "FltPosition" : input.FltPosition,"DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             DepArrScanResponse depArrScanResponse = new DepArrScanResponse();
-            depArrScanResponse.ReturnCode = "1";
+            depArrScanResponse.Success = "1";
 
             Flight flight = new Flight();
             flight.Destination = "NRT";
@@ -60,12 +93,13 @@ namespace RFID.Core.Services
             loadSummary.Freight = "4/4";
             loadSummary.Mail = "5/5";
             loadSummary.PercentLoaded = "100";
-            
+
             if (input.AppName == "Departures")
             {
                 flight.ETD = DateTime.Now.ToString();
             }
-            else {
+            else
+            {
                 flight.ETA = DateTime.Now.ToString();
             }
 
@@ -82,13 +116,13 @@ namespace RFID.Core.Services
             getBagInfoResponse.FltCode = "DL";
             getBagInfoResponse.FltDate = DateTime.Now.ToString("MMMdd");
             getBagInfoResponse.FltNum = "1234";
-            getBagInfoResponse.ReturnCode = "1";
+            getBagInfoResponse.Success = "1";
             getBagInfoResponse.PaxName = "Bill Gates";
             getBagInfoResponse.PaxItinerary = "MNL-NRT-MSP";
             getBagInfoResponse.Latitude = "47.636372";
             getBagInfoResponse.Longitude = "-122.126888";
 
-            
+
             List<ScanPoint> scanHistory = new List<ScanPoint>();
             scanHistory.Add(newscanPoint("ic_checkin", "Checkin - MNL - Manila, Philippines"));
             scanHistory.Add(newscanPoint("ic_departure", "Departure - MNL - Manila, Philippines"));
@@ -118,7 +152,7 @@ namespace RFID.Core.Services
         {
             //logger.Trace("Service : IRestService, Method : GetFlightDetails , Request : GetFlightDetailsResponse = {"CommodityID" : input.CommodityID,"FltCode" : input.FltCode,"FltDate" : input.FltDate,"FltNum" : input.FltNum, "FltPosition" : input.FltPosition,"DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             GetFlightDetailsResponse getFlightDetailsResponse = new GetFlightDetailsResponse();
-            getFlightDetailsResponse.ReturnCode = "1";
+            getFlightDetailsResponse.Success = "1";
 
             Flight flight = new Flight();
             getFlightDetailsResponse.Flight.Destination = "NRT";
@@ -163,10 +197,10 @@ namespace RFID.Core.Services
             main2.SubLocations = new string[] { };
             PierClaimLocations main3 = new PierClaimLocations();
             main3.Name = "Arrivals";
-            main3.SubLocations = new string[] {"DL Arvl", "OA Arvl", "AS Arvl" };
+            main3.SubLocations = new string[] { "DL Arvl", "OA Arvl", "AS Arvl" };
 
             getPierClaimLocationResponse.MainLocations = new PierClaimLocations[] { main1, main2, main3 };
-            getPierClaimLocationResponse.ReturnCode = "1";
+            getPierClaimLocationResponse.Success = "1";
             //logger.Trace("Service : IRestService , Method : GetPierClaimLocation , Response : GetPierClaimLocationResponse = {"MainLocation":PierResponse.MainLocation, "ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
             return getPierClaimLocationResponse;
         }
@@ -175,7 +209,7 @@ namespace RFID.Core.Services
         {
             //logger.Trace("Service : IRestService, Method : PierClaimScan , Request : PierClaimScanInput = {"Bags" : input.Bags, "DeviceName" : input.DeviceName,"MyProperty" : input.MyProperty,"PierClaimLocation": input.PierClaimLocation, "Station" : input.Station, "Version" : input.Version};")
             PierClaimScanResponse pierClaimScan = new PierClaimScanResponse();
-            pierClaimScan.ReturnCode = "1";
+            pierClaimScan.Success = "1";
             //logger.Trace("Service : IRestService , Method : PierClaimScan , Response : PierClaimScanResponse =  {"ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
             return pierClaimScan;
         }

@@ -31,7 +31,7 @@ namespace RFID.Core.ViewModels
                 ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
                 var user = await userRepo.Load();
                 GetPierClaimLocationInput pierInput = new GetPierClaimLocationInput()
-                { AppName = user.Name, Username = user.Username, DeviceName = "Apple", Station = "123", Version = "1" };
+                { AppName = user.Name, Username = user.Username, Device = "Apple", Station = "123", Version = "1" };
                 if (Mvx.Resolve<IValidation>().ObjectIsNotNull(pierInput))
                 {
                     PierResponse = Mvx.Resolve<IRestService>().GetPierClaimLocation(pierInput);

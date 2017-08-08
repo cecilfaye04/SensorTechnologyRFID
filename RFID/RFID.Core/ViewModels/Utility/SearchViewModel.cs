@@ -32,7 +32,7 @@ namespace RFID.Core.ViewModels
 
             if (Mvx.Resolve<IValidation>().Is10Digits(BagtagNo))
             {
-                GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, DeviceName = "Apple", Station = "123", Username = "admin", Version = "1" };
+                GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, Device = "Apple", Station = "123", Username = "admin", Version = "1" };
                 var bagInfo = new GetBagInfoResponse();
                 try
                 {
@@ -47,7 +47,7 @@ namespace RFID.Core.ViewModels
                     //logger.Log(LogLevel.Info,e.ToString);
                 }
 
-                if (bagInfo.ReturnCode == "1")
+                if (bagInfo.Success == "1")
                 {
                     BagScanPoint scanPoint;
                     List<BagScanPoint> mscanHistory = new List<BagScanPoint>();

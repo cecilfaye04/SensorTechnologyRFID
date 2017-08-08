@@ -12,26 +12,26 @@ namespace RFIDUnitTest
     [TestClass]
     public class RestTest
     {
-        [TestMethod]
-        public void AuthenticateUser_Successful()
-        {
-            //Arrange   
-            var SystemUnderTest = new RestService();
-            var dependency = new AuthenticateUserInput()
-            {
-                Username = "admin",
-                Password = "password",
-                DeviceName = "Apple",
-                Station = "123",
-                Version = "1"
-            };
-            var expected = "1";
-            //Act
-            var actual = SystemUnderTest.AuthenticateUser(dependency);
+        //[TestMethod]
+        //public void AuthenticateUser_Successful()
+        //{
+        //    //Arrange   
+        //    var SystemUnderTest = new RestService();
+        //    var dependency = new AuthenticateUserInput()
+        //    {
+        //        Username = "admin",
+        //        Password = "password",
+        //        DeviceName = "Apple",
+        //        Station = "123",
+        //        Version = "1"
+        //    };
+        //    var expected = "1";
+        //    //Act
+        //    var actual = SystemUnderTest.AuthenticateUser(dependency);
 
-            //Assert
-            Assert.AreEqual(expected, actual.ReturnCode);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expected, actual.ReturnCode);
+        //}
 
         [TestMethod]
         public void GetBagInfo_AreEqual()
@@ -40,14 +40,14 @@ namespace RFIDUnitTest
             var SystemUnderTest = new RestService();
             var dependency = new GetBagInfoInput()
             { Bagtag = "1234567890",
-                DeviceName = "Apple",
+                Device = "Apple",
                 Station = "123",    
                 Username = "admin",
                 Version = "1" };
 
             var expected = new GetBagInfoResponse()
             {
-                ReturnCode = "1",
+                Success = "1",
                 FltCode = "DL",
                 FltDate = DateTime.Now.ToString("MMMdd"),
                 FltNum = "1234",
@@ -60,7 +60,7 @@ namespace RFIDUnitTest
             var actual = SystemUnderTest.GetBagInfo(dependency);
 
             //Assert
-            Assert.AreEqual(expected.ReturnCode, actual.ReturnCode);
+            Assert.AreEqual(expected.Success, actual.Success);
         }
 
         [TestMethod]
@@ -69,7 +69,7 @@ namespace RFIDUnitTest
             //Arrange
             var SystemUnderTest = new RestService();
             var dependency = new GetPierClaimLocationInput()
-            { AppName = "Admin User", Username = "admin", DeviceName = "Apple", Station = "123", Version = "1" };
+            { AppName = "Admin User", Username = "admin", Device = "Apple", Station = "123", Version = "1" };
 
             var expected = new GetPierClaimLocationResponse();
             PierClaimLocations main1 = new PierClaimLocations();
@@ -82,14 +82,14 @@ namespace RFIDUnitTest
             main3.Name = "Arrivals";
             main3.SubLocations = new string[] { "DL Arvl", "OA Arvl", "AS Arvl" };
             expected.MainLocations = new PierClaimLocations[] { main1, main2, main3 };
-            expected.ReturnCode = "1";
+            expected.Success = "1";
          
 
             //Act
             var actual = SystemUnderTest.GetPierClaimLocation(dependency);
 
             //Assert
-            Assert.AreEqual(expected.ReturnCode, actual.ReturnCode);
+            Assert.AreEqual(expected.Success, actual.Success);
         }
 
         [TestMethod]
@@ -98,7 +98,7 @@ namespace RFIDUnitTest
             //Arrange
             var SystemUnderTest = new RestService();
             var dependency = new PierClaimScanInput()
-            { Username = "admin", DeviceName = "Apple", Station = "123", Version = "1" };
+            { Username = "admin", Device = "Apple", Station = "123", Version = "1" };
 
             var expected = "1";
 
@@ -106,7 +106,7 @@ namespace RFIDUnitTest
             var actual = SystemUnderTest.PierClaimScan(dependency);
 
             //Assert
-            Assert.AreEqual(expected, actual.ReturnCode);
+            Assert.AreEqual(expected, actual.Success);
         }
 
         [TestMethod]
@@ -130,7 +130,7 @@ namespace RFIDUnitTest
             var actual = SystemUnderTest.GetFlightDetails(dependency);
 
             //Assert
-            Assert.AreEqual(expected, actual.ReturnCode);
+            Assert.AreEqual(expected, actual.Success);
         }
 
         [TestMethod]
@@ -156,7 +156,7 @@ namespace RFIDUnitTest
             var actual = SystemUnderTest.DepArrScan(dependency);
 
             //Assert
-            Assert.AreEqual(expected, actual.ReturnCode);
+            Assert.AreEqual(expected, actual.Success);
         }
 
 
