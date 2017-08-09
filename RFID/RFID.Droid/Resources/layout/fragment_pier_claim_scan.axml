@@ -1,17 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <include
         layout="@layout/toolbar_actionbar" />
-    <EditText
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/etBagNo"
-        android:hint="Bagtag no."
-        android:gravity="center"
-        android:layout_gravity="center" />
+        android:id="@+id/linearLayout1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+        <EditText
+            android:id="@+id/etBagNo"
+            android:hint="Bagtag no."
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            local:MvxBind="Text BagtagNo"
+            android:layout_weight="2" />
+        <Button
+            android:text="Scan"
+            android:id="@+id/btnScan"
+            android:layout_width="wrap_content"
+            local:MvxBind="Click ScanBagtagCommand"
+            android:layout_height="match_parent" />
+    </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -34,10 +52,11 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/tvScanned"
             android:id="@+id/tvScannedValue"
+            local:MvxBind="Text TotalValue"
             android:textSize="65dp"
             android:layout_alignParentRight="true"
             android:gravity="right"
-            android:layout_marginRight="30dp"
+            android:layout_marginRight="50dp"
             android:textColor="#3F51B5" />
         <TextView
             android:text="Baggage"
@@ -94,6 +113,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_height="wrap_content"
             android:id="@+id/tvSuccessValue"
+            local:MvxBind="Text SuccessValue"
             android:textSize="55dp"
             android:layout_width="wrap_content"
             android:layout_marginLeft="20dp"
@@ -121,6 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/vwDivider"
             android:id="@+id/tvFailedValue"
+            local:MvxBind="Text FailedValue"
             android:textSize="55dp"
             android:layout_marginLeft="40dp"
             android:textColor="#000000" />

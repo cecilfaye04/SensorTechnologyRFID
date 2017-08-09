@@ -70,29 +70,30 @@ namespace RFID.Core.ViewModels
 
                 var loginResponse = await Mvx.Resolve<IRestService>().AuthenticateUser(userTry);
 
-                    if (loginResponse.Success == true)
+                    switch (loginResponse.StatusCode)
                     {
-                        try
-                        {
-                            //logger.Trace("SqliteService<UserModel> : LoadUser")
-                            ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
-                            var user = await userRepo.Load();
-                            user.IsLoggedIn = true;
-                            user.Name = loginResponse.Name;
-                            //user.AppAccess = loginResponse.Application;
-                            user.AppAccess = "Pier,Arrival,Departure,Claim,BSO";
-                            await userRepo.InsertUpdate(user);
-                        }
-                        catch (Exception)
-                        {
-                            Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                            //logger.Log(LogLevel.Info,e.ToString);
-                        }
-                        await _navigationService.Navigate<MainMenuViewModel>();
-                    }
-                    else
-                    {
-                        Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");
+                        case "0":
+                            try
+                            {
+                                //logger.Trace("SqliteService<UserModel> : LoadUser")
+                                ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
+                                var user = await userRepo.Load();
+                                user.IsLoggedIn = true;
+                                user.Name = loginResponse.Name;
+                                //user.AppAccess = loginResponse.Application;
+                                user.AppAccess = "Pier,Arrival,Departure,Claim,BSO";
+                                await userRepo.InsertUpdate(user);
+                            }
+                            catch (Exception)
+                            {
+                                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                                //logger.Log(LogLevel.Info,e.ToString);
+                            }
+                            await _navigationService.Navigate<MainMenuViewModel>();
+                            break;
+                        default:
+                            Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");
+                            break;
                     }
                 });
             }
@@ -133,15 +134,24 @@ namespace RFID.Core.ViewModels
                     string response = await restService.Consume();
                     AuthenticateUserResponse authResponse = JsonConvert.DeserializeObject<AuthenticateUserResponse>(response);
 
+                    switch (authResponse.StatusCode)
+                    {
+                        case "0":
+                            await _navigationService.Navigate<MainMenuViewModel>();
+                            break;
+                        default:
+                            Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");
+                            break;
+                    }
                     //Junvic used success boolean instead of returnCode
-                    if (authResponse.Success == true)
-                    {
-                        await _navigationService.Navigate<MainMenuViewModel>();
-                    }
-                    else
-                    {
-                        Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");
-                    }
+                    //if (authResponse.Success == true)
+                    //{
+                    //    await _navigationService.Navigate<MainMenuViewModel>();
+                    //}
+                    //else
+                    //{
+                    //    Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");
+                    //}
                     //JObject jResponse = JObject.Parse(response);
 
                     ///process response using the return code. Coordinate with junvic on possible error codes

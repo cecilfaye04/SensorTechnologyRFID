@@ -15,7 +15,7 @@ namespace RFID.Core.Interfaces
         GetBagInfoResponse GetBagInfo(GetBagInfoInput input);
         GetFlightDetailsResponse GetFlightDetails(GetFlightDetailsInput input);
         GetPierClaimLocationResponse GetPierClaimLocation(GetPierClaimLocationInput input);
-        PierClaimScanResponse PierClaimScan(PierClaimScanInput input);
+        Task<PierClaimScanResponse> PierClaimScan(PierClaimScanInput input);
         Task<String> Consume();
 
         Dictionary<String, String> Parameters { set; }

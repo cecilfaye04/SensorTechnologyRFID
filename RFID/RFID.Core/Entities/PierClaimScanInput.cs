@@ -8,9 +8,9 @@ namespace RFID.Core.Entities
 {
     public class PierClaimScanInput: BaseInput 
     {
-        public string MyProperty { get; set; }
-        public string PierClaimLocation { get; set; }
-        public Bag[] Bags { get; set; }
+        public string Location { get; set; }
+        public string SubLocation { get; set; }
+        public List<Bag> Bags { get; set; }
     }
 
     public class Bag
@@ -18,5 +18,6 @@ namespace RFID.Core.Entities
         public string Bagtag { get; set; }
         public string Longitude { get; set; }
         public string Latitude { get; set; }
+        public DateTime ScanTime { get; set; }
     }
 }

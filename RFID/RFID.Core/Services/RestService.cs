@@ -51,7 +51,7 @@ namespace RFID.Core.Services
         {
             //logger.Trace("Service : IRestService, Method : DepArrScan , Request : DepArrScanInput = {"CommodityID" : input.CommodityID,"FltCode" : input.FltCode,"FltDate" : input.FltDate,"FltNum" : input.FltNum, "FltPosition" : input.FltPosition,"DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             DepArrScanResponse depArrScanResponse = new DepArrScanResponse();
-            depArrScanResponse.Success = true;
+            depArrScanResponse.StatusCode = "0";
 
             Flight flight = new Flight();
             flight.Destination = "NRT";
@@ -91,7 +91,7 @@ namespace RFID.Core.Services
             getBagInfoResponse.FltCode = "DL";
             getBagInfoResponse.FltDate = DateTime.Now.ToString("MMMdd");
             getBagInfoResponse.FltNum = "1234";
-            getBagInfoResponse.Success = true;
+            getBagInfoResponse.StatusCode = "0";
             getBagInfoResponse.PaxName = "Bill Gates";
             getBagInfoResponse.PaxItinerary = "MNL-NRT-MSP";
             getBagInfoResponse.Latitude = "47.636372";
@@ -127,7 +127,7 @@ namespace RFID.Core.Services
         {
             //logger.Trace("Service : IRestService, Method : GetFlightDetails , Request : GetFlightDetailsResponse = {"CommodityID" : input.CommodityID,"FltCode" : input.FltCode,"FltDate" : input.FltDate,"FltNum" : input.FltNum, "FltPosition" : input.FltPosition,"DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             GetFlightDetailsResponse getFlightDetailsResponse = new GetFlightDetailsResponse();
-            getFlightDetailsResponse.Success = true;
+            getFlightDetailsResponse.StatusCode = "0";
 
             Flight flight = new Flight();
             getFlightDetailsResponse.Flight.Destination = "NRT";
@@ -175,18 +175,37 @@ namespace RFID.Core.Services
             main3.SubLocations = new string[] { "DL Arvl", "OA Arvl", "AS Arvl" };
 
             getPierClaimLocationResponse.MainLocations = new PierClaimLocations[] { main1, main2, main3 };
-            getPierClaimLocationResponse.Success = true;
+            getPierClaimLocationResponse.StatusCode = "0";
             //logger.Trace("Service : IRestService , Method : GetPierClaimLocation , Response : GetPierClaimLocationResponse = {"MainLocation":PierResponse.MainLocation, "ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
             return getPierClaimLocationResponse;
         }
 
-        public PierClaimScanResponse PierClaimScan(PierClaimScanInput input)
+        public async Task<PierClaimScanResponse> PierClaimScan(PierClaimScanInput input)
         {
-            //logger.Trace("Service : IRestService, Method : PierClaimScan , Request : PierClaimScanInput = {"Bags" : input.Bags, "DeviceName" : input.DeviceName,"MyProperty" : input.MyProperty,"PierClaimLocation": input.PierClaimLocation, "Station" : input.Station, "Version" : input.Version};")
-            PierClaimScanResponse pierClaimScan = new PierClaimScanResponse();
-            pierClaimScan.Success = true;
-            //logger.Trace("Service : IRestService , Method : PierClaimScan , Response : PierClaimScanResponse =  {"ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
-            return pierClaimScan;
+            PierClaimScanResponse items = new PierClaimScanResponse();
+            var restUrl = "http://172.26.82.21:5001/bags";
+            var uri = new Uri(string.Format(restUrl, string.Empty));
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var json = JsonConvert.SerializeObject(input);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(uri, content);
+            if (response.IsSuccessStatusCode)
+            {
+                var contents = await response.Content.ReadAsStringAsync();
+                items = JsonConvert.DeserializeObject<PierClaimScanResponse>(contents);
+            }
+            return items;
+
+
+
+
+
+            ////logger.Trace("Service : IRestService, Method : PierClaimScan , Request : PierClaimScanInput = {"Bags" : input.Bags, "DeviceName" : input.DeviceName,"MyProperty" : input.MyProperty,"PierClaimLocation": input.PierClaimLocation, "Station" : input.Station, "Version" : input.Version};")
+            //PierClaimScanResponse pierClaimScan = new PierClaimScanResponse();
+            //pierClaimScan.Success = true;
+            ////logger.Trace("Service : IRestService , Method : PierClaimScan , Response : PierClaimScanResponse =  {"ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
+            //return pierClaimScan;
         }
 
         //Working.

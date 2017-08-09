@@ -47,7 +47,7 @@ namespace RFID.Core.ViewModels
                     //logger.Log(LogLevel.Info,e.ToString);
                 }
 
-                if (bagInfo.Success == true)
+                if (bagInfo.StatusCode == "0")
                 {
                     BagScanPoint scanPoint;
                     List<BagScanPoint> mscanHistory = new List<BagScanPoint>();
