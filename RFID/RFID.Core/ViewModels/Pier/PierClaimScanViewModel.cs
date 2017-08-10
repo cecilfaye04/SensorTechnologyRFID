@@ -11,12 +11,13 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class PierClaimScanViewModel : MvxViewModel<string>
+    public class PierClaimScanViewModel : MvxViewModel<Tuple<string, string>>
     {
 
-        public override Task Initialize(string parameter)
+        public override Task Initialize(Tuple<string, string> parameter)
         {
-            PierLocation = parameter;
+            pierClaimFlag = parameter.Item1;
+            PierLocation = parameter.Item2;
             return Task.FromResult(true);
         }
 
@@ -28,6 +29,7 @@ namespace RFID.Core.ViewModels
             set { _pierLocation = value; }
         }
 
+        public string pierClaimFlag;
         private string _bagtagNo;
         public string BagtagNo
         {
@@ -84,19 +86,28 @@ namespace RFID.Core.ViewModels
         {
             if (!string.IsNullOrEmpty(BagtagNo))
             {
-                PierClaimScanInput pierInput = new PierClaimScanInput();
-                pierInput.Username = "admin";
-                pierInput.Version = "0.1";
-                pierInput.Device = "Android";
-                pierInput.Station = "MNL";
-                pierInput.Location = "Pier";
-                pierInput.SubLocation = "PIER0001";
+                PierClaimScanInput pierClaimInput = new PierClaimScanInput();
+                PierClaimScanResponse scanResult = new PierClaimScanResponse();
+
+                pierClaimInput.Username = "admin";
+                pierClaimInput.Version = "0.1";
+                pierClaimInput.Device = "Android";
+                pierClaimInput.Station = "MNL";
+                pierClaimInput.Location = "Pier";
+                pierClaimInput.SubLocation = "PIER0001";
                 List<Bag> bagList = new List<Bag>();
                 bagList.Add(new Bag() { Bagtag = BagtagNo, Latitude = "", Longitude = "", ScanTime = DateTime.Now });
-                pierInput.Bags = bagList;
+                pierClaimInput.Bags = bagList;
 
-                var scanResult = await Mvx.Resolve<IRestService>().PierClaimScan(pierInput);
-                
+                if (pierClaimFlag == "Pier")
+                {
+                     scanResult = await Mvx.Resolve<IRestService>().PierScan(pierClaimInput);
+                }
+                else
+                {
+                     scanResult = await Mvx.Resolve<IRestService>().ClaimScan(pierClaimInput);
+                }
+               
                 foreach (var bag in scanResult.Bags)
                 {
                     if (bag.Success == true)

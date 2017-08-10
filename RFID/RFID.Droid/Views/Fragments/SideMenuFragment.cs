@@ -103,6 +103,9 @@ namespace RFID.Droid.Views
                 case Resource.Id.nav_departure:
                     ViewModel.ShowDepartureCommand.Execute();
                     break;
+                case Resource.Id.nav_claim:
+                    ViewModel.ShowClaimCommand.Execute();
+                    break;
                 case Resource.Id.nav_encoder:
                     ViewModel.ShowEncoderCommand.Execute();
                     break;

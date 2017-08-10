@@ -19,17 +19,16 @@ namespace RFID.Core.Services
 
         public RestService()
         {
-         
             client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
         }
 
-        //Working
+        //Working(Temporary). Will delete after finishing webapi.config
         public async Task<AuthenticateUserResponse> AuthenticateUser(AuthenticateUserInput input)
         {
             //logger.Trace("Service : IRestService, Method : AuthenticateUser , Request : AuthenticateUserInput = {"Username" : input.username,"Password" : input.Password, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             var items = new AuthenticateUserResponse();
-            var restUrl = "http://172.26.82.21:5000/login";
+            var restUrl = "http://172.26.82.21:5000/AuthWebservice/login";
             var uri = new Uri(string.Format(restUrl, string.Empty));
 
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
@@ -180,10 +179,11 @@ namespace RFID.Core.Services
             return getPierClaimLocationResponse;
         }
 
-        public async Task<PierClaimScanResponse> PierClaimScan(PierClaimScanInput input)
+        //Working(Temporary). Will delete after finishing webapi.config
+        public async Task<PierClaimScanResponse> PierScan(PierClaimScanInput input)
         {
             PierClaimScanResponse items = new PierClaimScanResponse();
-            var restUrl = "http://172.26.82.21:5001/bags";
+            var restUrl = "http://172.26.82.21:5000/PierWebservice/bags";
             var uri = new Uri(string.Format(restUrl, string.Empty));
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var json = JsonConvert.SerializeObject(input);
@@ -197,15 +197,28 @@ namespace RFID.Core.Services
             }
             return items;
 
-
-
-
-
             ////logger.Trace("Service : IRestService, Method : PierClaimScan , Request : PierClaimScanInput = {"Bags" : input.Bags, "DeviceName" : input.DeviceName,"MyProperty" : input.MyProperty,"PierClaimLocation": input.PierClaimLocation, "Station" : input.Station, "Version" : input.Version};")
             //PierClaimScanResponse pierClaimScan = new PierClaimScanResponse();
             //pierClaimScan.Success = true;
             ////logger.Trace("Service : IRestService , Method : PierClaimScan , Response : PierClaimScanResponse =  {"ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
             //return pierClaimScan;
+        }
+
+        //Working(Temporary). Will delete after finishing webapi.config
+        public async Task<PierClaimScanResponse> ClaimScan(PierClaimScanInput input)
+        {
+            PierClaimScanResponse items = new PierClaimScanResponse();
+            var uri = "http://172.26.82.21:5000/ClaimWebservice/bags";
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            var json = JsonConvert.SerializeObject(input);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            var response = await client.PostAsync(uri, content);
+            if (response.IsSuccessStatusCode)
+            {
+                var contents = await response.Content.ReadAsStringAsync();
+                items = JsonConvert.DeserializeObject<PierClaimScanResponse>(contents);
+            }
+            return items;
         }
 
         //Working.
@@ -262,7 +275,7 @@ namespace RFID.Core.Services
             set
             {
                 _webConfig = new Dictionary<string, string>();
-                _webConfig.Add("uri", "http://172.26.82.21:5000/login");
+                _webConfig.Add("uri", "http://172.26.82.21:5000/AuthWebservice/login");
                 _webConfig.Add("method", "POST");
                 _webConfig.Add("contentType", "application/json");
                 /// use the to update value of _webConfig like uri, method, content etc.

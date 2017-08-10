@@ -79,7 +79,7 @@ namespace RFID.Core.ViewModels
             try
             {
                 //logger.Trace("Navigate : PierClaimLocationViewModel")
-                _navigationService.Navigate<PierClaimLocationViewModel>();
+                _navigationService.Navigate<PierClaimLocationViewModel,string>("Pier");
             }
             catch (Exception e)
             {
@@ -87,6 +87,26 @@ namespace RFID.Core.ViewModels
                 //logger.Log(LogLevel.Info,e.ToString);
             }
         }
+
+        public IMvxCommand ShowClaimCommand
+        {
+            get { return new MvxCommand(ShowClaimExecuted); }
+        }
+
+        private void ShowClaimExecuted()
+        {
+            try
+            {
+                //logger.Trace("Navigate : PierClaimLocationViewModel")
+                _navigationService.Navigate<PierClaimLocationViewModel, string>("Claim");
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+        }
+
 
         public IMvxCommand ShowDepartureCommand
         {

@@ -138,6 +138,18 @@ namespace RFID.Core.ViewModels
                     {
                         case "0":
                             await _navigationService.Navigate<MainMenuViewModel>();
+                            ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
+                            var user = await userRepo.Load();
+                            user.IsLoggedIn = true;
+                            user.Name = authResponse.Name;
+                            string appAccess = String.Empty;
+                            foreach (var item in authResponse.Applications)
+                            {
+                                appAccess += item + ",";
+                            }
+                            user.AppAccess = appAccess;
+                            await userRepo.InsertUpdate(user);
+
                             break;
                         default:
                             Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");

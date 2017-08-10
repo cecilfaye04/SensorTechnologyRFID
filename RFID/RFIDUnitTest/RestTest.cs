@@ -103,7 +103,7 @@ namespace RFIDUnitTest
             var expected = "1";
 
             //Act
-            var actual = SystemUnderTest.PierClaimScan(dependency);
+            var actual = SystemUnderTest.PierScan(dependency);
 
             //Assert
             //Assert.AreEqual(expected, actual.Stat);

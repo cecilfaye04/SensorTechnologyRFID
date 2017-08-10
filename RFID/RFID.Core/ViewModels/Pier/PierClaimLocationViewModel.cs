@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class PierClaimLocationViewModel : BaseViewModel
+    public class PierClaimLocationViewModel : MvxViewModel<string>
     {
         private readonly IMvxNavigationService _navigationService;
 
@@ -22,6 +22,13 @@ namespace RFID.Core.ViewModels
         {
             _navigationService = navigationService;
         }
+
+        public override Task Initialize(string parameter)
+        {
+            pierClaimFlag = parameter;
+            return Task.FromResult(true);
+        }
+
 
         public async void InitializeList()
         {
@@ -52,11 +59,10 @@ namespace RFID.Core.ViewModels
 
         private void ShowPierScanExecuted()
         {
-            base.StoreParam("PierLocation", PierLocation);
             try
             {
                 //logger.Trace("Navigate : PierClaimScanViewModel")
-                _navigationService.Navigate<PierClaimScanViewModel,string>(PierLocation);
+                _navigationService.Navigate<PierClaimScanViewModel,Tuple<string,string>>(new Tuple<string, string>(pierClaimFlag,PierLocation));
             }
             catch (Exception e)
             {
@@ -66,6 +72,7 @@ namespace RFID.Core.ViewModels
 
         }
 
+        public string pierClaimFlag;
         private string _pierLocation;
         public string PierLocation
         {
