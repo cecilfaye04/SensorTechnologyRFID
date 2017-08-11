@@ -59,13 +59,13 @@ namespace RFID.Droid.Views.Fragments
         }
 
         //Failed solution for navigating from Pier to Claim (need to dispose instance of the fragment)
-        public override void OnViewCreated(View view, Bundle savedInstanceState)
-        {
-            var mainActivity = Activity as MainMenuView;
-            //this.Dispose();
-            var fragmentActivity = mainActivity as Android.Support.V4.App.FragmentActivity;
-            //fragmentActivity.SupportFragmentManager.BeginTransaction().Remove(this).Commit();
-        }
+        //public override void OnViewCreated(View view, Bundle savedInstanceState)
+        //{
+        //    var mainActivity = Activity as MainMenuView;
+        //    //this.Dispose();
+        //    var fragmentActivity = mainActivity as Android.Support.V4.App.FragmentActivity;
+        //    //fragmentActivity.SupportFragmentManager.BeginTransaction().Remove(this).Commit();
+        //}
         //public override void OnDestroy()
         //{
         //    this.Dispose();

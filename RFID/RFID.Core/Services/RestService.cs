@@ -21,6 +21,7 @@ namespace RFID.Core.Services
         {
             client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
+            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         //Working(Temporary). Will delete after finishing webapi.config
@@ -30,8 +31,6 @@ namespace RFID.Core.Services
             var items = new AuthenticateUserResponse();
             var restUrl = "http://172.26.82.21:5000/AuthWebservice/login";
             var uri = new Uri(string.Format(restUrl, string.Empty));
-
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var json = JsonConvert.SerializeObject(input);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -46,41 +45,57 @@ namespace RFID.Core.Services
 
         }
 
-        public DepArrScanResponse DepArrScan(DepArrScanInput input)
+        public async Task<DepArrScanResponse> DepArrScan(DepArrScanInput input)
         {
+            var items = new DepArrScanResponse();
+            var restUrl = "http://172.26.82.21:5000/DeparturesWebservice/load";
+            var uri = new Uri(string.Format(restUrl, string.Empty));
+
+            var json = JsonConvert.SerializeObject(input);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync(uri, content);
+            if (response.IsSuccessStatusCode)
+            {
+                var contents = await response.Content.ReadAsStringAsync();
+                items = JsonConvert.DeserializeObject<DepArrScanResponse>(contents);
+            }
+            return items;
+
+
             //logger.Trace("Service : IRestService, Method : DepArrScan , Request : DepArrScanInput = {"CommodityID" : input.CommodityID,"FltCode" : input.FltCode,"FltDate" : input.FltDate,"FltNum" : input.FltNum, "FltPosition" : input.FltPosition,"DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
-            DepArrScanResponse depArrScanResponse = new DepArrScanResponse();
-            depArrScanResponse.StatusCode = "0";
+            //DepArrScanResponse depArrScanResponse = new DepArrScanResponse();
+            //depArrScanResponse.StatusCode = "0";
 
-            Flight flight = new Flight();
-            flight.Destination = "NRT";
-            flight.Origin = "MNL";
-            flight.FltNum = "1234";
-            flight.FltCode = "5J";
-            flight.Gate = "G23";
-            flight.NoseNumber = "004321";
+            //Flight flight = new Flight();
+            //flight.Destination = "NRT";
+            //flight.Origin = "MNL";
+            //flight.FltNum = "1234";
+            //flight.FltCode = "5J";
+            //flight.Gate = "G23";
+            //flight.NoseNumber = "004321";
 
-            LoadSummary loadSummary = new LoadSummary();
-            loadSummary.Ballast = "1/1";
-            loadSummary.Bags = "2/2";
-            loadSummary.Comat = "3/3";
-            loadSummary.Freight = "4/4";
-            loadSummary.Mail = "5/5";
-            loadSummary.PercentLoaded = "100";
+            //LoadSummary loadSummary = new LoadSummary();
+            //loadSummary.Ballast = "1/1";
+            //loadSummary.Bags = "2/2";
+            //loadSummary.Comat = "3/3";
+            //loadSummary.Freight = "4/4";
+            //loadSummary.Mail = "5/5";
+            //loadSummary.PercentLoaded = "100";
 
-            if (input.AppName == "Departures")
-            {
-                flight.ETD = DateTime.Now.ToString();
-            }
-            else
-            {
-                flight.ETA = DateTime.Now.ToString();
-            }
+            //if (input.AppName == "Departures")
+            //{
+            //    flight.ETD = DateTime.Now.ToString();
+            //}
+            //else
+            //{
+            //    flight.ETA = DateTime.Now.ToString();
+            //}
 
-            depArrScanResponse.Flight = flight;
-            depArrScanResponse.LoadSummary = loadSummary;
-            //logger.Trace("Service : IRestService , Method : DepArrScan , Response : DepArrScanResponse = {"Flight": depArrScanResponse.Flight , "LoadSummary" : depArrScanResponse.LoadSummary , "ReturnCode":bagInfo.ReturnCode,"Message":bagInfo.Message};
-            return depArrScanResponse;
+            //depArrScanResponse.Flight = flight;
+            //depArrScanResponse.LoadSummary = loadSummary;
+            ////logger.Trace("Service : IRestService , Method : DepArrScan , Response : DepArrScanResponse = {"Flight": depArrScanResponse.Flight , "LoadSummary" : depArrScanResponse.LoadSummary , "ReturnCode":bagInfo.ReturnCode,"Message":bagInfo.Message};
+            //return depArrScanResponse;
         }
 
         public GetBagInfoResponse GetBagInfo(GetBagInfoInput input)
@@ -185,7 +200,6 @@ namespace RFID.Core.Services
             PierClaimScanResponse items = new PierClaimScanResponse();
             var restUrl = "http://172.26.82.21:5000/PierWebservice/bags";
             var uri = new Uri(string.Format(restUrl, string.Empty));
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var json = JsonConvert.SerializeObject(input);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -209,7 +223,6 @@ namespace RFID.Core.Services
         {
             PierClaimScanResponse items = new PierClaimScanResponse();
             var uri = "http://172.26.82.21:5000/ClaimWebservice/bags";
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             var json = JsonConvert.SerializeObject(input);
             var content = new StringContent(json, Encoding.UTF8, "application/json");
             var response = await client.PostAsync(uri, content);
@@ -227,7 +240,6 @@ namespace RFID.Core.Services
         {
 
             Uri uri = new Uri(_webConfig["uri"]);
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             /////write the rest of the parameters in postData
             _parameters.Add("Station", "MNL");
             _parameters.Add("Device", "Android");

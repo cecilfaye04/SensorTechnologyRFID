@@ -63,7 +63,7 @@ namespace RFID.Core.ViewModels
                 {
                     Username = Username,
                     Password = Password,
-                    Device = "Android",
+                    DeviceName = "Android",
                     Station = "MNL",
                     Version = "0.1"
                 };

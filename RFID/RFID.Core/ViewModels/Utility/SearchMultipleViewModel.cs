@@ -32,7 +32,7 @@ namespace RFID.Core.ViewModels.Search
         {
             //Sample 
             var bagInfo = new GetBagInfoResponse();
-            GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = "1234", Device = "Apple", Station = "123", Username = "admin", Version = "1" };
+            GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = "1234", DeviceName = "Apple", Station = "123", Username = "admin", Version = "1" };
             try
             {
                 bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -43,18 +44,37 @@
         android:layout_height="2dp"
         android:id="@+id/view6"
         android:background="#CCCCCC" />
-    <EditText
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:id="@+id/editText1"
-        android:hint="Bagtag no."
-        android:gravity="center_horizontal" />
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp">
+        <EditText
+            android:id="@+id/etBagNo"
+            android:hint="Bagtag no."
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            local:MvxBind="Text BagtagNo"
+            android:layout_weight="2" />
+        <Button
+            android:text="Scan"
+            android:id="@+id/btnScan"
+            android:layout_width="wrap_content"
+            local:MvxBind="Click DepArrScanBagtagCommand"
+            android:layout_height="match_parent" />
+    </LinearLayout>
     <ProgressBar
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:id="@+id/progressBar1"
-        android:progress="60"
+        android:progress="0"
+        local:MvxBind="Binding ProgressCount"
         android:layout_marginTop="10dp" />
     <TextView
         android:text="60%"
@@ -84,12 +104,13 @@
             android:layout_toRightOf="@id/imageView7"
             android:id="@+id/textView30" />
         <TextView
-            android:text="3"
+            android:text="0"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="72.7dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView30"
             android:id="@+id/textView31"
+            local:MvxBind="Text NormalLoadCount"
             android:layout_toRightOf="@id/imageView7"
             android:gravity="center"
             android:textSize="30dp"
@@ -103,7 +124,7 @@
             android:id="@+id/textView32"
             android:layout_marginLeft="15dp" />
         <TextView
-            android:text="2"
+            android:text="0"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="55.3dp"
             android:layout_height="wrap_content"
@@ -113,6 +134,7 @@
             android:layout_marginLeft="15dp"
             android:gravity="center"
             android:textStyle="bold"
+            local:MvxBind="Text HeavyLoadCount"
             android:textSize="30dp" />
         <TextView
             android:text="VALET"
@@ -123,7 +145,7 @@
             android:id="@+id/textView34"
             android:layout_marginLeft="15dp" />
         <TextView
-            android:text="2"
+            android:text="0"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="57.3dp"
             android:layout_height="wrap_content"
@@ -133,6 +155,7 @@
             android:layout_marginLeft="15dp"
             android:gravity="center"
             android:textSize="30dp"
+            local:MvxBind="Text ValetLoadCount"
             android:textStyle="bold" />
         <TextView
             android:text="TOTAL"
@@ -143,13 +166,14 @@
             android:id="@+id/textView36"
             android:layout_marginLeft="15dp" />
         <TextView
-            android:text="7"
+            android:text="0"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:layout_width="40.7dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView36"
             android:id="@+id/textView37"
             android:gravity="center"
+            local:MvxBind="Text TotalLoadCount"
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@id/textView35"
             android:textSize="30dp"
@@ -179,12 +203,13 @@
             android:textColor="#000000"
             android:textSize="17dp" />
         <TextView
-            android:text="72/187"
+            android:text="0/0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView1"
             android:id="@+id/textView14"
+             local:MvxBind="Text MailLoadCount"
             android:layout_below="@id/textView13"
             android:textStyle="bold"
             android:textColor="#000000"
@@ -212,11 +237,12 @@
             android:textColor="#000000"
             android:textSize="17dp" />
         <TextView
-            android:text="72/187"
+            android:text="0/0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView2"
+             local:MvxBind="Text FreightLoadCount"
             android:id="@+id/textView16"
             android:layout_below="@id/textView15"
             android:textStyle="bold"
@@ -247,12 +273,13 @@
             android:textColor="#000000"
             android:textSize="17dp" />
         <TextView
-            android:text="72/187"
+            android:text="0/0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView3"
             android:id="@+id/textView18"
+                local:MvxBind="Text BallastLoadCount"
             android:layout_below="@id/textView17"
             android:textStyle="bold"
             android:textColor="#000000"
@@ -275,12 +302,13 @@
             android:textColor="#000000"
             android:textSize="17dp" />
         <TextView
-            android:text="72/187"
+            android:text="0/0"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView4"
             android:id="@+id/textView20"
+             local:MvxBind="Text ComatLoadCount"
             android:layout_below="@id/textView19"
             android:textStyle="bold"
             android:textColor="#000000"

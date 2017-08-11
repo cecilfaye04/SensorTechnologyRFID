@@ -11,7 +11,7 @@ namespace RFID.Core.Entities
         public string Username { get; set; }
         public string Version { get; set; }
         public string Station { get; set; }
-        public string Device { get; set; }
+        public string DeviceName { get; set; }
 
     }
 }

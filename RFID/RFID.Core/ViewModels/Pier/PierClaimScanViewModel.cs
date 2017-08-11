@@ -91,7 +91,7 @@ namespace RFID.Core.ViewModels
 
                 pierClaimInput.Username = "admin";
                 pierClaimInput.Version = "0.1";
-                pierClaimInput.Device = "Android";
+                pierClaimInput.DeviceName = "Android";
                 pierClaimInput.Station = "MNL";
                 pierClaimInput.Location = "Pier";
                 pierClaimInput.SubLocation = "PIER0001";

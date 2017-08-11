@@ -10,8 +10,7 @@ namespace RFID.Core.Interfaces
     public interface IRestService
     {
         Task<AuthenticateUserResponse> AuthenticateUser(AuthenticateUserInput input);
-        //AuthenticateUserResponse AuthenticateUser(AuthenticateUserInput input);
-        DepArrScanResponse DepArrScan(DepArrScanInput input);
+        Task<DepArrScanResponse> DepArrScan(DepArrScanInput input);
         GetBagInfoResponse GetBagInfo(GetBagInfoInput input);
         GetFlightDetailsResponse GetFlightDetails(GetFlightDetailsInput input);
         GetPierClaimLocationResponse GetPierClaimLocation(GetPierClaimLocationInput input);
