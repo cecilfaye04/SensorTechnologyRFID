@@ -10,13 +10,14 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.IO;
+using System.Reflection;
+using System.Xml.Linq;
 
 namespace RFID.Core.Services
 {
     public class RestService : IRestService
     {
         HttpClient client;
-
         public RestService()
         {
             client = new HttpClient();
@@ -27,6 +28,8 @@ namespace RFID.Core.Services
         //Working(Temporary). Will delete after finishing webapi.config
         public async Task<AuthenticateUserResponse> AuthenticateUser(AuthenticateUserInput input)
         {
+
+
             //logger.Trace("Service : IRestService, Method : AuthenticateUser , Request : AuthenticateUserInput = {"Username" : input.username,"Password" : input.Password, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
             var items = new AuthenticateUserResponse();
             var restUrl = "http://172.26.82.21:5000/AuthWebservice/login";
@@ -191,12 +194,14 @@ namespace RFID.Core.Services
             getPierClaimLocationResponse.MainLocations = new PierClaimLocations[] { main1, main2, main3 };
             getPierClaimLocationResponse.StatusCode = "0";
             //logger.Trace("Service : IRestService , Method : GetPierClaimLocation , Response : GetPierClaimLocationResponse = {"MainLocation":PierResponse.MainLocation, "ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
+
             return getPierClaimLocationResponse;
         }
 
         //Working(Temporary). Will delete after finishing webapi.config
         public async Task<PierClaimScanResponse> PierScan(PierClaimScanInput input)
         {
+            //var x = GetWebApi("AuthWebService");
             PierClaimScanResponse items = new PierClaimScanResponse();
             var restUrl = "http://172.26.82.21:5000/PierWebservice/bags";
             var uri = new Uri(string.Format(restUrl, string.Empty));
@@ -239,7 +244,7 @@ namespace RFID.Core.Services
         public async Task<string> Consume()
         {
 
-            Uri uri = new Uri(_webConfig["uri"]);
+            Uri uri = new Uri(_webConfig["actionUri"]);
             /////write the rest of the parameters in postData
             _parameters.Add("Station", "MNL");
             _parameters.Add("Device", "Android");
@@ -282,16 +287,30 @@ namespace RFID.Core.Services
         }
 
         private Dictionary<string, string> _webConfig;
+
         public string WebMethod
         {
             set
             {
                 _webConfig = new Dictionary<string, string>();
-                _webConfig.Add("uri", "http://172.26.82.21:5000/AuthWebservice/login");
-                _webConfig.Add("method", "POST");
-                _webConfig.Add("contentType", "application/json");
-                /// use the to update value of _webConfig like uri, method, content etc.
-                /// read the values from a local XML config
+                Assembly assembly = typeof(App).GetTypeInfo().Assembly;
+                using (var stream = assembly.GetManifestResourceStream("RFID.Core.webapi.config"))
+                using (var reader = new StreamReader(stream))
+                {
+                    var doc = XDocument.Parse(reader.ReadToEnd());
+                    foreach (XElement xe in doc.Elements("Services").Elements("Service"))
+                    {
+                        if (xe.Attribute("Name").Value == value)
+                        {
+                            _webConfig.Add("method", xe.Element("Method").Value);
+                            _webConfig.Add("methodUri", xe.Element("MethodURI").Value);
+                            _webConfig.Add("actionUri", xe.Element("ActionURI").Value);
+                            _webConfig.Add("contentType", xe.Element("ContentType").Value);
+                        }
+                    }
+                    /// use the to update value of _webConfig like uri, method, content etc.
+                    /// read the values from a local XML config
+                }
             }
         }
     }

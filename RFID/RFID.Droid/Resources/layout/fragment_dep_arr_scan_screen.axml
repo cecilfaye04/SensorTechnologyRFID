@@ -11,6 +11,36 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/linearLayout2"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+        <TextView
+            android:text="Destination"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView38"
+            android:layout_weight="1" />
+        <TextView
+            android:text="ETD"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView39"
+            android:layout_weight="1" />
+        <TextView
+            android:text="Gate"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView40"
+            android:layout_weight="1"
+            android:gravity="right" />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/llDepArr"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp">
@@ -52,7 +82,8 @@
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout1"
         android:layout_marginLeft="5dp"
-        android:layout_marginRight="5dp">
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="10dp">
         <EditText
             android:id="@+id/etBagNo"
             android:hint="Bagtag no."
@@ -68,34 +99,45 @@
             local:MvxBind="Click DepArrScanBagtagCommand"
             android:layout_height="match_parent" />
     </LinearLayout>
-    <ProgressBar
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:id="@+id/progressBar1"
-        android:progress="0"
-        local:MvxBind="Binding ProgressCount"
-        android:layout_marginTop="10dp" />
-    <TextView
-        android:text="60%"
-        android:textAppearance="?android:attr/textAppearanceMedium"
+    <LinearLayout
+        android:orientation="vertical"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        local:MvxBind="Visible IsPercentVisible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView26"
-        android:gravity="center"
-        android:textColor="#000000"
-        android:layout_marginBottom="10dp" />
+        android:id="@+id/llPercentLoad">
+        <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:id="@+id/progressBar1"
+            android:progress="60"
+            local:MvxBind="Binding ProgressCount"
+            android:layout_marginTop="7dp" />
+        <TextView
+            android:text="60%"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView26"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:layout_marginBottom="10dp" />
+    </LinearLayout>
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="70.7dp"
         android:id="@+id/relativeLayout5"
         android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp">
         <ImageView
-            android:src="@android:drawable/ic_menu_gallery"
+            android:src="@drawable/baggage"
             android:layout_width="82.7dp"
             android:layout_height="58.0dp"
-            android:id="@+id/imageView7" />
+            android:id="@+id/imageView7"
+            android:layout_marginRight="5dp" />
         <TextView
             android:text="NORMAL"
             android:textAppearance="?android:attr/textAppearanceMedium"
@@ -106,7 +148,7 @@
         <TextView
             android:text="0"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="72.7dp"
+            android:layout_width="70.7dp"
             android:layout_height="wrap_content"
             android:layout_below="@id/textView30"
             android:id="@+id/textView31"
@@ -147,7 +189,7 @@
         <TextView
             android:text="0"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_width="57.3dp"
+            android:layout_width="50.3dp"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/textView33"
             android:id="@+id/textView35"
@@ -183,8 +225,8 @@
         android:layout_width="match_parent"
         android:layout_height="68.7dp"
         android:id="@+id/relativeLayout2"
-        android:layout_marginTop="25dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="35dp"
         android:layout_marginRight="10dp">
         <ImageView
             android:src="@drawable/logo_L"
@@ -209,7 +251,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView1"
             android:id="@+id/textView14"
-             local:MvxBind="Text MailLoadCount"
+            local:MvxBind="Text MailLoadCount"
             android:layout_below="@id/textView13"
             android:textStyle="bold"
             android:textColor="#000000"
@@ -242,7 +284,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView2"
-             local:MvxBind="Text FreightLoadCount"
+            local:MvxBind="Text FreightLoadCount"
             android:id="@+id/textView16"
             android:layout_below="@id/textView15"
             android:textStyle="bold"
@@ -253,8 +295,8 @@
         android:layout_width="match_parent"
         android:layout_height="68.7dp"
         android:id="@+id/relativeLayout3"
-        android:layout_marginTop="20dp"
-        android:layout_marginLeft="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="35dp"
         android:layout_marginRight="10dp">
         <ImageView
             android:src="@drawable/logo_L"
@@ -279,7 +321,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView3"
             android:id="@+id/textView18"
-                local:MvxBind="Text BallastLoadCount"
+            local:MvxBind="Text BallastLoadCount"
             android:layout_below="@id/textView17"
             android:textStyle="bold"
             android:textColor="#000000"
@@ -308,7 +350,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/imageView4"
             android:id="@+id/textView20"
-             local:MvxBind="Text ComatLoadCount"
+            local:MvxBind="Text ComatLoadCount"
             android:layout_below="@id/textView19"
             android:textStyle="bold"
             android:textColor="#000000"

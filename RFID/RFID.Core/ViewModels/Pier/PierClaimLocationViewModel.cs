@@ -29,11 +29,11 @@ namespace RFID.Core.ViewModels
             return Task.FromResult(true);
         }
 
-
         public async void InitializeList()
         {
             try
             {
+                PageLocationTitle = "Please select a " + pierClaimFlag + " location";
                 //logger.Trace("SqliteService<UserModel> : LoadUser")
                 ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
                 var user = await userRepo.Load();
@@ -79,6 +79,18 @@ namespace RFID.Core.ViewModels
             get { return _pierLocation; }
             set { _pierLocation = value; }
         }
+
+        private string _pageLocationTitle = "Please select a location";
+        public string PageLocationTitle
+        {
+            get { return _pageLocationTitle; }
+            set
+            {
+                _pageLocationTitle = value;
+                RaisePropertyChanged(() => PageLocationTitle);
+            }
+        }
+
 
         private GetPierClaimLocationResponse _pierResponse;
         public  GetPierClaimLocationResponse PierResponse

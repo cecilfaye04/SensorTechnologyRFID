@@ -103,10 +103,8 @@ namespace RFID.Droid.Views.Fragments
             //Listening to child item selection
             string result = String.Empty;
             expListView.ChildClick += delegate (object sender, ExpandableListView.ChildClickEventArgs e) {
-                
                 ViewModel.PierLocation = listAdapter.GetChild(e.GroupPosition, e.ChildPosition).ToString();
                 ViewModel.ShowPierScanCommand.Execute();
-
             };
 
             //Listening to group expand
@@ -135,9 +133,13 @@ namespace RFID.Droid.Views.Fragments
                 {
                     return new ColorDrawable(Color.ParseColor("#283593"));
                 }
-                else
+                else if (ViewModel.pierClaimFlag == "Claim")
                 {
                     return new ColorDrawable(Color.ParseColor("#4b2554"));
+                }
+                else
+                {
+                    return new ColorDrawable(Color.ParseColor("#0a022d"));
                 }
             }
         }

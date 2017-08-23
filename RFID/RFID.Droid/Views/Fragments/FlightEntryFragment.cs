@@ -14,7 +14,7 @@ namespace RFID.Droid.Views.Fragments
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            ((MainMenuView)Activity).Title = "Departure";
+            ((MainMenuView)Activity).Title = ViewModel.departureArrivalFlag;
             ShowHamburgerMenu = true;
             var mainActivity = Activity as MainMenuView;
             return base.OnCreateView(inflater, container, savedInstanceState); 
@@ -22,6 +22,22 @@ namespace RFID.Droid.Views.Fragments
 
 
         protected override int FragmentId => Resource.Layout.fragment_flight_entry;
-        protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#2196F3"));
+
+        protected override ColorDrawable backcolor
+        {
+            get
+            {
+                if (ViewModel.departureArrivalFlag == "Departure")
+                {
+                    return new ColorDrawable(Color.ParseColor("#2196F3"));
+                }
+                else
+                {
+                    return new ColorDrawable(Color.ParseColor("#162133"));
+                }
+            }
+        }
+
+        //protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#2196F3"));
     }
 }

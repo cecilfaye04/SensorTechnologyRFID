@@ -31,7 +31,7 @@ namespace RFID.Core
             var user = await userRepo.Load();
             if (user.IsLoggedIn)
             { this.RegisterAppStart<ViewModels.MainMenuViewModel>(); }
-            else { this.RegisterAppStart<ViewModels.LoginViewModel>(); }
+            else { this.RegisterAppStart<ViewModels.MainMenuViewModel>(); }
 
         }
     }

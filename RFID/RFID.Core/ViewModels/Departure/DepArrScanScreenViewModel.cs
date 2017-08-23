@@ -10,8 +10,16 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class DepArrScanScreenViewModel : BaseViewModel
+    public class DepArrScanScreenViewModel : MvxViewModel<string>
     {
+        public override Task Initialize(string parameter)
+        {
+            _depArrFlag = parameter;
+           //var x = _depArrFlag == "Departure" ? _isPercentVisible = true : _isPercentVisible = false;
+            return Task.FromResult(true);
+        }
+
+        private string _depArrFlag;
         private string _bagtagNo;
         public string BagtagNo
         {
@@ -22,6 +30,15 @@ namespace RFID.Core.ViewModels
                 RaisePropertyChanged(() => BagtagNo);
             }
         }
+
+        private bool _isPercentVisible;
+
+        public bool IsPercentVisible
+        {
+            get { return _isPercentVisible; }
+            set { _isPercentVisible = value; RaisePropertyChanged(() => IsPercentVisible); }
+        }
+
 
         private string _normalLoadCount="0";
         public string NormalLoadCount
@@ -123,7 +140,6 @@ namespace RFID.Core.ViewModels
         }
 
 
-
         public IMvxCommand DepArrScanBagtagCommand
         {
             get
@@ -180,5 +196,7 @@ namespace RFID.Core.ViewModels
             }
  
         }
+
+       
     }
 }

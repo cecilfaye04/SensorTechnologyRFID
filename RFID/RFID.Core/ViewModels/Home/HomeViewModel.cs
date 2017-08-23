@@ -25,6 +25,7 @@ namespace RFID.Core.ViewModels
    
         private void EnableApps(string appAccess)
         {
+            appAccess = "PierClaimDeparturesArrivalsBSO";
             IsPierVisible = appAccess.Contains("Pier");
             IsDepartureVisible = appAccess.Contains("Departures");
             IsArrivalVisible = appAccess.Contains("Arrivals");
@@ -112,6 +113,25 @@ namespace RFID.Core.ViewModels
             }
         }
 
+        public IMvxCommand ShowBsoCommand
+        {
+            get { return new MvxCommand(ShowBsoExecuted); }
+        }
+
+
+        private void ShowBsoExecuted()
+        {
+            try
+            {
+                //logger.Trace("Navigate : PierClaimLocationViewModel")
+                _navigationService.Navigate<PierClaimLocationViewModel, string>("BSO");
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+        }
         public IMvxCommand ShowDepartureCommand
         {
             get { return new MvxCommand(ShowDepartureExecuted); }
@@ -122,7 +142,27 @@ namespace RFID.Core.ViewModels
             try
             {
                 //logger.Trace("Navigate : FlightEntryViewModel")
-                _navigationService.Navigate<FlightEntryViewModel>();
+                _navigationService.Navigate<FlightEntryViewModel,string>("Departure");
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+        }
+
+        public IMvxCommand ShowArrivalCommand
+        {
+            get { return new MvxCommand(ShowArrivalExecuted); }
+        }
+
+
+        private void ShowArrivalExecuted()
+        {
+            try
+            {
+                //logger.Trace("Navigate : FlightEntryViewModel")
+                _navigationService.Navigate<FlightEntryViewModel,string>("Arrival");
             }
             catch (Exception e)
             {

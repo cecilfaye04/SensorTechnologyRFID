@@ -100,7 +100,7 @@ namespace RFIDUnitTest
             var dependency = new PierClaimScanInput()
             { Username = "admin", DeviceName = "Apple", Station = "123", Version = "1" };
 
-            var expected = "1";
+            //var expected = "1";
 
             //Act
             var actual = SystemUnderTest.PierScan(dependency);

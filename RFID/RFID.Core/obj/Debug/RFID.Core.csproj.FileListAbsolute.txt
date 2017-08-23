@@ -1,3 +1,4 @@
+C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\webapi.config
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\RFID.Core.dll.config
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\RFID.Core.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\RFID.Core.pdb
@@ -40,7 +41,5 @@ C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\obj\Debug\RFID.Core.dll
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\obj\Debug\RFID.Core.pdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\obj\Debug\RFID.Core.csprojResolveAssemblyReference.cache
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\obj\Debug\RFID.Core.dll.mdb
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\RFID.Core.dll.mdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\obj\Debug\RFID.Core.dll.mdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Core\bin\Debug\RFID.Core.dll.mdb

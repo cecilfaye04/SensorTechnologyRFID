@@ -54,6 +54,7 @@
     <Compile Include="Entities\PierClaimScanInput.cs" />
     <Compile Include="Entities\PierClaimScanResponse.cs" />
     <Compile Include="Interfaces\ILogService.cs" />
+    <Compile Include="Interfaces\IMapService.cs" />
     <Compile Include="Interfaces\IRegistry.cs" />
     <Compile Include="Interfaces\IRestService.cs" />
     <Compile Include="Interfaces\IValidation.cs" />
@@ -173,9 +174,10 @@
   <ItemGroup>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="webapi.config" />
+    <EmbeddedResource Include="webapi.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

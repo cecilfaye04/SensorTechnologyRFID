@@ -27,8 +27,10 @@ namespace RFID.Core.ViewModels
 
         public LoginViewModel(IMvxNavigationService navigationService)
         {
+            
             _navigationService = navigationService;
         }
+
 
         private string _userName;
         public string Username
@@ -142,7 +144,7 @@ namespace RFID.Core.ViewModels
                             var user = await userRepo.Load();
                             user.IsLoggedIn = true;
                             user.Name = authResponse.Name;
-                            string appAccess = String.Empty;
+                            string appAccess = "";
                             foreach (var item in authResponse.Applications)
                             {
                                 appAccess += item + ",";
