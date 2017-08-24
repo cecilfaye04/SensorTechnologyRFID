@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class PierClaimLocationViewModel : BaseViewModel
+    public class PierClaimLocationViewModel : MvxViewModel<string>
     {
         private readonly IMvxNavigationService _navigationService;
 
@@ -23,15 +23,22 @@ namespace RFID.Core.ViewModels
             _navigationService = navigationService;
         }
 
+        public override Task Initialize(string parameter)
+        {
+            pierClaimFlag = parameter;
+            return Task.FromResult(true);
+        }
+
         public async void InitializeList()
         {
             try
             {
+                PageLocationTitle = "Please select a " + pierClaimFlag + " location";
                 //logger.Trace("SqliteService<UserModel> : LoadUser")
                 ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
                 var user = await userRepo.Load();
                 GetPierClaimLocationInput pierInput = new GetPierClaimLocationInput()
-                { AppName = user.Name, Username = user.Username, Device = "Apple", Station = "123", Version = "1" };
+                { AppName = user.Name, Username = user.Username, DeviceName = "Apple", Station = "123", Version = "1" };
                 if (Mvx.Resolve<IValidation>().ObjectIsNotNull(pierInput))
                 {
                     PierResponse = Mvx.Resolve<IRestService>().GetPierClaimLocation(pierInput);
@@ -52,11 +59,10 @@ namespace RFID.Core.ViewModels
 
         private void ShowPierScanExecuted()
         {
-            base.StoreParam("PierLocation", PierLocation);
             try
             {
                 //logger.Trace("Navigate : PierClaimScanViewModel")
-                _navigationService.Navigate<PierClaimScanViewModel,string>(PierLocation);
+                _navigationService.Navigate<PierClaimScanViewModel,Tuple<string,string>>(new Tuple<string, string>(pierClaimFlag,PierLocation));
             }
             catch (Exception e)
             {
@@ -66,12 +72,25 @@ namespace RFID.Core.ViewModels
 
         }
 
+        public string pierClaimFlag;
         private string _pierLocation;
         public string PierLocation
         {
             get { return _pierLocation; }
             set { _pierLocation = value; }
         }
+
+        private string _pageLocationTitle = "Please select a location";
+        public string PageLocationTitle
+        {
+            get { return _pageLocationTitle; }
+            set
+            {
+                _pageLocationTitle = value;
+                RaisePropertyChanged(() => PageLocationTitle);
+            }
+        }
+
 
         private GetPierClaimLocationResponse _pierResponse;
         public  GetPierClaimLocationResponse PierResponse

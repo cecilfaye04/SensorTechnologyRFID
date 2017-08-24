@@ -20,7 +20,8 @@ namespace RFID.Droid.Views
         /// </summary>
         protected bool ShowHamburgerMenu { get; set; } = false;
         protected bool ShowBackButton { get; set; } = false;
-        protected bool ShowBackMenu { get; set; } = false;
+        protected abstract int FragmentId { get; }
+        protected abstract ColorDrawable backcolor { get; }
 
         protected BaseFragment()
         {
@@ -75,9 +76,7 @@ namespace RFID.Droid.Views
             return view;
         }
 
-        protected abstract int FragmentId { get; }
-        protected abstract ColorDrawable backcolor { get; }
-
+  
         public override void OnConfigurationChanged(Configuration newConfig)
         {
             base.OnConfigurationChanged(newConfig);

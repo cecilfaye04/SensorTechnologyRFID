@@ -48,7 +48,7 @@ namespace RFID.Droid.Views.Fragments
             base.OnResume();
         }
 
-        public void OnMapReady(GoogleMap googleMap)
+        public async void OnMapReady(GoogleMap googleMap)
         {
 
             this.googleMap = googleMap;
@@ -65,10 +65,14 @@ namespace RFID.Droid.Views.Fragments
             googleMap.AddMarker(mrkerUserLocation);
             googleMap.AddMarker(mrkerBagLocation);
             googleMap.MoveCamera(CameraUpdateFactory.NewLatLng(new LatLng(47.639466, -122.130665)));
-            GetRouteInfo();
+            var x = await GetRouteInfo();
+            RouteLine = GetPolylines(x);
+            RouteLine.InvokeColor(-65536);
+            RouteLine.InvokeWidth(5);
+            Routes = googleMap.AddPolyline(RouteLine);
 
         }
-        public async void GetRouteInfo()
+        public async Task<string> GetRouteInfo()
         {
 
             string response = string.Empty;
@@ -97,10 +101,11 @@ namespace RFID.Droid.Views.Fragments
             {
                 Routes.Remove();
             }
-            RouteLine = GetPolylines(response);
-            RouteLine.InvokeColor(-65536);
-            RouteLine.InvokeWidth(5);
-            Routes = googleMap.AddPolyline(RouteLine);
+            return response;
+            //RouteLine = GetPolylines(response);
+            //RouteLine.InvokeColor(-65536);
+            //RouteLine.InvokeWidth(5);
+            //Routes = googleMap.AddPolyline(RouteLine);
 
         }
 

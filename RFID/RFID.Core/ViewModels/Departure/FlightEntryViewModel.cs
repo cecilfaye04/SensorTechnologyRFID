@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class FlightEntryViewModel : BaseViewModel
+    public class FlightEntryViewModel : MvxViewModel<string>
     {
         private readonly IMvxNavigationService _navigationService;
 
@@ -20,6 +20,13 @@ namespace RFID.Core.ViewModels
             _navigationService = navigationService;
         }
 
+        public override Task Initialize(string parameter)
+        {
+            departureArrivalFlag = parameter;
+            return Task.FromResult(true);
+        }
+
+        public string departureArrivalFlag { get; set; }
         private List<string> _flight = new List<string>()
             {
               "PR","DL","TG","AA","HA","AS","AR","NH","AI","SR","MP","MX"
@@ -76,7 +83,7 @@ namespace RFID.Core.ViewModels
                 try
                 {
                     //logger.Trace("Navigate : DepArrScanScreenViewModel")
-                _navigationService.Navigate<DepArrScanScreenViewModel>();
+                _navigationService.Navigate<DepArrScanScreenViewModel,string>(departureArrivalFlag);
                     //throw new System.ArgumentException("Parameter cannot be null", "original");
                 }
                 catch (Exception e)
@@ -87,5 +94,7 @@ namespace RFID.Core.ViewModels
                 }
             //}
         }
+
+      
     }
 }

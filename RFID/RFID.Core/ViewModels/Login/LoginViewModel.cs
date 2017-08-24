@@ -27,8 +27,10 @@ namespace RFID.Core.ViewModels
 
         public LoginViewModel(IMvxNavigationService navigationService)
         {
+            
             _navigationService = navigationService;
         }
+
 
         private string _userName;
         public string Username
@@ -63,7 +65,7 @@ namespace RFID.Core.ViewModels
                 {
                     Username = Username,
                     Password = Password,
-                    Device = "Android",
+                    DeviceName = "Android",
                     Station = "MNL",
                     Version = "0.1"
                 };
@@ -138,6 +140,18 @@ namespace RFID.Core.ViewModels
                     {
                         case "0":
                             await _navigationService.Navigate<MainMenuViewModel>();
+                            ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
+                            var user = await userRepo.Load();
+                            user.IsLoggedIn = true;
+                            user.Name = authResponse.Name;
+                            string appAccess = "";
+                            foreach (var item in authResponse.Applications)
+                            {
+                                appAccess += item + ",";
+                            }
+                            user.AppAccess = appAccess;
+                            await userRepo.InsertUpdate(user);
+
                             break;
                         default:
                             Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");

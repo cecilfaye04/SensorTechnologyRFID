@@ -32,7 +32,7 @@ namespace RFID.Core.ViewModels
 
             if (Mvx.Resolve<IValidation>().Is10Digits(BagtagNo))
             {
-                GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, Device = "Apple", Station = "123", Username = "admin", Version = "1" };
+                GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, DeviceName = "Apple", Station = "123", Username = "admin", Version = "1" };
                 var bagInfo = new GetBagInfoResponse();
                 try
                 {

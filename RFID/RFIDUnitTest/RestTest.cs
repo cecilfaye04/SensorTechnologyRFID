@@ -40,7 +40,7 @@ namespace RFIDUnitTest
             var SystemUnderTest = new RestService();
             var dependency = new GetBagInfoInput()
             { Bagtag = "1234567890",
-                Device = "Apple",
+                DeviceName = "Apple",
                 Station = "123",    
                 Username = "admin",
                 Version = "1" };
@@ -69,7 +69,7 @@ namespace RFIDUnitTest
             //Arrange
             var SystemUnderTest = new RestService();
             var dependency = new GetPierClaimLocationInput()
-            { AppName = "Admin User", Username = "admin", Device = "Apple", Station = "123", Version = "1" };
+            { AppName = "Admin User", Username = "admin", DeviceName = "Apple", Station = "123", Version = "1" };
 
             var expected = new GetPierClaimLocationResponse();
             PierClaimLocations main1 = new PierClaimLocations();
@@ -98,12 +98,12 @@ namespace RFIDUnitTest
             //Arrange
             var SystemUnderTest = new RestService();
             var dependency = new PierClaimScanInput()
-            { Username = "admin", Device = "Apple", Station = "123", Version = "1" };
+            { Username = "admin", DeviceName = "Apple", Station = "123", Version = "1" };
 
-            var expected = "1";
+            //var expected = "1";
 
             //Act
-            var actual = SystemUnderTest.PierClaimScan(dependency);
+            var actual = SystemUnderTest.PierScan(dependency);
 
             //Assert
             //Assert.AreEqual(expected, actual.Stat);
@@ -133,31 +133,31 @@ namespace RFIDUnitTest
             Assert.AreEqual(expected, actual.StatusCode);
         }
 
-        [TestMethod]
-        public void DepArrScan_AreEqual()
-        {
-            //Arrange
-            var SystemUnderTest = new RestService();
-            var dependency = new DepArrScanInput()
-            {
-                FltDate = DateTime.Now.ToString("HH:mm MMM dd, yyyy"),
-                FltNum = "123",
-                FltCode = "AZ",
-                FltPosition = "11",
-                Station = "MNL",
-                AppName = "Departures",
-                Latitude = "121.1212",
-                Longitude = "121.111"
-            };
+        //[TestMethod]
+        //public void DepArrScan_AreEqual()
+        //{
+        //    //Arrange
+        //    var SystemUnderTest = new RestService();
+        //    var dependency = new DepArrScanInput()
+        //    {
+        //        FltDate = DateTime.Now.ToString("HH:mm MMM dd, yyyy"),
+        //        FltNum = "123",
+        //        FltCode = "AZ",
+        //        FltPosition = "11",
+        //        Station = "MNL",
+        //        AppName = "Departures",
+        //        Latitude = "121.1212",
+        //        Longitude = "121.111"
+        //    };
 
-            var expected = "1";
+        //    var expected = "1";
 
-            //Act
-            var actual = SystemUnderTest.DepArrScan(dependency);
+        //    //Act
+        //    var actual = SystemUnderTest.DepArrScan(dependency);
 
-            //Assert
-            Assert.AreEqual(expected, actual.StatusCode);
-        }
+        //    //Assert
+        //    Assert.AreEqual(expected, actual.StatusCode);
+        //}
 
 
 

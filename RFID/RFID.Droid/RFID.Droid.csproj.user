@@ -3,6 +3,6 @@
   <PropertyGroup>
     <AndroidDesignerPreferredDevice>4in WVGA %28Nexus S%29</AndroidDesignerPreferredDevice>
     <AndroidDesignerPreferredTheme>Theme.DeviceDefault</AndroidDesignerPreferredTheme>
-    <SelectedDevice> 4" JellyBean %284.2%29 HDPI Phone</SelectedDevice>
+    <SelectedDevice>4" JellyBean %284.2%29 HDPI Phone</SelectedDevice>
   </PropertyGroup>
 </Project>

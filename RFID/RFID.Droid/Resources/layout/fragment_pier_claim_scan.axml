@@ -69,21 +69,11 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:background="#757575"
         android:layout_toRightOf="@id/imageView2"
-        android:layout_below="@id/rlScannedBaggage" />
-    <Button
-        android:text="Data Sync"
-        android:layout_width="match_parent"
-        android:layout_height="40.7dp"
-        android:id="@+id/btnSync"
-        android:background="@android:color/transparent"
-        android:textColor="#3F51B5"
-        android:layout_marginTop="20dp"
-        android:textStyle="bold"
-        android:textSize="17dp"
-        android:layout_marginBottom="5dp" />
+        android:layout_below="@id/rlScannedBaggage"
+        android:layout_marginBottom="35dp" />
     <TextView
         android:text="Scanned baggage will be automatically"
         android:textAppearance="?android:attr/textAppearanceSmall"

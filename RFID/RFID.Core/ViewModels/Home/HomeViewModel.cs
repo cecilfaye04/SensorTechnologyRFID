@@ -22,11 +22,13 @@ namespace RFID.Core.ViewModels
             _navigationService = navigationService;
         }
 
+   
         private void EnableApps(string appAccess)
         {
+            appAccess = "PierClaimDeparturesArrivalsBSO";
             IsPierVisible = appAccess.Contains("Pier");
-            IsDepartureVisible = appAccess.Contains("Departure");
-            IsArrivalVisible = appAccess.Contains("Arrival");
+            IsDepartureVisible = appAccess.Contains("Departures");
+            IsArrivalVisible = appAccess.Contains("Arrivals");
             IsClaimVisible = appAccess.Contains("Claim");
             IsBSOVisible = appAccess.Contains("BSO");
         }
@@ -68,30 +70,21 @@ namespace RFID.Core.ViewModels
         public bool IsBSOVisible
         {
             get { return isBSOVisible; }
-            set { isBSOVisible = value; RaisePropertyChanged(() => IsPierVisible); }
+            set { isBSOVisible = value; RaisePropertyChanged(() => IsBSOVisible); }
         }
 
-        private List<string> appAccess;
-
-        public List<string> AppAccess
-
+        public IMvxCommand ShowPierCommand
         {
-            get { return appAccess; }
-            set { appAccess = value; }
-        }
-
-        public IMvxCommand ShowPeirCommand
-        {
-            get { return new MvxCommand(ShowPeirExecuted); }
+            get { return new MvxCommand(ShowPierExecuted); }
         }
 
 
-        private void ShowPeirExecuted()
+        private void ShowPierExecuted()
         {
             try
             {
                 //logger.Trace("Navigate : PierClaimLocationViewModel")
-                _navigationService.Navigate<PierClaimLocationViewModel>();
+                _navigationService.Navigate<PierClaimLocationViewModel, string>("Pier");
             }
             catch (Exception e)
             {
@@ -100,6 +93,45 @@ namespace RFID.Core.ViewModels
             }
         }
 
+        public IMvxCommand ShowClaimCommand
+        {
+            get { return new MvxCommand(ShowClaimExecuted); }
+        }
+
+
+        private void ShowClaimExecuted()
+        {
+            try
+            {
+                //logger.Trace("Navigate : PierClaimLocationViewModel")
+                _navigationService.Navigate<PierClaimLocationViewModel, string>("Claim");
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+        }
+
+        public IMvxCommand ShowBsoCommand
+        {
+            get { return new MvxCommand(ShowBsoExecuted); }
+        }
+
+
+        private void ShowBsoExecuted()
+        {
+            try
+            {
+                //logger.Trace("Navigate : PierClaimLocationViewModel")
+                _navigationService.Navigate<PierClaimLocationViewModel, string>("BSO");
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+        }
         public IMvxCommand ShowDepartureCommand
         {
             get { return new MvxCommand(ShowDepartureExecuted); }
@@ -110,7 +142,27 @@ namespace RFID.Core.ViewModels
             try
             {
                 //logger.Trace("Navigate : FlightEntryViewModel")
-                _navigationService.Navigate<FlightEntryViewModel>();
+                _navigationService.Navigate<FlightEntryViewModel,string>("Departure");
+            }
+            catch (Exception e)
+            {
+                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
+                //logger.Log(LogLevel.Info,e.ToString);
+            }
+        }
+
+        public IMvxCommand ShowArrivalCommand
+        {
+            get { return new MvxCommand(ShowArrivalExecuted); }
+        }
+
+
+        private void ShowArrivalExecuted()
+        {
+            try
+            {
+                //logger.Trace("Navigate : FlightEntryViewModel")
+                _navigationService.Navigate<FlightEntryViewModel,string>("Arrival");
             }
             catch (Exception e)
             {
@@ -161,7 +213,6 @@ namespace RFID.Core.ViewModels
 
         public async void InitializeButton()
         {
-            ProgressBarVisible = true;
             try
             {
                 //logger.Trace("SqliteService<UserModel> : LoadUser")
@@ -174,8 +225,8 @@ namespace RFID.Core.ViewModels
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
                 //logger.Log(LogLevel.Info,e.ToString);
             }
-            ProgressBarVisible = false;
         }
+
 
     }
 

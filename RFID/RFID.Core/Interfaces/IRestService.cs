@@ -10,12 +10,12 @@ namespace RFID.Core.Interfaces
     public interface IRestService
     {
         Task<AuthenticateUserResponse> AuthenticateUser(AuthenticateUserInput input);
-        //AuthenticateUserResponse AuthenticateUser(AuthenticateUserInput input);
-        DepArrScanResponse DepArrScan(DepArrScanInput input);
+        Task<DepArrScanResponse> DepArrScan(DepArrScanInput input);
         GetBagInfoResponse GetBagInfo(GetBagInfoInput input);
         GetFlightDetailsResponse GetFlightDetails(GetFlightDetailsInput input);
         GetPierClaimLocationResponse GetPierClaimLocation(GetPierClaimLocationInput input);
-        Task<PierClaimScanResponse> PierClaimScan(PierClaimScanInput input);
+        Task<PierClaimScanResponse> PierScan(PierClaimScanInput input);
+        Task<PierClaimScanResponse> ClaimScan(PierClaimScanInput input);
         Task<String> Consume();
 
         Dictionary<String, String> Parameters { set; }

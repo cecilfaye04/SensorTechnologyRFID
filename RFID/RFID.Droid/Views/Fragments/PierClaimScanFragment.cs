@@ -51,8 +51,6 @@ namespace RFID.Droid.Views.Fragments
                 //Show the snackbar
                 snackBar.Show();
             };
-
-
             return view;
         }
         protected override int FragmentId => Resource.Layout.fragment_pier_claim_scan;

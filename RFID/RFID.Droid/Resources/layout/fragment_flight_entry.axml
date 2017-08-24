@@ -31,21 +31,31 @@
             local:MvxBind="Click ShowDepartmentScanCommand"
             android:background="#3F51B5"
             android:textColor="#FFFFFF"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_width="63.3dp"
+            android:layout_height="40.0dp"
+            android:layout_weight="1"
+            android:gravity="center" />
     </LinearLayout>
-    <DatePicker
-        android:layout_width="match_parent"
-        android:layout_height="306.7dp"
-        android:id="@+id/dpFlightDate"
-        android:datePickerMode="calendar"
-        android:spinnersShown="false"
-        android:calendarTextColor="#ff3e50b4"
-        android:clipToPadding="true"
-        android:layout_marginTop="30dp"
-        android:headerBackground="#1565C0"
-        android:calendarViewShown="true"
-        android:clipChildren="true"
-        android:layoutMode="clipBounds" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/linearLayout1"
+        android:layout_marginTop="30dp">
+        <DatePicker
+            android:id="@+id/dpFlightDate"
+            android:datePickerMode="calendar"
+            android:spinnersShown="false"
+            android:calendarTextColor="#ff3e50b4"
+            android:clipToPadding="true"
+            android:headerBackground="#1565C0"
+            android:calendarViewShown="true"
+            android:clipChildren="true"
+            android:layoutMode="clipBounds"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
 </LinearLayout>
