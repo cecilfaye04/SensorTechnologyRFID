@@ -17,7 +17,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -266,7 +266,6 @@
     <Compile Include="Views\Fragments\BagTrackFragment.cs" />
     <Compile Include="Views\Fragments\BaseFragment.cs" />
     <Compile Include="Views\Fragments\BottomNavigationFragment.cs" />
-    <Compile Include="Views\Fragments\CustomMapFragment.cs" />
     <Compile Include="Views\Fragments\DepArrScanScreenFragment.cs" />
     <Compile Include="Views\Fragments\FlightEntryFragment.cs" />
     <Compile Include="Views\Fragments\HomeFragment.cs" />

@@ -2,6 +2,7 @@
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using RFID.Core.Entities;
+using RFID.Core.Helpers;
 using RFID.Core.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,11 @@ namespace RFID.Core.ViewModels
 {
     public class PierClaimScanViewModel : MvxViewModel<Tuple<string, string>>
     {
+
+        public PierClaimScanViewModel() {
+            //uncomment InitReaders once implementation for the QR, RFID and Barcode reader is ready
+            //InitReaders();
+        }
         public override Task Initialize(Tuple<string, string> parameter)
         {
             pierClaimFlag = parameter.Item1;
@@ -129,6 +135,46 @@ namespace RFID.Core.ViewModels
             }
         }
 
+    #region Readers
 
-    }
+        IBarcode BarcodeReader;
+        IQrcode QRCodeReader;
+        IRfid RFIDReader;
+        private void InitReaders()
+        {
+            BarcodeReader = Mvx.Resolve<IBarcode>();
+            QRCodeReader = Mvx.Resolve<IQrcode>();
+            RFIDReader = Mvx.Resolve<IRfid>();
+
+            QRCodeReader.OnScanEvent += OnScanEvent;
+            QRCodeReader.OnScanFail += OnScanFail;
+            BarcodeReader.OnScanEvent += OnScanEvent;
+            BarcodeReader.OnScanFail += OnScanFail;
+
+            RFIDReader.OnRFIDScanEvent += OnRFIDScanEvent;
+            RFIDReader.OnRFIDScanFail += OnRFIDScanFail;
+            RFIDReader.OnRFIDWriteEvent += OnRFIDScanEvent;
+            RFIDReader.OnRFIDWriteEventFailed += OnRFIDScanFail;
+        }
+
+        private void OnScanEvent(object sender, ScanEventArgs e){
+
+        }
+
+        private void OnScanFail(object sender, ScanEventArgs e) {
+
+        }
+
+        private void OnRFIDScanFail(object sender, RFIDScanEventArgs e)
+        {
+
+        }
+
+        private void OnRFIDScanEvent(object sender, RFIDScanEventArgs e)
+        {
+
+        }
+    #endregion
+
+}
 }

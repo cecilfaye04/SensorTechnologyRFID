@@ -53,10 +53,15 @@
     <Compile Include="Entities\GetPierClaimLocationResponse.cs" />
     <Compile Include="Entities\PierClaimScanInput.cs" />
     <Compile Include="Entities\PierClaimScanResponse.cs" />
+    <Compile Include="Helpers\RFIDScanEventArgs.cs" />
+    <Compile Include="Helpers\ScanEventArgs.cs" />
+    <Compile Include="Interfaces\IBarcode.cs" />
     <Compile Include="Interfaces\ILogService.cs" />
     <Compile Include="Interfaces\IMapService.cs" />
+    <Compile Include="Interfaces\IQrcode.cs" />
     <Compile Include="Interfaces\IRegistry.cs" />
     <Compile Include="Interfaces\IRestService.cs" />
+    <Compile Include="Interfaces\IRfid.cs" />
     <Compile Include="Interfaces\IValidation.cs" />
     <Compile Include="Models\BagInfo.cs" />
     <Compile Include="Models\Location.cs" />
@@ -178,6 +183,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
