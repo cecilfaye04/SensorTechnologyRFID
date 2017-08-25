@@ -12,25 +12,26 @@ using System.Net.Http.Headers;
 using System.IO;
 using System.Reflection;
 using System.Xml.Linq;
+using MvvmCross.Platform;
 
 namespace RFID.Core.Services
 {
     public class RestService : IRestService
     {
         HttpClient client;
+        ILogService logger;
+
         public RestService()
         {
+            logger = Mvx.Resolve<ILogService>();
             client = new HttpClient();
             client.MaxResponseContentBufferSize = 256000;
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        //Working(Temporary). Will delete after finishing webapi.config
         public async Task<AuthenticateUserResponse> AuthenticateUser(AuthenticateUserInput input)
         {
-
-
-            //logger.Trace("Service : IRestService, Method : AuthenticateUser , Request : AuthenticateUserInput = {"Username" : input.username,"Password" : input.Password, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
+            logger.Trace("Service : IRestService, Method : AuthenticateUser , Request : AuthenticateUserInput = {'Username' : " + input.Username + ",'Password' : " + input.Password + ", 'DeviceName' : 'Apple', 'Station' : '123', 'Version' : '1'};");
             var items = new AuthenticateUserResponse();
             var restUrl = "http://172.26.82.21:5000/AuthWebservice/login";
             var uri = new Uri(string.Format(restUrl, string.Empty));
@@ -43,13 +44,13 @@ namespace RFID.Core.Services
                 var contents = await response.Content.ReadAsStringAsync();
                 items = JsonConvert.DeserializeObject<AuthenticateUserResponse>(contents);
             }
+            logger.Trace("Service : IRestService , Method : AuthenticateUser , Response : AuthenticateUserResponse = {'Name' : " + items.Name + ", 'AppAccess' : " + items.Applications + ", 'ReturnCode' : " + items.StatusCode + ", 'Message' :" + items.Message + "}");
             return items;
-            //logger.Trace("Service : IRestService , Method : AuthenticateUser , Response : AuthenticateUserResponse = {"Name" : loginResponse.Name , "AppAccess" : loginResponse.AppAccess, "ReturnCode" : loginResponse.ReturnCode,"Message" : loginResponse.Message};
-
         }
 
         public async Task<DepArrScanResponse> DepArrScan(DepArrScanInput input)
         {
+            logger.Trace("Service : IRestService, Method : DepArrScan , Request : DepArrScanInput = {'Bagtag' :" + input.Bagtag + ",'CarrierCode' : " + input.CarrierCode + ",'FlightNumber' : " + input.FlightNumber + ",'Position' : "+ input.Position +" ,'ScanTime' : " + input.ScanTime + ",'DeviceName' : " + input.DeviceName + " , 'Station' : " + input.Station + " , 'Version' : " + input.Version + ", 'Username' : "+ input.Username +" };");
             var items = new DepArrScanResponse();
             var restUrl = "http://172.26.82.21:5000/DeparturesWebservice/load";
             var uri = new Uri(string.Format(restUrl, string.Empty));
@@ -63,47 +64,14 @@ namespace RFID.Core.Services
                 var contents = await response.Content.ReadAsStringAsync();
                 items = JsonConvert.DeserializeObject<DepArrScanResponse>(contents);
             }
+            logger.Trace("Service : IRestService , Method : DepArrScan , Response : DepArrScanResponse = {'Flight': items , 'LoadSummary' : depArrScanResponse.LoadSummary , 'ReturnCode':bagInfo.ReturnCode,'Message':bagInfo.Message}");
+
             return items;
-
-
-            //logger.Trace("Service : IRestService, Method : DepArrScan , Request : DepArrScanInput = {"CommodityID" : input.CommodityID,"FltCode" : input.FltCode,"FltDate" : input.FltDate,"FltNum" : input.FltNum, "FltPosition" : input.FltPosition,"DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
-            //DepArrScanResponse depArrScanResponse = new DepArrScanResponse();
-            //depArrScanResponse.StatusCode = "0";
-
-            //Flight flight = new Flight();
-            //flight.Destination = "NRT";
-            //flight.Origin = "MNL";
-            //flight.FltNum = "1234";
-            //flight.FltCode = "5J";
-            //flight.Gate = "G23";
-            //flight.NoseNumber = "004321";
-
-            //LoadSummary loadSummary = new LoadSummary();
-            //loadSummary.Ballast = "1/1";
-            //loadSummary.Bags = "2/2";
-            //loadSummary.Comat = "3/3";
-            //loadSummary.Freight = "4/4";
-            //loadSummary.Mail = "5/5";
-            //loadSummary.PercentLoaded = "100";
-
-            //if (input.AppName == "Departures")
-            //{
-            //    flight.ETD = DateTime.Now.ToString();
-            //}
-            //else
-            //{
-            //    flight.ETA = DateTime.Now.ToString();
-            //}
-
-            //depArrScanResponse.Flight = flight;
-            //depArrScanResponse.LoadSummary = loadSummary;
-            ////logger.Trace("Service : IRestService , Method : DepArrScan , Response : DepArrScanResponse = {"Flight": depArrScanResponse.Flight , "LoadSummary" : depArrScanResponse.LoadSummary , "ReturnCode":bagInfo.ReturnCode,"Message":bagInfo.Message};
-            //return depArrScanResponse;
         }
 
         public GetBagInfoResponse GetBagInfo(GetBagInfoInput input)
         {
-            //logger.Trace("Service : IRestService, Method : GetBagInfo , Request : GetBagInfoInput = {"Bagtag" : input.Bagtag, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
+            logger.Trace("Service : IRestService, Method : GetBagInfo , Request : GetBagInfoInput = {'Bagtag' : input.Bagtag, 'DeviceName' : 'Appl', 'Station' : '123', 'Version' : '1' };");
             GetBagInfoResponse getBagInfoResponse = new GetBagInfoResponse();
             getBagInfoResponse.FltCode = "DL";
             getBagInfoResponse.FltDate = DateTime.Now.ToString("MMMdd");
@@ -124,25 +92,25 @@ namespace RFID.Core.Services
             scanHistory.Add(newscanPoint("ic_departure", "Departure - MSP - Minneapolis, USA"));
             getBagInfoResponse.BagHistory = scanHistory.ToArray<ScanPoint>();
 
-            //logger.Trace("Service : IRestService , Method : GetBagInfo , Response : GetBagInfoResponse = {"BagHistory": bagInfo.BagHistory, "ReturnCode":bagInfo.ReturnCode,"Message":bagInfo.Message};
+            logger.Trace("Service : IRestService , Method : GetBagInfo , Response : GetBagInfoResponse = {'BagHistory': bagInfo.BagHistory, 'ReturnCode':bagInfo.ReturnCode,'Message':bagInfo.Message}");
             return getBagInfoResponse;
 
         }
 
         private ScanPoint newscanPoint(string icon, string name)
         {
-            //logger.Trace("Service : IRestService, Method : newscanPoint , Request : {"Icon" : icon, "Name" : name };")
+            logger.Trace("Service : IRestService, Method : newscanPoint , Request : {'Icon' : icon, 'Name' : name };");
             ScanPoint mscanpoint = new ScanPoint();
             mscanpoint.ScanType = icon;
             mscanpoint.Location = name;
             mscanpoint.DateTime = DateTime.Now.ToString("HH:mm MMM dd, yyyy");
-            //logger.Trace("Service : IRestService, Method : newscanPoint , Response : ScanPoint = {"ScanType" :  mscanpoint.ScanType, "Location" :  mscanpoint.Location , "DateTime" = mscanpoint.DateTime };")
+            logger.Trace("Service : IRestService, Method : newscanPoint , Response : ScanPoint = {'ScanType' :  mscanpoint.ScanType, 'Location' :  mscanpoint.Location , 'DateTime' = mscanpoint.DateTime };");
             return mscanpoint;
         }
 
         public GetFlightDetailsResponse GetFlightDetails(GetFlightDetailsInput input)
         {
-            //logger.Trace("Service : IRestService, Method : GetFlightDetails , Request : GetFlightDetailsResponse = {"CommodityID" : input.CommodityID,"FltCode" : input.FltCode,"FltDate" : input.FltDate,"FltNum" : input.FltNum, "FltPosition" : input.FltPosition,"DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
+            logger.Trace("Service : IRestService, Method : GetFlightDetails , Request : GetFlightDetailsResponse = {'CommodityID' : input.CommodityID,'FltCode' : input.FltCode,'FltDate' : input.FltDate,'FltNum' : input.FltNum, 'FltPosition' : input.FltPosition,'DeviceName' : 'Apple', 'Station' : '123', 'Version' : '1' };");
             GetFlightDetailsResponse getFlightDetailsResponse = new GetFlightDetailsResponse();
             getFlightDetailsResponse.StatusCode = "0";
 
@@ -173,13 +141,13 @@ namespace RFID.Core.Services
 
             getFlightDetailsResponse.Flight = flight;
             getFlightDetailsResponse.LoadSummary = loadSummary;
-            //logger.Trace("Service : IRestService , Method : GetFlightDetails , Response : GetFlightDetailsResponse = {"Flight": depArrScanResponse.Flight , "LoadSummary" : depArrScanResponse.LoadSummary , "ReturnCode":bagInfo.ReturnCode,"Message":bagInfo.Message};
+            logger.Trace("Service : IRestService , Method : GetFlightDetails , Response : GetFlightDetailsResponse = {'Flight': depArrScanResponse.Flight , 'LoadSummary' : depArrScanResponse.LoadSummary , 'ReturnCode':bagInfo.ReturnCode,'Message':bagInfo.Message}");
             return getFlightDetailsResponse;
         }
 
         public GetPierClaimLocationResponse GetPierClaimLocation(GetPierClaimLocationInput input)
         {
-            //logger.Trace("Service : IRestService, Method : GetPierClaimLocation, Request : GetPierClaimLocationInput = {"Appname":user.Name,"Username" : user.Username, "DeviceName" : "Apple", "Station" : "123", "Version" : "1" };")
+            logger.Trace("Service : IRestService, Method : GetPierClaimLocation, Request : GetPierClaimLocationInput = {'Appname':user.Name,'Username' : user.Username, 'DeviceName' : 'Apple', 'Station' : '123', 'Version' : '1' }");
             GetPierClaimLocationResponse getPierClaimLocationResponse = new GetPierClaimLocationResponse();
             PierClaimLocations main1 = new PierClaimLocations();
             main1.Name = "Pier";
@@ -193,7 +161,7 @@ namespace RFID.Core.Services
 
             getPierClaimLocationResponse.MainLocations = new PierClaimLocations[] { main1, main2, main3 };
             getPierClaimLocationResponse.StatusCode = "0";
-            //logger.Trace("Service : IRestService , Method : GetPierClaimLocation , Response : GetPierClaimLocationResponse = {"MainLocation":PierResponse.MainLocation, "ReturnCode":PierResponse.ReturnCode,"Message":PierResponse.Message};
+            logger.Trace("Service : IRestService , Method : GetPierClaimLocation , Response : GetPierClaimLocationResponse = {'MainLocation':PierResponse.MainLocation, 'ReturnCode':PierResponse.ReturnCode,'Message':PierResponse.Message}");
 
             return getPierClaimLocationResponse;
         }
@@ -251,9 +219,12 @@ namespace RFID.Core.Services
             _parameters.Add("Version", "0.1");
             string json = JsonConvert.SerializeObject(_parameters, Formatting.Indented);
             var content = new StringContent(json, Encoding.UTF8, _webConfig["contentType"]);
-
+            logger.Trace("Service : IRestService , Method : " + _webConfig["method"] + " ,Request : " + json + "");
             var response = await client.PostAsync(uri, content);
-            return await response.Content.ReadAsStringAsync();
+            var returnResponse = await response.Content.ReadAsStringAsync();
+            logger.Trace("Service : IRestService , Method : " + _webConfig["method"] + " ,Response : " + returnResponse + "");
+
+            return returnResponse;
             //Uri uri = new Uri(_webConfig["uri"]);
             //HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
             //request.ContentType = _webConfig["contentType"];

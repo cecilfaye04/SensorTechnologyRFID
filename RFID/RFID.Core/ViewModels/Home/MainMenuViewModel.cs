@@ -15,9 +15,11 @@ namespace RFID.Core.ViewModels
     public class MainMenuViewModel : BaseViewModel
     {
         private readonly IMvxNavigationService _navigationService;
+        private ILogService _logger;
 
         public MainMenuViewModel(IMvxNavigationService navigationService)
         {
+            _logger = Mvx.Resolve<ILogService>();
             _navigationService = navigationService;
         }
 
@@ -25,14 +27,14 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : HomeViewModel,SideMenuViewModel")
+                _logger.Trace("ShowMenu Start");
                 _navigationService.Navigate<HomeViewModel>();
                 _navigationService.Navigate<SideMenuViewModel>();
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowMenu ex: " + e.ToString() + "");
             }
         }
 
@@ -45,13 +47,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate: SearchViewModel")
+                _logger.Trace("ShowSearchExecuted Start");
                 _navigationService.Navigate<SearchViewModel>();
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowSearchExecuted ex: " + e.ToString() + "");
             }
         }
     }

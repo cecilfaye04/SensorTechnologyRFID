@@ -28,8 +28,6 @@ namespace RFID.Droid.Views.Fragments
             return view;
         }
 
-     
-
         protected override int FragmentId => Resource.Layout.fragment_rfid_encoder;
         protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#283593"));
     }

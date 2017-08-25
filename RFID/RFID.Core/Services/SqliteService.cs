@@ -8,28 +8,36 @@ using RFID.Core.Interfaces;
 using System.Collections.ObjectModel;
 using System.Linq.Expressions;
 using SQLiteNetExtensionsAsync.Extensions;
+using MvvmCross.Platform;
 
 namespace RFID.Core.Services
 {
     public class SqliteService<T> : ISqliteService<T> where T : class, new()
     {
+        ILogService _logger;
+
+        public SqliteService()
+        {
+            _logger = Mvx.Resolve<ILogService>();
+        }
+
         public async Task InsertUpdate(T entity)
         {
-           await App.Connection.InsertOrReplaceWithChildrenAsync(entity);
-            //logger.Trace("SqliteService<UserModel> : InsertUpdate, Query : InsertOrReplaceWithChildrenAsync(entity), Result : value")
+            _logger.Trace("SqliteService<UserModel> : InsertUpdate Start");
+            await App.Connection.InsertOrReplaceWithChildrenAsync(entity);
         }
 
         public async Task<T> Load()
         {
+            _logger.Trace("SqliteService<UserModel> :  Load Start");
             var retValue = await App.Connection.Table<T>().FirstOrDefaultAsync();
-            //logger.Trace("SqliteService<UserModel> : Load, Query : FirstOrDefaultAsync>(id), Result : value")
             return retValue;
         }
 
         public async Task<T> Load(string id)
         {
+            _logger.Trace("SqliteService<UserModel> :  Load(string id) Start");
             var retValue = await App.Connection.GetWithChildrenAsync<T>(id);
-            //logger.Trace("SqliteService<UserModel> : LoadSpecific, Query : GetWithChildrenAsync<T>(id), Result : value")
             return retValue;
         }
     }

@@ -34,7 +34,7 @@ namespace RFID.Droid.Views
             _navigationView = view.FindViewById<NavigationView>(Resource.Id.navigation_view);
             _navigationView.SetNavigationItemSelectedListener(this);
             _navigationView.Menu.FindItem(Resource.Id.nav_home).SetChecked(true);
-
+            //var x = ViewModel.AppAccess;
             //if (ViewModel.AppAccess.Count > 0)
             //{
             //    if (!ViewModel.AppAccess.Contains("BSO"))
@@ -50,18 +50,18 @@ namespace RFID.Droid.Views
             //    {
             //        _navigationView.Menu.FindItem(Resource.Id.nav_claim).SetVisible(false);
             //    }
-            //    if (!ViewModel.AppAccess.Contains("Arrival"))
+            //    if (!ViewModel.AppAccess.Contains("Arrivals"))
             //    {
             //        _navigationView.Menu.FindItem(Resource.Id.nav_arrival).SetVisible(false);
             //    }
-            //    if (!ViewModel.AppAccess.Contains("Departure"))
+            //    if (!ViewModel.AppAccess.Contains("Departures"))
             //    {
             //        _navigationView.Menu.FindItem(Resource.Id.nav_departure).SetVisible(false);
             //    }
             //}
             //else
             //{ }
-         
+
 
 
 

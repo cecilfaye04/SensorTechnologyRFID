@@ -15,9 +15,11 @@ namespace RFID.Core.ViewModels
     public class SearchViewModel : BaseViewModel 
     {
         private readonly IMvxNavigationService _navigationService;
-        private BagInfo mBagInfo = new BagInfo();
+        private ILogService _logger;
+
         public SearchViewModel(IMvxNavigationService navigationService)
         {
+            _logger = Mvx.Resolve<ILogService>();
             _navigationService = navigationService;
         }
 
@@ -29,8 +31,8 @@ namespace RFID.Core.ViewModels
         private void ShowSearchResultExecuted()
         {
             ProgressBarVisible = true;
-
-            if (Mvx.Resolve<IValidation>().Is10Digits(BagtagNo))
+            BagInfo mBagInfo = new BagInfo();
+            if (Mvx.Resolve<IValidation>().Is10Digits(BagtagNo) && !String.IsNullOrEmpty(BagtagNo))
             {
                 GetBagInfoInput baginput = new GetBagInfoInput() { Bagtag = BagtagNo, DeviceName = "Apple", Station = "123", Username = "admin", Version = "1" };
                 var bagInfo = new GetBagInfoResponse();
@@ -41,10 +43,10 @@ namespace RFID.Core.ViewModels
                         bagInfo = Mvx.Resolve<IRestService>().GetBagInfo(baginput);
                     }
                 }
-                catch (Exception)
+                catch (Exception e)
                 {
                     Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                    //logger.Log(LogLevel.Info,e.ToString);
+                    _logger.Trace("ShowSearchResultExecuted ex: " + e.ToString() + "");
                 }
 
                 if (bagInfo.StatusCode == "0")
@@ -83,7 +85,6 @@ namespace RFID.Core.ViewModels
         }
 
         private string _bagtagNo ;
-
         public string BagtagNo
         {
             get { return _bagtagNo; }
@@ -102,13 +103,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : SearchMultipleViewModel")
+                _logger.Trace("ShowMultipleSearchExecuted Start");
                 _navigationService.Navigate<SearchMultipleViewModel>();
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowMultipleSearchExecuted ex: " + e.ToString() + "");
             }
         }
     }

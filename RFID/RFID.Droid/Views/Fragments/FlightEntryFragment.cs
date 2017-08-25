@@ -20,9 +20,7 @@ namespace RFID.Droid.Views.Fragments
             return base.OnCreateView(inflater, container, savedInstanceState); 
         }
 
-
         protected override int FragmentId => Resource.Layout.fragment_flight_entry;
-
         protected override ColorDrawable backcolor
         {
             get
@@ -37,7 +35,5 @@ namespace RFID.Droid.Views.Fragments
                 }
             }
         }
-
-        //protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#2196F3"));
     }
 }

@@ -18,8 +18,11 @@ namespace RFID.Core.ViewModels
     public class BagInfoViewModel : MvxViewModel<BagInfo>
     {
         private readonly IMvxNavigationService _navigationService;
+        private ILogService _logger;
+
         public BagInfoViewModel(IMvxNavigationService navigationService)
         {
+            _logger = Mvx.Resolve<ILogService>();
             _navigationService = navigationService;
         }
         
@@ -45,17 +48,17 @@ namespace RFID.Core.ViewModels
         {
             try
             {
+                _logger.Trace("ShowSearchTrackExecuted Start");
                 _navigationService.Navigate<BagLocateViewModel>();
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowSearchTrackExecuted ex: " + e.ToString() + "");
             }
         }
      
         private string _itinerary;
-
         public string Itinerary
         {
             get { return _itinerary; }
@@ -67,7 +70,6 @@ namespace RFID.Core.ViewModels
         }
 
         private string _flightDate;
-
         public string FlightDate
         {
             get { return _flightDate; }
@@ -113,7 +115,6 @@ namespace RFID.Core.ViewModels
         }
 
         private string _baglatitude;
-
         public string BagLatitude
         {
             get { return _baglatitude; }
@@ -121,7 +122,6 @@ namespace RFID.Core.ViewModels
         }
 
         private string _bagLongitude;
-
         public string BagLongitude
         {
             get { return _bagLongitude; }
@@ -129,7 +129,6 @@ namespace RFID.Core.ViewModels
         }
 
         private List<BagScanPoint> scanHistory;
-
         public List<BagScanPoint> ScanHistory
         {
             get { return scanHistory; }

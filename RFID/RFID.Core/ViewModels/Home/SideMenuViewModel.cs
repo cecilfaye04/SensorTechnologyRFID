@@ -16,9 +16,11 @@ namespace RFID.Core.ViewModels
     public class SideMenuViewModel : BaseViewModel
     {
         private readonly IMvxNavigationService _navigationService;
+        private ILogService _logger;
 
         public SideMenuViewModel(IMvxNavigationService navigationService)
         {
+            _logger = Mvx.Resolve<ILogService>();
             _navigationService = navigationService;
         }
 
@@ -26,29 +28,27 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("SqliteService<UserModel> : LoadUser")
+                _logger.Trace("Service: SqliteService<UserModel> Method: Load");
                 ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
                 var user = await userRepo.Load();
                 List<string> appAccess = user.AppAccess.Split(',').ToList<string>();
                 appAccess.Reverse();
                 AppAccess = appAccess;
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("Service: SqliteService<UserModel> Method: Load" + e.ToString() + "");
             }
         }
 
         private List<string> appAccess;
-
         public List<string> AppAccess
         {
             get { return appAccess; }
             set { appAccess = value; }
         }
 
-        #region Cross Platform Commands & Handlers
 
         public IMvxCommand ShowHomeCommand
         {
@@ -59,13 +59,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : HomeViewModel")
+                _logger.Trace("ShowHomeExecuted Start");
                 _navigationService.Navigate<HomeViewModel>();
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowHomeExecuted ex: " + e.ToString() + "");
             }
         }
 
@@ -78,13 +78,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : PierClaimLocationViewModel")
+                _logger.Trace("ShowPierExecuted Start");
                 _navigationService.Navigate<PierClaimLocationViewModel,string>("Pier");
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowPierExecuted ex: " + e.ToString() + "");
             }
         }
 
@@ -97,13 +97,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : PierClaimLocationViewModel")
+                _logger.Trace("ShowClaimExecuted Start");
                 _navigationService.Navigate<PierClaimLocationViewModel, string>("Claim");
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowClaimExecuted ex: " + e.ToString() + "");
             }
         }
 
@@ -116,13 +116,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : FlightEntryViewModel")
+                _logger.Trace("ShowDepartureExecuted Start");
                 _navigationService.Navigate<FlightEntryViewModel, string>("Departure");
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowDepartureExecuted ex: " + e.ToString() + "");
             }
         }
 
@@ -135,13 +135,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : PierClaimLocationViewModel")
-                _navigationService.Navigate<PierClaimLocationViewModel, string>("Claim");
+                _logger.Trace("ShowBsoExecuted Start");
+                _navigationService.Navigate<PierClaimLocationViewModel, string>("BSO");
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowBsoExecuted ex: " + e.ToString() + "");
             }
         }
 
@@ -150,18 +150,17 @@ namespace RFID.Core.ViewModels
             get { return new MvxCommand(ShowArrivalExecuted); }
         }
 
-
         private void ShowArrivalExecuted()
         {
             try
             {
-                //logger.Trace("Navigate : FlightEntryViewModel")
+                _logger.Trace("ShowArrivalExecuted Start");
                 _navigationService.Navigate<FlightEntryViewModel, string>("Arrival");
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowArrivalExecuted ex: " + e.ToString() + "");
             }
         }
 
@@ -174,13 +173,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : RfidEncoderViewModel")
+                _logger.Trace("ShowEncoderExecuted Start");
                 _navigationService.Navigate<RfidEncoderViewModel>();
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowEncoderExecuted ex: " + e.ToString() + "");
             }
         }
 
@@ -193,13 +192,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : SearchViewModel")
+                _logger.Trace("ShowSearchExecuted Start");
                 _navigationService.Navigate<SearchViewModel>();
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowSearchExecuted ex: " + e.ToString() + "");
             }
         }
         public IMvxCommand LogoutCommand
@@ -210,24 +209,20 @@ namespace RFID.Core.ViewModels
                 {
                     try
                     {
-                        //logger.Trace("SqliteService<UserModel> : LoadUser")
+                        _logger.Trace("Service: SqliteService<UserModel> Method: Load");
                         ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
                         var user = await userRepo.Load();
                         user.IsLoggedIn = false;
                         await userRepo.InsertUpdate(user);
                     }
-                    catch (Exception)
+                    catch (Exception e)
                     {
                         Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                        //logger.Log(LogLevel.Info,e.ToString);
+                        _logger.Trace("LogoutCommand ex: " + e.ToString() + "");
                     }
-
                     await _navigationService.Navigate<LoginViewModel>();
                 });
             }
         }
-
-
-        #endregion
     }
 }

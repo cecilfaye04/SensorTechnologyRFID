@@ -22,16 +22,12 @@ namespace RFID.Core.ViewModels
 {
     public class LoginViewModel : BaseViewModel
     {
-        AuthenticateUserResponse loginResponse;
         private readonly IMvxNavigationService _navigationService;
-
         public LoginViewModel(IMvxNavigationService navigationService)
         {
-            
             _navigationService = navigationService;
         }
-
-
+     
         private string _userName;
         public string Username
         {
@@ -54,75 +50,20 @@ namespace RFID.Core.ViewModels
             }
         }
 
-        //Working
+        private bool IsBusy { get; set; }
+
         public ICommand LoginCommand
         {
             get
             {
-                return new MvxCommand(async () =>
-                {
-                AuthenticateUserInput userTry = new AuthenticateUserInput()
-                {
-                    Username = Username,
-                    Password = Password,
-                    DeviceName = "Android",
-                    Station = "MNL",
-                    Version = "0.1"
-                };
-
-                var loginResponse = await Mvx.Resolve<IRestService>().AuthenticateUser(userTry);
-
-                    switch (loginResponse.StatusCode)
-                    {
-                        case "0":
-                            try
-                            {
-                                //logger.Trace("SqliteService<UserModel> : LoadUser")
-                                ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
-                                var user = await userRepo.Load();
-                                user.IsLoggedIn = true;
-                                user.Name = loginResponse.Name;
-                                //user.AppAccess = loginResponse.Application;
-                                user.AppAccess = "Pier,Arrival,Departure,Claim,BSO";
-                                await userRepo.InsertUpdate(user);
-                            }
-                            catch (Exception)
-                            {
-                                Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                                //logger.Log(LogLevel.Info,e.ToString);
-                            }
-                            await _navigationService.Navigate<MainMenuViewModel>();
-                            break;
-                        default:
-                            Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");
-                            break;
-                    }
-                });
-            }
-        }
-
-
-        ///implement this on all view model. This property will be used to avoid multiple process at the same time
-        ///possibly add a wait screet when IsBusy is set to true
-        private bool IsBusy { get; set; }
-        public ICommand LoginCommanNew
-        {
-            get
-            {
-
                 return new MvxCommand(async () => await AuthenticateUser());
             }
         }
 
-        /// <summary>
-        /// Method to process user login
-        /// </summary>
         private async Task AuthenticateUser()
         {
             {
-
                 if (IsBusy) { return; }
-                ///set IsBusy property to true
                 IsBusy = true;
                 try
                 {
@@ -151,39 +92,11 @@ namespace RFID.Core.ViewModels
                             }
                             user.AppAccess = appAccess;
                             await userRepo.InsertUpdate(user);
-
                             break;
                         default:
                             Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");
                             break;
                     }
-                    //Junvic used success boolean instead of returnCode
-                    //if (authResponse.Success == true)
-                    //{
-                    //    await _navigationService.Navigate<MainMenuViewModel>();
-                    //}
-                    //else
-                    //{
-                    //    Mvx.Resolve<IUserDialogs>().Alert("Please provide correct Username and Password.", "Invalid Username or Password", "Dismiss");
-                    //}
-                    //JObject jResponse = JObject.Parse(response);
-
-                    ///process response using the return code. Coordinate with junvic on possible error codes
-                
-                    //switch (jResponse.GetValue("returnCode").ToString())
-                    //{
-                    //    case "1":
-                    //        //successful
-                    //        await _navigationService.Navigate<MainMenuViewModel>();
-                    //        break;
-                    //    case "2":
-                    //        //process error response. Use the message from the JResponse
-                    //        break;
-                    //    default:
-                    //        //display generic error
-                    //        break;
-
-                    //}
                 }
                 catch (JsonReaderException e)
                 {
@@ -199,12 +112,9 @@ namespace RFID.Core.ViewModels
                 }
                 finally
                 {
-
                     IsBusy = false;
                 }
-
             }
-
         }
     }
 }

@@ -7,9 +7,6 @@ using RFID.Core.Interfaces;
 using RFID.Core.Models;
 using RFID.Core.Services;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
@@ -17,9 +14,11 @@ namespace RFID.Core.ViewModels
     public class PierClaimLocationViewModel : MvxViewModel<string>
     {
         private readonly IMvxNavigationService _navigationService;
+        private ILogService _logger;
 
         public PierClaimLocationViewModel(IMvxNavigationService navigationService)
         {
+            _logger = Mvx.Resolve<ILogService>();
             _navigationService = navigationService;
         }
 
@@ -34,7 +33,7 @@ namespace RFID.Core.ViewModels
             try
             {
                 PageLocationTitle = "Please select a " + pierClaimFlag + " location";
-                //logger.Trace("SqliteService<UserModel> : LoadUser")
+                _logger.Trace("Service: SqliteService<UserModel> Method: LoadUser");
                 ISqliteService<UserModel> userRepo = new SqliteService<UserModel>();
                 var user = await userRepo.Load();
                 GetPierClaimLocationInput pierInput = new GetPierClaimLocationInput()
@@ -43,12 +42,11 @@ namespace RFID.Core.ViewModels
                 {
                     PierResponse = Mvx.Resolve<IRestService>().GetPierClaimLocation(pierInput);
                 }
-
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("SqliteService<UserModel> Method: LoadUser ex: " + e.ToString() + "");
             }
         }
 
@@ -61,13 +59,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : PierClaimScanViewModel")
+                _logger.Trace("ShowPierScanExecuted Start");
                 _navigationService.Navigate<PierClaimScanViewModel,Tuple<string,string>>(new Tuple<string, string>(pierClaimFlag,PierLocation));
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowPierScanExecuted ex: " + e.ToString() + "");
             }
 
         }
@@ -90,7 +88,6 @@ namespace RFID.Core.ViewModels
                 RaisePropertyChanged(() => PageLocationTitle);
             }
         }
-
 
         private GetPierClaimLocationResponse _pierResponse;
         public  GetPierClaimLocationResponse PierResponse

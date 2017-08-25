@@ -17,7 +17,7 @@ namespace RFID.Droid.Views.Fragments
 {
     [MvxFragment(typeof(MainMenuViewModel), Resource.Id.search_frame)]
     [Register("RFID.Droid.Views.SearchTrackFragment")]
-    public class BagLocateFragment : BaseFragment<BagLocateViewModel> /*, IOnMapReadyCallback*/
+    public class BagLocateFragment : BaseFragment<BagLocateViewModel> 
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {

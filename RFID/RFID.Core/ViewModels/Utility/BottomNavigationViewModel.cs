@@ -2,6 +2,7 @@
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
+using RFID.Core.Interfaces;
 using RFID.Core.Models;
 using RFID.Core.ViewModels.Search;
 using System;
@@ -15,20 +16,24 @@ namespace RFID.Core.ViewModels
    public class BottomNavigationViewModel : MvxViewModel<BagInfo>
     {
         private readonly IMvxNavigationService _navigationService;
-        private BagInfo _BagInfo = new BagInfo();
+        private ILogService _logger;
+        private BagInfo _BagInfo;
         public BottomNavigationViewModel(IMvxNavigationService navigationService)
         {
+            _logger = Mvx.Resolve<ILogService>();
             _navigationService = navigationService;
         }
 
         public override Task Initialize(BagInfo parameter)
         {
+            _BagInfo = new BagInfo();
             _BagInfo = parameter;
             return Task.FromResult(true);
         }
 
         public void ShowSearch()
         {
+            _logger.Trace("ShowSearch Start");
             _navigationService.Navigate<BagInfoViewModel, BagInfo>(_BagInfo);
         }
 
@@ -41,13 +46,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : BagInfoViewModel")
+                _logger.Trace("ShowSearchResultExecuted Start");
                 _navigationService.Navigate<BagInfoViewModel, BagInfo>(_BagInfo);
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowSearchResultExecuted ex: " + e.ToString() + "");
             }
         }
 
@@ -60,13 +65,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : BagLocateViewModel")
+                _logger.Trace("ShowLocationExecuted Start");
                 _navigationService.Navigate<BagLocateViewModel>();
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowLocationExecuted ex: " + e.ToString() + "");
             }
         }
 
@@ -79,13 +84,13 @@ namespace RFID.Core.ViewModels
         {
             try
             {
-                //logger.Trace("Navigate : BagTrackViewModel")
+                _logger.Trace("ShowTrackCommand Start");
                 _navigationService.Navigate<BagTrackViewModel, BagInfo>(_BagInfo);
             }
             catch (Exception e)
             {
                 Mvx.Resolve<IUserDialogs>().Toast("An error occurred!", null);
-                //logger.Log(LogLevel.Info,e.ToString);
+                _logger.Trace("ShowTrackCommand ex: " + e.ToString() + "");
             }
         }
 

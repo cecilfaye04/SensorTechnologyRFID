@@ -42,10 +42,6 @@ RFID.Droid.Views.Fragments.BottomNavigationFragment, RFID.Droid;md5228e410b1ab37
 RFID.Droid.Views.Fragments.BottomNavigationFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5228e410b1ab3726e8cf5cc6b549a2bdb.BottomNavigationFragment
 RFID.Droid.Views.Fragments.BottomNavigationFragment;md5228e410b1ab3726e8cf5cc6b549a2bdb.BottomNavigationFragment
 rfid.droid.views.fragments.BottomNavigationFragment;md5228e410b1ab3726e8cf5cc6b549a2bdb.BottomNavigationFragment
-RFID.Droid.Views.Fragments.CustomMapFragment, RFID.Droid;md5228e410b1ab3726e8cf5cc6b549a2bdb.CustomMapFragment
-RFID.Droid.Views.Fragments.CustomMapFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;md5228e410b1ab3726e8cf5cc6b549a2bdb.CustomMapFragment
-RFID.Droid.Views.Fragments.CustomMapFragment;md5228e410b1ab3726e8cf5cc6b549a2bdb.CustomMapFragment
-rfid.droid.views.fragments.CustomMapFragment;md5228e410b1ab3726e8cf5cc6b549a2bdb.CustomMapFragment
 RFID.Droid.Views.Fragments.DepArrScanScreenFragment, RFID.Droid;RFID.Droid.Views.DepartureScanFragment
 RFID.Droid.Views.Fragments.DepArrScanScreenFragment, RFID.Droid, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null;RFID.Droid.Views.DepartureScanFragment
 RFID.Droid.Views.Fragments.DepArrScanScreenFragment;RFID.Droid.Views.DepartureScanFragment

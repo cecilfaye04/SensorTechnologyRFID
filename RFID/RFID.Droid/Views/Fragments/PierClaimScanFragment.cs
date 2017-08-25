@@ -32,23 +32,18 @@ namespace RFID.Droid.Views.Fragments
             Button retryButton = view.FindViewById<Button>(Resource.Id.btnRetry);
             clearButton.Click += (s, e) =>
             {
-                //Creates the Snackbar 
                 Snackbar snackBar = Snackbar.Make(clearButton, "Clear", Snackbar.LengthShort).SetAction("OK", (v) =>
                 {
                 });
                 
-                //Show the snackbar
                 snackBar.Show();
             };
             retryButton.Click += (s, e) =>
             {
-                //Creates the Snackbar 
                 Snackbar snackBar = Snackbar.Make(retryButton, "No Internet Connection", Snackbar.LengthShort).SetAction("Retry", (v) =>
                 {
 
                 });
-
-                //Show the snackbar
                 snackBar.Show();
             };
             return view;

@@ -35,7 +35,6 @@ namespace RFID.Droid.Views.Fragments
         int previousGroup = -1;
         MvxNotifyPropertyChangedEventSubscription _token;
 
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             ShowHamburgerMenu = true;
@@ -100,15 +99,12 @@ namespace RFID.Droid.Views.Fragments
    
         void FnClickEvents()
         {
-            //Listening to child item selection
             string result = String.Empty;
             expListView.ChildClick += delegate (object sender, ExpandableListView.ChildClickEventArgs e) {
                 ViewModel.PierLocation = listAdapter.GetChild(e.GroupPosition, e.ChildPosition).ToString();
                 ViewModel.ShowPierScanCommand.Execute();
             };
 
-            //Listening to group expand
-            //modified so that on selection of one group other opened group has been closed
             expListView.GroupExpand += delegate (object sender, ExpandableListView.GroupExpandEventArgs e) {
 
                 if (e.GroupPosition != previousGroup)
@@ -116,15 +112,11 @@ namespace RFID.Droid.Views.Fragments
                 previousGroup = e.GroupPosition;
             };
 
-            //Listening to group collapse
             expListView.GroupCollapse += delegate (object sender, ExpandableListView.GroupCollapseEventArgs e) {
-                //Toast.MakeText(this, "group collapsed", ToastLength.Short).Show();
             };
         }
+
         protected override int FragmentId => Resource.Layout.fragment_pier_claim_location;
-
-        //protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#283593"));
-
         protected override ColorDrawable backcolor
         {
             get

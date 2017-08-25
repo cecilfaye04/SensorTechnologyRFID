@@ -21,12 +21,10 @@ namespace RFID.Droid.Views
     [Register("RFID.Droid.Views.HomeFragment")]
     public class HomeFragment : BaseFragment<HomeViewModel>
     {
-
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
             ((MainMenuView)Activity).Title = "Home";
             ShowHamburgerMenu = true;
-
             var view = base.OnCreateView(inflater, container, savedInstanceState);
             ViewModel.InitializeButton();
             return view;

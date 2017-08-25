@@ -13,7 +13,6 @@ namespace RFID.Core.ViewModels
 {
     public class PierClaimScanViewModel : MvxViewModel<Tuple<string, string>>
     {
-
         public override Task Initialize(Tuple<string, string> parameter)
         {
             pierClaimFlag = parameter.Item1;
@@ -21,15 +20,15 @@ namespace RFID.Core.ViewModels
             return Task.FromResult(true);
         }
 
-        private string _pierLocation;
+        public string pierClaimFlag;
 
+        private string _pierLocation;
         public string PierLocation
         {
             get { return _pierLocation; }
             set { _pierLocation = value; }
         }
 
-        public string pierClaimFlag;
         private string _bagtagNo;
         public string BagtagNo
         {

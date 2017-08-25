@@ -22,7 +22,5 @@ namespace RFID.Droid.Views
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_login);
         }
-
-
     }
 }

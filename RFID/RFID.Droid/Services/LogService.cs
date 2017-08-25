@@ -18,19 +18,18 @@ namespace RFID.Droid.Services
     public class LogService : ILogService
     {
         //private static Logger logger = LogManager.GetCurrentClassLogger();
-
         public void Trace(string message)
         {
            
-            Log.Logger = new LoggerConfiguration()
-             .MinimumLevel.Debug()
-          .WriteTo.LiterateConsole()
-           .WriteTo.File("log.txt", shared: true)
-            .WriteTo.RollingFile("logs\\myapp-{Date}.txt")
-              .CreateLogger();
+          //  Log.Logger = new LoggerConfiguration()
+          //   .MinimumLevel.Debug()
+          //.WriteTo.LiterateConsole()
+          // .WriteTo.File("log.txt", shared: true)
+          //  .WriteTo.RollingFile("logs\\myapp-{Date}.txt")
+          //    .CreateLogger();
 
-            Log.Debug(message);
-            Log.Information("Hello, world!");
+          //  Log.Debug(message);
+          //  Log.Information("Hello, world!");
             //logger.Debug(DateTime.Now + message);
             //logger.Trace("asd");
             //Log.CloseAndFlush();

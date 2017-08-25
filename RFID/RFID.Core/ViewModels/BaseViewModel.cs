@@ -12,11 +12,6 @@ namespace RFID.Core.ViewModels
 {
     public class BaseViewModel : MvxViewModel
     {
-
-
-       
-
-   
         private bool progressBarVisible;
 
         public bool ProgressBarVisible
@@ -24,6 +19,5 @@ namespace RFID.Core.ViewModels
             get { return progressBarVisible; }
             set { progressBarVisible = value; RaisePropertyChanged(() => ProgressBarVisible); }
         }
-
     }
 }

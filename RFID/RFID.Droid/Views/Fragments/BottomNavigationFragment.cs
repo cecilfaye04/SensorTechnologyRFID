@@ -29,8 +29,6 @@ namespace RFID.Droid.Views.Fragments
             _bottomNavigation = view.FindViewById<BottomNavigationView>(Resource.Id.bottom_navigation);
             _bottomNavigation.SetOnNavigationItemSelectedListener(this);
             return view;
-            //return base.OnCreateView(inflater, container, savedInstanceState);
-
         }
 
         public bool OnNavigationItemSelected(IMenuItem item)
@@ -50,8 +48,6 @@ namespace RFID.Droid.Views.Fragments
 
             return true;
         }
-
-  
 
         protected override int FragmentId => Resource.Layout.fragment_search_bottom_nav;
         protected override ColorDrawable backcolor => new ColorDrawable(Color.ParseColor("#3E50B4"));
