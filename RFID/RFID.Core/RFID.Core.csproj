@@ -55,13 +55,13 @@
     <Compile Include="Entities\PierClaimScanResponse.cs" />
     <Compile Include="Helpers\RFIDScanEventArgs.cs" />
     <Compile Include="Helpers\ScanEventArgs.cs" />
-    <Compile Include="Interfaces\IBarcode.cs" />
+    <Compile Include="Interfaces\IBarcodeService.cs" />
     <Compile Include="Interfaces\ILogService.cs" />
     <Compile Include="Interfaces\IMapService.cs" />
-    <Compile Include="Interfaces\IQrcode.cs" />
+    <Compile Include="Interfaces\IQrcodeService.cs" />
     <Compile Include="Interfaces\IRegistry.cs" />
     <Compile Include="Interfaces\IRestService.cs" />
-    <Compile Include="Interfaces\IRfid.cs" />
+    <Compile Include="Interfaces\IRfidService.cs" />
     <Compile Include="Interfaces\IValidation.cs" />
     <Compile Include="Models\BagInfo.cs" />
     <Compile Include="Models\Location.cs" />

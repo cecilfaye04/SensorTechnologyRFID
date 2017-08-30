@@ -14,10 +14,12 @@ namespace RFID.Core.ViewModels
 {
     public class PierClaimScanViewModel : MvxViewModel<Tuple<string, string>>
     {
-
+        private ILogService Logger;
         public PierClaimScanViewModel() {
             //uncomment InitReaders once implementation for the QR, RFID and Barcode reader is ready
-            //InitReaders();
+            Logger = Mvx.Resolve<ILogService>();
+            InitReaders();
+
         }
         public override Task Initialize(Tuple<string, string> parameter)
         {
@@ -83,8 +85,14 @@ namespace RFID.Core.ViewModels
         {
             get
             {
-                return new MvxCommand(ScanBagtagExecuted);
+                //return new MvxCommand(ScanBagtagExecuted);
+                return new MvxCommand(RunQRCOde);
             }
+        }
+
+        private async void RunQRCOde() {
+
+            QRCodeReader.Open();
         }
 
         private async void ScanBagtagExecuted()
@@ -137,28 +145,35 @@ namespace RFID.Core.ViewModels
 
     #region Readers
 
-        IBarcode BarcodeReader;
-        IQrcode QRCodeReader;
-        IRfid RFIDReader;
+        IBarcodeService BarcodeReader;
+        IQrcodeService QRCodeReader;
+        IRfidService RFIDReader;
         private void InitReaders()
         {
-            BarcodeReader = Mvx.Resolve<IBarcode>();
-            QRCodeReader = Mvx.Resolve<IQrcode>();
-            RFIDReader = Mvx.Resolve<IRfid>();
+            //BarcodeReader = Mvx.Resolve<IBarcode>();
+            QRCodeReader = Mvx.Resolve<IQrcodeService>();
+            //RFIDReader = Mvx.Resolve<IRfid>();
 
             QRCodeReader.OnScanEvent += OnScanEvent;
             QRCodeReader.OnScanFail += OnScanFail;
-            BarcodeReader.OnScanEvent += OnScanEvent;
-            BarcodeReader.OnScanFail += OnScanFail;
+            //BarcodeReader.OnScanEvent += OnScanEvent;
+            //BarcodeReader.OnScanFail += OnScanFail;
 
-            RFIDReader.OnRFIDScanEvent += OnRFIDScanEvent;
-            RFIDReader.OnRFIDScanFail += OnRFIDScanFail;
-            RFIDReader.OnRFIDWriteEvent += OnRFIDScanEvent;
-            RFIDReader.OnRFIDWriteEventFailed += OnRFIDScanFail;
+            //RFIDReader.OnRFIDScanEvent += OnRFIDScanEvent;
+            //RFIDReader.OnRFIDScanFail += OnRFIDScanFail;
+            //RFIDReader.OnRFIDWriteEvent += OnRFIDScanEvent;
+            //RFIDReader.OnRFIDWriteEventFailed += OnRFIDScanFail;
         }
 
         private void OnScanEvent(object sender, ScanEventArgs e){
-
+            try
+            {
+                BagtagNo = e.ScannedValue;
+            }
+            catch (Exception ex)
+            {
+                Logger.Trace("OnScanEvent Ex: " + ex.ToString());
+            }
         }
 
         private void OnScanFail(object sender, ScanEventArgs e) {

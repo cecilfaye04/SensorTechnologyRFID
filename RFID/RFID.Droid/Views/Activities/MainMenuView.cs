@@ -11,6 +11,7 @@ using Android.Support.V4.View;
 using System.Collections.Generic;
 using Android.Widget;
 using System.Collections;
+using ZXing.Mobile;
 
 namespace RFID.Droid.Views
 {
@@ -30,7 +31,8 @@ namespace RFID.Droid.Views
 
             if (savedInstanceState == null)
                 ViewModel.ShowMenu();
-                
+
+            MobileBarcodeScanner.Initialize(this.Application);
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -89,6 +91,11 @@ namespace RFID.Droid.Views
             InputMethodManager inputMethodManager = (InputMethodManager)GetSystemService(InputMethodService);
             inputMethodManager.HideSoftInputFromWindow(CurrentFocus.WindowToken, 0);
             CurrentFocus.ClearFocus();
+        }
+
+        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
+        {
+            global::ZXing.Net.Mobile.Android.PermissionsHandler.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 }
