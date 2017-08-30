@@ -274,7 +274,7 @@
     <Compile Include="MvxPanelPopToRootPresentationHint.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\LogService.cs" />
+    <Compile Include="Services\LoggingService.cs" />
     <Compile Include="Services\MapService.cs" />
     <Compile Include="Services\QRCodeService.cs" />
     <Compile Include="Services\RegistryService.cs" />
@@ -302,10 +302,10 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Assets\NLog.config">
+    <None Include="Assets\NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <SubType>Designer</SubType>
-    </Content>
+    </None>
     <AndroidAsset Include="Assets\NLog.xsd">
       <SubType>Designer</SubType>
     </AndroidAsset>

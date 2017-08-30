@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels.Search
 {
-    public class BagTrackViewModel : MvxViewModel<BagInfo>
+    public class BagTrackViewModel : BaseViewModel<BagInfo>
     {
         public override Task Initialize(BagInfo parameter)
         {

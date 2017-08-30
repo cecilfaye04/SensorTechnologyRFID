@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class BagInfoViewModel : MvxViewModel<BagInfo>
+    public class BagInfoViewModel : BaseViewModel<BagInfo>
     {
         private readonly IMvxNavigationService _navigationService;
         private ILogService _logger;

@@ -9,6 +9,8 @@ using System.Collections.ObjectModel;
 using System.Linq.Expressions;
 using SQLiteNetExtensionsAsync.Extensions;
 using MvvmCross.Platform;
+using SQLite.Net.Async;
+using SQLite.Net;
 
 namespace RFID.Core.Services
 {
@@ -39,6 +41,27 @@ namespace RFID.Core.Services
             _logger.Trace("SqliteService<UserModel> :  Load(string id) Start");
             var retValue = await App.Connection.GetWithChildrenAsync<T>(id);
             return retValue;
+        }
+    }
+
+    public class SqliteDatabase : SQLiteAsyncConnection
+    {
+        public SqliteDatabase(Func<SQLiteConnectionWithLock> sqliteConnectionFunc, TaskScheduler taskScheduler = null,
+            TaskCreationOptions taskCreationOptions = TaskCreationOptions.None)
+            : base(sqliteConnectionFunc, taskScheduler, taskCreationOptions)
+        {
+        }
+
+        public async Task InitializeAsync()
+        {
+            await CreateTableAsync<UserModel>();
+            await CreateTableAsync<BagInfo>();
+            await CreateTableAsync<PierClaimBagScan>();
+            await SeedAsync();
+        }
+        private async Task SeedAsync()
+        {
+            await InsertAsync(new UserModel { Username = "user", IsLoggedIn = false, Name = String.Empty, AppAccess = String.Empty });
         }
     }
 }

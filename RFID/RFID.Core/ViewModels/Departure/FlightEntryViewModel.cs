@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class FlightEntryViewModel : MvxViewModel<string>
+    public class FlightEntryViewModel : BaseViewModel<string>
     {
         private readonly IMvxNavigationService _navigationService;
         private ILogService _logger;

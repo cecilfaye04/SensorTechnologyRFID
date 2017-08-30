@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class DepArrScanScreenViewModel : MvxViewModel<string>
+    public class DepArrScanScreenViewModel : BaseViewModel<string>
     {
         public override Task Initialize(string parameter)
         {

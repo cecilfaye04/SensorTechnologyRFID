@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class PierClaimScanViewModel : MvxViewModel<Tuple<string, string>>
+    public class PierClaimScanViewModel : BaseViewModel<Tuple<string, string>>
     {
         private ILogService Logger;
         public PierClaimScanViewModel() {

@@ -50,7 +50,7 @@ namespace RFID.Core.Services
 
         public async Task<DepArrScanResponse> DepArrScan(DepArrScanInput input)
         {
-            logger.Trace("Service : IRestService, Method : DepArrScan , Request : DepArrScanInput = {'Bagtag' :" + input.Bagtag + ",'CarrierCode' : " + input.CarrierCode + ",'FlightNumber' : " + input.FlightNumber + ",'Position' : "+ input.Position +" ,'ScanTime' : " + input.ScanTime + ",'DeviceName' : " + input.DeviceName + " , 'Station' : " + input.Station + " , 'Version' : " + input.Version + ", 'Username' : "+ input.Username +" };");
+            logger.Trace("Service : IRestService, Method : DepArrScan , Request : DepArrScanInput = {'Bagtag' :" + input.Bagtag + ",'CarrierCode' : " + input.CarrierCode + ",'FlightNumber' : " + input.FlightNumber + ",'Position' : " + input.Position + " ,'ScanTime' : " + input.ScanTime + ",'DeviceName' : " + input.DeviceName + " , 'Station' : " + input.Station + " , 'Version' : " + input.Version + ", 'Username' : " + input.Username + " };");
             var items = new DepArrScanResponse();
             var restUrl = "http://172.26.82.21:5000/DeparturesWebservice/load";
             var uri = new Uri(string.Format(restUrl, string.Empty));
@@ -220,31 +220,13 @@ namespace RFID.Core.Services
             string json = JsonConvert.SerializeObject(_parameters, Formatting.Indented);
             var content = new StringContent(json, Encoding.UTF8, _webConfig["contentType"]);
             logger.Trace("Service : IRestService , Method : " + _webConfig["method"] + " ,Request : " + json + "");
+
             var response = await client.PostAsync(uri, content);
             var returnResponse = await response.Content.ReadAsStringAsync();
+
             logger.Trace("Service : IRestService , Method : " + _webConfig["method"] + " ,Response : " + returnResponse + "");
 
             return returnResponse;
-            //Uri uri = new Uri(_webConfig["uri"]);
-            //HttpWebRequest request = (HttpWebRequest)HttpWebRequest.Create(uri);
-            //request.ContentType = _webConfig["contentType"];
-            //request.Method = _webConfig["method"];
-            //string json = JsonConvert.SerializeObject(_parameters, Formatting.Indented);
-
-            /////write the rest of the parameters in postData
-
-
-            //using (WebResponse response = await request.GetResponseAsync())
-            //{
-            //    using (Stream stream = response.GetResponseStream())
-            //    {
-            //        await Task.Run(() => stream);
-
-            //        StreamReader reader = new StreamReader(stream, Encoding.UTF8);
-            //        return reader.ReadToEnd();
-            //    }
-            //}
-
         }
 
 

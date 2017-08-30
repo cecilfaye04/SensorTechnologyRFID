@@ -35,7 +35,7 @@ namespace RFID.Droid
         protected override IMvxApplication CreateApp()
         {
             Mvx.RegisterSingleton<IInitilializeSqliteService>(new InitializeSqliteService());
-            Mvx.RegisterSingleton<ILogService>(new LogService());
+            Mvx.RegisterSingleton<ILogService>(new LoggingService());
             Mvx.RegisterSingleton<IQrcodeService>(new QRCodeService());
             UserDialogs.Init(() => Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
             AndroidEnvironment.UnhandledExceptionRaiser -= StoreLogger;

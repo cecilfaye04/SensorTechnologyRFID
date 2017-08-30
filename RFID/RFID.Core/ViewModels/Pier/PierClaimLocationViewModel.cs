@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels
 {
-    public class PierClaimLocationViewModel : MvxViewModel<string>
+    public class PierClaimLocationViewModel : BaseViewModel<string>
     {
         private readonly IMvxNavigationService _navigationService;
         private ILogService _logger;

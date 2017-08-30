@@ -12,12 +12,22 @@ namespace RFID.Core.ViewModels
 {
     public class BaseViewModel : MvxViewModel
     {
+
+    }
+
+    public class BaseViewModel<T>: MvxViewModel<T> where T : class
+    {
         private bool progressBarVisible;
 
         public bool ProgressBarVisible
         {
             get { return progressBarVisible; }
             set { progressBarVisible = value; RaisePropertyChanged(() => ProgressBarVisible); }
+        }
+
+        public override Task Initialize(T parameter)
+        {
+            return Task.FromResult(true);
         }
     }
 }

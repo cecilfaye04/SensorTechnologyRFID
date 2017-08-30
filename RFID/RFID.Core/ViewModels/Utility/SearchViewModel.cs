@@ -30,7 +30,7 @@ namespace RFID.Core.ViewModels
 
         private void ShowSearchResultExecuted()
         {
-            ProgressBarVisible = true;
+            //ProgressBarVisible = true;
             BagInfo mBagInfo = new BagInfo();
             if (Mvx.Resolve<IValidation>().Is10Digits(BagtagNo) && !String.IsNullOrEmpty(BagtagNo))
             {
@@ -81,7 +81,7 @@ namespace RFID.Core.ViewModels
                 Mvx.Resolve<IUserDialogs>().Alert("Bagtag no must contains 10 digits.","Invalid Bagtag no!","Dismiss");
             }
           
-            ProgressBarVisible = false;
+            //ProgressBarVisible = false;
         }
 
         private string _bagtagNo ;

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.ViewModels.Search
 {
-   public class SearchMultipleViewModel : MvxViewModel
+   public class SearchMultipleViewModel : BaseViewModel
     {
        
         private readonly IMvxNavigationService _navigationService;
