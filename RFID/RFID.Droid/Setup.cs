@@ -36,7 +36,7 @@ namespace RFID.Droid
         {
             Mvx.RegisterSingleton<IInitilializeSqliteService>(new InitializeSqliteService());
             Mvx.RegisterSingleton<ILogService>(new LogService());
-
+            Mvx.RegisterSingleton<IQrcodeService>(new QRCodeService());
             UserDialogs.Init(() => Mvx.Resolve<IMvxAndroidCurrentTopActivity>().Activity);
             AndroidEnvironment.UnhandledExceptionRaiser -= StoreLogger;
             AndroidEnvironment.UnhandledExceptionRaiser += StoreLogger;
