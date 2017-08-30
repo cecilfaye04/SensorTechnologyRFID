@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.Interfaces
 {
-    public interface IBarcode
+    public interface IBarcodeService
     {
         /// <summary>
         /// Event to raise when read is successful

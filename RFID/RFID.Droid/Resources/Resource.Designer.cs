@@ -1570,6 +1570,9 @@ namespace RFID.Droid
 			global::Splat.Resource.String.library_name = global::RFID.Droid.Resource.String.library_name;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::RFID.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::RFID.Droid.Resource.String.Hello;
+			global::ZXing.Mobile.Resource.Id.contentFrame = global::RFID.Droid.Resource.Id.contentFrame;
+			global::ZXing.Mobile.Resource.Layout.zxingscanneractivitylayout = global::RFID.Droid.Resource.Layout.zxingscanneractivitylayout;
+			global::ZXing.Mobile.Resource.Layout.zxingscannerfragmentlayout = global::RFID.Droid.Resource.Layout.zxingscannerfragmentlayout;
 		}
 		
 		public partial class Animation
@@ -4271,6 +4274,9 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b0031
 			public const int collapseActionView = 2131427377;
 			
+			// aapt resource value: 0x7f0b0142
+			public const int contentFrame = 2131427650;
+			
 			// aapt resource value: 0x7f0b005a
 			public const int contentPanel = 2131427418;
 			
@@ -4520,14 +4526,14 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b00a2
 			public const int map = 2131427490;
 			
-			// aapt resource value: 0x7f0b0143
-			public const int masked = 2131427651;
+			// aapt resource value: 0x7f0b0144
+			public const int masked = 2131427652;
 			
 			// aapt resource value: 0x7f0b012f
 			public const int media_actions = 2131427631;
 			
-			// aapt resource value: 0x7f0b0147
-			public const int menu_search = 2131427655;
+			// aapt resource value: 0x7f0b0148
+			public const int menu_search = 2131427656;
 			
 			// aapt resource value: 0x7f0b002f
 			public const int middle = 2131427375;
@@ -4541,47 +4547,47 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b009f
 			public const int mvxListView1 = 2131427487;
 			
-			// aapt resource value: 0x7f0b014c
-			public const int nav_arrival = 2131427660;
-			
-			// aapt resource value: 0x7f0b014e
-			public const int nav_bso = 2131427662;
-			
 			// aapt resource value: 0x7f0b014d
-			public const int nav_claim = 2131427661;
-			
-			// aapt resource value: 0x7f0b014b
-			public const int nav_departure = 2131427659;
-			
-			// aapt resource value: 0x7f0b0150
-			public const int nav_encoder = 2131427664;
-			
-			// aapt resource value: 0x7f0b0151
-			public const int nav_footer = 2131427665;
-			
-			// aapt resource value: 0x7f0b0149
-			public const int nav_home = 2131427657;
-			
-			// aapt resource value: 0x7f0b0148
-			public const int nav_items = 2131427656;
-			
-			// aapt resource value: 0x7f0b0146
-			public const int nav_location = 2131427654;
-			
-			// aapt resource value: 0x7f0b0152
-			public const int nav_logout = 2131427666;
-			
-			// aapt resource value: 0x7f0b014a
-			public const int nav_pier = 2131427658;
-			
-			// aapt resource value: 0x7f0b0144
-			public const int nav_result = 2131427652;
+			public const int nav_arrival = 2131427661;
 			
 			// aapt resource value: 0x7f0b014f
-			public const int nav_search = 2131427663;
+			public const int nav_bso = 2131427663;
+			
+			// aapt resource value: 0x7f0b014e
+			public const int nav_claim = 2131427662;
+			
+			// aapt resource value: 0x7f0b014c
+			public const int nav_departure = 2131427660;
+			
+			// aapt resource value: 0x7f0b0151
+			public const int nav_encoder = 2131427665;
+			
+			// aapt resource value: 0x7f0b0152
+			public const int nav_footer = 2131427666;
+			
+			// aapt resource value: 0x7f0b014a
+			public const int nav_home = 2131427658;
+			
+			// aapt resource value: 0x7f0b0149
+			public const int nav_items = 2131427657;
+			
+			// aapt resource value: 0x7f0b0147
+			public const int nav_location = 2131427655;
+			
+			// aapt resource value: 0x7f0b0153
+			public const int nav_logout = 2131427667;
+			
+			// aapt resource value: 0x7f0b014b
+			public const int nav_pier = 2131427659;
 			
 			// aapt resource value: 0x7f0b0145
-			public const int nav_track = 2131427653;
+			public const int nav_result = 2131427653;
+			
+			// aapt resource value: 0x7f0b0150
+			public const int nav_search = 2131427664;
+			
+			// aapt resource value: 0x7f0b0146
+			public const int nav_track = 2131427654;
 			
 			// aapt resource value: 0x7f0b0089
 			public const int navigation_frame = 2131427465;
@@ -5102,8 +5108,8 @@ namespace RFID.Droid
 			// aapt resource value: 0x7f0b000e
 			public const int view_offset_helper = 2131427342;
 			
-			// aapt resource value: 0x7f0b0142
-			public const int visible = 2131427650;
+			// aapt resource value: 0x7f0b0143
+			public const int visible = 2131427651;
 			
 			// aapt resource value: 0x7f0b00f1
 			public const int vwDivider = 2131427569;
@@ -5421,6 +5427,12 @@ namespace RFID.Droid
 			
 			// aapt resource value: 0x7f030052
 			public const int toolbar_actionbar = 2130903122;
+			
+			// aapt resource value: 0x7f030053
+			public const int zxingscanneractivitylayout = 2130903123;
+			
+			// aapt resource value: 0x7f030054
+			public const int zxingscannerfragmentlayout = 2130903124;
 			
 			static Layout()
 			{

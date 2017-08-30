@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.Interfaces
 {
-    public interface IRfid
+    public interface IRfidService
     {
         /// <summary>
         /// Get/Set Property for the action to be done when trigger is pulled

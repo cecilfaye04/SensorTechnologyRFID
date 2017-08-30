@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RFID.Core.Interfaces
 {
-    public interface IQrcode
+    public interface IQrcodeService
     {
         /// <summary>
         /// Readonly property to check if QRCode reader is on the process of scanning
