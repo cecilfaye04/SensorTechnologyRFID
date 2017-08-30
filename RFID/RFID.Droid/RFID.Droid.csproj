@@ -17,7 +17,7 @@
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <AndroidUseLatestPlatformSdk>True</AndroidUseLatestPlatformSdk>
-    <TargetFrameworkVersion>v6.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v7.0</TargetFrameworkVersion>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
@@ -284,12 +284,12 @@
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
-    <AndroidAsset Include="Assets\NLog.config">
+    <Content Include="Assets\NLog.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </AndroidAsset>
+      <SubType>Designer</SubType>
+    </Content>
     <AndroidAsset Include="Assets\NLog.xsd">
       <SubType>Designer</SubType>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </AndroidAsset>
     <None Include="GettingStarted.Xamarin" />
     <None Include="packages.config" />

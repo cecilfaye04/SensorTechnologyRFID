@@ -20,10 +20,17 @@ namespace AndroidUITest
             app.Tap(x => x.Id("lblListHeader").Text("Pier"));
             app.Tap(x => x.Id("lblListItem").Text("Pier 2"));
             app.WaitForElement("rlScannedBaggage");
-
             //BackNavigation
             app.TapCoordinates(0, 29);
             app.WaitForElement("tvPierSelect");
+        }
+
+        [Test]
+        public void ClaimNavigationTest()
+        {
+            Login();
+            app.Repl();
+
         }
     }
 }
