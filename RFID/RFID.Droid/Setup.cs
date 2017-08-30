@@ -85,9 +85,9 @@ namespace RFID.Droid
         }
 
 
-        protected override IMvxTrace CreateDebugTrace()
-        {
-            return new DebugTrace();
-        }
+        //protected override IMvxTrace CreateDebugTrace()
+        //{
+        //    return new DebugTrace();
+        //}
     }
 }

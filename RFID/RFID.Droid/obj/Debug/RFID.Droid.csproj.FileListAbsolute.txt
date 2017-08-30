@@ -24,10 +24,6 @@ C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\De
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\Newtonsoft.Json.dll
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\NLog.dll
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\RFID.Core.dll
-C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\Serilog.dll
-C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.File.dll
-C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.Literate.dll
-C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.RollingFile.dll
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\Splat.dll
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\SQLite.Net.Async.dll
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\SQLite.Net.dll
@@ -88,10 +84,6 @@ C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\De
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\MvvmCross.Platform.Droid.dll.mdb
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\Newtonsoft.Json.xml
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\NLog.xml
-C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\Serilog.xml
-C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.File.xml
-C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.Literate.xml
-C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\Serilog.Sinks.RollingFile.xml
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\Splat.dll.mdb
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\RFID.Droid.csprojResolveAssemblyReference.cache
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\XbdMerge\Xamarin.Android.Support.Annotations.dll.stamp
@@ -232,7 +224,6 @@ C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\De
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.ServiceModel.Internals.dll.mdb
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
-C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\RFID.Droid.dll.mdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\webapi.config
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\Assets\NLog.config
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\RFID.Droid.dll.config
@@ -469,4 +460,5 @@ C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.Xml.dll.mdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\android\assets\System.Xml.Linq.dll.mdb
 C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\obj\Debug\RFID.Droid.dll.mdb
-C:\Users\cecil.clemente\Source\Repos\SensorTechnologyXamarinRFID\RFID\RFID.Droid\bin\Debug\RFID.Droid.dll.mdb
+C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\obj\Debug\RFID.Droid.dll.mdb
+C:\Users\jerome.manzano\Source\Repos\SensorTechnologyRFID\RFID\RFID.Droid\bin\Debug\RFID.Droid.dll.mdb
